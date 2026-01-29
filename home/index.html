@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PayPal Rewards</title>
+    <title>Freecash Belohnungen</title>
     <style>
         * {
             margin: 0;
@@ -51,213 +51,245 @@
             max-width: 400px;
             width: 90%;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            position: relative;
-            z-index: 10001;
+            border: 1px solid #333;
         }
         
-        .age-popup h2 {
+        .age-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .age-title {
             font-size: 24px;
             font-weight: 700;
-            color: #fff;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
+            color: #5cb85c;
         }
         
-        .age-popup p {
-            font-size: 15px;
-            color: #a0a0a0;
+        .age-subtitle {
+            font-size: 14px;
+            color: #999;
             margin-bottom: 30px;
-            line-height: 1.5;
         }
         
         .age-buttons {
             display: flex;
             gap: 12px;
+            flex-direction: column;
         }
         
-        .age-btn {
-            flex: 1;
-            padding: 18px;
+        .age-button {
+            padding: 16px;
+            border-radius: 12px;
+            border: none;
             font-size: 16px;
             font-weight: 600;
-            border: none;
-            border-radius: 12px;
             cursor: pointer;
-            position: relative;
-            pointer-events: auto;
-            min-height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.3s;
         }
         
-        .age-btn.yes {
-            background: #0075EB;
-            color: #fff;
+        .age-button.yes {
+            background: #5cb85c;
+            color: #000;
         }
         
-        .age-btn.no {
-            background: #2a2a2a;
-            color: #fff;
-        }
-        
-        .age-btn:active {
-            transform: scale(0.98);
-            opacity: 0.8;
+        .age-button.no {
+            background: transparent;
+            border: 1px solid #333;
+            color: #999;
         }
         
         .main-content {
             opacity: 0;
-            transition: opacity 0.5s ease-in;
-            min-height: 100vh;
+            transition: opacity 0.5s;
+            padding-bottom: 60px;
         }
         
         .main-content.show {
             opacity: 1;
         }
         
-        .header {
-            padding: 16px 20px;
+        .live-feed {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 26, 26, 0.95);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+            color: #5cb85c;
+            border: 1px solid #333;
+            z-index: 100;
+            max-width: 90%;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            animation: slideDown 0.4s ease-out, pulse 2s infinite;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateX(-50%) translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .header {
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
         }
         
         .header-icon {
-            width: 20px;
-            height: 20px;
-        }
-        
-        .header-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            margin-bottom: 15px;
         }
         
         .header-text {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 28px;
+            font-weight: 700;
             color: #fff;
         }
         
         .container {
-            max-width: 480px;
+            max-width: 500px;
             margin: 0 auto;
-            padding: 0 20px 20px 20px;
+            padding: 30px 20px;
         }
         
         .hero-card {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
             border-radius: 20px;
-            padding: 24px 20px;
+            padding: 30px;
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 25px;
             border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #5cb85c, #4a9d4a);
         }
         
         .unlocked-badge {
             display: inline-block;
-            background: #2a2a2a;
-            color: #fff;
+            background: #5cb85c;
+            color: #000;
             padding: 6px 16px;
-            border-radius: 16px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
         
         .hero-title {
-            font-size: 14px;
-            color: #a0a0a0;
-            margin-bottom: 8px;
-            font-weight: 400;
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 10px;
         }
         
         .hero-amount {
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 700;
-            color: #fff;
-            margin-bottom: 4px;
-            letter-spacing: -1px;
+            color: #5cb85c;
+            margin-bottom: 5px;
         }
         
         .hero-subtitle {
-            font-size: 12px;
+            font-size: 14px;
             color: #666;
         }
         
         .stats {
-            display: flex;
-            justify-content: space-around;
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 12px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
         }
         
         .stat {
+            background: #1a1a1a;
+            padding: 15px 10px;
+            border-radius: 12px;
             text-align: center;
+            border: 1px solid #222;
         }
         
         .stat-icon {
             font-size: 20px;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
         
         .stat-value {
             font-size: 12px;
+            color: #999;
             font-weight: 600;
-            color: #fff;
         }
         
         .info-banner {
-            background: #1a1a1a;
-            border-radius: 10px;
+            background: rgba(92, 184, 92, 0.1);
+            border: 1px solid rgba(92, 184, 92, 0.3);
+            border-radius: 12px;
             padding: 12px;
+            margin-bottom: 30px;
             text-align: center;
-            margin-bottom: 20px;
-            border: 1px solid #2a2a2a;
         }
         
         .info-banner-text {
-            font-size: 12px;
-            color: #a0a0a0;
+            font-size: 13px;
+            color: #5cb85c;
         }
         
         .section-title {
-            font-size: 17px;
+            font-size: 20px;
             font-weight: 700;
-            color: #fff;
-            margin-bottom: 12px;
-            font-style: italic;
+            margin-bottom: 20px;
+            text-align: center;
         }
         
         .step-card {
             background: #1a1a1a;
             border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
             display: flex;
-            gap: 14px;
+            gap: 15px;
             align-items: flex-start;
-            border: 1px solid #2a2a2a;
+            border: 1px solid #222;
+            transition: all 0.3s;
+        }
+        
+        .step-card:hover {
+            border-color: #5cb85c;
+            transform: translateY(-2px);
         }
         
         .step-number {
-            width: 36px;
-            height: 36px;
-            background: #fff;
+            background: #5cb85c;
             color: #000;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
             font-weight: 700;
+            font-size: 16px;
             flex-shrink: 0;
         }
         
@@ -266,107 +298,48 @@
         }
         
         .step-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
         
         .step-desc {
             font-size: 13px;
-            color: #a0a0a0;
-            line-height: 1.4;
+            color: #999;
+            line-height: 1.5;
         }
         
         .cta-button {
-            background: #fff;
-            color: #000;
-            padding: 16px;
-            font-size: 15px;
-            font-weight: 700;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            text-decoration: none;
             display: block;
             width: 100%;
+            padding: 18px;
+            background: #5cb85c;
+            color: #000;
             text-align: center;
-            margin-top: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 25px;
+            transition: all 0.3s;
+            border: none;
+            letter-spacing: 1px;
         }
         
         .cta-button:active {
             transform: scale(0.98);
-        }
-        
-        .live-feed {
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 100px;
-            z-index: 1000;
-            pointer-events: none;
-            max-width: 90%;
-        }
-        
-        .notification {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin-bottom: 12px;
-            min-width: 280px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-            animation: slideDown 0.5s ease-out;
-            opacity: 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .notification.show {
-            opacity: 1;
-        }
-        
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        .notification-dot {
-            width: 8px;
-            height: 8px;
-            background: #ff4444;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        
-        .notification-text {
-            flex: 1;
-            font-size: 13px;
-            color: #fff;
-        }
-        
-        .notification-count {
-            font-weight: 700;
         }
     </style>
 </head>
 <body>
     <div class="age-gate" id="ageGate">
         <div class="age-popup">
-            <h2>Age Verification</h2>
-            <p>You must be 18 years or older to continue</p>
+            <div class="age-icon">🔞</div>
+            <div class="age-title">Altersverifikation</div>
+            <div class="age-subtitle">Bist du 18 Jahre oder älter?</div>
             <div class="age-buttons">
-                <button type="button" class="age-btn no" id="underBtn">Under 18</button>
-                <button type="button" class="age-btn yes" id="overBtn">18+</button>
+                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Ja, ich bin 18+</button>
+                <button class="age-button no" onclick="alert('Du musst 18+ sein');">Nein</button>
             </div>
         </div>
     </div>
@@ -375,71 +348,73 @@
         <div class="live-feed" id="liveFeed"></div>
         
         <div class="header">
-            <div class="header-icon">
-                <img src="data:image/png;base64,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" alt="PayPal">
+            <div style="display:flex;align-items:center;gap:12px;justify-content:center;">
+                <img src="https://i.imgur.com/freecash-logo.png" 
+                     alt="Freecash" 
+                     style="width:50px;height:50px;border-radius:10px;"
+                     onerror="this.style.display='none'">
+                <div class="header-text">Freecash Belohnungen</div>
             </div>
-            <div class="header-text">PayPal Rewards</div>
         </div>
         
         <div class="container">
             <div class="hero-card">
-                <div class="unlocked-badge">UNLOCKED</div>
-                <div class="hero-title">Your Earning Potential</div>
-                <div class="hero-amount">$100 – $750</div>
-                <div class="hero-subtitle">after completing deals</div>
+                <div class="unlocked-badge">FREIGESCHALTET</div>
+                <div class="hero-title">Dein Verdienstpotenzial</div>
+                <div class="hero-amount">€100 – €750</div>
+                <div class="hero-subtitle">nach Abschluss der Deals</div>
             </div>
             
             <div class="stats">
                 <div class="stat">
                     <div class="stat-icon">⭐</div>
-                    <div class="stat-value">4.8 Rating</div>
+                    <div class="stat-value">4,8 Bewertung</div>
                 </div>
                 <div class="stat">
                     <div class="stat-icon">💰</div>
-                    <div class="stat-value">$50M+ Paid</div>
+                    <div class="stat-value">€50M+ Ausgezahlt</div>
                 </div>
                 <div class="stat">
                     <div class="stat-icon">👥</div>
-                    <div class="stat-value">600K+ Users</div>
+                    <div class="stat-value">600K+ Nutzer</div>
                 </div>
             </div>
             
             <div class="info-banner">
-                <div class="info-banner-text">🎫 Free signup · No hidden fees · Instant access</div>
+                <div class="info-banner-text">🎫 Kostenlose Anmeldung · Keine versteckten Gebühren · Sofortiger Zugang</div>
             </div>
             
-            <div class="section-title">Your PayPal Rewards Journey</div>
+            <div class="section-title">Deine Freecash Belohnungsreise</div>
             
             <div class="step-card">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <div class="step-title">Sign Up & Verify</div>
-                    <div class="step-desc">Create your access with basic information.</div>
+                    <div class="step-title">Installieren</div>
+                    <div class="step-desc">Lade die App herunter und installiere sie.</div>
                 </div>
             </div>
             
             <div class="step-card">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <div class="step-title">Complete 3–5 Deals</div>
-                    <div class="step-desc">Finish recommended deals to unlock your PayPal reward.</div>
+                    <div class="step-title">Anmelden & Verifizieren</div>
+                    <div class="step-desc">Erstelle dein Konto mit grundlegenden Informationen.</div>
                 </div>
             </div>
             
             <div class="step-card">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">Reward Unlocked</div>
-                    <div class="step-desc">Rewards unlock after successful completion.</div>
+                    <div class="step-title">Belohnung Freigeschaltet</div>
+                    <div class="step-desc">Belohnungen werden nach erfolgreichem Abschluss freigeschaltet.</div>
                 </div>
             </div>
             
-            <a href="https://trkfy.org/aff_c?offer_id=1548&aff_id=17554" class="cta-button">CLAIM NOW</a>
+            <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554" class="cta-button">JETZT ANFORDERN</a>
         </div>
     </div>
     
     <script>
-        // Auto-redirect after 3 seconds
         setTimeout(function() {
             const ageGate = document.getElementById('ageGate');
             const mainContent = document.getElementById('mainContent');
@@ -448,90 +423,25 @@
                 mainContent.classList.add('show');
             }
         }, 3000);
+
+        const names = ['Jenny', 'Laura', 'Sarah', 'Lisa', 'Anna', 'Marie', 'Sophie', 'Julia', 'Lena', 'Emma', 'Mia', 'Hannah', 'Lea', 'Nina', 'Carla'];
+        const amounts = ['€127', '€243', '€189', '€456', '€321', '€298', '€176', '€412', '€534', '€267'];
         
-        // Age verification handlers
-        (function() {
-            let ageGate, mainContent, overBtn, underBtn;
-            
-            function init() {
-                ageGate = document.getElementById('ageGate');
-                mainContent = document.getElementById('mainContent');
-                overBtn = document.getElementById('overBtn');
-                underBtn = document.getElementById('underBtn');
-                
-                if (!overBtn || !underBtn) {
-                    setTimeout(init, 100);
-                    return;
-                }
-                
-                function showMainContent(e) {
-                    if (e) e.preventDefault();
-                    ageGate.style.display = 'none';
-                    mainContent.classList.add('show');
-                }
-                
-                function blockAccess(e) {
-                    if (e) e.preventDefault();
-                    alert('You must be 18 or older to access this content.');
-                }
-                
-                overBtn.addEventListener('touchstart', showMainContent, {passive: false});
-                overBtn.addEventListener('mousedown', showMainContent);
-                overBtn.addEventListener('click', showMainContent);
-                
-                underBtn.addEventListener('touchstart', blockAccess, {passive: false});
-                underBtn.addEventListener('mousedown', blockAccess);
-                underBtn.addEventListener('click', blockAccess);
-            }
-            
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', init);
-            } else {
-                init();
-            }
-        })();
-        
-        // Live notifications
-        const counts = [2800, 3200, 2950, 3100, 2750, 3400, 2900, 3250];
-        
-        function createNotification() {
-            const liveFeed = document.getElementById('liveFeed');
-            const count = counts[Math.floor(Math.random() * counts.length)];
-            
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.innerHTML = `
-                <div class="notification-dot"></div>
-                <div class="notification-text">
-                    <span class="notification-count">${count.toLocaleString()}</span> people unlocking rewards right now
-                </div>
-            `;
-            
-            while (liveFeed.children.length >= 1) {
-                liveFeed.removeChild(liveFeed.lastChild);
-            }
-            
-            liveFeed.insertBefore(notification, liveFeed.firstChild);
-            
-            setTimeout(() => {
-                notification.classList.add('show');
-            }, 100);
-            
-            setTimeout(() => {
-                notification.style.opacity = '0';
+        function updateLiveFeed() {
+            const name = names[Math.floor(Math.random() * names.length)];
+            const amount = amounts[Math.floor(Math.random() * amounts.length)];
+            const feed = document.getElementById('liveFeed');
+            if (feed) {
+                feed.textContent = `🔥 ${name} hat gerade ${amount} verdient`;
+                feed.style.animation = 'none';
                 setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 500);
-            }, 5000);
+                    feed.style.animation = 'slideDown 0.4s ease-out, pulse 2s infinite';
+                }, 10);
+            }
         }
         
-        setTimeout(createNotification, 2000);
-        
-        setInterval(() => {
-            createNotification();
-        }, Math.random() * 3000 + 5000);
+        updateLiveFeed();
+        setInterval(updateLiveFeed, 8000);
     </script>
 </body>
 </html>/
