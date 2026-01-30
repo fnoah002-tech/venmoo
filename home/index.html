@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Freecash Belohnungen</title>
+    <title>Freecash - Geld verdienen</title>
     <style>
         * {
             margin: 0;
@@ -14,10 +14,11 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: #000;
+            background: linear-gradient(180deg, #0a1f1a 0%, #061610 100%);
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         
         .age-gate {
@@ -32,7 +33,6 @@
             align-items: center;
             justify-content: center;
             animation: fadeIn 0.3s ease-out;
-            pointer-events: auto;
         }
         
         .age-gate.hidden {
@@ -63,7 +63,7 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #5cb85c;
+            color: #00ff88;
         }
         
         .age-subtitle {
@@ -89,7 +89,7 @@
         }
         
         .age-button.yes {
-            background: #5cb85c;
+            background: #00ff88;
             color: #000;
         }
         
@@ -102,194 +102,134 @@
         .main-content {
             opacity: 0;
             transition: opacity 0.5s;
-            padding-bottom: 20px;
         }
         
         .main-content.show {
             opacity: 1;
         }
         
-        .live-feed {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(26, 26, 26, 0.95);
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-size: 13px;
-            color: #5cb85c;
-            border: 1px solid #333;
-            z-index: 100;
-            max-width: 90%;
-            text-align: center;
-            animation: slideDown 0.4s ease-out, pulse 2s infinite;
-        }
-        
-        @keyframes slideDown {
-            from {
-                transform: translateX(-50%) translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(-50%) translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        
-        .header {
-            padding: 20px 20px 15px 20px;
-            text-align: center;
-            border-bottom: 1px solid #222;
-        }
-        
-        .header-icon {
-            margin-bottom: 8px;
-        }
-        
-        .header-text {
-            font-size: 22px;
-            font-weight: 700;
-            color: #fff;
-        }
-        
         .container {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 20px 20px;
-        }
-        
-        .hero-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-            border-radius: 16px;
             padding: 20px;
-            text-align: center;
-            margin-bottom: 15px;
-            border: 1px solid #333;
-            position: relative;
-            overflow: hidden;
         }
         
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #5cb85c, #4a9d4a);
+        /* Browser Bar - Hidden */
+        .browser-bar {
+            display: none;
         }
         
-        .unlocked-badge {
-            display: inline-block;
-            background: #5cb85c;
+        /* Download Button */
+        .download-btn {
+            background: #00ff88;
             color: #000;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        
-        .hero-title {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 8px;
-        }
-        
-        .hero-amount {
-            font-size: 34px;
-            font-weight: 700;
-            color: #5cb85c;
-            margin-bottom: 4px;
-        }
-        
-        .hero-subtitle {
-            font-size: 12px;
-            color: #666;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .stat {
-            background: #1a1a1a;
-            padding: 12px 8px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #222;
-        }
-        
-        .stat-icon {
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
-        
-        .stat-value {
-            font-size: 11px;
-            color: #999;
-            font-weight: 600;
-        }
-        
-        .info-banner {
-            background: rgba(92, 184, 92, 0.1);
-            border: 1px solid rgba(92, 184, 92, 0.3);
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .info-banner-text {
-            font-size: 11px;
-            color: #5cb85c;
-        }
-        
-        .section-title {
+            padding: 18px 30px;
+            border-radius: 16px;
+            border: none;
+            width: 100%;
             font-size: 18px;
             font-weight: 700;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .step-card {
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 10px;
             display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 12px;
-            align-items: flex-start;
-            border: 1px solid #222;
+            margin-bottom: 30px;
+            cursor: pointer;
             transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
         }
         
-        .step-card:hover {
-            border-color: #5cb85c;
-            transform: translateY(-2px);
+        .download-btn:active {
+            transform: scale(0.98);
         }
         
-        .step-number {
-            background: #5cb85c;
+        .apple-icon {
+            font-size: 24px;
+        }
+        
+        /* Success Section */
+        .success-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo-container {
+            display: none;
+        }
+        
+        .success-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #00ff88;
             color: #000;
-            width: 28px;
-            height: 28px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .check-icon {
+            width: 40px;
+            height: 40px;
+            background: #000;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #00ff88;
+            font-size: 24px;
+        }
+        
+        .success-text {
+            font-size: 16px;
+            color: #aaa;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        
+        /* Steps Section */
+        .steps-title {
+            font-size: 16px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .steps-container {
+            background: rgba(26, 47, 42, 0.5);
+            border-radius: 24px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .step-number {
+            width: 45px;
+            height: 45px;
+            background: #00ff88;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
             font-weight: 700;
-            font-size: 14px;
             flex-shrink: 0;
         }
         
@@ -298,36 +238,84 @@
         }
         
         .step-title {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
         }
         
         .step-desc {
-            font-size: 12px;
-            color: #999;
-            line-height: 1.4;
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.5;
         }
         
-        .cta-button {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background: #5cb85c;
-            color: #000;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 10px;
+        /* Activation Box */
+        .activation-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #ff3366;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .activation-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .lock-icon-big {
+            font-size: 24px;
+        }
+        
+        .activation-title {
+            font-size: 20px;
             font-weight: 700;
-            font-size: 15px;
-            margin-top: 20px;
-            transition: all 0.3s;
-            border: none;
-            letter-spacing: 1px;
         }
         
-        .cta-button:active {
-            transform: scale(0.98);
+        .warning-badge {
+            background: #ff3366;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: auto;
+        }
+        
+        .activation-text {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        .activation-text .highlight {
+            color: #00ff88;
+            font-weight: 700;
+        }
+        
+        /* Trust Badge */
+        .trust-badge {
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            padding: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            .success-badge {
+                font-size: 24px;
+                padding: 10px 20px;
+            }
+            
+            .check-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
         }
     </style>
 </head>
@@ -345,94 +333,89 @@
     </div>
     
     <div class="main-content" id="mainContent">
-        <div class="live-feed" id="liveFeed"></div>
+    <div class="container">
+        <!-- Browser Bar -->
+        <div class="browser-bar">
+            <div class="browser-controls">
+                <div class="close-btn">✕</div>
+                <div class="back-btn">‹</div>
+            </div>
+            <div class="url-bar">
+                <span class="tiktok-logo">🎵 TikTok</span>
+                <span class="lock-icon">🔒</span>
+                <span class="url-text">grabdailydeals.net</span>
+            </div>
+            <div class="menu-btn">⋯</div>
+        </div>
         
-        <div class="header">
-            <div style="display:flex;align-items:center;gap:12px;justify-content:center;">
-                <img src="https://i.imgur.com/freecash-logo.png" 
-                     alt="Freecash" 
-                     style="width:50px;height:50px;border-radius:10px;"
-                     onerror="this.style.display='none'">
-                <div class="header-text">Freecash Belohnungen</div>
+        <!-- Success Section -->
+        <div class="success-section">
+            <div class="logo-container">
+                <img src="data:image/jpeg;base64,EOF
+cat >> /mnt/user-data/outputs/freecash_new_design.html << EOF2
+${LOGO_BASE64}" alt="Freecash">
+            </div>
+            <div class="success-badge">
+                <div class="check-icon">✓</div>
+                <span>Du bist dabei!</span>
+            </div>
+            <div class="success-text">
+                Dein Konto ist für höhere Auszahlungen vorqualifiziert.<br>
+                Lade die App herunter, um vollen Zugang zu aktivieren.
             </div>
         </div>
         
-        <div class="container">
-            <div class="hero-card">
-                <div class="unlocked-badge">FREIGESCHALTET</div>
-                <div class="hero-title">Dein Verdienstpotenzial</div>
-                <div class="hero-amount">€100 – €750</div>
-                <div class="hero-subtitle">nach Abschluss der Deals</div>
+        <!-- Download Button -->
+        <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554" class="download-btn">
+            <span>JETZT HERUNTERLADEN</span>
+        </a>
+        
+        <!-- Activation Box -->
+        <div class="activation-box">
+            <div class="activation-header">
+                <span class="lock-icon-big">🔒</span>
+                <span class="activation-title">Aktivierung erforderlich</span>
+                <span class="warning-badge">⚠ WICHTIG</span>
             </div>
-            
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-icon">⭐</div>
-                    <div class="stat-value">4,8 Bewertung</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-icon">💰</div>
-                    <div class="stat-value">€50M+ Ausgezahlt</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-icon">👥</div>
-                    <div class="stat-value">600K+ Nutzer</div>
-                </div>
+            <div class="activation-text">
+                Neue Nutzer: Schließe <span class="highlight">2 schnelle Angebote</span> ab, um vollen Zugang freizuschalten und Geld zu verdienen.
             </div>
-            
-            <div class="info-banner">
-                <div class="info-banner-text">🎫 Kostenlose Anmeldung · Keine versteckten Gebühren · Sofortiger Zugang</div>
-            </div>
-            
-            <div class="section-title">Deine Freecash Belohnungsreise</div>
-            
-            <div class="step-card">
+        </div>
+        
+        <!-- Steps Section -->
+        <div class="steps-title">Deine Verdienstmöglichkeit</div>
+        
+        <div class="steps-container">
+            <div class="step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <div class="step-title">Installieren</div>
-                    <div class="step-desc">Lade die App herunter und installiere sie.</div>
+                    <div class="step-title">Freecash-App herunterladen</div>
+                    <div class="step-desc">Verfügbar für iOS & Android - Dauert weniger als 60 Sekunden</div>
                 </div>
             </div>
             
-            <div class="step-card">
+            <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <div class="step-title">Apps Testen & Meilensteine Erreichen</div>
-                    <div class="step-desc">Teste empfohlene Apps und erreiche Meilensteine.</div>
+                    <div class="step-title">Tägliche Angebote abschließen</div>
+                    <div class="step-desc">Videos schauen, Apps & Spiele testen oder Umfragen machen!</div>
                 </div>
             </div>
             
-            <div class="step-card">
+            <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">Ausgezahlt Werden</div>
-                    <div class="step-desc">Erhalte deine Belohnung nach erfolgreichem Abschluss.</div>
+                    <div class="step-title">Verdienst auszahlen lassen</div>
+                    <div class="step-desc">Sofortauszahlung: PayPal, Klarna, Crypto & Überweisung</div>
                 </div>
             </div>
-            
-            <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554" class="cta-button">JETZT ANFORDERN</a>
+        </div>
+        
+        <!-- Trust Badge -->
+        <div class="trust-badge">
+            Vertraut von über 500.000 Nutzern, die täglich Geld verdienen
         </div>
     </div>
-    
-    <script>
-        const names = ['Jenny', 'Laura', 'Sarah', 'Lisa', 'Anna', 'Marie', 'Sophie', 'Julia', 'Lena', 'Emma', 'Mia', 'Hannah', 'Lea', 'Nina', 'Carla'];
-        const amounts = ['€127', '€243', '€189', '€456', '€321', '€298', '€176', '€412', '€534', '€267'];
-        
-        function updateLiveFeed() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const amount = amounts[Math.floor(Math.random() * amounts.length)];
-            const feed = document.getElementById('liveFeed');
-            if (feed) {
-                feed.textContent = `🔥 ${name} hat gerade ${amount} verdient`;
-                feed.style.animation = 'none';
-                setTimeout(() => {
-                    feed.style.animation = 'slideDown 0.4s ease-out, pulse 2s infinite';
-                }, 10);
-            }
-        }
-        
-        updateLiveFeed();
-        setInterval(updateLiveFeed, 8000);
-    </script>
+    </div>
 </body>
 </html>/
