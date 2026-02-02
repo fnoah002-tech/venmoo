@@ -46,7 +46,7 @@
             max-width: 400px;
             width: 90%;
             text-align: center;
-            border: 3px solid #ff3366;
+            border: 1px solid #333;
         }
         
         .age-icon {
@@ -58,7 +58,7 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #ff3366;
+            color: #00ff88;
         }
         
         .age-subtitle {
@@ -415,13 +415,12 @@
     
     <div class="age-gate" id="ageGate">
         <div class="age-popup">
-            <div class="age-icon">⚠️</div>
-            <div class="age-title" style="color: #ff3366;">ACHTUNG</div>
-            <div class="age-subtitle" style="font-size: 16px; color: #fff; margin-bottom: 30px;">
-                Du musst 2 Spiele herunterladen und die Anforderungen des Spiels erfüllen um das Feature freizuschalten
-            </div>
+            <div class="age-icon">🔞</div>
+            <div class="age-title">Altersverifikation</div>
+            <div class="age-subtitle">Bist du 18 Jahre oder älter?</div>
             <div class="age-buttons">
-                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Akzeptieren</button>
+                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Ja, ich bin 18+</button>
+                <button class="age-button no" onclick="alert('Du musst 18+ sein');">Nein</button>
             </div>
         </div>
     </div>
@@ -439,7 +438,7 @@
                 </div>
             </div>
             
-            <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554&source=new" class="download-btn">
+            <a href="https://gloffers.org/aff_c?offer_id=3532&aff_id=17554&source=pl" class="download-btn">
                 <span>HIER STARTEN</span>
                 <span class="arrow-icon">👉</span>
             </a>
@@ -495,11 +494,11 @@
             { name: "Laura", amount: "€45.20", action: "hat gerade ausgezahlt", time: "Vor 2 Min" },
             { name: "Max", amount: "€67.80", action: "hat gerade verdient", time: "Vor 5 Min" },
             { name: "Sarah", amount: "€89.50", action: "hat ausgezahlt", time: "Vor 8 Min" },
-            { name: "Tim", amount: "€134.90", action: "hat gerade verdient", time: "Vor 12 Min" },
-            { name: "Julia", amount: "€56.30", action: "hat ausgezahlt", time: "Vor 15 Min" },
-            { name: "Felix", amount: "€178.40", action: "hat gerade verdient", time: "Vor 18 Min" },
-            { name: "Anna", amount: "€192.10", action: "hat ausgezahlt", time: "Vor 22 Min" },
-            { name: "Leon", amount: "€254.60", action: "hat gerade verdient", time: "Vor 25 Min" },
+            { name: "Tim", amount: "€34.90", action: "hat gerade verdient", time: "Vor 12 Min" },
+            { name: "Julia", amount: "€156.30", action: "hat ausgezahlt", time: "Vor 15 Min" },
+            { name: "Felix", amount: "€78.40", action: "hat gerade verdient", time: "Vor 18 Min" },
+            { name: "Anna", amount: "€92.10", action: "hat ausgezahlt", time: "Vor 22 Min" },
+            { name: "Leon", amount: "€54.60", action: "hat gerade verdient", time: "Vor 25 Min" },
             { name: "Emma", amount: "€123.70", action: "hat ausgezahlt", time: "Vor 28 Min" },
             { name: "Nico", amount: "€41.20", action: "hat gerade verdient", time: "Vor 31 Min" }
         ];
