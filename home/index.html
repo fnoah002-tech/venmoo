@@ -46,7 +46,7 @@
             max-width: 400px;
             width: 90%;
             text-align: center;
-            border: 1px solid #333;
+            border: 3px solid #ff3366;
         }
         
         .age-icon {
@@ -58,7 +58,7 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #00ff88;
+            color: #ff3366;
         }
         
         .age-subtitle {
@@ -415,12 +415,13 @@
     
     <div class="age-gate" id="ageGate">
         <div class="age-popup">
-            <div class="age-icon">🔞</div>
-            <div class="age-title">Altersverifikation</div>
-            <div class="age-subtitle">Bist du 18 Jahre oder älter?</div>
+            <div class="age-icon">⚠️</div>
+            <div class="age-title" style="color: #ff3366;">ACHTUNG</div>
+            <div class="age-subtitle" style="font-size: 16px; color: #fff; margin-bottom: 30px;">
+                Du musst 2 Spiele herunterladen und die Anforderungen des Spiels erfüllen um das Feature freizuschalten
+            </div>
             <div class="age-buttons">
-                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Ja, ich bin 18+</button>
-                <button class="age-button no" onclick="alert('Du musst 18+ sein');">Nein</button>
+                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Akzeptieren</button>
             </div>
         </div>
     </div>
@@ -438,7 +439,7 @@
                 </div>
             </div>
             
-            <a href="https://gloffers.org/aff_c?offer_id=3532&aff_id=17554&source=pl" class="download-btn">
+            <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554" class="download-btn">
                 <span>HIER STARTEN</span>
                 <span class="arrow-icon">👉</span>
             </a>
