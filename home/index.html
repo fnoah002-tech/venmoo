@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freecash - Geld verdienen</title>
+    <title>Freecash - お金を稼ぐ</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
             background: linear-gradient(180deg, #0a1f1a 0%, #061610 100%);
             color: #fff;
             line-height: 1.6;
@@ -46,7 +46,7 @@
             max-width: 400px;
             width: 90%;
             text-align: center;
-            border: 1px solid #333;
+            border: 3px solid #ff3366;
         }
         
         .age-icon {
@@ -58,12 +58,12 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #00ff88;
+            color: #ff3366;
         }
         
         .age-subtitle {
-            font-size: 14px;
-            color: #999;
+            font-size: 16px;
+            color: #fff;
             margin-bottom: 30px;
         }
         
@@ -86,12 +86,6 @@
         .age-button.yes {
             background: #00ff88;
             color: #000;
-        }
-        
-        .age-button.no {
-            background: transparent;
-            border: 1px solid #333;
-            color: #999;
         }
         
         .main-content {
@@ -143,7 +137,7 @@
         .success-text {
             font-size: 16px;
             color: #aaa;
-            line-height: 1.6;
+            line-height: 1.8;
             margin-top: 15px;
         }
         
@@ -320,7 +314,7 @@
         .activation-text {
             font-size: 14px;
             color: #ccc;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         
         .activation-text .highlight {
@@ -385,7 +379,7 @@
         .step-desc {
             font-size: 14px;
             color: #aaa;
-            line-height: 1.5;
+            line-height: 1.6;
         }
         
         .trust-badge {
@@ -415,12 +409,13 @@
     
     <div class="age-gate" id="ageGate">
         <div class="age-popup">
-            <div class="age-icon">🔞</div>
-            <div class="age-title">Altersverifikation</div>
-            <div class="age-subtitle">Bist du 18 Jahre oder älter?</div>
+            <div class="age-icon">⚠️</div>
+            <div class="age-title" style="color: #ff3366;">注意</div>
+            <div class="age-subtitle" style="font-size: 16px; color: #fff; margin-bottom: 30px;">
+                2つのゲームをダウンロードしてゲームの要件を満たすことで、この機能のロックを解除する必要があります
+            </div>
             <div class="age-buttons">
-                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Ja, ich bin 18+</button>
-                <button class="age-button no" onclick="alert('Du musst 18+ sein');">Nein</button>
+                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">承認する</button>
             </div>
         </div>
     </div>
@@ -430,60 +425,60 @@
             <div class="success-section">
                 <div class="success-badge">
                     <div class="check-icon">✓</div>
-                    <span>Du bist dabei!</span>
+                    <span>参加完了！</span>
                 </div>
                 <div class="success-text">
-                    Dein Konto ist für höhere Auszahlungen vorqualifiziert.<br>
-                    Lade die App herunter, um vollen Zugang zu aktivieren.
+                    あなたのアカウントは高額出金の事前資格があります。<br>
+                    アプリをダウンロードしてフルアクセスを有効にしてください。
                 </div>
             </div>
             
             <a href="https://gloffers.org/aff_c?offer_id=3532&aff_id=17554&source=199" class="download-btn">
-                <span>HIER STARTEN</span>
+                <span>ここから始める</span>
                 <span class="arrow-icon">👉</span>
             </a>
             
             <div class="activation-box">
                 <div class="activation-header">
                     <span class="lock-icon-big">🔒</span>
-                    <span class="activation-title">Aktivierung erforderlich</span>
-                    <span class="warning-badge">⚠ WICHTIG</span>
+                    <span class="activation-title">アクティベーション必要</span>
+                    <span class="warning-badge">⚠ 重要</span>
                 </div>
                 <div class="activation-text">
-                    Neue Nutzer: Schließe <span class="highlight">2 schnelle Angebote</span> ab, um vollen Zugang freizuschalten und Geld zu verdienen.
+                    新規ユーザー: <span class="highlight">2つの簡単なオファー</span>を完了して、フルアクセスのロックを解除してお金を稼ぎましょう。
                 </div>
             </div>
             
-            <div class="steps-title">Deine Verdienstmöglichkeit</div>
+            <div class="steps-title">収益の機会</div>
             
             <div class="steps-container">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <div class="step-title">Freecash-App herunterladen</div>
-                        <div class="step-desc">Verfügbar für iOS & Android - Dauert weniger als 60 Sekunden</div>
+                        <div class="step-title">Freecashアプリをダウンロード</div>
+                        <div class="step-desc">iOS & Android対応 - 60秒以内で完了</div>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <div class="step-title">Tägliche Angebote abschließen</div>
-                        <div class="step-desc">Videos schauen, Apps & Spiele testen oder Umfragen machen!</div>
+                        <div class="step-title">毎日のオファーを完了する</div>
+                        <div class="step-desc">動画視聴、アプリ&ゲームテスト、アンケート回答！</div>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <div class="step-title">Verdienst auszahlen lassen</div>
-                        <div class="step-desc">Sofortauszahlung: PayPal, Klarna, Crypto & Überweisung</div>
+                        <div class="step-title">収益を出金する</div>
+                        <div class="step-desc">即時出金: PayPal、暗号通貨、銀行振込</div>
                     </div>
                 </div>
             </div>
             
             <div class="trust-badge">
-                Vertraut von über 500.000 Nutzern, die täglich Geld verdienen
+                毎日お金を稼いでいる50万人以上のユーザーに信頼されています
             </div>
         </div>
     </div>
@@ -491,16 +486,16 @@
     <script>
         // Live Notifications System
         const notifications = [
-            { name: "Laura", amount: "€45.20", action: "hat gerade ausgezahlt", time: "Vor 2 Min" },
-            { name: "Max", amount: "€67.80", action: "hat gerade verdient", time: "Vor 5 Min" },
-            { name: "Sarah", amount: "€89.50", action: "hat ausgezahlt", time: "Vor 8 Min" },
-            { name: "Tim", amount: "€34.90", action: "hat gerade verdient", time: "Vor 12 Min" },
-            { name: "Julia", amount: "€156.30", action: "hat ausgezahlt", time: "Vor 15 Min" },
-            { name: "Felix", amount: "€78.40", action: "hat gerade verdient", time: "Vor 18 Min" },
-            { name: "Anna", amount: "€92.10", action: "hat ausgezahlt", time: "Vor 22 Min" },
-            { name: "Leon", amount: "€54.60", action: "hat gerade verdient", time: "Vor 25 Min" },
-            { name: "Emma", amount: "€123.70", action: "hat ausgezahlt", time: "Vor 28 Min" },
-            { name: "Nico", amount: "€41.20", action: "hat gerade verdient", time: "Vor 31 Min" }
+            { name: "由美", amount: "¥6,800", action: "が出金しました", time: "2分前" },
+            { name: "大輔", amount: "¥10,200", action: "が稼ぎました", time: "5分前" },
+            { name: "さくら", amount: "¥13,450", action: "が出金しました", time: "8分前" },
+            { name: "健太", amount: "¥5,250", action: "が稼ぎました", time: "12分前" },
+            { name: "美咲", amount: "¥23,500", action: "が出金しました", time: "15分前" },
+            { name: "翔太", amount: "¥11,800", action: "が稼ぎました", time: "18分前" },
+            { name: "あやか", amount: "¥13,860", action: "が出金しました", time: "22分前" },
+            { name: "拓也", amount: "¥8,220", action: "が稼ぎました", time: "25分前" },
+            { name: "えみ", amount: "¥18,600", action: "が出金しました", time: "28分前" },
+            { name: "たくみ", amount: "¥6,200", action: "が稼ぎました", time: "31分前" }
         ];
         
         let currentIndex = 0;
