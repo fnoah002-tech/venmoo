@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freecash - Geld verdienen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Freecash - Earn Money</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +13,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             background: linear-gradient(180deg, #0a1f1a 0%, #061610 100%);
             color: #fff;
             line-height: 1.6;
@@ -34,6 +35,10 @@
             animation: fadeIn 0.3s ease-out;
         }
         
+        .age-gate.hidden {
+            display: none;
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -46,7 +51,7 @@
             max-width: 400px;
             width: 90%;
             text-align: center;
-            border: 3px solid #ff3366;
+            border: 1px solid #333;
         }
         
         .age-icon {
@@ -58,7 +63,7 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #ff3366;
+            color: #00ff88;
         }
         
         .age-subtitle {
@@ -109,10 +114,47 @@
             padding: 20px;
         }
         
+        /* Browser Bar - Hidden */
+        .browser-bar {
+            display: none;
+        }
+        
+        /* Download Button */
+        .download-btn {
+            background: #00ff88;
+            color: #000;
+            padding: 18px 30px;
+            border-radius: 16px;
+            border: none;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+        }
+        
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .apple-icon {
+            font-size: 24px;
+        }
+        
+        /* Success Section */
         .success-section {
             text-align: center;
             margin-bottom: 40px;
-            padding-top: 30px;
+        }
+        
+        .logo-container {
+            display: none;
         }
         
         .success-badge {
@@ -147,187 +189,7 @@
             margin-top: 15px;
         }
         
-        .download-btn {
-            background: #00ff88;
-            color: #000;
-            padding: 18px 30px;
-            border-radius: 16px;
-            border: none;
-            width: 100%;
-            font-size: 18px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 30px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .download-btn:active {
-            transform: scale(0.98);
-        }
-        
-        .download-btn:hover {
-            box-shadow: 0 6px 30px rgba(0, 255, 136, 0.5);
-        }
-        
-        .arrow-icon {
-            font-size: 24px;
-            animation: bounceRight 1s infinite;
-        }
-        
-        @keyframes bounceRight {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
-        }
-        
-        /* Live Notifications */
-        .live-notifications {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 9999;
-            width: 90%;
-            max-width: 400px;
-        }
-        
-        .notification {
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            animation: slideDown 0.5s ease-out;
-            opacity: 0;
-        }
-        
-        .notification.show {
-            opacity: 1;
-        }
-        
-        .notification.hide {
-            animation: slideUp 0.5s ease-out forwards;
-        }
-        
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideUp {
-            from {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-        }
-        
-        .notification-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #00ff88, #00cc6a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-        
-        .notification-content {
-            flex: 1;
-        }
-        
-        .notification-name {
-            font-size: 14px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 4px;
-        }
-        
-        .notification-text {
-            font-size: 13px;
-            color: #aaa;
-        }
-        
-        .notification-amount {
-            color: #00ff88;
-            font-weight: 700;
-        }
-        
-        .notification-time {
-            font-size: 11px;
-            color: #666;
-            white-space: nowrap;
-        }
-        
-        .activation-box {
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px solid #ff3366;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .activation-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-        
-        .lock-icon-big {
-            font-size: 24px;
-        }
-        
-        .activation-title {
-            font-size: 20px;
-            font-weight: 700;
-        }
-        
-        .warning-badge {
-            background: #ff3366;
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-left: auto;
-        }
-        
-        .activation-text {
-            font-size: 14px;
-            color: #ccc;
-            line-height: 1.6;
-        }
-        
-        .activation-text .highlight {
-            color: #00ff88;
-            font-weight: 700;
-        }
-        
+        /* Steps Section */
         .steps-title {
             font-size: 16px;
             color: #999;
@@ -388,6 +250,54 @@
             line-height: 1.5;
         }
         
+        /* Activation Box */
+        .activation-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #ff3366;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .activation-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .lock-icon-big {
+            font-size: 24px;
+        }
+        
+        .activation-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .warning-badge {
+            background: #ff3366;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: auto;
+        }
+        
+        .activation-text {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        .activation-text .highlight {
+            color: #00ff88;
+            font-weight: 700;
+        }
+        
+        /* Trust Badge */
         .trust-badge {
             text-align: center;
             font-size: 13px;
@@ -410,139 +320,102 @@
     </style>
 </head>
 <body>
-    <!-- Live Notifications -->
-    <div class="live-notifications" id="notifications"></div>
-    
     <div class="age-gate" id="ageGate">
         <div class="age-popup">
-            <div class="age-icon">⚠️</div>
-            <div class="age-title" style="color: #ff3366;">ACHTUNG</div>
-            <div class="age-subtitle" style="font-size: 16px; color: #fff; margin-bottom: 30px;">
-                Du musst 2 Spiele herunterladen und die Anforderungen des Spiels erfüllen um das Feature freizuschalten
-            </div>
+            <div class="age-icon">🔞</div>
+            <div class="age-title">Age Verification</div>
+            <div class="age-subtitle">Are you 18 years or older?</div>
             <div class="age-buttons">
-                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Akzeptieren</button>
+                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Yes, I am 18+</button>
+                <button class="age-button no" onclick="alert('You must be 18+');">No</button>
             </div>
         </div>
     </div>
     
     <div class="main-content" id="mainContent">
-        <div class="container">
-            <div class="success-section">
-                <div class="success-badge">
-                    <div class="check-icon">✓</div>
-                    <span>Du bist dabei!</span>
-                </div>
-                <div class="success-text">
-                    Dein Konto ist für höhere Auszahlungen vorqualifiziert.<br>
-                    Lade die App herunter, um vollen Zugang zu aktivieren.
-                </div>
+    <div class="container">
+        <!-- Browser Bar -->
+        <div class="browser-bar">
+            <div class="browser-controls">
+                <div class="close-btn">✕</div>
+                <div class="back-btn">‹</div>
             </div>
-            
-            <a href="https://glctrk.org/aff_c?offer_id=3532&aff_id=17554&source=10x" class="download-btn">
-                <span>HIER STARTEN</span>
-                <span class="arrow-icon">👉</span>
-            </a>
-            
-            <div class="activation-box">
-                <div class="activation-header">
-                    <span class="lock-icon-big">🔒</span>
-                    <span class="activation-title">Aktivierung erforderlich</span>
-                    <span class="warning-badge">⚠ WICHTIG</span>
-                </div>
-                <div class="activation-text">
-                    Neue Nutzer: Schließe <span class="highlight">2 schnelle Angebote</span> ab, um vollen Zugang freizuschalten und Geld zu verdienen.
-                </div>
+            <div class="url-bar">
+                <span class="tiktok-logo">🎵 TikTok</span>
+                <span class="lock-icon">🔒</span>
+                <span class="url-text">grabdailydeals.net</span>
             </div>
-            
-            <div class="steps-title">Deine Verdienstmöglichkeit</div>
-            
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <div class="step-title">Freecash-App herunterladen</div>
-                        <div class="step-desc">Verfügbar für iOS & Android - Dauert weniger als 60 Sekunden</div>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <div class="step-title">Tägliche Angebote abschließen</div>
-                        <div class="step-desc">Videos schauen, Apps & Spiele testen oder Umfragen machen!</div>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <div class="step-title">Verdienst auszahlen lassen</div>
-                        <div class="step-desc">Sofortauszahlung: PayPal, Klarna, Crypto & Überweisung</div>
-                    </div>
-                </div>
+            <div class="menu-btn">⋯</div>
+        </div>
+        
+        <!-- Success Section -->
+        <div class="success-section">
+            <div class="logo-container">
+                <img src="data:image/jpeg;base64,EOF
+cat >> /mnt/user-data/outputs/freecash_new_design.html << EOF2
+${LOGO_BASE64}" alt="Freecash">
             </div>
-            
-            <div class="trust-badge">
-                Vertraut von über 500.000 Nutzern, die täglich Geld verdienen
+            <div class="success-badge">
+                <div class="check-icon">✓</div>
+                <span>You're in!</span>
+            </div>
+            <div class="success-text">
+                Your account is pre-qualified for higher payouts.<br>
+                Download the app to activate full access.
             </div>
         </div>
-    </div>
-    
-    <script>
-        // Live Notifications System
-        const notifications = [
-            { name: "Laura", amount: "€45.20", action: "hat gerade ausgezahlt", time: "Vor 2 Min" },
-            { name: "Max", amount: "€67.80", action: "hat gerade verdient", time: "Vor 5 Min" },
-            { name: "Sarah", amount: "€89.50", action: "hat ausgezahlt", time: "Vor 8 Min" },
-            { name: "Tim", amount: "€34.90", action: "hat gerade verdient", time: "Vor 12 Min" },
-            { name: "Julia", amount: "€156.30", action: "hat ausgezahlt", time: "Vor 15 Min" },
-            { name: "Felix", amount: "€78.40", action: "hat gerade verdient", time: "Vor 18 Min" },
-            { name: "Anna", amount: "€92.10", action: "hat ausgezahlt", time: "Vor 22 Min" },
-            { name: "Leon", amount: "€54.60", action: "hat gerade verdient", time: "Vor 25 Min" },
-            { name: "Emma", amount: "€123.70", action: "hat ausgezahlt", time: "Vor 28 Min" },
-            { name: "Nico", amount: "€41.20", action: "hat gerade verdient", time: "Vor 31 Min" }
-        ];
         
-        let currentIndex = 0;
+        <!-- Download Button -->
+        <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554" class="download-btn">
+            <span>DOWNLOAD NOW</span>
+        </a>
         
-        function showNotification() {
-            const container = document.getElementById('notifications');
-            const notif = notifications[currentIndex];
-            
-            const div = document.createElement('div');
-            div.className = 'notification';
-            div.innerHTML = `
-                <div class="notification-avatar">💰</div>
-                <div class="notification-content">
-                    <div class="notification-name">${notif.name}</div>
-                    <div class="notification-text">
-                        ${notif.action} <span class="notification-amount">${notif.amount}</span>
-                    </div>
+        <!-- Activation Box -->
+        <div class="activation-box">
+            <div class="activation-header">
+                <span class="lock-icon-big">🔒</span>
+                <span class="activation-title">Activation Required</span>
+                <span class="warning-badge">⚠ IMPORTANT</span>
+            </div>
+            <div class="activation-text">
+                New users: Complete <span class="highlight">2 quick offers</span> to unlock full access and start earning.
+            </div>
+        </div>
+        
+        <!-- Steps Section -->
+        <div class="steps-title">Your Earning Potential</div>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Download Freecash App</div>
+                    <div class="step-desc">Available for iOS Verfügbar für iOS & Android - Dauert weniger als 60 Sekunden Android - Takes less than 60 seconds</div>
                 </div>
-                <div class="notification-time">${notif.time}</div>
-            `;
+            </div>
             
-            container.appendChild(div);
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">Complete Daily Offers</div>
+                    <div class="step-desc">Watch videos, test apps Videos schauen, Apps & Spiele testen oder Umfragen machen! games or do surveys!</div>
+                </div>
+            </div>
             
-            // Show notification
-            setTimeout(() => div.classList.add('show'), 100);
-            
-            // Hide and remove notification after 4 seconds
-            setTimeout(() => {
-                div.classList.add('hide');
-                setTimeout(() => div.remove(), 500);
-            }, 4000);
-            
-            currentIndex = (currentIndex + 1) % notifications.length;
-        }
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Cash Out Earnings</div>
+                    <div class="step-desc">Instant payout: PayPal, Klarna, Crypto Sofortauszahlung: PayPal, Klarna, Crypto & Überweisung Bank Transfer</div>
+                </div>
+            </div>
+        </div>
         
-        // Show first notification after 2 seconds
-        setTimeout(() => {
-            showNotification();
-            // Then show new notification every 6 seconds
-            setInterval(showNotification, 6000);
-        }, 2000);
-    </script>
+        <!-- Trust Badge -->
+        <div class="trust-badge">
+            Trusted by over 500,000 users earning money daily
+        </div>
+    </div>
+    </div>
 </body>
 </html>/
