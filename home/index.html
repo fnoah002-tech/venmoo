@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Freecash - Earn Money</title>
+    <title>Freecash - Geld verdienen</title>
     
     <!-- TikTok Pixel Code -->
     <script>
@@ -22,8 +22,8 @@
       var a=document.getElementsByTagName("script")[0];
       a.parentNode.insertBefore(o,a)};
       
-      // ERSETZE 'D61I7HBC77UCERU3LM10' MIT DEINER ECHTEN PIXEL ID
-      ttq.load('D61I7HBC77UCERU3LM10');
+      // ERSETZE 'D61J1TBC77U10VTVVKPG' MIT DEINER ECHTEN PIXEL ID
+      ttq.load('D61J1TBC77U10VTVVKPG');
       ttq.page();
     }(window, document, 'ttq');
     </script>
@@ -45,8 +45,87 @@
             min-height: 100vh;
         }
         
+        .age-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .age-gate.hidden {
+            display: none;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .age-popup {
+            background: #1a1a1a;
+            border-radius: 24px;
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        
+        .age-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .age-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #00ff88;
+        }
+        
+        .age-subtitle {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        
+        .age-buttons {
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+        }
+        
+        .age-button {
+            padding: 16px;
+            border-radius: 12px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .age-button.yes {
+            background: #00ff88;
+            color: #000;
+        }
+        
+        .age-button.no {
+            background: transparent;
+            border: 1px solid #333;
+            color: #999;
+        }
+        
         .main-content {
-            opacity: 1;
+            opacity: 0;
+            transition: opacity 0.5s;
         }
         
         .main-content.show {
@@ -57,11 +136,6 @@
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-        }
-        
-        /* Browser Bar - Hidden */
-        .browser-bar {
-            display: none;
         }
         
         /* Download Button */
@@ -117,18 +191,11 @@
             50% { transform: translateY(-8px); }
         }
         
-        .apple-icon {
-            font-size: 24px;
-        }
-        
         /* Success Section */
         .success-section {
             text-align: center;
             margin-bottom: 40px;
-        }
-        
-        .logo-container {
-            display: none;
+            padding-top: 30px;
         }
         
         .success-badge {
@@ -389,39 +456,32 @@
     </style>
 </head>
 <body>
-    <div class="main-content show" id="mainContent">
+    <div class="age-gate" id="ageGate">
+        <div class="age-popup">
+            <div class="age-icon">🔞</div>
+            <div class="age-title">Altersverifizierung</div>
+            <div class="age-subtitle">Bist du 18 Jahre oder älter?</div>
+            <div class="age-buttons">
+                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Ja, ich bin 18+</button>
+                <button class="age-button no" onclick="alert('Du musst 18+ sein');">Nein</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content" id="mainContent">
     <!-- Live Notifications -->
     <div class="live-notifications" id="notifications"></div>
     
     <div class="container">
-        <!-- Browser Bar -->
-        <div class="browser-bar">
-            <div class="browser-controls">
-                <div class="close-btn">✕</div>
-                <div class="back-btn">‹</div>
-            </div>
-            <div class="url-bar">
-                <span class="tiktok-logo">🎵 TikTok</span>
-                <span class="lock-icon">🔒</span>
-                <span class="url-text">grabdailydeals.net</span>
-            </div>
-            <div class="menu-btn">⋯</div>
-        </div>
-        
         <!-- Success Section -->
         <div class="success-section">
-            <div class="logo-container">
-                <img src="data:image/jpeg;base64,EOF
-cat >> /mnt/user-data/outputs/freecash_new_design.html << EOF2
-${LOGO_BASE64}" alt="Freecash">
-            </div>
             <div class="success-badge">
                 <div class="check-icon">✓</div>
-                <span>Congratulations!</span>
+                <span>Glückwunsch!</span>
             </div>
             <div class="success-text">
-                Your account is pre-qualified for higher payouts.<br>
-                Download the app to activate full access.
+                Dein Konto ist für höhere Auszahlungen vorqualifiziert.<br>
+                Lade die App herunter, um vollen Zugang zu aktivieren.
             </div>
         </div>
         
@@ -434,7 +494,7 @@ ${LOGO_BASE64}" alt="Freecash">
         <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554" 
            class="download-btn"
            onclick="if(typeof ttq !== 'undefined') { ttq.track('ClickButton', { content_name: 'Download Freecash' }); }">
-            <span>DOWNLOAD NOW</span>
+            <span>JETZT HERUNTERLADEN</span>
             <span class="arrow-icon">→</span>
         </a>
         
@@ -442,46 +502,46 @@ ${LOGO_BASE64}" alt="Freecash">
         <div class="activation-box">
             <div class="activation-header">
                 <span class="lock-icon-big">🔒</span>
-                <span class="activation-title">Activation Required</span>
-                <span class="warning-badge">⚠ IMPORTANT</span>
+                <span class="activation-title">Aktivierung erforderlich</span>
+                <span class="warning-badge">⚠ WICHTIG</span>
             </div>
             <div class="activation-text">
-                New users: Complete <span class="highlight">2 quick offers</span> to unlock full access and start earning.
+                Neue Nutzer: Schließe <span class="highlight">2 schnelle Angebote</span> ab, um vollen Zugang freizuschalten und Geld zu verdienen.
             </div>
         </div>
         
         <!-- Steps Section -->
-        <div class="steps-title">Your Earning Potential</div>
+        <div class="steps-title">Deine Verdienstmöglichkeit</div>
         
         <div class="steps-container">
             <div class="step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <div class="step-title">Download Freecash App</div>
-                    <div class="step-desc">Available for iOS & Android - Takes less than 60 seconds</div>
+                    <div class="step-title">Freecash-App herunterladen</div>
+                    <div class="step-desc">Verfügbar für iOS & Android - Dauert weniger als 60 Sekunden</div>
                 </div>
             </div>
             
             <div class="step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <div class="step-title">Complete Daily Offers</div>
-                    <div class="step-desc">Watch videos, test apps & games or do surveys!</div>
+                    <div class="step-title">Tägliche Angebote abschließen</div>
+                    <div class="step-desc">Videos schauen, Apps & Spiele testen oder Umfragen machen!</div>
                 </div>
             </div>
             
             <div class="step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">Cash Out Earnings</div>
-                    <div class="step-desc">Instant payout: PayPal, Klarna, Crypto & Bank Transfer</div>
+                    <div class="step-title">Verdienst auszahlen lassen</div>
+                    <div class="step-desc">Sofortauszahlung: PayPal, Klarna, Crypto & Überweisung</div>
                 </div>
             </div>
         </div>
         
         <!-- Trust Badge -->
         <div class="trust-badge">
-            Trusted by over 500,000 users earning money daily
+            Vertraut von über 500.000 Nutzern, die täglich Geld verdienen
         </div>
     </div>
     </div>
@@ -489,14 +549,14 @@ ${LOGO_BASE64}" alt="Freecash">
     <script>
         // Live Notifications System
         const notifications = [
-            { name: "Sarah M.", amount: "$67.80", action: "just withdrew", time: "2m ago" },
-            { name: "Mike T.", amount: "$134.50", action: "just earned", time: "5m ago" },
-            { name: "Jessica L.", amount: "$89.20", action: "withdrew", time: "8m ago" },
-            { name: "Chris P.", amount: "$156.30", action: "just earned", time: "12m ago" },
-            { name: "Amanda K.", amount: "$78.90", action: "withdrew", time: "15m ago" },
-            { name: "David R.", amount: "$203.40", action: "just earned", time: "18m ago" },
-            { name: "Emily S.", amount: "$92.10", action: "withdrew", time: "22m ago" },
-            { name: "Ryan B.", amount: "$124.60", action: "just earned", time: "25m ago" }
+            { name: "Laura", amount: "€45.20", action: "hat gerade ausgezahlt", time: "Vor 2 Min" },
+            { name: "Max", amount: "€67.80", action: "hat gerade verdient", time: "Vor 5 Min" },
+            { name: "Sarah", amount: "€89.50", action: "hat ausgezahlt", time: "Vor 8 Min" },
+            { name: "Tim", amount: "€34.90", action: "hat gerade verdient", time: "Vor 12 Min" },
+            { name: "Julia", amount: "€156.30", action: "hat ausgezahlt", time: "Vor 15 Min" },
+            { name: "Felix", amount: "€78.40", action: "hat gerade verdient", time: "Vor 18 Min" },
+            { name: "Anna", amount: "€92.10", action: "hat ausgezahlt", time: "Vor 22 Min" },
+            { name: "Leon", amount: "€54.60", action: "hat gerade verdient", time: "Vor 25 Min" }
         ];
         
         let currentIndex = 0;
