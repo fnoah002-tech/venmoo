@@ -298,6 +298,22 @@
             border-radius: 20px;
             padding: 20px;
             margin-bottom: 20px;
+            position: relative;
+            padding-top: 35px;
+        }
+        
+        .warning-badge {
+            background: #ff3366;
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .activation-header {
@@ -314,17 +330,6 @@
         .activation-title {
             font-size: 20px;
             font-weight: 700;
-        }
-        
-        .warning-badge {
-            background: #ff3366;
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-left: auto;
         }
         
         .activation-text {
@@ -500,10 +505,10 @@
         
         <!-- Activation Box -->
         <div class="activation-box">
+            <span class="warning-badge">⚠ WICHTIG</span>
             <div class="activation-header">
                 <span class="lock-icon-big">🔒</span>
                 <span class="activation-title">Aktivierung erforderlich</span>
-                <span class="warning-badge">⚠ WICHTIG</span>
             </div>
             <div class="activation-text">
                 Neue Nutzer: Schließe <span class="highlight">2 schnelle Angebote</span> ab, um vollen Zugang freizuschalten und Geld zu verdienen.
