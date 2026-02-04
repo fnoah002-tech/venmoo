@@ -137,10 +137,21 @@
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+            text-decoration: none;
         }
         
         .download-btn:active {
             transform: scale(0.98);
+        }
+        
+        .arrow-icon {
+            font-size: 24px;
+            animation: bounceRight 1s infinite;
+        }
+        
+        @keyframes bounceRight {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
         }
         
         .apple-icon {
@@ -366,8 +377,9 @@ ${LOGO_BASE64}" alt="Freecash">
         </div>
         
         <!-- Download Button -->
-        <a href="https://trkio.org/aff_c?offer_id=3532&aff_id=17554&source=maddy" class="download-btn">
+        <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554" class="download-btn">
             <span>DOWNLOAD NOW</span>
+            <span class="arrow-icon">→</span>
         </a>
         
         <!-- Activation Box -->
