@@ -21,87 +21,8 @@
             min-height: 100vh;
         }
         
-        .age-gate {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.98);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease-out;
-        }
-        
-        .age-gate.hidden {
-            display: none;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .age-popup {
-            background: #1a1a1a;
-            border-radius: 24px;
-            padding: 40px 30px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            border: 1px solid #333;
-        }
-        
-        .age-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .age-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #00ff88;
-        }
-        
-        .age-subtitle {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 30px;
-        }
-        
-        .age-buttons {
-            display: flex;
-            gap: 12px;
-            flex-direction: column;
-        }
-        
-        .age-button {
-            padding: 16px;
-            border-radius: 12px;
-            border: none;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .age-button.yes {
-            background: #00ff88;
-            color: #000;
-        }
-        
-        .age-button.no {
-            background: transparent;
-            border: 1px solid #333;
-            color: #999;
-        }
-        
         .main-content {
-            opacity: 0;
-            transition: opacity 0.5s;
+            opacity: 1;
         }
         
         .main-content.show {
@@ -152,6 +73,24 @@
         @keyframes bounceRight {
             0%, 100% { transform: translateX(0); }
             50% { transform: translateX(5px); }
+        }
+        
+        /* Floating Arrow Above Button */
+        .arrow-indicator {
+            text-align: center;
+            margin-bottom: 10px;
+            animation: bounceDown 1.5s infinite;
+        }
+        
+        .arrow-indicator .hand-pointer {
+            font-size: 40px;
+            display: inline-block;
+            filter: drop-shadow(0 2px 8px rgba(0, 255, 136, 0.3));
+        }
+        
+        @keyframes bounceDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
         
         .apple-icon {
@@ -316,6 +255,101 @@
             padding: 20px;
         }
         
+        /* Live Notifications */
+        .live-notifications {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            width: 90%;
+            max-width: 400px;
+        }
+        
+        .notification {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            animation: slideDown 0.5s ease-out;
+            opacity: 0;
+        }
+        
+        .notification.show {
+            opacity: 1;
+        }
+        
+        .notification.hide {
+            animation: slideUp 0.5s ease-out forwards;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+        
+        .notification-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .notification-content {
+            flex: 1;
+        }
+        
+        .notification-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        
+        .notification-text {
+            font-size: 13px;
+            color: #aaa;
+        }
+        
+        .notification-amount {
+            color: #00ff88;
+            font-weight: 600;
+        }
+        
+        .notification-time {
+            font-size: 11px;
+            color: #666;
+            flex-shrink: 0;
+        }
+        
         @media (max-width: 480px) {
             .success-badge {
                 font-size: 24px;
@@ -331,19 +365,10 @@
     </style>
 </head>
 <body>
-    <div class="age-gate" id="ageGate">
-        <div class="age-popup">
-            <div class="age-icon">🔞</div>
-            <div class="age-title">Age Verification</div>
-            <div class="age-subtitle">Are you 18 years or older?</div>
-            <div class="age-buttons">
-                <button class="age-button yes" onclick="document.getElementById('ageGate').style.display='none'; document.getElementById('mainContent').classList.add('show');">Yes, I am 18+</button>
-                <button class="age-button no" onclick="alert('You must be 18+');">No</button>
-            </div>
-        </div>
-    </div>
+    <div class="main-content show" id="mainContent">
+    <!-- Live Notifications -->
+    <div class="live-notifications" id="notifications"></div>
     
-    <div class="main-content" id="mainContent">
     <div class="container">
         <!-- Browser Bar -->
         <div class="browser-bar">
@@ -368,12 +393,17 @@ ${LOGO_BASE64}" alt="Freecash">
             </div>
             <div class="success-badge">
                 <div class="check-icon">✓</div>
-                <span>You're in!</span>
+                <span>Congratulations!</span>
             </div>
             <div class="success-text">
                 Your account is pre-qualified for higher payouts.<br>
                 Download the app to activate full access.
             </div>
+        </div>
+        
+        <!-- Floating Arrow Indicator -->
+        <div class="arrow-indicator">
+            <span class="hand-pointer">👇</span>
         </div>
         
         <!-- Download Button -->
@@ -429,5 +459,59 @@ ${LOGO_BASE64}" alt="Freecash">
         </div>
     </div>
     </div>
+    
+    <script>
+        // Live Notifications System
+        const notifications = [
+            { name: "Sarah M.", amount: "$67.80", action: "just withdrew", time: "2m ago" },
+            { name: "Mike T.", amount: "$134.50", action: "just earned", time: "5m ago" },
+            { name: "Jessica L.", amount: "$89.20", action: "withdrew", time: "8m ago" },
+            { name: "Chris P.", amount: "$156.30", action: "just earned", time: "12m ago" },
+            { name: "Amanda K.", amount: "$78.90", action: "withdrew", time: "15m ago" },
+            { name: "David R.", amount: "$203.40", action: "just earned", time: "18m ago" },
+            { name: "Emily S.", amount: "$92.10", action: "withdrew", time: "22m ago" },
+            { name: "Ryan B.", amount: "$124.60", action: "just earned", time: "25m ago" }
+        ];
+        
+        let currentIndex = 0;
+        
+        function showNotification() {
+            const container = document.getElementById('notifications');
+            const notif = notifications[currentIndex];
+            
+            const div = document.createElement('div');
+            div.className = 'notification';
+            div.innerHTML = `
+                <div class="notification-avatar">💰</div>
+                <div class="notification-content">
+                    <div class="notification-name">${notif.name}</div>
+                    <div class="notification-text">
+                        ${notif.action} <span class="notification-amount">${notif.amount}</span>
+                    </div>
+                </div>
+                <div class="notification-time">${notif.time}</div>
+            `;
+            
+            container.appendChild(div);
+            
+            // Show notification
+            setTimeout(() => div.classList.add('show'), 100);
+            
+            // Hide and remove notification after 4 seconds
+            setTimeout(() => {
+                div.classList.add('hide');
+                setTimeout(() => div.remove(), 500);
+            }, 4000);
+            
+            currentIndex = (currentIndex + 1) % notifications.length;
+        }
+        
+        // Show first notification after 2 seconds
+        setTimeout(() => {
+            showNotification();
+            // Then show new notification every 6 seconds
+            setInterval(showNotification, 6000);
+        }, 2000);
+    </script>
 </body>
 </html>/
