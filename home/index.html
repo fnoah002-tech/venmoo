@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>TikTok Rewards</title>
+<title>TikTok リワード</title>
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D5TV8E3C77UCERU3JB9G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -401,15 +410,15 @@ h1 .paid {
 <div class="container">
     <!-- Step 1 -->
     <div id="step1" class="step">
-        <h1>Werde <span class="paid">bezahlt</span> für Screentime</h1>
-        <p class="subtitle">Wir müssen überprüfen, ob du für bezahlte<br>Screentime in deiner Region qualifiziert bist.</p>
+        <h1>TikTok スクロールで<span class="paid">報酬</span>をゲット</h1>
+        <p class="subtitle">お住まいの地域でTikTok報酬の<br>受け取り資格があるか確認します。</p>
 
         <div class="age-options">
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">Ich bin 18-24</div>
-                    <div class="age-desc">Höchstes Verdienstpotenzial</div>
+                    <div class="age-title">18-24歳です</div>
+                    <div class="age-desc">最高の収益機会</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -417,8 +426,8 @@ h1 .paid {
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">Ich bin 25-34</div>
-                    <div class="age-desc">Großartiges Verdienstpotenzial</div>
+                    <div class="age-title">25-34歳です</div>
+                    <div class="age-desc">良い収益機会</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -426,8 +435,8 @@ h1 .paid {
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">Ich bin 35+</div>
-                    <div class="age-desc">Du bist qualifiziert!</div>
+                    <div class="age-title">35歳以上です</div>
+                    <div class="age-desc">資格があります！</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -435,8 +444,8 @@ h1 .paid {
             <div class="age-card disabled">
                 <div class="check-icon">🚫</div>
                 <div class="age-content">
-                    <div class="age-title">Ich bin unter 18</div>
-                    <div class="age-desc">Nicht berechtigt</div>
+                    <div class="age-title">18歳未満です</div>
+                    <div class="age-desc">資格がありません</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -447,14 +456,14 @@ h1 .paid {
                 <div class="progress-fill" style="width: 50%;"></div>
             </div>
             <div class="progress-label">
-                <span>Schritt 1 von 2</span>
-                <span>Schnelle Überprüfung</span>
+                <span>ステップ 1/2</span>
+                <span>簡単な確認</span>
             </div>
         </div>
 
         <div class="live-counter">
             <div class="live-dot"></div>
-            <span><span id="counter1">2.781</span> Personen verdienen gerade</span>
+            <span><span id="counter1">2,781</span> 人が現在稼いでいます</span>
         </div>
     </div>
 
@@ -463,86 +472,81 @@ h1 .paid {
         <div class="logo">
             <div class="logo-icon">🎵</div>
             <div class="logo-text">
-                <span class="logo-tiktok">Screentime</span> <span class="logo-rewards">Rewards</span>
+                <span class="logo-tiktok">TikTok</span> <span class="logo-rewards">リワード</span>
             </div>
-        </div>
-
-        <div style="background: rgba(255, 170, 0, 0.15); border: 2px solid rgba(255, 170, 0, 0.4); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
-            <div style="font-size: 14px; font-weight: 600; color: #ffaa00; margin-bottom: 4px;">⚡ Freischaltung erforderlich</div>
-            <div style="font-size: 13px; color: #d0d0d0;">Schließe 2 Deals ab, um dein volles Verdienstpotenzial freizuschalten</div>
         </div>
 
         <div class="earning-card">
             <div class="unlocked-badge">
-                <span>✕ FREIGESCHALTET</span>
+                <span>✕ 解除されました</span>
             </div>
-            <div class="earning-title">Dein Verdienstpotenzial</div>
+            <div class="earning-title">あなたの収益可能額</div>
             <div class="earning-amount">
-                <span class="amount-pink">45€</span> – <span class="amount-cyan">124€</span>
+                <span class="amount-pink">¥6,000</span> – <span class="amount-cyan">¥16,000</span>
             </div>
-            <div class="earning-subtitle">pro Tag für deine Screentime</div>
+            <div class="earning-subtitle">TikTokスクロールで1日あたり</div>
         </div>
 
-        <div class="journey-title">Deine Screentime Rewards Verdienstmöglichkeit</div>
+        <div class="journey-title">TikTok リワードで稼ぐ方法</div>
 
         <div class="journey-steps">
             <div class="journey-step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <div class="step-title">Registriere dich bei Screentime Rewards</div>
-                    <div class="step-desc">Lade die App herunter & registriere dein Konto und verwandle dein Handy in eine Geldmaschine.</div>
+                    <div class="step-title">TikTok リワードに登録</div>
+                    <div class="step-desc">アプリをダウンロードしてアカウントを登録し、スマホをお金を稼ぐマシンに変えましょう。</div>
                 </div>
             </div>
 
             <div class="journey-step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <div class="step-title">Werde bezahlt für Screentime</div>
-                    <div class="step-desc">Nutze einfach dein Handy. Verdiene bis zu 124€ pro Tag von zu Hause!</div>
+                    <div class="step-title">スクロールして報酬を獲得</div>
+                    <div class="step-desc">すでに好きなコンテンツをスクロールするだけで、収益が増えていくのを見ましょう。自宅から1日最大¥16,000稼げます！</div>
                 </div>
             </div>
 
             <div class="journey-step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">Sofortige Auszahlungen</div>
-                    <div class="step-desc">Zahle dein Guthaben sofort aus via PayPal, Crypto, Gutscheine und weitere Zahlungsoptionen.</div>
+                    <div class="step-title">即座に出金</div>
+                    <div class="step-desc">PayPal、仮想通貨、ギフトカードなど、様々な支払いオプションで残高を即座に出金できます。</div>
                 </div>
             </div>
         </div>
 
-        <a href="https://trkio.org/aff_c?offer_id=3532&aff_id=17554&source=cper" class="cta-button" target="_blank">
-            JETZT VERDIENEN →
+        <a href="https://rewardorbit.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5NzE2NzU5YzE3MWVlOTRiZGM3MTA3MyIsInRzIjoxNzcwMTYyNjg2NjE4fQ" class="cta-button" target="_blank" onclick="ttq.track('ClickButton')">
+            今すぐ稼ぐ →
         </a>
 
         <div class="payment-icons">
             <span class="payment-icon paypal">PayPal</span>
-            <span class="payment-icon">Bank</span>
+            <span class="payment-icon">銀行</span>
             <span class="payment-icon amazon">Amazon</span>
         </div>
 
         <div class="trust-badges">
-            <div class="trust-badge">⭐ 4B Bewertung</div>
-            <div class="trust-badge">💰 8M$+ Ausgezahlt</div>
-            <div class="trust-badge">👥 600K+ Nutzer</div>
+            <div class="trust-badge">⭐ 4B評価</div>
+            <div class="trust-badge">💰 ¥1億円以上支払済</div>
+            <div class="trust-badge">👥 60万人以上のユーザー</div>
         </div>
 
-        <p class="warning-text">⚠️ Gib Alter 21+ bei der Anmeldung an, um Auszahlungsprobleme zu vermeiden</p>
-        <p class="footer-text">🔒 Kostenlos beitreten · Keine versteckten Gebühren · Sofortiger Zugang</p>
+        <p class="warning-text">⚠️ 出金の問題を避けるため、登録時に21歳以上と入力してください</p>
+        <p class="footer-text">🔒 登録無料 · 隠れた料金なし · すぐにアクセス可能</p>
 
         <div class="progress-container">
             <div class="progress-bar">
                 <div class="progress-fill" style="width: 100%;"></div>
             </div>
             <div class="progress-label">
-                <span>Schritt 2 von 2</span>
-                <span>🔒 Du bist genehmigt!</span>
+                <span>ステップ 2/2</span>
+                <span>🔒 承認されました！</span>
             </div>
         </div>
 
         <div class="live-counter">
             <div class="live-dot"></div>
-            <span><span id="counter2">2.782</span> Personen verdienen gerade</span>
+            <span><span id="counter2">2,782</span> 人が現在稼いでいます</span>
         </div>
     </div>
 </div>
@@ -560,17 +564,17 @@ function updateCounter() {
     const counter2 = document.getElementById('counter2');
     
     if (counter1) {
-        const current = parseInt(counter1.textContent.replace(/\./g, ''));
+        const current = parseInt(counter1.textContent.replace(/,/g, ''));
         const change = Math.floor(Math.random() * 20) - 10;
         const newVal = Math.max(2750, Math.min(2850, current + change));
-        counter1.textContent = newVal.toLocaleString('de-DE');
+        counter1.textContent = newVal.toLocaleString();
     }
     
     if (counter2) {
-        const current = parseInt(counter2.textContent.replace(/\./g, ''));
+        const current = parseInt(counter2.textContent.replace(/,/g, ''));
         const change = Math.floor(Math.random() * 20) - 10;
         const newVal = Math.max(2750, Math.min(2850, current + change));
-        counter2.textContent = newVal.toLocaleString('de-DE');
+        counter2.textContent = newVal.toLocaleString();
     }
 }
 
