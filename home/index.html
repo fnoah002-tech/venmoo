@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>ティックトック リワード</title>
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-  ttq.load('D5TV8E3C77UCERU3JB9G');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
+<title>TikTok Belohnungen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -410,15 +401,20 @@ h1 .paid {
 <div class="container">
     <!-- Step 1 -->
     <div id="step1" class="step">
-        <h1>ティックトック スクロールで<span class="paid">報酬</span>をゲット</h1>
-        <p class="subtitle">お住まいの地域でティックトック報酬の<br>受け取り資格があるか確認します。</p>
+        <div style="background: rgba(255, 45, 85, 0.15); border: 2px solid rgba(255, 45, 85, 0.5); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
+            <div style="font-size: 14px; font-weight: 600; color: #ff2d55; margin-bottom: 4px;">⚠️ Wichtig</div>
+            <div style="font-size: 13px; color: #d0d0d0;">Gib bei der Anmeldung Alter 21+ an, um Auszahlungsprobleme zu vermeiden</div>
+        </div>
+
+        <h1>Werde <span class="paid">Bezahlt</span> für TikTok Scrollen</h1>
+        <p class="subtitle">Wir müssen verifizieren, ob du für bezahlte<br>TikTok-Belohnungen in deiner Region berechtigt bist.</p>
 
         <div class="age-options">
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">21〜25歳</div>
-                    <div class="age-desc">最高の収益機会</div>
+                    <div class="age-title">Ich bin 21-25</div>
+                    <div class="age-desc">Höchstes Verdienstpotenzial</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -426,8 +422,8 @@ h1 .paid {
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">26〜34歳</div>
-                    <div class="age-desc">良い収益機会</div>
+                    <div class="age-title">Ich bin 26-34</div>
+                    <div class="age-desc">Gutes Verdienstpotenzial</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -435,8 +431,8 @@ h1 .paid {
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">35歳以上</div>
-                    <div class="age-desc">資格があります！</div>
+                    <div class="age-title">Ich bin 35+</div>
+                    <div class="age-desc">Du qualifizierst dich!</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -444,8 +440,8 @@ h1 .paid {
             <div class="age-card disabled">
                 <div class="check-icon">🚫</div>
                 <div class="age-content">
-                    <div class="age-title">21歳未満</div>
-                    <div class="age-desc">資格がありません</div>
+                    <div class="age-title">Ich bin unter 21</div>
+                    <div class="age-desc">Nicht berechtigt</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -456,14 +452,14 @@ h1 .paid {
                 <div class="progress-fill" style="width: 50%;"></div>
             </div>
             <div class="progress-label">
-                <span>ステップ 1/2</span>
-                <span>簡単な確認</span>
+                <span>Schritt 1 von 2</span>
+                <span>Schnelle Verifizierung</span>
             </div>
         </div>
 
         <div class="live-counter">
             <div class="live-dot"></div>
-            <span><span id="counter1">2,781</span> 人が現在稼いでいます</span>
+            <span><span id="counter1">2,781</span> Personen verdienen gerade</span>
         </div>
     </div>
 
@@ -472,87 +468,87 @@ h1 .paid {
         <div class="logo">
             <div class="logo-icon">🎵</div>
             <div class="logo-text">
-                <span class="logo-tiktok">ティックトック</span> <span class="logo-rewards">リワード</span>
+                <span class="logo-tiktok">TikTok</span> <span class="logo-rewards">Belohnungen</span>
             </div>
         </div>
+
+        <p class="warning-text" style="margin-bottom: 20px; font-size: 13px;">⚠️ Gib bei der Anmeldung Alter 21+ an, um Auszahlungsprobleme zu vermeiden</p>
 
         <div class="earning-card">
             <div class="unlocked-badge">
-                <span>✕ 解除されました</span>
+                <span>✕ FREIGESCHALTET</span>
             </div>
-            <div class="earning-title">あなたの収益可能額</div>
+            <div class="earning-title">Dein Verdienstpotenzial</div>
             <div class="earning-amount">
-                <span class="amount-pink">¥6,000</span>〜<span class="amount-cyan">¥16,000</span>
+                <span class="amount-pink">€ 45</span> – <span class="amount-cyan">€ 124</span>
             </div>
-            <div class="earning-subtitle">ティックトックスクロールで1日あたり</div>
+            <div class="earning-subtitle">pro Tag für TikTok scrollen</div>
         </div>
 
-        <p class="warning-text" style="margin-bottom: 20px;">⚠️ 出金の問題を避けるため、登録時に21歳以上と入力してください</p>
-
-        <div class="journey-title">ティックトック リワードで稼ぐ方法</div>
+        <div class="journey-title">Deine TikTok Belohnungen Verdienstreise</div>
 
         <div class="journey-steps">
             <div class="journey-step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <div class="step-title">ティックトック リワードに登録</div>
-                    <div class="step-desc">アプリをダウンロードしてアカウントを登録し、スマホをお金を稼ぐマシンに変えましょう。</div>
+                    <div class="step-title">Bei TikTok Belohnungen anmelden</div>
+                    <div class="step-desc">Lade die App herunter & registriere dein Konto und verwandle dein Handy in eine Geldmaschine.</div>
                 </div>
             </div>
 
             <div class="journey-step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <div class="step-title">スクロールして報酬を獲得</div>
-                    <div class="step-desc">すでに好きなコンテンツをスクロールするだけで、収益が増えていくのを見ましょう。自宅から1日最大¥16,000稼げます！</div>
+                    <div class="step-title">Bezahlt werden fürs Scrollen</div>
+                    <div class="step-desc">Scrolle einfach durch Inhalte, die du bereits liebst, und sieh zu, wie dein Verdienst wächst. Verdiene bis zu € 124 pro Tag von zu Hause!</div>
                 </div>
             </div>
 
             <div class="journey-step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">即座に出金</div>
-                    <div class="step-desc">PayPal、仮想通貨、ギフトカードなど、様々な支払いオプションで残高を即座に出金できます。</div>
+                    <div class="step-title">Sofortige Auszahlungen</div>
+                    <div class="step-desc">Zahle dein Guthaben sofort via PayPal, Krypto, Geschenkkarten und weiteren Zahlungsoptionen aus.</div>
                 </div>
             </div>
         </div>
 
         <div style="background: rgba(255, 45, 85, 0.15); border: 2px solid rgba(255, 45, 85, 0.5); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
-            <div style="font-size: 14px; font-weight: 600; color: #ff2d55; margin-bottom: 4px;">⚡ 解除が必要です</div>
-            <div style="font-size: 13px; color: #d0d0d0;">2つのオファーを完了して、収益機能をフルに解除しましょう</div>
+            <div style="font-size: 14px; font-weight: 600; color: #ff2d55; margin-bottom: 4px;">⚡ Freischaltung erforderlich</div>
+            <div style="font-size: 13px; color: #d0d0d0;">Schließe 2 Deals ab, um dein volles Verdienstpotenzial freizuschalten</div>
         </div>
 
-        <a href="https://rewardorbit.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzcwNzM0OTAzOTQ3fQ?s2=jp2" class="cta-button" target="_blank" onclick="ttq.track('ClickButton')" style="color: #000000;">
-            今すぐ稼ぐ →
+        <a href="https://rewardorbit.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzcwNzM5NDk4ODM4fQ?s2=asd" class="cta-button" target="_blank" onclick="ttq.track('ClickButton')" style="color: #000000;">
+            JETZT VERDIENEN →
         </a>
 
         <div class="payment-icons">
             <span class="payment-icon paypal">PayPal</span>
-            <span class="payment-icon">銀行</span>
+            <span class="payment-icon">Bank</span>
             <span class="payment-icon amazon">Amazon</span>
         </div>
 
         <div class="trust-badges">
-            <div class="trust-badge">⭐ 4B評価</div>
-            <div class="trust-badge">💰 ¥1億円以上支払済</div>
-            <div class="trust-badge">👥 60万人以上のユーザー</div>
+            <div class="trust-badge">⭐ 4B Bewertung</div>
+            <div class="trust-badge">💰 € 8M+ Ausgezahlt</div>
+            <div class="trust-badge">👥 600K+ Nutzer</div>
         </div>
 
-        <p class="footer-text">🔒 登録無料 · 隠れた料金なし · すぐにアクセス可能</p>
+        <p class="footer-text">🔒 Kostenlose Anmeldung · Keine versteckten Gebühren · Sofortiger Zugang</p>
 
         <div class="progress-container">
             <div class="progress-bar">
                 <div class="progress-fill" style="width: 100%;"></div>
             </div>
             <div class="progress-label">
-                <span>ステップ 2/2</span>
-                <span>🔒 承認されました！</span>
+                <span>Schritt 2 von 2</span>
+                <span>🔒 Du bist zugelassen!</span>
             </div>
         </div>
 
         <div class="live-counter">
             <div class="live-dot"></div>
-            <span><span id="counter2">2,782</span> 人が現在稼いでいます</span>
+            <span><span id="counter2">2,782</span> Personen verdienen gerade</span>
         </div>
     </div>
 </div>
