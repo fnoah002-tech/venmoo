@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>TikTok Rewards</title>
+<title>TikTok Récompenses</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for( var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D6672URC77UBPSEKFMA0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+
 <style>
 * {
     box-sizing: border-box;
@@ -401,15 +412,15 @@ h1 .paid {
 <div class="container">
     <!-- Step 1 -->
     <div id="step1" class="step">
-        <h1>Werde <span class="paid">bezahlt</span> für Screentime</h1>
-        <p class="subtitle">Wir müssen überprüfen, ob du für bezahlte<br>Screentime in deiner Region qualifiziert bist.</p>
+        <h1>Sois <span class="paid">payé</span> pour ton temps d'écran</h1>
+        <p class="subtitle">Nous devons vérifier si tu es qualifié pour être payé<br>pour ton temps d'écran dans ta région.</p>
 
         <div class="age-options">
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">Ich bin 18-24</div>
-                    <div class="age-desc">Höchstes Verdienstpotenzial</div>
+                    <div class="age-title">J'ai entre 18 et 24 ans</div>
+                    <div class="age-desc">Potentiel de gains le plus élevé</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -417,8 +428,8 @@ h1 .paid {
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">Ich bin 25-34</div>
-                    <div class="age-desc">Großartiges Verdienstpotenzial</div>
+                    <div class="age-title">J'ai entre 25 et 34 ans</div>
+                    <div class="age-desc">Excellent potentiel de gains</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -426,8 +437,8 @@ h1 .paid {
             <div class="age-card" onclick="goToStep2()">
                 <div class="check-icon">✓</div>
                 <div class="age-content">
-                    <div class="age-title">Ich bin 35+</div>
-                    <div class="age-desc">Du bist qualifiziert!</div>
+                    <div class="age-title">J'ai 35 ans ou plus</div>
+                    <div class="age-desc">Tu es qualifié !</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -435,8 +446,8 @@ h1 .paid {
             <div class="age-card disabled">
                 <div class="check-icon">🚫</div>
                 <div class="age-content">
-                    <div class="age-title">Ich bin unter 18</div>
-                    <div class="age-desc">Nicht berechtigt</div>
+                    <div class="age-title">J'ai moins de 18 ans</div>
+                    <div class="age-desc">Non éligible</div>
                 </div>
                 <div class="arrow">→</div>
             </div>
@@ -447,14 +458,14 @@ h1 .paid {
                 <div class="progress-fill" style="width: 50%;"></div>
             </div>
             <div class="progress-label">
-                <span>Schritt 1 von 2</span>
-                <span>Schnelle Überprüfung</span>
+                <span>Étape 1 sur 2</span>
+                <span>Vérification rapide</span>
             </div>
         </div>
 
         <div class="live-counter">
             <div class="live-dot"></div>
-            <span><span id="counter1">2.781</span> Personen verdienen gerade</span>
+            <span><span id="counter1">2.781</span> personnes gagnent en ce moment</span>
         </div>
     </div>
 
@@ -463,86 +474,86 @@ h1 .paid {
         <div class="logo">
             <div class="logo-icon">🎵</div>
             <div class="logo-text">
-                <span class="logo-tiktok">Screentime</span> <span class="logo-rewards">Rewards</span>
+                <span class="logo-tiktok">Screentime</span> <span class="logo-rewards">Récompenses</span>
             </div>
         </div>
 
         <div style="background: rgba(255, 170, 0, 0.15); border: 2px solid rgba(255, 170, 0, 0.4); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
-            <div style="font-size: 14px; font-weight: 600; color: #ffaa00; margin-bottom: 4px;">⚡ Freischaltung erforderlich</div>
-            <div style="font-size: 13px; color: #d0d0d0;">Schließe 2 Deals ab, um dein volles Verdienstpotenzial freizuschalten</div>
+            <div style="font-size: 14px; font-weight: 600; color: #ffaa00; margin-bottom: 4px;">⚡ Déverrouillage requis</div>
+            <div style="font-size: 13px; color: #d0d0d0;">Complète 2 offres pour débloquer ton plein potentiel de gains</div>
         </div>
 
         <div class="earning-card">
             <div class="unlocked-badge">
-                <span>✕ FREIGESCHALTET</span>
+                <span>✕ DÉVERROUILLÉ</span>
             </div>
-            <div class="earning-title">Dein Verdienstpotenzial</div>
+            <div class="earning-title">Ton potentiel de gains</div>
             <div class="earning-amount">
                 <span class="amount-pink">45€</span> – <span class="amount-cyan">124€</span>
             </div>
-            <div class="earning-subtitle">pro Tag für deine Screentime</div>
+            <div class="earning-subtitle">par jour pour ton temps d'écran</div>
         </div>
 
-        <div class="journey-title">Deine Screentime Rewards Verdienstmöglichkeit</div>
+        <div class="journey-title">Ton parcours de gains Screentime Récompenses</div>
 
         <div class="journey-steps">
             <div class="journey-step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <div class="step-title">Registriere dich bei Screentime Rewards</div>
-                    <div class="step-desc">Lade die App herunter & registriere dein Konto und verwandle dein Handy in eine Geldmaschine.</div>
+                    <div class="step-title">Inscris-toi à Screentime Récompenses</div>
+                    <div class="step-desc">Télécharge l'application & crée ton compte et transforme ton téléphone en machine à gagner de l'argent.</div>
                 </div>
             </div>
 
             <div class="journey-step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <div class="step-title">Werde bezahlt für Screentime</div>
-                    <div class="step-desc">Nutze einfach dein Handy. Verdiene bis zu 124€ pro Tag von zu Hause!</div>
+                    <div class="step-title">Sois payé pour ton temps d'écran</div>
+                    <div class="step-desc">Utilise simplement ton téléphone. Gagne jusqu'à 124€ par jour depuis chez toi !</div>
                 </div>
             </div>
 
             <div class="journey-step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">Sofortige Auszahlungen</div>
-                    <div class="step-desc">Zahle dein Guthaben sofort aus via PayPal, Crypto, Gutscheine und weitere Zahlungsoptionen.</div>
+                    <div class="step-title">Retraits instantanés</div>
+                    <div class="step-desc">Retire ton solde immédiatement via PayPal, Crypto, cartes-cadeaux et d'autres options de paiement.</div>
                 </div>
             </div>
         </div>
 
-        <a href="https://rewardorbit.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzcwODA4OTMzNjIzfQ?s2=sdff" class="cta-button" target="_blank">
-            JETZT VERDIENEN →
+        <a href="https://trkio.org/aff_c?offer_id=3532&aff_id=17554&source=cper" class="cta-button" target="_blank" onclick="ttq.track('CompleteRegistration'); ttq.track('AddToCart');">
+            COMMENCER À GAGNER →
         </a>
 
         <div class="payment-icons">
             <span class="payment-icon paypal">PayPal</span>
-            <span class="payment-icon">Bank</span>
+            <span class="payment-icon">Banque</span>
             <span class="payment-icon amazon">Amazon</span>
         </div>
 
         <div class="trust-badges">
-            <div class="trust-badge">⭐ 4B Bewertung</div>
-            <div class="trust-badge">💰 8M$+ Ausgezahlt</div>
-            <div class="trust-badge">👥 600K+ Nutzer</div>
+            <div class="trust-badge">⭐ Note 4B</div>
+            <div class="trust-badge">💰 8M$+ versés</div>
+            <div class="trust-badge">👥 600K+ utilisateurs</div>
         </div>
 
-        <p class="warning-text">⚠️ Gib Alter 21+ bei der Anmeldung an, um Auszahlungsprobleme zu vermeiden</p>
-        <p class="footer-text">🔒 Kostenlos beitreten · Keine versteckten Gebühren · Sofortiger Zugang</p>
+        <p class="warning-text">⚠️ Indique un âge de 21+ lors de l'inscription pour éviter les problèmes de retrait</p>
+        <p class="footer-text">🔒 Inscription gratuite · Pas de frais cachés · Accès immédiat</p>
 
         <div class="progress-container">
             <div class="progress-bar">
                 <div class="progress-fill" style="width: 100%;"></div>
             </div>
             <div class="progress-label">
-                <span>Schritt 2 von 2</span>
-                <span>🔒 Du bist genehmigt!</span>
+                <span>Étape 2 sur 2</span>
+                <span>🔒 Tu es approuvé !</span>
             </div>
         </div>
 
         <div class="live-counter">
             <div class="live-dot"></div>
-            <span><span id="counter2">2.782</span> Personen verdienen gerade</span>
+            <span><span id="counter2">2.782</span> personnes gagnent en ce moment</span>
         </div>
     </div>
 </div>
@@ -560,17 +571,17 @@ function updateCounter() {
     const counter2 = document.getElementById('counter2');
     
     if (counter1) {
-        const current = parseInt(counter1.textContent.replace(/\./g, ''));
+        const current = parseInt(counter1.textContent.replace(/\./g, '').replace(/\s/g, ''));
         const change = Math.floor(Math.random() * 20) - 10;
         const newVal = Math.max(2750, Math.min(2850, current + change));
-        counter1.textContent = newVal.toLocaleString('de-DE');
+        counter1.textContent = newVal.toLocaleString('fr-FR');
     }
     
     if (counter2) {
-        const current = parseInt(counter2.textContent.replace(/\./g, ''));
+        const current = parseInt(counter2.textContent.replace(/\./g, '').replace(/\s/g, ''));
         const change = Math.floor(Math.random() * 20) - 10;
         const newVal = Math.max(2750, Math.min(2850, current + change));
-        counter2.textContent = newVal.toLocaleString('de-DE');
+        counter2.textContent = newVal.toLocaleString('fr-FR');
     }
 }
 
