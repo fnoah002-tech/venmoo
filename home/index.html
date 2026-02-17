@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="fr">
 
 <head>
   <!-- 1. CRITICAL FUNCTIONALITY -->
@@ -85,12 +85,12 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-  <meta name="theme-color" content="#003087">
+  <meta name="theme-color" content="#0a0a0a">
   <meta name="robots" content="noindex">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>PayPal Einladung</title>
+  <title>Invitation</title>
   <link rel="preconnect" href="https://analytics.tiktok.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,8 +100,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { 
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-      background: #f5f7fa; 
-      color: #2c2e2f; 
+      background: #0a0a0a; 
+      color: #fff; 
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -136,12 +136,11 @@
       font-weight: 700;
       margin-bottom: 8px;
       text-align: center;
-      color: #2c2e2f;
     }
 
     .qualifier-sub {
       font-size: 14px;
-      color: #687173;
+      color: #a1a1aa;
       margin-bottom: 24px;
       text-align: center;
     }
@@ -150,31 +149,30 @@
       width: 100%;
       max-width: 320px;
       padding: 16px 20px;
-      background: #fff;
-      border: 1px solid #cbd2d6;
-      border-radius: 8px;
-      color: #2c2e2f;
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      color: #fff;
       font-size: 16px;
       font-family: inherit;
       cursor: pointer;
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23687173' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 16px center;
       background-size: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .qualifier-select:focus {
       outline: none;
-      border-color: #0070ba;
+      border-color: #22c55e;
     }
 
     .loading-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(245,247,250,0.95);
+      background: rgba(10,10,10,0.95);
       z-index: 1000;
       flex-direction: column;
       align-items: center;
@@ -188,8 +186,8 @@
     .loader-ring {
       width: 48px;
       height: 48px;
-      border: 3px solid #cbd2d6;
-      border-top-color: #0070ba;
+      border: 3px solid #27272a;
+      border-top-color: #22c55e;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
@@ -201,7 +199,7 @@
     .loader-text {
       margin-top: 16px;
       font-size: 14px;
-      color: #687173;
+      color: #a1a1aa;
     }
 
     /* Main */
@@ -230,16 +228,15 @@
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 8px;
-      color: #2c2e2f;
     }
 
     .header-title span {
-      color: #0070ba;
+      color: #22c55e;
     }
 
     .header-sub {
       font-size: 15px;
-      color: #687173;
+      color: #a1a1aa;
     }
 
     .live-activity {
@@ -248,16 +245,15 @@
       justify-content: center;
       gap: 8px;
       padding: 12px;
-      background: #fff;
+      background: #18181b;
       border-radius: 10px;
       margin-bottom: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .live-dot {
       width: 8px;
       height: 8px;
-      background: #0070ba;
+      background: #22c55e;
       border-radius: 50%;
       animation: blink 1s infinite;
     }
@@ -269,20 +265,20 @@
 
     .live-text {
       font-size: 13px;
-      color: #687173;
+      color: #a1a1aa;
     }
 
     .live-count {
-      color: #0070ba;
+      color: #22c55e;
       font-weight: 700;
     }
 
     .cta-btn {
       width: 100%;
       padding: 20px;
-      background: #0070ba;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
       border: none;
-      border-radius: 24px;
+      border-radius: 14px;
       font-size: 18px;
       font-weight: 700;
       color: #fff;
@@ -291,12 +287,8 @@
       display: block;
       text-align: center;
       margin-bottom: 16px;
-      transition: all 0.2s;
-      box-shadow: 0 2px 8px rgba(0,112,186,0.3);
-    }
-
-    .cta-btn:hover {
-      background: #005ea6;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 24px rgba(34, 197, 94, 0.4);
     }
 
     .cta-btn:active {
@@ -304,13 +296,13 @@
     }
 
     .proof-section {
-      border-top: 1px solid #cbd2d6;
+      border-top: 1px solid #27272a;
       padding-top: 20px;
     }
 
     .proof-title {
       font-size: 11px;
-      color: #687173;
+      color: #71717a;
       text-transform: uppercase;
       letter-spacing: 1px;
       text-align: center;
@@ -329,21 +321,20 @@
     .proof-value {
       font-size: 18px;
       font-weight: 700;
-      color: #2c2e2f;
+      color: #fff;
     }
 
     .proof-label {
       font-size: 10px;
-      color: #687173;
+      color: #71717a;
       text-transform: uppercase;
     }
 
     .steps-simple {
-      background: #fff;
+      background: #18181b;
       border-radius: 12px;
       padding: 16px 20px;
       margin-bottom: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .step-row {
@@ -354,39 +345,39 @@
     }
 
     .step-row:not(:last-child) {
-      border-bottom: 1px solid #cbd2d6;
+      border-bottom: 1px solid #27272a;
     }
 
     .step-num {
       width: 24px;
       height: 24px;
-      background: #0070ba;
+      background: #22c55e;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 12px;
       font-weight: 700;
-      color: #fff;
+      color: #000;
       flex-shrink: 0;
     }
 
     .step-text {
       font-size: 14px;
-      color: #2c2e2f;
+      color: #e4e4e7;
     }
 
     .age-note {
       text-align: center;
       font-size: 12px;
-      color: #687173;
+      color: #a1a1aa;
       margin-bottom: 16px;
     }
 
     .footer-text {
       text-align: center;
       font-size: 11px;
-      color: #9da3a6;
+      color: #52525b;
       margin-top: 16px;
     }
   </style>
@@ -395,13 +386,13 @@
 <body>
   <!-- Screen 1: Qualifier -->
   <div class="screen qualifier-screen active" id="screen1">
-    <div class="qualifier-icon">🇩🇪</div>
-    <h1 class="qualifier-title">Sind Sie in Deutschland?</h1>
-    <p class="qualifier-sub">Bitte bestätigen Sie um fortzufahren</p>
+    <div class="qualifier-icon">🇫🇷</div>
+    <h1 class="qualifier-title">Êtes-vous en France ?</h1>
+    <p class="qualifier-sub">Veuillez confirmer pour continuer</p>
     <select class="qualifier-select" id="qualifierSelect">
-      <option value="" disabled selected>Option wählen</option>
-      <option value="yes">Ja</option>
-      <option value="no">Nein</option>
+      <option value="" disabled selected>Choisir une option</option>
+      <option value="yes">Oui</option>
+      <option value="no">Non</option>
     </select>
   </div>
 
@@ -410,59 +401,59 @@
     <div class="page-wrapper">
 
       <div class="header-section">
-        <div class="header-icon">💳</div>
-        <h1 class="header-title">Sie wurden <span>ausgewählt</span></h1>
-        <p class="header-sub">Exklusiver Zugang für neue Teilnehmer</p>
+        <div class="header-icon">📱</div>
+        <h1 class="header-title">Vous avez été <span>sélectionné</span></h1>
+        <p class="header-sub">Accès exclusif pour les nouveaux participants</p>
       </div>
 
       <div class="live-activity">
         <div class="live-dot"></div>
-        <span class="live-text"><span class="live-count" id="liveCount">847</span> Personen jetzt aktiv</span>
+        <span class="live-text"><span class="live-count" id="liveCount">847</span> personnes actives en ce moment</span>
       </div>
 
       <div class="steps-simple">
         <div class="step-row">
           <span class="step-num">1</span>
-          <span class="step-text">Geben Sie Ihre E-Mail ein</span>
+          <span class="step-text">Télécharger l'app et s'inscrire</span>
         </div>
         <div class="step-row">
           <span class="step-num">2</span>
-          <span class="step-text">Inhalte durchsuchen und Aufgaben erledigen</span>
+          <span class="step-text">Parcourir le contenu et compléter les tâches</span>
         </div>
         <div class="step-row">
           <span class="step-num">3</span>
-          <span class="step-text">Ihre Gewinne abheben</span>
+          <span class="step-text">Retirer vos gains</span>
         </div>
       </div>
 
       <a href="https://www.yz0cj3jn.com/9W598/3QQG7/?source_id=t2beiman1" class="cta-btn">
-        Jetzt teilnehmen →
+        Participer maintenant →
       </a>
 
-      <p class="age-note">⚠️ Geben Sie 21+ Jahre bei der Anmeldung an, um alle Funktionen freizuschalten</p>
+      <p class="age-note">⚠️ Indiquez 21+ ans lors de l'inscription pour activer toutes les fonctionnalités</p>
 
       <div class="proof-section">
-        <div class="proof-title">Benutzerstatistiken</div>
+        <div class="proof-title">Statistiques utilisateurs</div>
         <div class="proof-stats">
           <div class="proof-item">
             <div class="proof-value">4.8★</div>
-            <div class="proof-label">Bewertung</div>
+            <div class="proof-label">Note</div>
           </div>
           <div class="proof-item">
             <div class="proof-value">500K+</div>
-            <div class="proof-label">Nutzer</div>
+            <div class="proof-label">Utilisateurs</div>
           </div>
         </div>
       </div>
 
-      <p class="footer-text">🔒 Kostenlose Anmeldung · Sofortiger Zugang</p>
+      <p class="footer-text">🔒 Inscription gratuite · Accès immédiat</p>
     </div>
   </div>
 
   <!-- Loading Overlay -->
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loader-ring"></div>
-    <div class="loader-text">Überprüfung läuft...</div>
+    <div class="loader-text">Vérification en cours...</div>
   </div>
 
   <script>
