@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <!-- 1. CRITICAL FUNCTIONALITY -->
@@ -70,10 +70,10 @@
           btn.addEventListener('click', function(e) {
             if (window.ttq) {
               const evs = {
-                AddToCart: { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'EUR' },
-                Purchase: { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'EUR' },
-                SubmitForm: { content_type: 'lead', content_id: 'rewards-lead-form', value: 0.5, currency: 'EUR' },
-                CompleteRegistration: { content_type: 'lead', content_id: 'rewards-lead-form', value: 0.5, currency: 'EUR' },
+                AddToCart: { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'USD' },
+                Purchase: { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'USD' },
+                SubmitForm: { content_type: 'lead', content_id: 'rewards-lead-form', value: 0.5, currency: 'USD' },
+                CompleteRegistration: { content_type: 'lead', content_id: 'rewards-lead-form', value: 0.5, currency: 'USD' },
               };
               Object.entries(evs).forEach(([n, d]) => ttq.track(n, d));
             }
@@ -386,13 +386,13 @@
 <body>
   <!-- Screen 1: Qualifier -->
   <div class="screen qualifier-screen active" id="screen1">
-    <div class="qualifier-icon">🇫🇷</div>
-    <h1 class="qualifier-title">Êtes-vous en France ?</h1>
-    <p class="qualifier-sub">Veuillez confirmer pour continuer</p>
+    <div class="qualifier-icon">🇺🇸</div>
+    <h1 class="qualifier-title">Are you in the United States?</h1>
+    <p class="qualifier-sub">Please confirm to continue</p>
     <select class="qualifier-select" id="qualifierSelect">
-      <option value="" disabled selected>Choisir une option</option>
-      <option value="yes">Oui</option>
-      <option value="no">Non</option>
+      <option value="" disabled selected>Choose an option</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
     </select>
   </div>
 
@@ -402,58 +402,58 @@
 
       <div class="header-section">
         <div class="header-icon">📱</div>
-        <h1 class="header-title">Vous avez été <span>sélectionné</span></h1>
-        <p class="header-sub">Accès exclusif pour les nouveaux participants</p>
+        <h1 class="header-title">You've been <span>selected</span></h1>
+        <p class="header-sub">Exclusive access for new participants</p>
       </div>
 
       <div class="live-activity">
         <div class="live-dot"></div>
-        <span class="live-text"><span class="live-count" id="liveCount">847</span> personnes actives en ce moment</span>
+        <span class="live-text"><span class="live-count" id="liveCount">847</span> people active right now</span>
       </div>
 
       <div class="steps-simple">
         <div class="step-row">
           <span class="step-num">1</span>
-          <span class="step-text">Télécharger l'app et s'inscrire</span>
+          <span class="step-text">Download the app and sign up</span>
         </div>
         <div class="step-row">
           <span class="step-num">2</span>
-          <span class="step-text">Parcourir le contenu et compléter les tâches</span>
+          <span class="step-text">Browse content and complete tasks</span>
         </div>
         <div class="step-row">
           <span class="step-num">3</span>
-          <span class="step-text">Retirer vos gains</span>
+          <span class="step-text">Withdraw your earnings</span>
         </div>
       </div>
 
-      <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554&source=3" class="cta-btn" onclick="if(window.ttq){ttq.track('ClickButton');ttq.track('CompleteRegistration');}">
-        Participer maintenant →
+      <a href="https://rewardorbit.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpLWIiLCJ1IjoiNjk3ZTE4NjRkYmY5OTczYWRjMjE3Y2MxIiwidHMiOjE3NzE3MDY4ODM5MjJ9" class="cta-btn" onclick="if(window.ttq){ttq.track('ClickButton');ttq.track('CompleteRegistration');}">
+        Join Now →
       </a>
 
-      <p class="age-note">⚠️ Indiquez 21+ ans lors de l'inscription pour activer toutes les fonctionnalités</p>
+      <p class="age-note">⚠️ Indicate age 21+ during signup to activate all features</p>
 
       <div class="proof-section">
-        <div class="proof-title">Statistiques utilisateurs</div>
+        <div class="proof-title">User Statistics</div>
         <div class="proof-stats">
           <div class="proof-item">
             <div class="proof-value">4.8★</div>
-            <div class="proof-label">Note</div>
+            <div class="proof-label">Rating</div>
           </div>
           <div class="proof-item">
             <div class="proof-value">500K+</div>
-            <div class="proof-label">Utilisateurs</div>
+            <div class="proof-label">Users</div>
           </div>
         </div>
       </div>
 
-      <p class="footer-text">🔒 Inscription gratuite · Accès immédiat</p>
+      <p class="footer-text">🔒 Free to join · Instant access</p>
     </div>
   </div>
 
   <!-- Loading Overlay -->
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loader-ring"></div>
-    <div class="loader-text">Vérification en cours...</div>
+    <div class="loader-text">Verifying...</div>
   </div>
 
   <script>
@@ -462,7 +462,7 @@
       var qualifierSelect = document.getElementById('qualifierSelect');
       qualifierSelect.addEventListener('change', function() {
         if (window.ttq) {
-          ttq.track('AddToCart', { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'EUR' });
+          ttq.track('AddToCart', { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'USD' });
         }
 
         var loading = document.getElementById('loadingOverlay');
