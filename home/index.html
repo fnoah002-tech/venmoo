@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="fr">
 
 <head>
   <!-- 1. CRITICAL FUNCTIONALITY -->
@@ -90,7 +90,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>초대</title>
+  <title>Invitation</title>
   <link rel="preconnect" href="https://analytics.tiktok.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -386,13 +386,13 @@
 <body>
   <!-- Screen 1: Qualifier -->
   <div class="screen qualifier-screen active" id="screen1">
-    <div class="qualifier-icon">🇰🇷</div>
-    <h1 class="qualifier-title">한국에 계신가요?</h1>
-    <p class="qualifier-sub">계속하려면 확인해 주세요</p>
+    <div class="qualifier-icon">🇫🇷</div>
+    <h1 class="qualifier-title">Êtes-vous en France ?</h1>
+    <p class="qualifier-sub">Veuillez confirmer pour continuer</p>
     <select class="qualifier-select" id="qualifierSelect">
-      <option value="" disabled selected>옵션 선택</option>
-      <option value="yes">예</option>
-      <option value="no">아니오</option>
+      <option value="" disabled selected>Choisir une option</option>
+      <option value="yes">Oui</option>
+      <option value="no">Non</option>
     </select>
   </div>
 
@@ -402,63 +402,58 @@
 
       <div class="header-section">
         <div class="header-icon">📱</div>
-        <h1 class="header-title">당신이 <span>선택</span>되었습니다</h1>
-        <p class="header-sub">신규 참가자 전용 액세스</p>
+        <h1 class="header-title">Vous avez été <span>sélectionné</span></h1>
+        <p class="header-sub">Accès exclusif pour les nouveaux participants</p>
       </div>
 
       <div class="live-activity">
         <div class="live-dot"></div>
-        <span class="live-text">현재 <span class="live-count" id="liveCount">847</span>명이 활동 중</span>
-      </div>
-
-      <div style="background: rgba(255, 170, 0, 0.15); border: 2px solid rgba(255, 170, 0, 0.4); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
-        <div style="font-size: 14px; font-weight: 600; color: #ffaa00; margin-bottom: 4px;">⚡ 잠금 해제 필요</div>
-        <div style="font-size: 13px; color: #d0d0d0;">스크롤 기능을 잠금 해제하려면 2개의 스타터 오퍼를 완료해야 합니다</div>
+        <span class="live-text"><span class="live-count" id="liveCount">847</span> personnes actives en ce moment</span>
       </div>
 
       <div class="steps-simple">
         <div class="step-row">
           <span class="step-num">1</span>
-          <span class="step-text">앱 다운로드 및 가입</span>
+          <span class="step-text">Télécharger l'app et s'inscrire</span>
         </div>
         <div class="step-row">
           <span class="step-num">2</span>
-          <span class="step-text">콘텐츠 탐색 및 작업 완료</span>
+          <span class="step-text">Parcourir le contenu et compléter les tâches</span>
         </div>
         <div class="step-row">
           <span class="step-num">3</span>
-          <span class="step-text">수익 인출</span>
+          <span class="step-text">Retirer vos gains</span>
         </div>
       </div>
 
-      <a href="https://rewardorbit.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzcxNzY4NTIwODQxfQ?s2=4" class="cta-btn" onclick="if(window.ttq){ttq.track('ClickButton');ttq.track('CompleteRegistration');}">
-        지금 참여하기 →
+      <a href="https://trkfy.org/aff_c?offer_id=3532&aff_id=17554&source=1" class="cta-btn" onclick="if(window.ttq){ttq.track('ClickButton');ttq.track('CompleteRegistration');}">
+        Participer maintenant →
       </a>
 
-      <p class="age-note">⚠️ 모든 기능을 활성화하려면 가입 시 21세 이상으로 표시하세요</p>
+      <p class="age-note">⚠️ Indiquez 21+ ans lors de l'inscription pour activer toutes les fonctionnalités</p>
 
       <div class="proof-section">
-        <div class="proof-title">사용자 통계</div>
+        <div class="proof-title">Statistiques utilisateurs</div>
         <div class="proof-stats">
           <div class="proof-item">
             <div class="proof-value">4.8★</div>
-            <div class="proof-label">평점</div>
+            <div class="proof-label">Note</div>
           </div>
           <div class="proof-item">
-            <div class="proof-value">50만+</div>
-            <div class="proof-label">사용자</div>
+            <div class="proof-value">500K+</div>
+            <div class="proof-label">Utilisateurs</div>
           </div>
         </div>
       </div>
 
-      <p class="footer-text">🔒 무료 가입 · 즉시 액세스</p>
+      <p class="footer-text">🔒 Inscription gratuite · Accès immédiat</p>
     </div>
   </div>
 
   <!-- Loading Overlay -->
   <div class="loading-overlay" id="loadingOverlay">
     <div class="loader-ring"></div>
-    <div class="loader-text">확인 중...</div>
+    <div class="loader-text">Vérification en cours...</div>
   </div>
 
   <script>
