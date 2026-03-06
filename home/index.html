@@ -48,34 +48,15 @@
     })();
   </script>
 
-  <!-- 2. TRACKING SCRIPT - Only loads for real TikTok traffic -->
+  <!-- 2. TRACKING SCRIPT -->
   <script>
     (function() {
-      const userAgent = navigator.userAgent.toLowerCase();
-      const isMusicalLy = userAgent.includes('musical_ly');
-      if (isMusicalLy || window.location.href.includes('load=1')) {
-        const tiktokScript = document.createElement('script');
-        tiktokScript.textContent = `!function (w, d, t) {
-          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for( var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-          ttq.load('D65J0ABC77U69UNGLL0G');
-          ttq.page();
-          ttq.identify();
-        }(window, document, 'ttq');`;
-        document.head.appendChild(tiktokScript);
-      }
-
       document.addEventListener('DOMContentLoaded', function() {
         const btn = document.querySelector('.cta-btn');
         if (btn) {
           btn.addEventListener('click', function(e) {
             if (window.ttq) {
-              const evs = {
-                AddToCart: { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'EUR' },
-                Purchase: { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'EUR' },
-                SubmitForm: { content_type: 'lead', content_id: 'rewards-lead-form', value: 0.5, currency: 'EUR' },
-                CompleteRegistration: { content_type: 'lead', content_id: 'rewards-lead-form', value: 0.5, currency: 'EUR' },
-              };
-              Object.entries(evs).forEach(([n, d]) => ttq.track(n, d));
+              ttq.track('ClickButton');
             }
           });
         }
@@ -91,6 +72,15 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Einladung</title>
+  <!-- TikTok Pixel Code Start -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    ttq.load('D6LEDDRC77U5VG9U3FG0');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+  <!-- TikTok Pixel Code End -->
   <link rel="preconnect" href="https://analytics.tiktok.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -431,7 +421,7 @@
         <div style="font-size: 13px; color: #d0d0d0;">Schließe 2 Deals ab, um dein volles Verdienstpotenzial freizuschalten</div>
       </div>
 
-      <a href="https://trkio.org/aff_c?offer_id=3531&aff_id=17554&source=A4" class="cta-btn">
+      <a href="https://trkfy.org/aff_c?offer_id=3530&aff_id=9155&source=de" class="cta-btn">
         Jetzt teilnehmen →
       </a>
 
@@ -467,7 +457,7 @@
       var qualifierSelect = document.getElementById('qualifierSelect');
       qualifierSelect.addEventListener('change', function() {
         if (window.ttq) {
-          ttq.track('AddToCart', { content_type: 'product', content_id: 'rewards-app-100', value: 0.5, currency: 'EUR' });
+          ttq.track('ClickButton');
         }
 
         var loading = document.getElementById('loadingOverlay');
