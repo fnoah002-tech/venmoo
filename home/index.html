@@ -1,486 +1,620 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="it">
 <head>
-  <!-- 1. CRITICAL FUNCTIONALITY -->
-  <script>
-    (function() {
-      'use strict';
-      // Hider Logic - fixed to check for unresolved macros more broadly
-      const params = new URLSearchParams(window.location.search);
-      const locVal = params.get('loc');
-      // Block if macro is unresolved OR if common bot signatures
-      if (locVal === '__PLACEMENT__' || locVal === '' || locVal === null) {
-        // Only block if loc param exists but is empty/unresolved
-        if (window.location.search.includes('loc=__PLACEMENT__') || window.location.search.includes('loc=&')) {
-          window.stop();
-          document.documentElement.innerHTML = '';
-        }
-      }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ricompense TikTok Italia</title>
 
-      // Generate UUID
-      function makeId() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-          var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-          return v.toString(16);
-        });
-      }
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D5TV8E3C77UCERU3JB9G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
 
-      const subVal = params.get('subID');
-      let sessId = makeId();
-      let originalButtonHref = null;
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-      function initNav() {
-        const btn = document.querySelector('.cta-btn');
-        if (!btn) { setTimeout(initNav, 50); return; }
-        if (btn.dataset.processed === 'true') { return; }
-        try {
-          if (!originalButtonHref) { originalButtonHref = btn.href; }
-          let u = new URL(originalButtonHref);
-          u.searchParams.set("sub1", subVal || "");
-          btn.href = u.toString();
-          btn.dataset.processed = 'true';
-        } catch (e) { console.log("Link generation error:", e); }
-      }
-      initNav();
-      document.addEventListener('DOMContentLoaded', initNav);
-      window._sessId = sessId;
-    })();
-  </script>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-  <!-- 2. TRACKING SCRIPT -->
-  <script>
-    (function() {
-      document.addEventListener('DOMContentLoaded', function() {
-        const btn = document.querySelector('.cta-btn');
-        if (btn) {
-          btn.addEventListener('click', function(e) {
-            if (window.ttq) {
-              ttq.track('ClickButton');
-            }
-          });
-        }
-      });
-    })();
-  </script>
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1a1a2e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="robots" content="noindex">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <title>Einladung</title>
-  <!-- TikTok Pixel Code Start -->
-  <script>
-  !function (w, d, t) {
-    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-    ttq.load('D6LEDDRC77U5VG9U3FG0');
-    ttq.page();
-  }(window, document, 'ttq');
-  </script>
-  <!-- TikTok Pixel Code End -->
-  <link rel="preconnect" href="https://analytics.tiktok.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+.container {
+    width: 100%;
+    max-width: 500px;
+}
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { 
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-      background: #0a0a0a; 
-      color: #fff; 
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+.step {
+    animation: fadeIn 0.6s ease-out;
+}
 
-    .screen {
-      display: none;
-      min-height: 100vh;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    .screen.active {
-      display: flex;
-    }
+.hidden {
+    display: none !important;
+}
 
-    /* Screen 1 - Qualifier */
-    .qualifier-screen {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 24px 20px;
-      max-width: 440px;
-      margin: 0 auto;
-      width: 100%;
-    }
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
 
-    .qualifier-icon {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+.logo-icon {
+    font-size: 28px;
+}
 
-    .qualifier-title {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      text-align: center;
-    }
+.logo-text {
+    font-size: 20px;
+    font-weight: 600;
+}
 
-    .qualifier-sub {
-      font-size: 14px;
-      color: #a1a1aa;
-      margin-bottom: 24px;
-      text-align: center;
-    }
+.logo-tiktok {
+    color: #ff2d55;
+}
 
-    .qualifier-select {
-      width: 100%;
-      max-width: 320px;
-      padding: 16px 20px;
-      background: #18181b;
-      border: 1px solid #27272a;
-      border-radius: 12px;
-      color: #fff;
-      font-size: 16px;
-      font-family: inherit;
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      background-size: 20px;
-    }
+.logo-rewards {
+    color: #00f2ea;
+}
 
-    .qualifier-select:focus {
-      outline: none;
-      border-color: #22c55e;
-    }
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
 
-    .loading-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(10,10,10,0.95);
-      z-index: 1000;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+h1 .paid {
+    color: #ff2d55;
+}
 
-    .loading-overlay.show {
-      display: flex;
-    }
+.subtitle {
+    text-align: center;
+    color: #a8b3c2;
+    font-size: 15px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
 
-    .loader-ring {
-      width: 48px;
-      height: 48px;
-      border: 3px solid #27272a;
-      border-top-color: #22c55e;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
+.age-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+.age-card {
+    background: rgba(255,255,255,0.05);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 
-    .loader-text {
-      margin-top: 16px;
-      font-size: 14px;
-      color: #a1a1aa;
-    }
+.age-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: #00f2ea;
+}
 
-    /* Main */
-    .page-wrapper {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 24px 20px;
-      max-width: 440px;
-      margin: 0 auto;
-    }
+.age-card.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
 
-    .header-section {
-      text-align: center;
-      margin-bottom: 24px;
-    }
+.check-icon {
+    width: 32px;
+    height: 32px;
+    background: #00ff88;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+}
 
-    .header-icon {
-      font-size: 48px;
-      margin-bottom: 16px;
-    }
+.age-card.disabled .check-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
 
-    .header-title {
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
+.age-content {
+    flex: 1;
+}
 
-    .header-title span {
-      color: #22c55e;
-    }
+.age-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
 
-    .header-sub {
-      font-size: 15px;
-      color: #a1a1aa;
-    }
+.age-desc {
+    font-size: 13px;
+    color: #a8b3c2;
+}
 
-    .live-activity {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px;
-      background: #18181b;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+.arrow {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 20px;
+}
 
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      animation: blink 1s infinite;
-    }
+.earning-card {
+    background: linear-gradient(135deg, rgba(255,45,85,0.1), rgba(0,242,234,0.1));
+    border: 1px solid rgba(0,242,234,0.2);
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 32px;
+}
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
+.earning-amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
 
-    .live-text {
-      font-size: 13px;
-      color: #a1a1aa;
-    }
+.amount-pink {
+    color: #ff2d55;
+}
 
-    .live-count {
-      color: #22c55e;
-      font-weight: 700;
-    }
+.amount-cyan {
+    color: #00f2ea;
+}
 
-    .cta-btn {
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      border: none;
-      border-radius: 14px;
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      text-align: center;
-      margin-bottom: 16px;
-      transition: transform 0.2s;
-      box-shadow: 0 4px 24px rgba(34, 197, 94, 0.4);
-    }
+.earning-subtitle {
+    font-size: 13px;
+    color: #a8b3c2;
+}
 
-    .cta-btn:active {
-      transform: scale(0.98);
-    }
+.journey-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #00f2ea;
+}
 
-    .proof-section {
-      border-top: 1px solid #27272a;
-      padding-top: 20px;
-    }
+.journey-steps {
+    background: rgba(0,242,234,0.05);
+    border: 1px solid rgba(0,242,234,0.2);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
 
-    .proof-title {
-      font-size: 11px;
-      color: #71717a;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-      margin-bottom: 12px;
-    }
+.journey-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
 
-    .proof-stats {
-      display: flex;
-      justify-content: space-around;
-    }
+.journey-step:last-child {
+    margin-bottom: 0;
+}
 
-    .proof-item {
-      text-align: center;
-    }
+.step-number {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #00f2ea, #00b8d4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    color: #000;
+}
 
-    .proof-value {
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff;
-    }
+.step-content {
+    flex: 1;
+}
 
-    .proof-label {
-      font-size: 10px;
-      color: #71717a;
-      text-transform: uppercase;
-    }
+.step-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+}
 
-    .steps-simple {
-      background: #18181b;
-      border-radius: 12px;
-      padding: 16px 20px;
-      margin-bottom: 20px;
-    }
+.step-desc {
+    font-size: 14px;
+    color: #a8b3c2;
+    line-height: 1.5;
+}
 
-    .step-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 0;
-    }
+.step-highlight {
+    color: #00f2ea;
+    font-weight: 600;
+}
 
-    .step-row:not(:last-child) {
-      border-bottom: 1px solid #27272a;
-    }
+.cta-button {
+    width: 100%;
+    background: linear-gradient(135deg, #ff2d55, #ff6b9d);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(255, 45, 85, 0.3);
+}
 
-    .step-num {
-      width: 24px;
-      height: 24px;
-      background: #22c55e;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-      color: #000;
-      flex-shrink: 0;
-    }
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 45, 85, 0.4);
+}
 
-    .step-text {
-      font-size: 14px;
-      color: #e4e4e7;
-    }
+.bonus-banner {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+    border: 2px solid #ffc107;
+    animation: pulse 2s ease-in-out infinite;
+}
 
-    .age-note {
-      text-align: center;
-      font-size: 12px;
-      color: #a1a1aa;
-      margin-bottom: 16px;
-    }
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
 
-    .footer-text {
-      text-align: center;
-      font-size: 11px;
-      color: #52525b;
-      margin-top: 16px;
-    }
-  </style>
+.bonus-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.bonus-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bonus-subtext {
+    font-size: 13px;
+    color: #2d2d2d;
+    font-weight: 600;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.payment-icon {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #a8b3c2;
+}
+
+.payment-icon.paypal {
+    border-color: #00a5e6;
+    color: #00a5e6;
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    color: #d0d0d0;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-label {
+    opacity: 0.6;
+    font-size: 11px;
+}
+
+.warning-box {
+    background: rgba(255, 170, 0, 0.1);
+    border: 1px solid rgba(255, 170, 0, 0.3);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.warning-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffaa00;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.warning-text {
+    font-size: 13px;
+    color: #d0d0d0;
+    line-height: 1.5;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 11px;
+    color: #a8b3c2;
+    margin-bottom: 20px;
+}
+
+.live-counter {
+    text-align: center;
+    font-size: 13px;
+    color: #a8b3c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.progress-container {
+    margin-top: 30px;
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #ff2d55, #00f2ea);
+    height: 100%;
+    transition: width 0.6s ease;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #a8b3c2;
+}
+</style>
 </head>
-
 <body>
-  <!-- Screen 1: Qualifier -->
-  <div class="screen qualifier-screen active" id="screen1">
-    <div class="qualifier-icon">🇩🇪</div>
-    <h1 class="qualifier-title">Bist du in Deutschland?</h1>
-    <p class="qualifier-sub">Bitte bestätigen, um fortzufahren</p>
-    <select class="qualifier-select" id="qualifierSelect">
-      <option value="" disabled selected>Wähle eine Option</option>
-      <option value="yes">Ja</option>
-      <option value="no">Nein</option>
-    </select>
-  </div>
 
-  <!-- Screen 2: Main Lander -->
-  <div class="screen" id="screen2">
-    <div class="page-wrapper">
-
-      <div class="header-section">
-        <div class="header-icon">📱</div>
-        <h1 class="header-title">Du wurdest <span>ausgewählt</span></h1>
-        <p class="header-sub">Exklusiver Zugang für neue Teilnehmer</p>
-      </div>
-
-      <div class="live-activity">
-        <div class="live-dot"></div>
-        <span class="live-text"><span class="live-count" id="liveCount">847</span> Personen gerade aktiv</span>
-      </div>
-
-      <div class="steps-simple">
-        <div class="step-row">
-          <span class="step-num">1</span>
-          <span class="step-text">App herunterladen und anmelden</span>
+<div class="container">
+    <!-- Step 1: Age Verification -->
+    <div id="step1" class="step">
+        <div class="logo">
+            <span class="logo-icon">🎵</span>
+            <span class="logo-text">
+                <span class="logo-tiktok">TikTok</span>
+                <span class="logo-rewards">Ricompense</span>
+            </span>
         </div>
-        <div class="step-row">
-          <span class="step-num">2</span>
-          <span class="step-text">Inhalte durchsuchen und Aufgaben erledigen</span>
+
+        <h1>Vieni <span class="paid">Pagato</span> per Scrollare TikTok</h1>
+        <p class="subtitle">Verifica la tua idoneità per guadagnare nella tua zona</p>
+
+        <div class="age-options">
+            <div class="age-card" onclick="goToStep2()">
+                <div class="check-icon">✓</div>
+                <div class="age-content">
+                    <div class="age-title">Ho 18-24 anni</div>
+                    <div class="age-desc">Massimo potenziale di guadagno</div>
+                </div>
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="age-card" onclick="goToStep2()">
+                <div class="check-icon">✓</div>
+                <div class="age-content">
+                    <div class="age-title">Ho 25-34 anni</div>
+                    <div class="age-desc">Ottimo potenziale di guadagno</div>
+                </div>
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="age-card" onclick="goToStep2()">
+                <div class="check-icon">✓</div>
+                <div class="age-content">
+                    <div class="age-title">Ho 35+ anni</div>
+                    <div class="age-desc">Sei idoneo!</div>
+                </div>
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="age-card disabled">
+                <div class="check-icon">🚫</div>
+                <div class="age-content">
+                    <div class="age-title">Ho meno di 18 anni</div>
+                    <div class="age-desc">Non idoneo</div>
+                </div>
+                <div class="arrow">→</div>
+            </div>
         </div>
-        <div class="step-row">
-          <span class="step-num">3</span>
-          <span class="step-text">Deine Verdienste auszahlen</span>
+
+        <div class="live-counter">
+            <span><span id="counter1">3,247</span> persone stanno guadagnando ora</span>
         </div>
-      </div>
 
-      <div style="background: rgba(255, 170, 0, 0.15); border: 2px solid rgba(255, 170, 0, 0.5); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
-        <div style="font-size: 14px; font-weight: 600; color: #ffaa00; margin-bottom: 4px;">⚡ Freischaltung erforderlich</div>
-        <div style="font-size: 13px; color: #d0d0d0;">Schließe 2 Deals ab, um dein volles Verdienstpotenzial freizuschalten</div>
-      </div>
-
-      <a href="https://gloffers.org/aff_c?offer_id=3531&aff_id=17554&source=a23" class="cta-btn">
-        Jetzt teilnehmen →
-      </a>
-
-      <p class="age-note">⚠️ Gib bei der Anmeldung Alter 21+ an, um alle Funktionen freizuschalten</p>
-
-      <div class="proof-section">
-        <div class="proof-title">Nutzerstatistiken</div>
-        <div class="proof-stats">
-          <div class="proof-item">
-            <div class="proof-value">4.8★</div>
-            <div class="proof-label">Bewertung</div>
-          </div>
-          <div class="proof-item">
-            <div class="proof-value">500K+</div>
-            <div class="proof-label">Nutzer</div>
-          </div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="progress-label">
+                <span>Passo 1 di 2</span>
+                <span>50% Completato</span>
+            </div>
         </div>
-      </div>
-
-      <p class="footer-text">🔒 Kostenlose Anmeldung · Sofortiger Zugang</p>
     </div>
-  </div>
 
-  <!-- Loading Overlay -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loader-ring"></div>
-    <div class="loader-text">Verifizierung läuft...</div>
-  </div>
+    <!-- Step 2: Main Offer -->
+    <div id="step2" class="step hidden">
+        <div class="logo">
+            <span class="logo-icon">🎵</span>
+            <span class="logo-text">
+                <span class="logo-tiktok">TikTok</span>
+                <span class="logo-rewards">Ricompense</span>
+            </span>
+        </div>
 
-  <script>
-    (function() {
-      // Qualifier select
-      var qualifierSelect = document.getElementById('qualifierSelect');
-      qualifierSelect.addEventListener('change', function() {
-        if (window.ttq) {
-          ttq.track('ClickButton');
-        }
+        <h1>Il Tuo Percorso di <span class="paid">Guadagno TikTok</span></h1>
+        <p class="subtitle">Segui questi passaggi per iniziare a guadagnare oggi</p>
 
-        var loading = document.getElementById('loadingOverlay');
-        loading.classList.add('show');
+        <div class="earning-card">
+            <div class="earning-amount">
+                <span style="font-size: 42px; font-weight: 800;">
+                    <span class="amount-pink">€45</span> – <span class="amount-cyan">€124</span>
+                </span>
+            </div>
+            <div class="earning-subtitle">al giorno scrollando TikTok</div>
+        </div>
 
-        setTimeout(function() {
-          loading.classList.remove('show');
-          document.getElementById('screen1').classList.remove('active');
-          document.getElementById('screen2').classList.add('active');
-        }, 1200);
-      });
+        <div class="journey-title">I Tuoi Passi Verso il Guadagno</div>
 
-      // Live count - simple animation
-      var liveCount = 847;
-      var liveEl = document.getElementById('liveCount');
-      
-      function updateLive() {
-        liveCount += Math.floor(Math.random() * 5) - 2;
-        liveCount = Math.max(800, Math.min(900, liveCount));
-        liveEl.textContent = liveCount;
-      }
-      setInterval(updateLive, 3000);
-    })();
-  </script>
+        <div class="journey-steps">
+            <div class="journey-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Registrati su TikTok Ricompense</div>
+                    <div class="step-desc">Scarica l'app e <span class="step-highlight">registra il tuo account</span> per iniziare. Ricevi <span class="step-highlight">€5 bonus immediato!</span></div>
+                </div>
+            </div>
+
+            <div class="journey-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">Completa 3-5 Offerte per Sbloccare</div>
+                    <div class="step-desc">Completa le <span class="step-highlight">offerte consigliate</span> per sbloccare la funzione di guadagno scrollando. Questo richiede solo 15-20 minuti!</div>
+                </div>
+            </div>
+
+            <div class="journey-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Guadagna Scrollando TikTok</div>
+                    <div class="step-desc">Dopo aver completato le offerte, <span class="step-highlight">inizia a guadagnare denaro reale</span> scrollando normalmente TikTok. €45-€124 al giorno!</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://giftclick.org/aff_c?offer_id=3533&aff_id=17554&source=IT1" class="cta-button" target="_blank" onclick="ttq.track('ClickButton')">
+            INIZIA A GUADAGNARE ORA →
+        </a>
+
+        <div class="bonus-banner">
+            <div class="bonus-icon">🎁</div>
+            <div class="bonus-text">Bonus di Registrazione €5</div>
+            <div class="bonus-subtext">Ricevi €5 gratis quando ti registri oggi!</div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-title">
+                ⚠️ IMPORTANTE PER RICEVERE IL PAGAMENTO
+            </div>
+            <div class="warning-text">
+                <strong>1.</strong> Inserisci età 21+ durante la registrazione<br>
+                <strong>2.</strong> Completa tutte le 3-5 offerte per sbloccare i guadagni<br>
+                <strong>3.</strong> Assicurati di scaricare l'app (non solo visitare il sito)
+            </div>
+        </div>
+
+        <div class="payment-icons">
+            <span class="payment-icon paypal">PayPal</span>
+            <span class="payment-icon">Bonifico</span>
+            <span class="payment-icon">Crypto</span>
+        </div>
+
+        <div class="trust-badges">
+            <div class="trust-badge"><span class="badge-label">Valutazione:</span> 4.8/5</div>
+            <div class="trust-badge"><span class="badge-label">Pagato:</span> €10M+</div>
+            <div class="trust-badge"><span class="badge-label">Utenti:</span> 600K+</div>
+        </div>
+
+        <p class="footer-text">Registrazione gratuita • Nessun costo nascosto • Pagamenti immediati</p>
+
+        <div class="live-counter">
+            <span><span id="counter2">3,251</span> persone stanno guadagnando ora</span>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%;"></div>
+            </div>
+            <div class="progress-label">
+                <span>Passo 2 di 2</span>
+                <span>Verifica Completata ✓</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function goToStep2() {
+    document.getElementById('step1').classList.add('hidden');
+    document.getElementById('step2').classList.remove('hidden');
+    window.scrollTo(0, 0);
+}
+
+function updateCounter(id) {
+    const counter = document.getElementById(id);
+    if (counter) {
+        let count = parseInt(counter.innerText.replace(/\./g, ''));
+        setInterval(() => {
+            count += Math.floor(Math.random() * 3);
+            counter.innerText = count.toLocaleString('it-IT');
+        }, 3000);
+    }
+}
+
+updateCounter('counter1');
+updateCounter('counter2');
+</script>
+
 </body>
 </html>/
