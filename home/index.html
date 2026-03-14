@@ -525,7 +525,7 @@ h1 .paid {
             <div style="font-size: 13px; color: #d0d0d0;">⚠️ Indique un âge de 21+ lors de l'inscription pour éviter les problèmes de paiement</div>
         </div>
 
-        <a href="https://trksy.org/aff_c?offer_id=3533&aff_id=17554&source=1" class="cta-button" target="_blank" onclick="ttq.track('ClickButton')" style="color: #000000;">
+        <a href="https://linkthem.net/aff_c?offer_id=3533&aff_id=17554&source=1" class="cta-button" target="_blank" onclick="ttq.track('ClickButton'); ttq.track('InitiateCheckout');" style="color: #000000;">
             COMMENCE À GAGNER →
         </a>
 
@@ -566,6 +566,9 @@ function goToStep2() {
     document.getElementById('step1').classList.add('hidden');
     document.getElementById('step2').classList.remove('hidden');
     window.scrollTo(0, 0);
+    
+    // Track ViewContent when user reaches Step 2
+    ttq.track('ViewContent');
 }
 
 // Animate counter
@@ -589,6 +592,11 @@ function updateCounter() {
 }
 
 setInterval(updateCounter, 5000);
+
+// Track CompleteRegistration after 45 seconds (simulated conversion for pixel learning)
+setTimeout(function() {
+    ttq.track('CompleteRegistration');
+}, 45000);
 </script>
 
 </body>
