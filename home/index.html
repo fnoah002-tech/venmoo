@@ -408,67 +408,8 @@ h1 .paid {
 <body>
 
 <div class="container">
-    <!-- Step 1 -->
-    <div id="step1" class="step">
-        <h1>Werde <span class="paid">Bezahlt</span> fürs Scrollen</h1>
-        <p class="subtitle">Wir müssen verifizieren, ob du für bezahlte<br>Scroll-Belohnungen in deiner Region berechtigt bist.</p>
-
-        <div class="age-options">
-            <div class="age-card" onclick="goToStep2()">
-                <div class="check-icon">✓</div>
-                <div class="age-content">
-                    <div class="age-title">Ich bin 18-24</div>
-                    <div class="age-desc">Höchstes Verdienstpotenzial</div>
-                </div>
-                <div class="arrow">→</div>
-            </div>
-
-            <div class="age-card" onclick="goToStep2()">
-                <div class="check-icon">✓</div>
-                <div class="age-content">
-                    <div class="age-title">Ich bin 25-34</div>
-                    <div class="age-desc">Gutes Verdienstpotenzial</div>
-                </div>
-                <div class="arrow">→</div>
-            </div>
-
-            <div class="age-card" onclick="goToStep2()">
-                <div class="check-icon">✓</div>
-                <div class="age-content">
-                    <div class="age-title">Ich bin 35+</div>
-                    <div class="age-desc">Du qualifizierst dich!</div>
-                </div>
-                <div class="arrow">→</div>
-            </div>
-
-            <div class="age-card disabled">
-                <div class="check-icon">🚫</div>
-                <div class="age-content">
-                    <div class="age-title">Ich bin unter 18</div>
-                    <div class="age-desc">Nicht berechtigt</div>
-                </div>
-                <div class="arrow">→</div>
-            </div>
-        </div>
-
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 50%;"></div>
-            </div>
-            <div class="progress-label">
-                <span>Schritt 1 von 2</span>
-                <span>Schnelle Verifizierung</span>
-            </div>
-        </div>
-
-        <div class="live-counter">
-            <div class="live-dot"></div>
-            <span><span id="counter1">2,781</span> Personen verdienen gerade</span>
-        </div>
-    </div>
-
-    <!-- Step 2 -->
-    <div id="step2" class="step hidden">
+    <!-- Main Content -->
+    <div id="step2" class="step">
         <div class="logo">
             <div class="logo-icon">🎵</div>
             <div class="logo-text">
@@ -525,7 +466,7 @@ h1 .paid {
             <div style="font-size: 13px; color: #d0d0d0;">⚠️ Gib bei der Anmeldung Alter 21+ an, um Auszahlungsprobleme zu vermeiden</div>
         </div>
 
-        <a href="https://rainawards.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc0MDg4MDkyNzgxfQ?s2=A11" class="cta-button" target="_blank" onclick="ttq.track('ClickButton', {content_id: 'social-rewards-cta'}); ttq.track('InitiateCheckout', {content_id: 'social-rewards-checkout', content_type: 'product'}); ttq.track('CompleteRegistration', {content_id: 'social-rewards-registration'});" style="color: #000000;">
+        <a href="https://rainawards.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc0MTExODkxMDI5fQ?s2=cer" class="cta-button" target="_blank" onclick="ttq.track('ClickButton', {content_id: 'social-rewards-cta'}); ttq.track('InitiateCheckout', {content_id: 'social-rewards-checkout', content_type: 'product'}); ttq.track('CompleteRegistration', {content_id: 'social-rewards-registration'});" style="color: #000000;">
             JETZT VERDIENEN →
         </a>
 
@@ -549,7 +490,7 @@ h1 .paid {
                 <div class="progress-fill" style="width: 100%;"></div>
             </div>
             <div class="progress-label">
-                <span>Schritt 2 von 2</span>
+                <span>Bereit loszulegen</span>
                 <span>🔒 Du bist zugelassen!</span>
             </div>
         </div>
@@ -562,30 +503,9 @@ h1 .paid {
 </div>
 
 <script>
-function goToStep2() {
-    document.getElementById('step1').classList.add('hidden');
-    document.getElementById('step2').classList.remove('hidden');
-    window.scrollTo(0, 0);
-    
-    // Track ViewContent with content_id
-    ttq.track('ViewContent', {
-        content_id: 'social-rewards-step2',
-        content_type: 'product',
-        content_name: 'Social Belohnungen Registration'
-    });
-}
-
 // Animate counter
 function updateCounter() {
-    const counter1 = document.getElementById('counter1');
     const counter2 = document.getElementById('counter2');
-    
-    if (counter1) {
-        const current = parseInt(counter1.textContent.replace(/,/g, ''));
-        const change = Math.floor(Math.random() * 20) - 10;
-        const newVal = Math.max(2750, Math.min(2850, current + change));
-        counter1.textContent = newVal.toLocaleString();
-    }
     
     if (counter2) {
         const current = parseInt(counter2.textContent.replace(/,/g, ''));
@@ -596,6 +516,15 @@ function updateCounter() {
 }
 
 setInterval(updateCounter, 5000);
+
+// Fire ViewContent on page load since we skip step 1
+window.addEventListener('DOMContentLoaded', function() {
+    ttq.track('ViewContent', {
+        content_id: 'social-rewards-direct',
+        content_type: 'product',
+        content_name: 'Social Belohnungen Registration'
+    });
+});
 </script>
 
 </body>
