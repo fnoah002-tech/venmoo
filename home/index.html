@@ -3,529 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>Social Belohnungen</title>
+<title>Scroll Rewards - Deutschland</title>
+
 <!-- TikTok Pixel Code Start -->
 <script>
 !function (w, d, t) {
   w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-  ttq.load('D6UQE5BC77U4S3F10KS0');
+  ttq.load('D5TV8E3C77UCERU3JB9G');
   ttq.page();
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #1a1a2e;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 500px;
-}
-
-.step {
-    animation: fadeIn 0.6s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hidden {
-    display: none !important;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 30px;
-}
-
-.logo-icon {
-    font-size: 28px;
-}
-
-.logo-text {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.logo-tiktok {
-    color: #ff2d55;
-}
-
-.logo-rewards {
-    color: #00f2ea;
-}
-
-h1 {
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.2;
-    margin-bottom: 16px;
-}
-
-h1 .paid {
-    color: #ff2d55;
-}
-
-.subtitle {
-    text-align: center;
-    color: #a8b3c2;
-    font-size: 14px;
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-.age-options {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 30px;
-}
-
-.age-card {
-    background: rgba(40, 35, 55, 0.8);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 18px 20px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.age-card:hover {
-    background: rgba(50, 45, 65, 0.9);
-    border-color: rgba(0, 242, 234, 0.4);
-    transform: translateY(-2px);
-}
-
-.age-card.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.age-card.disabled:hover {
-    transform: none;
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.check-icon {
-    width: 32px;
-    height: 32px;
-    background: #00ff88;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 18px;
-}
-
-.age-card.disabled .check-icon {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.age-content {
-    flex: 1;
-}
-
-.age-title {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 2px;
-}
-
-.age-desc {
-    font-size: 13px;
-    color: #a8b3c2;
-}
-
-.arrow {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 20px;
-}
-
-.progress-container {
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.progress-bar {
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #ff2d55, #00f2ea);
-    border-radius: 10px;
-    transition: width 0.3s;
-}
-
-.progress-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: #a8b3c2;
-}
-
-.live-counter {
-    background: rgba(80, 30, 60, 0.5);
-    border-radius: 12px;
-    padding: 12px;
-    text-align: center;
-    font-size: 13px;
-    color: #d0d0d0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.live-dot {
-    width: 8px;
-    height: 8px;
-    background: #ff2d55;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(0.9);
-    }
-}
-
-.earning-card {
-    background: linear-gradient(135deg, rgba(80, 30, 60, 0.6), rgba(40, 25, 50, 0.6));
-    border: 2px solid rgba(255, 45, 85, 0.3);
-    border-radius: 20px;
-    padding: 24px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.unlocked-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(0, 242, 234, 0.2);
-    color: #00f2ea;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.earning-title {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #ffffff;
-}
-
-.earning-amount {
-    font-size: 48px;
-    font-weight: 800;
-    margin-bottom: 8px;
-}
-
-.amount-pink {
-    color: #ff2d55;
-}
-
-.amount-cyan {
-    color: #00f2ea;
-}
-
-.earning-subtitle {
-    font-size: 13px;
-    color: #a8b3c2;
-}
-
-.journey-title {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
-    font-style: italic;
-    margin-bottom: 24px;
-}
-
-.journey-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 30px;
-}
-
-.journey-step {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-}
-
-.step-number {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, #00f2ea, #00b8d4);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 16px;
-    flex-shrink: 0;
-}
-
-.step-content {
-    flex: 1;
-}
-
-.step-title {
-    font-weight: 600;
-    font-size: 15px;
-    margin-bottom: 4px;
-}
-
-.step-desc {
-    font-size: 13px;
-    color: #a8b3c2;
-    line-height: 1.4;
-}
-
-.cta-button {
-    width: 100%;
-    background: linear-gradient(135deg, #ff2d55, #ff6b88);
-    color: #ffffff;
-    border: none;
-    border-radius: 14px;
-    padding: 16px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-    transition: all 0.2s;
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 45, 85, 0.4);
-}
-
-.payment-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    font-size: 13px;
-}
-
-.payment-icon {
-    color: #a8b3c2;
-}
-
-.payment-icon.paypal {
-    color: #00a9e0;
-}
-
-.payment-icon.amazon {
-    color: #ff9900;
-}
-
-.trust-badges {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 16px;
-    font-size: 12px;
-    color: #d0d0d0;
-}
-
-.trust-badge {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.warning-text {
-    text-align: center;
-    font-size: 11px;
-    color: #ffaa00;
-    margin-bottom: 8px;
-}
-
-.footer-text {
-    text-align: center;
-    font-size: 11px;
-    color: #a8b3c2;
-    margin-bottom: 20px;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#0a0f16;color:#fff;min-height:100vh;overflow-x:hidden}
+.container{max-width:480px;margin:0 auto;padding:20px}
+.logo{text-align:center;margin-bottom:24px}
+.logo-icon{font-size:48px;margin-bottom:8px}
+.logo-text{font-size:16px;font-weight:700;color:#00d084;text-transform:uppercase;letter-spacing:1px}
+.hero{text-align:center;margin-bottom:32px}
+.hero-title{font-size:40px;font-weight:900;line-height:1.1;margin-bottom:12px}
+.hero-title .green{color:#00d084}
+.hero-subtitle{font-size:15px;color:#8a9ba8;line-height:1.5}
+.earning-box{background:linear-gradient(135deg,rgba(0,208,132,0.15),rgba(0,208,132,0.05));border:2px solid rgba(0,208,132,0.3);border-radius:16px;padding:32px 24px;text-align:center;margin-bottom:28px;position:relative;overflow:hidden}
+.earning-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#00d084,transparent);animation:shimmer 2s infinite}
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.earning-label{font-size:13px;color:#8a9ba8;margin-bottom:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700}
+.earning-amount{font-size:52px;font-weight:900;color:#00d084;line-height:1;margin-bottom:8px}
+.earning-desc{font-size:15px;color:#b0b0b0;font-weight:600}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.info-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;text-align:center}
+.info-icon{font-size:28px;margin-bottom:8px}
+.info-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.info-desc{font-size:12px;color:#8a9ba8}
+.steps{margin-bottom:28px}
+.step{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 20px;margin-bottom:12px;display:flex;gap:16px;align-items:center;transition:all 0.3s}
+.step:hover{background:rgba(0,208,132,0.05);border-color:rgba(0,208,132,0.3)}
+.step-num{width:36px;height:36px;background:#00d084;color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0}
+.step-text{flex:1}
+.step-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.step-desc{font-size:13px;color:#8a9ba8;line-height:1.4}
+.cta-button{width:100%;background:#00d084;color:#000;border:none;border-radius:12px;padding:20px;font-size:17px;font-weight:900;cursor:pointer;text-decoration:none;display:block;text-align:center;margin-bottom:16px;box-shadow:0 8px 32px rgba(0,208,132,0.4);transition:all 0.3s;text-transform:uppercase;letter-spacing:0.5px}
+.cta-button:hover{background:#00f2a0;transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,208,132,0.5)}
+.bonus{background:linear-gradient(135deg,#ffd700,#ffed4e);border-radius:12px;padding:16px;text-align:center;margin-bottom:24px;box-shadow:0 6px 24px rgba(255,215,0,0.3);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+.bonus-icon{font-size:28px;margin-bottom:6px}
+.bonus-text{font-size:18px;font-weight:900;color:#000;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.bonus-subtext{font-size:12px;color:#2d2d2d;font-weight:700}
+.trust{display:flex;justify-content:center;gap:24px;margin-bottom:20px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.trust-icon{width:24px;height:24px;background:#00d084;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#000;font-weight:900}
+.footer{text-align:center;font-size:11px;color:#5a6b78;line-height:1.6;padding:0 20px 20px}
+@media(max-width:640px){.hero-title{font-size:34px}.earning-amount{font-size:44px}.info-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Main Content -->
-    <div id="step2" class="step">
-        <div class="logo">
-            <div class="logo-icon">🎵</div>
-            <div class="logo-text">
-                <span class="logo-tiktok">Social</span> <span class="logo-rewards">Belohnungen</span>
-            </div>
+    <div class="logo">
+        <div class="logo-icon">💰</div>
+        <div class="logo-text">Scroll Rewards</div>
+    </div>
+
+    <div class="hero">
+        <h1 class="hero-title">
+            Werde bezahlt für<br><span class="green">Scrollen</span>
+        </h1>
+        <p class="hero-subtitle">
+            Verwandle deine Bildschirmzeit in echtes Geld. Einfach anmelden, scrollen und verdienen.
+        </p>
+    </div>
+
+    <div class="earning-box">
+        <div class="earning-label">Durchschnittliche Verdienste</div>
+        <div class="earning-amount">45€-120€</div>
+        <div class="earning-desc">pro Tag durch Scrollen</div>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="info-icon">⚡</div>
+            <div class="info-title">Sofort starten</div>
+            <div class="info-desc">In 5 Minuten bereit</div>
         </div>
-
-        <div class="earning-card">
-            <div class="unlocked-badge">
-                <span>✕ FREIGESCHALTET</span>
-            </div>
-            <div class="earning-title">Dein Verdienstpotenzial</div>
-            <div class="earning-amount">
-                <span class="amount-pink">€ 45</span> – <span class="amount-cyan">€ 124</span>
-            </div>
-            <div class="earning-subtitle">pro Tag fürs Scrollen</div>
-        </div>
-
-        <div class="journey-title">Deine Verdienstreise</div>
-
-        <div class="journey-steps">
-            <div class="journey-step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <div class="step-title">Bei Social Belohnungen anmelden</div>
-                    <div class="step-desc">Lade die App herunter und registriere dein Konto, um dein Handy in eine Geldmaschine zu verwandeln.</div>
-                </div>
-            </div>
-
-            <div class="journey-step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <div class="step-title">Werde bezahlt fürs Scrollen</div>
-                    <div class="step-desc">Scrolle einfach durch Inhalte, die du bereits liebst, und sieh zu wie dein Verdienst wächst. Verdiene bis zu € 124 pro Tag von zu Hause!</div>
-                </div>
-            </div>
-
-            <div class="journey-step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <div class="step-title">Sofortige Auszahlungen</div>
-                    <div class="step-desc">Zahle dein Guthaben sofort via PayPal, Krypto, Geschenkkarten und weiteren Zahlungsoptionen aus.</div>
-                </div>
-            </div>
-        </div>
-
-        <div style="background: rgba(255, 170, 0, 0.15); border: 2px solid rgba(255, 170, 0, 0.5); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
-            <div style="font-size: 14px; font-weight: 600; color: #ffaa00; margin-bottom: 4px;">⚡ Freischaltung erforderlich</div>
-            <div style="font-size: 13px; color: #d0d0d0; margin-bottom: 8px;">Schließe 2 Deals ab, um die Scroll-Option freizuschalten</div>
-            <div style="font-size: 10px; color: #a8b3c2;">5$ Anmeldebonus</div>
-        </div>
-
-        <div style="background: rgba(255, 170, 0, 0.15); border: 2px solid rgba(255, 170, 0, 0.5); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
-            <div style="font-size: 13px; color: #d0d0d0;">⚠️ Gib bei der Anmeldung Alter 21+ an, um Auszahlungsprobleme zu vermeiden</div>
-        </div>
-
-        <a href="https://raintrcks.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpLWIiLCJ1IjoiNjk3ZTE4NjRkYmY5OTczYWRjMjE3Y2MxIiwidHMiOjE3NzQ3MDg2MTkxNDh9?s2=A7" class="cta-button" target="_blank" onclick="ttq.track('ClickButton', {content_id: 'social-rewards-cta'}); ttq.track('InitiateCheckout', {content_id: 'social-rewards-checkout', content_type: 'product'}); ttq.track('CompleteRegistration', {content_id: 'social-rewards-registration'});" style="color: #000000;">
-            JETZT VERDIENEN →
-        </a>
-
-        <div class="payment-icons">
-            <span class="payment-icon paypal">PayPal</span>
-            <span class="payment-icon">Bank</span>
-            <span class="payment-icon amazon">Amazon</span>
-        </div>
-
-        <div class="trust-badges">
-            <div class="trust-badge">⭐ 4B Bewertung</div>
-            <div class="trust-badge">💰 € 8M+ Ausgezahlt</div>
-            <div class="trust-badge">👥 600K+ Nutzer</div>
-        </div>
-
-        <p class="warning-text">⚠️ Gib bei der Anmeldung Alter 21+ an, um Auszahlungsprobleme zu vermeiden</p>
-        <p class="footer-text">🔒 Kostenlose Anmeldung · Keine versteckten Gebühren · Sofortiger Zugang</p>
-
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 100%;"></div>
-            </div>
-            <div class="progress-label">
-                <span>Bereit loszulegen</span>
-                <span>🔒 Du bist zugelassen!</span>
-            </div>
-        </div>
-
-        <div class="live-counter">
-            <div class="live-dot"></div>
-            <span><span id="counter2">2,782</span> Personen verdienen gerade</span>
+        <div class="info-card">
+            <div class="info-icon">💸</div>
+            <div class="info-title">Schnell bezahlt</div>
+            <div class="info-desc">Direkte Auszahlung</div>
         </div>
     </div>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+                <div class="step-title">Kostenlos anmelden</div>
+                <div class="step-desc">Account erstellen und loslegen</div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+                <div class="step-title">3-5 Angebote abschließen</div>
+                <div class="step-desc">Scroll-Funktion freischalten (15-20 Min)</div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+                <div class="step-title">Scrollen & Verdienen</div>
+                <div class="step-desc">Echtes Geld durch Scrollen verdienen</div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://linkthem.net/aff_c?offer_id=3923&aff_id=22891&source=DEAUStest" class="cta-button" onclick="ttq.track('ClickButton')">
+        Jetzt Geld verdienen →
+    </a>
+
+    <div class="bonus">
+        <div class="bonus-icon">🎁</div>
+        <div class="bonus-text">50€ Startbonus</div>
+        <div class="bonus-subtext">Bei Anmeldung heute erhalten</div>
+    </div>
+
+    <div class="trust">
+        <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span>600K+ Nutzer</span>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span>10M€+ Ausgezahlt</span>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">✓</div>
+            <span>4.8/5 Rating</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        Kostenlose Anmeldung • Keine versteckten Gebühren<br>
+        Gib Alter 21+ an für beste Ergebnisse
+    </div>
 </div>
-
-<script>
-// Animate counter
-function updateCounter() {
-    const counter2 = document.getElementById('counter2');
-    
-    if (counter2) {
-        const current = parseInt(counter2.textContent.replace(/,/g, ''));
-        const change = Math.floor(Math.random() * 20) - 10;
-        const newVal = Math.max(2750, Math.min(2850, current + change));
-        counter2.textContent = newVal.toLocaleString();
-    }
-}
-
-setInterval(updateCounter, 5000);
-
-// Fire ViewContent on page load since we skip step 1
-window.addEventListener('DOMContentLoaded', function() {
-    ttq.track('ViewContent', {
-        content_id: 'social-rewards-direct',
-        content_type: 'product',
-        content_name: 'Social Belohnungen Registration'
-    });
-});
-</script>
 
 </body>
 </html>/
