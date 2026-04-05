@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>Social Rewards</title>
+<title>Social Belohnungen</title>
 <!-- TikTok Pixel Code Start -->
 <script>
 !function (w, d, t) {
@@ -104,6 +104,77 @@ h1 .paid {
     font-size: 14px;
     margin-bottom: 30px;
     line-height: 1.5;
+}
+
+.age-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.age-card {
+    background: rgba(40, 35, 55, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.age-card:hover {
+    background: rgba(50, 45, 65, 0.9);
+    border-color: rgba(0, 242, 234, 0.4);
+    transform: translateY(-2px);
+}
+
+.age-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.age-card.disabled:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.check-icon {
+    width: 32px;
+    height: 32px;
+    background: #00ff88;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+}
+
+.age-card.disabled .check-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.age-content {
+    flex: 1;
+}
+
+.age-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.age-desc {
+    font-size: 13px;
+    color: #a8b3c2;
+}
+
+.arrow {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 20px;
 }
 
 .progress-container {
@@ -212,6 +283,14 @@ h1 .paid {
     color: #a8b3c2;
 }
 
+.journey-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
 .journey-steps {
     display: flex;
     flex-direction: column;
@@ -311,6 +390,13 @@ h1 .paid {
     gap: 6px;
 }
 
+.warning-text {
+    text-align: center;
+    font-size: 11px;
+    color: #ffaa00;
+    margin-bottom: 8px;
+}
+
 .footer-text {
     text-align: center;
     font-size: 11px;
@@ -327,56 +413,55 @@ h1 .paid {
         <div class="logo">
             <div class="logo-icon">🎵</div>
             <div class="logo-text">
-                <span class="logo-tiktok">Social</span> <span class="logo-rewards">Rewards</span>
+                <span class="logo-tiktok">Social</span> <span class="logo-rewards">Belohnungen</span>
             </div>
         </div>
 
         <div class="earning-card">
             <div class="unlocked-badge">
-                <span>✕ UNLOCKED</span>
+                <span>✕ FREIGESCHALTET</span>
             </div>
-            <div class="earning-title">Your Earning Potential</div>
+            <div class="earning-title">Dein Verdienstpotenzial</div>
             <div class="earning-amount">
-                <span class="amount-pink">$ 50</span> – <span class="amount-cyan">$ 140</span>
+                <span class="amount-pink">€ 45</span> – <span class="amount-cyan">€ 124</span>
             </div>
-            <div class="earning-subtitle">per day for scrolling</div>
+            <div class="earning-subtitle">pro Tag fürs Scrollen</div>
         </div>
 
         <div class="journey-steps">
             <div class="journey-step">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <div class="step-title">Sign up for Social Rewards</div>
-                    <div class="step-desc">Download the app and register your account.</div>
+                    <div class="step-title">Bei Social Belohnungen anmelden</div>
+                    <div class="step-desc">Lade die App herunter und registriere dein Konto.</div>
                 </div>
             </div>
 
             <div class="journey-step">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <div class="step-title">Get paid for scrolling</div>
-                    <div class="step-desc">Scroll through content and earn up to $ 140 per day!</div>
+                    <div class="step-title">Werde bezahlt fürs Scrollen</div>
+                    <div class="step-desc">Scrolle durch Inhalte und verdiene bis zu € 124 pro Tag!</div>
                 </div>
             </div>
 
             <div class="journey-step">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <div class="step-title">Instant payouts</div>
-                    <div class="step-desc">Withdraw your balance instantly via PayPal, crypto & more.</div>
+                    <div class="step-title">Sofortige Auszahlungen</div>
+                    <div class="step-desc">Zahle dein Guthaben sofort via PayPal, Krypto & mehr aus.</div>
                 </div>
             </div>
         </div>
 
         <div style="background: rgba(255, 170, 0, 0.15); border: 2px solid rgba(255, 170, 0, 0.5); border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 20px;">
-            <div style="font-size: 14px; font-weight: 600; color: #ffaa00; margin-bottom: 4px;">⚡ Unlock Required</div>
-            <div style="font-size: 13px; color: #d0d0d0; margin-bottom: 8px;">Complete 2 deals to unlock the scroll option</div>
-            <div style="font-size: 12px; color: #d0d0d0; margin-bottom: 6px;">⚠️ Enter age 21+ during sign-up to receive payouts</div>
-            <div style="font-size: 10px; color: #a8b3c2;">$5 sign-up bonus</div>
+            <div style="font-size: 14px; font-weight: 600; color: #ffaa00; margin-bottom: 4px;">⚡ Freischaltung erforderlich</div>
+            <div style="font-size: 13px; color: #d0d0d0; margin-bottom: 8px;">Schließe 2 Deals ab, um die Scroll-Option freizuschalten</div>
+            <div style="font-size: 10px; color: #a8b3c2;">5$ Anmeldebonus</div>
         </div>
 
-        <a href="https://raintrcks.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpLWIiLCJ1IjoiNjk3ZTE4NjRkYmY5OTczYWRjMjE3Y2MxIiwidHMiOjE3NzQ4MDcxMDc5OTR9?s2=UU" class="cta-button" target="_blank" onclick="ttq.track('ClickButton', {content_id: 'social-rewards-cta'}); ttq.track('InitiateCheckout', {content_id: 'social-rewards-checkout', content_type: 'product'}); ttq.track('CompleteRegistration', {content_id: 'social-rewards-registration'});" style="color: #000000;">
-            START EARNING →
+        <a href="https://rainawards.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc1Mzc3Nzc5MTI5fQ?s1=A" class="cta-button" target="_blank" onclick="ttq.track('ClickButton', {content_id: 'social-rewards-cta'}); ttq.track('InitiateCheckout', {content_id: 'social-rewards-checkout', content_type: 'product'}); ttq.track('CompleteRegistration', {content_id: 'social-rewards-registration'});" style="color: #000000;">
+            JETZT VERDIENEN →
         </a>
 
         <div class="payment-icons">
@@ -386,26 +471,26 @@ h1 .paid {
         </div>
 
         <div class="trust-badges">
-            <div class="trust-badge">⭐ 4.7 Rating</div>
-            <div class="trust-badge">💰 $8M+ Paid Out</div>
-            <div class="trust-badge">👥 600K+ Users</div>
+            <div class="trust-badge">⭐ 4B Bewertung</div>
+            <div class="trust-badge">💰 € 8M+ Ausgezahlt</div>
+            <div class="trust-badge">👥 600K+ Nutzer</div>
         </div>
 
-        <p class="footer-text">🔒 Free sign-up · No hidden fees · Instant access</p>
+        <p class="footer-text">🔒 Kostenlose Anmeldung · Keine versteckten Gebühren · Sofortiger Zugang</p>
 
         <div class="progress-container">
             <div class="progress-bar">
                 <div class="progress-fill" style="width: 100%;"></div>
             </div>
             <div class="progress-label">
-                <span>Ready to start</span>
-                <span>🔒 You're approved!</span>
+                <span>Bereit loszulegen</span>
+                <span>🔒 Du bist zugelassen!</span>
             </div>
         </div>
 
         <div class="live-counter">
             <div class="live-dot"></div>
-            <span><span id="counter2">2,782</span> people earning now</span>
+            <span><span id="counter2">2,782</span> Personen verdienen gerade</span>
         </div>
     </div>
 </div>
@@ -430,7 +515,7 @@ window.addEventListener('DOMContentLoaded', function() {
     ttq.track('ViewContent', {
         content_id: 'social-rewards-direct',
         content_type: 'product',
-        content_name: 'Social Rewards Registration'
+        content_name: 'Social Belohnungen Registration'
     });
 });
 </script>
