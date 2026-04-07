@@ -333,10 +333,54 @@ h1 .paid {
     line-height: 1.4;
 }
 
+.age-restriction-box {
+    background: linear-gradient(135deg, rgba(0, 242, 234, 0.08), rgba(0, 180, 210, 0.05));
+    border: 1.5px solid rgba(0, 242, 234, 0.35);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.age-restriction-badge {
+    width: 42px;
+    height: 42px;
+    background: rgba(0, 242, 234, 0.15);
+    border: 2px solid #00f2ea;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: #00f2ea;
+    flex-shrink: 0;
+    letter-spacing: -1px;
+}
+
+.age-restriction-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #00f2ea;
+    margin-bottom: 2px;
+}
+
+.age-restriction-text {
+    font-size: 12px;
+    color: #a8b3c2;
+    line-height: 1.4;
+}
+
+.age-restriction-text strong {
+    color: #ffffff;
+}
+
 .cta-button {
     width: 100%;
     background: linear-gradient(135deg, #ff2d55, #ff6b88);
-    color: #ffffff;
+    color: #000000;
     border: none;
     border-radius: 14px;
     padding: 16px;
@@ -460,7 +504,16 @@ h1 .paid {
             <div style="font-size: 10px; color: #a8b3c2;">5$ Anmeldebonus</div>
         </div>
 
-        <a href="https://rainawards.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc1Mzc3Nzc5MTI5fQ?s1=A5" class="cta-button" target="_blank" onclick="ttq.track('ClickButton', {content_id: 'social-rewards-cta'}); ttq.track('InitiateCheckout', {content_id: 'social-rewards-checkout', content_type: 'product'}); ttq.track('CompleteRegistration', {content_id: 'social-rewards-registration'});" style="color: #000000;">
+        <!-- 21+ Altershinweis -->
+        <div class="age-restriction-box">
+            <div class="age-restriction-badge">21+</div>
+            <div>
+                <div class="age-restriction-title">Altersverifizierung erforderlich</div>
+                <div class="age-restriction-text">Du musst <strong>mindestens 21 Jahre alt</strong> sein, um Auszahlungen zu erhalten.</div>
+            </div>
+        </div>
+
+        <a href="https://rainawards.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc1NTA1NzA4MDY4fQ?s1=A1" class="cta-button" target="_blank" onclick="ttq.track('ClickButton', {content_id: 'social-rewards-cta'}); ttq.track('InitiateCheckout', {content_id: 'social-rewards-checkout', content_type: 'product'}); ttq.track('CompleteRegistration', {content_id: 'social-rewards-registration'});">
             JETZT VERDIENEN →
         </a>
 
