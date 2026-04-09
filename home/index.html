@@ -7,6 +7,15 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>Social Belohnungen</title>
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  ttq.load('D5TV8E3C77UCERU3JB9G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,7 +30,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#1a1a2e;color:#fff;
 .logo-rewards{color:#00f2ea}
 .earning-card{background:linear-gradient(135deg,rgba(80,30,60,0.7),rgba(40,25,50,0.7));border:2px solid rgba(255,45,85,0.4);border-radius:16px;padding:18px;text-align:center;margin-bottom:18px}
 .unlocked{display:inline-flex;align-items:center;gap:4px;background:rgba(0,242,234,0.2);color:#00f2ea;padding:4px 10px;border-radius:16px;font-size:11px;font-weight:700;margin-bottom:8px}
-.earning-title{font-size:14px;margin-bottom:8px;color:#fff;font-weight:600}
+.earning-title{font-size:12px;margin-bottom:6px;color:#fff;font-weight:600}
 .earning-amount{font-size:38px;font-weight:900;margin-bottom:6px}
 .amount-pink{color:#ff2d55}
 .amount-cyan{color:#00f2ea}
@@ -114,33 +123,26 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#1a1a2e;color:#fff;
         </div>
     </div>
 
+    <a href="#" id="ctaButton" class="cta-button" onclick="handleCTAClick(event)">
+        Jetzt Anmelden (21+) →
+    </a>
+
     <div class="steps">
         <div class="step">
             <div class="step-num">1</div>
-            <div class="step-content">
-                <div class="step-title">Anmelden mit Alter 21+</div>
-                <div class="step-desc">Registriere dich und gib <span class="step-highlight">zwingend Alter 21+</span> an!</div>
-            </div>
-        </div>
-        <div class="step">
-            <div class="step-num">2</div>
             <div class="step-content">
                 <div class="step-title">2-3 Angebote abschließen</div>
                 <div class="step-desc">Schalte die <span class="step-highlight">Scroll-Funktion frei</span> (dauert 15-20 Min)</div>
             </div>
         </div>
         <div class="step">
-            <div class="step-num">3</div>
+            <div class="step-num">2</div>
             <div class="step-content">
                 <div class="step-title">Geld verdienen durchs Scrollen</div>
                 <div class="step-desc">Verdiene <span class="step-highlight">€45-124 täglich</span> einfach beim Scrollen!</div>
             </div>
         </div>
     </div>
-
-    <a href="#" id="ctaButton" class="cta-button" onclick="handleCTAClick(event)">
-        Jetzt Anmelden (21+) →
-    </a>
 
     <div class="bonus">
         <div class="bonus-icon">🎁</div>
@@ -192,7 +194,7 @@ function handleCTAClick(event) {
     }
     
     // Original offer URL
-    const offerURL = 'https://rainawards.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpLWIiLCJ1IjoiNjliYTA1YTBjZDNkNjBhYjBkODdlNDcyIiwidHMiOjE3NzU2NDcxOTkyODd9?s1=gert';
+    const offerURL = 'https://rainawards.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc1NzM3OTcwMjMwfQ?s2=ny=dee';
     
     // Convert to external browser link
     const externalLink = convertToExternalLink(offerURL);
@@ -223,4 +225,4 @@ window.addEventListener('DOMContentLoaded',()=>{
 </script>
 
 </body>
-</html>
+</html>/
