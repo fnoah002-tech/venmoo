@@ -3,500 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
   <title>Social Belohnungen</title>
-
-  <!-- TikTok Pixel Code Start -->
   <script>
   !function (w, d, t) {
-    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._t=ttq._t||{},ttq._t[e]=+new Date;n=document.createElement("script");n.async=!0;n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
     ttq.load('D6UQE5BC77U4S3F10KS0');
     ttq.page();
   }(window, document, 'ttq');
   </script>
-  <!-- TikTok Pixel Code End -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #11111a;
-      --card: rgba(28, 27, 42, 0.92);
-      --card-soft: rgba(38, 35, 56, 0.78);
-      --text: #ffffff;
-      --muted: #aab3c5;
-      --pink: #ff2d55;
-      --pink-soft: rgba(255, 45, 85, 0.14);
-      --cyan: #00f2ea;
-      --cyan-soft: rgba(0, 242, 234, 0.12);
-      --yellow: #ffbf47;
-      --yellow-soft: rgba(255, 191, 71, 0.12);
-      --line: rgba(255,255,255,0.08);
-      --shadow: 0 18px 55px rgba(0,0,0,0.35);
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(255,45,85,0.16), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(0,242,234,0.12), transparent 30%),
-        var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 18px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 520px;
-    }
-
-    .shell {
-      background: rgba(17, 17, 26, 0.88);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero {
-      padding: 24px 20px 18px;
-      background: linear-gradient(180deg, rgba(255,45,85,0.08), rgba(0,0,0,0));
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 16px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .logo-icon { font-size: 26px; }
-    .logo-pink { color: var(--pink); }
-    .logo-cyan { color: var(--cyan); }
-
-    .badge-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .top-badge {
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .top-badge.pink { color: #ffd4dd; background: var(--pink-soft); border-color: rgba(255,45,85,0.24); }
-    .top-badge.cyan { color: #bafffb; background: var(--cyan-soft); border-color: rgba(0,242,234,0.24); }
-
-    h1 {
-      font-size: 32px;
-      line-height: 1.08;
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      margin-bottom: 12px;
-    }
-
-    h1 .accent { color: var(--pink); }
-
-    .subtext {
-      text-align: center;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.55;
-      max-width: 430px;
-      margin: 0 auto;
-    }
-
-    .content {
-      padding: 0 20px 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 18px;
-      margin-top: 16px;
-    }
-
-    .earn-card {
-      background: linear-gradient(135deg, rgba(255,45,85,0.13), rgba(0,242,234,0.09));
-      border: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-    }
-
-    .earn-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #ffe0e8;
-      background: rgba(255,45,85,0.16);
-      border: 1px solid rgba(255,45,85,0.22);
-      padding: 7px 12px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
-
-    .earn-title {
-      font-size: 15px;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .earn-amount {
-      font-size: 44px;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: -0.05em;
-      margin-bottom: 8px;
-    }
-
-    .earn-amount .pink { color: var(--pink); }
-    .earn-amount .cyan { color: var(--cyan); }
-
-    .earn-foot {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-
-    .section-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .section-title span { color: var(--cyan); }
-
-    .explain {
-      color: #e9edf5;
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    .steps {
-      display: grid;
-      gap: 12px;
-    }
-
-    .step {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px;
-      border-radius: 18px;
-      background: var(--card-soft);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .step-num {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 15px;
-      background: linear-gradient(135deg, var(--cyan), #5ef6f0);
-      color: #071416;
-    }
-
-    .step-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .step-desc {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .verify-box {
-      background: linear-gradient(135deg, rgba(0,242,234,0.09), rgba(255,45,85,0.08));
-      border: 1px solid rgba(0,242,234,0.22);
-    }
-
-    .verify-row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .verify-badge {
-      min-width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--cyan);
-      border: 2px solid rgba(0,242,234,0.48);
-      background: rgba(0,242,234,0.08);
-    }
-
-    .verify-title {
-      font-size: 15px;
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-
-    .verify-text {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .deal-box {
-      background: linear-gradient(135deg, rgba(255,191,71,0.11), rgba(255,45,85,0.08));
-      border: 1px solid rgba(255,191,71,0.24);
-    }
-
-    .deal-head {
-      font-size: 16px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: #ffd88c;
-    }
-
-    .deal-copy {
-      color: #edf1f8;
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .deal-list {
-      display: grid;
-      gap: 9px;
-    }
-
-    .deal-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--yellow);
-      flex-shrink: 0;
-      margin-top: 6px;
-    }
-
-    .cta-wrap {
-      margin-top: 18px;
-    }
-
-    .cta {
-      width: 100%;
-      display: block;
-      text-decoration: none;
-      text-align: center;
-      padding: 18px 16px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, var(--pink), #ff6a88);
-      color: #1a0810;
-      font-size: 17px;
-      font-weight: 800;
-      box-shadow: 0 14px 30px rgba(255,45,85,0.26);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 34px rgba(255,45,85,0.34);
-    }
-
-    .cta-sub {
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 10px;
-      line-height: 1.45;
-    }
-
-    .trust-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .trust {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: 12px 10px;
-      text-align: center;
-    }
-
-    .trust strong {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
-
-    .trust span {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.4;
-      display: block;
-    }
-
-    .live {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--pink);
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0%,100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(0.8); opacity: 0.45; }
-    }
-
-    .footer {
-      padding: 16px 20px 22px;
-      border-top: 1px solid var(--line);
-      background: rgba(255,255,255,0.02);
-    }
-
-    .footer-line {
-      text-align: center;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.55;
-      margin-bottom: 8px;
-    }
-
-    .micro {
-      text-align: center;
-      color: #8f98aa;
-      font-size: 10px;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 420px) {
-      h1 { font-size: 28px; }
-      .earn-amount { font-size: 38px; }
-      .trust-row { grid-template-columns: 1fr; }
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Inter,sans-serif;background:#111;color:#fff;padding:14px}
+    .wrap{max-width:430px;margin:0 auto;background:#181818;border:1px solid #2a2a2a;border-radius:24px;padding:20px}
+    .logo{text-align:center;font-weight:800;font-size:20px;margin-bottom:14px}
+    .logo span:first-child{color:#ff2d55}.logo span:last-child{color:#00f2ea}
+    h1{font-size:28px;line-height:1.05;text-align:center;font-weight:800;margin-bottom:12px}
+    h1 span{color:#ff2d55}
+    .sub{text-align:center;color:#b0b0b0;font-size:14px;line-height:1.5;margin-bottom:18px}
+    .steps{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+    .step{display:flex;gap:12px;background:#222;padding:14px;border-radius:16px}
+    .num{width:28px;height:28px;border-radius:50%;background:#00f2ea;color:#000;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+    .step h3{font-size:14px;margin-bottom:3px}.step p{font-size:12px;color:#aaa;line-height:1.4}
+    .notice{background:#2a1f08;border:1px solid rgba(255,191,71,.35);padding:14px;border-radius:16px;margin-bottom:16px}
+    .notice strong{display:block;font-size:14px;color:#ffbf47;margin-bottom:6px}
+    .notice p{font-size:12px;color:#ddd;line-height:1.45}
+    .cta{display:block;width:100%;text-align:center;text-decoration:none;background:#ff2d55;color:#111;font-weight:800;padding:17px;border-radius:16px;font-size:16px;margin-bottom:14px}
+    .mini{text-align:center;font-size:11px;color:#888;line-height:1.4}
+    .live{margin-top:14px;text-align:center;font-size:12px;color:#999}
+    .dot{display:inline-block;width:8px;height:8px;background:#ff2d55;border-radius:50%;margin-right:6px;animation:pulse 1.5s infinite}
+    @keyframes pulse{50%{opacity:.4;transform:scale(.8)}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="shell">
-      <section class="hero">
-        <div class="logo">
-          <div class="logo-icon">🎵</div>
-          <div><span class="logo-pink">Social</span> <span class="logo-cyan">Belohnungen</span></div>
-        </div>
+  <div class="wrap">
+    <div class="logo"><span>Social</span> <span>Belohnungen</span></div>
 
-        <div class="badge-row">
-          <div class="top-badge pink">NEUER TESTER-ZUGANG</div>
-          <div class="top-badge cyan">21+ ERFORDERLICH</div>
-        </div>
+    <h1>Warum werden Leute <span>fürs Scrollen</span> bezahlt?</h1>
+    <div class="sub">Marken bezahlen Nutzer dafür, neue Apps, Inhalte und Engagement-Feeds vor dem öffentlichen Launch zu testen.</div>
 
-        <h1>Warum werden Leute jetzt <span class="accent">einfach fürs Scrollen</span> bezahlt?</h1>
-        <p class="subtext">
-          Weil Marken inzwischen echte Nutzer dafür vergüten, neue Apps, Feeds und Engagement-Abläufe zu testen,
-          bevor sie groß ausgerollt werden. Du wirst dabei als Tester freigeschaltet — nicht als Influencer.
-        </p>
-      </section>
-
-      <main class="content">
-        <div class="cta-wrap">
-          <a
-            href="https://taptrcks.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc1ODk3ODU3Njk5LCJzIjoibmQtZnJlZWNhc2gtY3BpLXVzLWFuZHJvaWQifQ?s2=fa"
-            class="cta"
-            target="_blank"
-            onclick="ttq.track('ClickButton', {content_id: 'scroll-access-cta'}); ttq.track('InitiateCheckout', {content_id: 'scroll-access-checkout', content_type: 'product'}); ttq.track('CompleteRegistration', {content_id: 'scroll-access-registration'});"
-          >
-            Scroll-Aufgaben freischalten →
-          </a>
-          <div class="cta-sub">App herunterladen • 21+ bestätigen • Dashboard freischalten</div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <h3>App herunterladen</h3>
+          <p>Installiere die Partner-App und öffne deinen Zugang.</p>
         </div>
+      </div>
 
-        <div class="live">
-          <div class="pulse"></div>
-          <span><span id="liveCount">2,782</span> Nutzer befinden sich gerade in der Freischaltung</span>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <h3>21+ bestätigen</h3>
+          <p>Nur verifizierte 21+ Nutzer werden für Auszahlungen freigeschaltet.</p>
         </div>
-      </main>
+      </div>
 
-      <footer class="footer">
-        <div class="footer-line">Kostenlose Registrierung · Zugang abhängig von Verifizierung · 21+ erforderlich</div>
-        <div class="micro">
-          Verdienstangaben können je nach Region, Gerätekompatibilität, Nutzerqualität und verfügbaren Partner-Tasks variieren.
-          Für die Freischaltung können bestimmte Schritte innerhalb der Partner-App erforderlich sein.
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <h3>2 Starter-Deals abschließen</h3>
+          <p>Dadurch wird dein Dashboard für Scroll-Aufgaben aktiviert.</p>
         </div>
-      </footer>
+      </div>
     </div>
+
+    <div class="notice">
+      <strong>⚡ Freischaltung erforderlich</strong>
+      <p>Die 2 Starter-Deals dienen zur Qualitäts- und Nutzerverifizierung, bevor Scroll-Aufgaben sichtbar werden.</p>
+    </div>
+
+    <a href="https://taptrcks.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc1ODg4MzU2Njg0LCJzIjoibmQtZnJlZWNhc2gtY3BpLXVzLWFuZHJvaWQifQ?s2=aymo" class="cta" target="_blank">Dashboard freischalten →</a>
+
+    <div class="mini">App herunterladen • 21+ bestätigen • Zugang aktivieren</div>
+
+    <div class="live"><span class="dot"></span><span id="count">2,782</span> Nutzer aktivieren gerade ihren Zugang</div>
   </div>
 
   <script>
-    function updateLiveCount() {
-      var el = document.getElementById('liveCount');
-      if (!el) return;
-      var current = parseInt(el.textContent.replace(/,/g, ''), 10);
-      var change = Math.floor(Math.random() * 18) - 8;
-      var next = Math.max(2741, Math.min(2864, current + change));
-      el.textContent = next.toLocaleString('en-US');
-    }
-
-    setInterval(updateLiveCount, 5000);
-
-    window.addEventListener('DOMContentLoaded', function () {
-      ttq.track('ViewContent', {
-        content_id: 'scroll-bridge-lander',
-        content_type: 'product',
-        content_name: 'Social Belohnungen Bridge Lander'
-      });
-    });
+    setInterval(()=>{
+      const el=document.getElementById('count');
+      let n=parseInt(el.innerText.replace(/,/g,''));
+      n+=Math.floor(Math.random()*14)-6;
+      if(n<2750)n=2750;if(n>2850)n=2850;
+      el.innerText=n.toLocaleString();
+    },5000)
   </script>
 </body>
 </html>/
+
