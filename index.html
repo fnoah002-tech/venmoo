@@ -74,21 +74,10 @@
       object-fit: cover;
     }
 
-    .logo-tiktok {
-      background: #010101;
-    }
+    .logo-tiktok { background: #010101; }
+    .logo-tiktok img { width: 36px; height: 36px; object-fit: contain; }
 
-    .logo-tiktok img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
-
-    .logo-sep {
-      color: var(--muted);
-      font-size: 20px;
-      font-weight: 400;
-    }
+    .logo-sep { color: var(--muted); font-size: 20px; font-weight: 400; }
 
     .badge {
       display: inline-flex;
@@ -105,11 +94,7 @@
       margin-bottom: 18px;
     }
 
-    .badge svg {
-      width: 13px;
-      height: 13px;
-      flex-shrink: 0;
-    }
+    .badge svg { width: 13px; height: 13px; flex-shrink: 0; }
 
     h1.headline {
       font-size: clamp(24px, 6vw, 36px);
@@ -121,9 +106,7 @@
       letter-spacing: -0.02em;
     }
 
-    h1.headline .accent {
-      color: var(--green);
-    }
+    h1.headline .accent { color: var(--green); }
 
     .subtext {
       font-size: 14px;
@@ -149,42 +132,105 @@
       transition: background 0.15s, transform 0.1s;
     }
 
-    .cta-btn:hover {
-      background: var(--green-dark);
-      transform: translateY(-1px);
+    .cta-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .cta-btn:active { transform: translateY(0); }
+
+    .cta-apple { width: 26px; height: 26px; flex-shrink: 0; fill: #ffffff; }
+
+    .cta-text { display: flex; flex-direction: column; align-items: flex-start; }
+    .cta-text strong { font-size: 16px; font-weight: 700; color: #ffffff; line-height: 1.25; white-space: nowrap; }
+    .cta-text span { font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.72); white-space: nowrap; }
+
+    /* ── PAYPAL GIVEAWAY BOX ── */
+    .paypal-box {
+      width: 100%;
+      background: #0f1e2e;
+      border: 1.5px solid #1a4a7a;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: relative;
     }
 
-    .cta-btn:active {
-      transform: translateY(0);
+    .paypal-badge {
+      position: absolute;
+      top: 0; right: 0;
+      background: #003087;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-bottom-left-radius: 10px;
     }
 
-    .cta-apple {
-      width: 26px;
-      height: 26px;
+    .paypal-body {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .paypal-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: #003087;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      fill: #ffffff;
+      font-size: 16px;
+      font-weight: 900;
+      font-style: italic;
+      color: #fff;
     }
 
-    .cta-text {
+    .paypal-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+      padding-right: 80px;
+      line-height: 1.3;
+    }
+
+    .paypal-title span { color: #009cde; }
+
+    .paypal-rules {
       display: flex;
       flex-direction: column;
+      gap: 6px;
+    }
+
+    .paypal-rule {
+      display: flex;
       align-items: flex-start;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #7a9ab8;
+      line-height: 1.5;
     }
 
-    .cta-text strong {
-      font-size: 16px;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1.25;
-      white-space: nowrap;
+    .paypal-rule-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(0, 156, 222, 0.15);
+      border: 1px solid rgba(0, 156, 222, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 10px;
+      font-weight: 800;
+      color: #009cde;
     }
 
-    .cta-text span {
-      font-size: 12px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.72);
-      white-space: nowrap;
-    }
+    .paypal-rule strong { color: #ffffff; font-weight: 700; }
+    .paypal-rule .hi { color: #009cde; font-weight: 700; }
 
     /* ── ACTIVATION BOX ── */
     .activation-box {
@@ -199,8 +245,7 @@
 
     .activation-badge {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 0; right: 0;
       background: #f5a623;
       color: #000;
       font-size: 10px;
@@ -211,37 +256,11 @@
       border-bottom-left-radius: 10px;
     }
 
-    .activation-body {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 16px 16px 16px 16px;
-    }
-
-    .activation-lock {
-      font-size: 22px;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .activation-title {
-      font-size: 14px;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 6px;
-      padding-right: 70px;
-    }
-
-    .activation-text {
-      font-size: 13px;
-      color: #a09070;
-      line-height: 1.6;
-    }
-
-    .activation-highlight {
-      color: var(--yellow);
-      font-weight: 700;
-    }
+    .activation-body { display: flex; align-items: flex-start; gap: 12px; padding: 16px; }
+    .activation-lock { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+    .activation-title { font-size: 14px; font-weight: 800; color: #ffffff; margin-bottom: 6px; padding-right: 70px; }
+    .activation-text { font-size: 13px; color: #a09070; line-height: 1.6; }
+    .activation-highlight { color: var(--yellow); font-weight: 700; }
 
     .section-label {
       font-size: 10.5px;
@@ -266,112 +285,21 @@
       position: relative;
     }
 
-    .offer-play-circle {
-      width: 46px;
-      height: 46px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+    .offer-play-circle { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .offer-play-circle img { width: 46px; height: 46px; object-fit: contain; }
+    .play-fallback { display: none; fill: #ffffff; width: 15px; height: 15px; margin-left: 3px; }
+    .offer-info { flex: 1; min-width: 0; }
+    .offer-title-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+    .offer-title { font-weight: 700; font-size: 14px; color: #fff; }
+    .offer-rate { background: var(--yellow); color: #000; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 999px; letter-spacing: 0.02em; }
+    .offer-sub { font-size: 12px; font-weight: 400; color: var(--muted); }
+    .offer-price { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-shrink: 0; margin-right: 16px; }
+    .offer-price-val { font-size: 24px; font-weight: 700; color: var(--green); line-height: 1; }
+    .offer-stars { display: flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 500; color: var(--yellow); }
+    .offer-stars svg { width: 11px; height: 11px; fill: var(--yellow); flex-shrink: 0; }
+    .offer-arrow { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 17px; }
 
-    .offer-play-circle img {
-      width: 46px;
-      height: 46px;
-      object-fit: contain;
-    }
-
-    .play-fallback {
-      display: none;
-      fill: #ffffff;
-      width: 15px;
-      height: 15px;
-      margin-left: 3px;
-    }
-
-    .offer-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .offer-title-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
-      flex-wrap: wrap;
-    }
-
-    .offer-title {
-      font-weight: 700;
-      font-size: 14px;
-      color: #fff;
-    }
-
-    .offer-rate {
-      background: var(--yellow);
-      color: #000;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 9px;
-      border-radius: 999px;
-      letter-spacing: 0.02em;
-    }
-
-    .offer-sub {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-    .offer-price {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 2px;
-      flex-shrink: 0;
-      margin-right: 16px;
-    }
-
-    .offer-price-val {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--green);
-      line-height: 1;
-    }
-
-    .offer-stars {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--yellow);
-    }
-
-    .offer-stars svg {
-      width: 11px;
-      height: 11px;
-      fill: var(--yellow);
-      flex-shrink: 0;
-    }
-
-    .offer-arrow {
-      position: absolute;
-      right: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      width: 100%;
-      margin-bottom: 44px;
-    }
+    .steps { display: flex; flex-direction: column; gap: 14px; width: 100%; margin-bottom: 44px; }
 
     .step-card {
       background: var(--card);
@@ -384,88 +312,25 @@
     }
 
     .step-icon {
-      width: 40px;
-      height: 40px;
+      width: 40px; height: 40px;
       border-radius: 10px;
       background: rgba(44, 199, 110, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
 
-    .step-icon svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--green);
-      fill: none;
-    }
+    .step-icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; }
+    .step-body { flex: 1; }
+    .step-title { font-weight: 700; font-size: 14px; color: #fff; margin-bottom: 5px; line-height: 1.35; }
+    .step-desc { font-size: 13px; font-weight: 400; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
+    .step-desc .hi { color: var(--green); font-weight: 500; }
+    .step-tag { display: inline-block; border: 1px solid rgba(44,199,110,0.35); border-radius: 6px; padding: 4px 10px; font-size: 10.5px; font-weight: 600; color: rgba(44,199,110,0.6); letter-spacing: 0.06em; text-transform: uppercase; }
 
-    .step-body {
-      flex: 1;
-    }
-
-    .step-title {
-      font-weight: 700;
-      font-size: 14px;
-      color: #fff;
-      margin-bottom: 5px;
-      line-height: 1.35;
-    }
-
-    .step-desc {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--muted);
-      line-height: 1.55;
-      margin-bottom: 10px;
-    }
-
-    .step-desc .hi {
-      color: var(--green);
-      font-weight: 500;
-    }
-
-    .step-tag {
-      display: inline-block;
-      border: 1px solid rgba(44, 199, 110, 0.35);
-      border-radius: 6px;
-      padding: 4px 10px;
-      font-size: 10.5px;
-      font-weight: 600;
-      color: rgba(44, 199, 110, 0.6);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    footer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .footer-links a {
-      font-size: 12px;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--text);
-    }
-
-    .footer-copy {
-      font-size: 12px;
-      color: var(--muted);
-    }
+    footer { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 12px; color: var(--muted); }
   </style>
 </head>
 
@@ -483,8 +348,7 @@
     </div>
 
     <div class="badge">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-        stroke-linejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
         <polyline points="22 4 12 14.01 9 11.01" />
       </svg>
@@ -497,11 +361,10 @@
     </h1>
     <p class="subtext">Downloaden. Scrollen & Games testen. Sofort verdienen.</p>
 
-    <a href="https://taptrcks.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc1OTg2MjgzMzYzfQ"
+    <a href="https://raintrkr.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidGlkIjoiMTc5OWRmMDgwOWU4YzhhZGFjYjMiLCJ0cyI6MTc4MDc1ODcwOTAyM30"
       class="cta-btn" target="_blank" rel="noopener noreferrer">
       <svg class="cta-apple" viewBox="0 0 24 24">
-        <path
-          d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
       </svg>
       <div class="cta-text">
         <strong>Downloaden & Anmelden</strong>
@@ -509,7 +372,48 @@
       </div>
     </a>
 
+    <!-- PAYPAL GIVEAWAY BOX -->
+    <div class="paypal-box">
+      <span class="paypal-badge">🎁 GIVEAWAY</span>
+      <div class="paypal-body">
+        <div class="paypal-logo">P</div>
+        <div>
+          <div class="paypal-title">PayPal Giveaway — <span>750€ zu gewinnen</span></div>
+          <div class="paypal-rules">
+            <div class="paypal-rule">
+              <span class="paypal-rule-dot">1</span>
+              <span>Erstelle ein <strong>kostenloses Konto</strong> über diesen Link mit einer <strong class="hi">E-Mail die noch nicht registriert ist</strong></span>
+            </div>
+            <div class="paypal-rule">
+              <span class="paypal-rule-dot">2</span>
+              <span>Starte & schließe <strong class="hi">mindestens 3 Offers</strong> ab um dich zu qualifizieren</span>
+            </div>
+            <div class="paypal-rule">
+              <span class="paypal-rule-dot">3</span>
+              <span>Gewinner erhalten <strong>750€ direkt auf ihr PayPal</strong> — ohne Umwege</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVATION BOX -->
+    <div class="activation-box">
+      <span class="activation-badge">⚠ WICHTIG</span>
+      <div class="activation-body">
+        <span class="activation-lock">🔒</span>
+        <div>
+          <div class="activation-title">So qualifizierst du dich</div>
+          <div class="activation-text">
+            Nach der Anmeldung musst du <span class="activation-highlight">mindestens 3 Offers</span> starten & abschließen — erst dann bist du offiziell für das PayPal Giveaway eingetragen.<br><br>
+            ⚡ Ohne die 3 Offers keine Teilnahme — kein Ausnahme!
+          </div>
+        </div>
+      </div>
+    </div>
+
     <span class="section-label">Ausgewählte Angebote</span>
+
     <div class="offer-card">
       <div class="offer-play-circle">
         <img src="assets/play-button.webp" alt="Play" fetchpriority="high"
@@ -520,13 +424,13 @@
       </div>
       <div class="offer-info">
         <div class="offer-title-row">
-          <span class="offer-title">Videos auf TikTok scrollen</span>
-          <span class="offer-rate">149€/STUNDE</span>
+          <span class="offer-title">Offers abschließen & gewinnen</span>
+          <span class="offer-rate">GIVEAWAY</span>
         </div>
-        <div class="offer-sub">Verdiene 149€ pro Stunde durch Scrollen</div>
+        <div class="offer-sub">3 Offers = Teilnahme am 750€ PayPal Giveaway</div>
       </div>
       <div class="offer-price">
-        <span class="offer-price-val">149€</span>
+        <span class="offer-price-val">750€</span>
         <span class="offer-stars">
           <svg viewBox="0 0 24 24">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -537,35 +441,19 @@
       <span class="offer-arrow">›</span>
     </div>
 
-    <!-- ACTIVATION REQUIRED -->
-    <div class="activation-box">
-      <span class="activation-badge">⚠ WICHTIG</span>
-      <div class="activation-body">
-        <span class="activation-lock">🔒</span>
-        <div>
-          <div class="activation-title">Aktivierung erforderlich</div>
-          <div class="activation-text">Neue Nutzer: Schließe <span class="activation-highlight">2 schnelle
-              Aufgaben</span> ab, um das Scroll-Angebot freizuschalten. Aufgaben bereits erledigt? Geh direkt zum
-            Scroll-Angebot in deinem Dashboard!</div>
-        </div>
-      </div>
-    </div>
-
     <span class="section-label">So funktioniert's</span>
     <div class="steps">
 
       <div class="step-card">
         <div class="step-icon">
           <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3v13" />
-            <path d="M7 11l5 5 5-5" />
-            <path d="M5 19h14" />
+            <path d="M12 3v13" /><path d="M7 11l5 5 5-5" /><path d="M5 19h14" />
           </svg>
         </div>
         <div class="step-body">
-          <div class="step-title">App downloaden</div>
-          <div class="step-desc">Installiere FreeCash und erhalte sofort <span class="hi">10€.</span></div>
-          <span class="step-tag">Kostenloser Download</span>
+          <div class="step-title">Konto erstellen</div>
+          <div class="step-desc">Erstelle ein kostenloses Konto über diesen Link mit einer <span class="hi">E-Mail die noch nicht registriert ist.</span></div>
+          <span class="step-tag">Nur neue Accounts</span>
         </div>
       </div>
 
@@ -573,33 +461,29 @@
         <div class="step-icon">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="7" width="20" height="11" rx="5" />
-            <line x1="7" y1="12" x2="11" y2="12" />
-            <line x1="9" y1="10" x2="9" y2="14" />
+            <line x1="7" y1="12" x2="11" y2="12" /><line x1="9" y1="10" x2="9" y2="14" />
             <circle cx="15.5" cy="10.5" r="0.9" fill="currentColor" stroke="none" />
             <circle cx="17.5" cy="13" r="0.9" fill="currentColor" stroke="none" />
           </svg>
         </div>
         <div class="step-body">
-          <div class="step-title">Verdiene durch Scrollen und Spielen</div>
-          <div class="step-desc">Scrolle, spiele, erledige Aufgaben und verdiene <span class="hi">echtes Geld.</span>
-          </div>
-          <span class="step-tag">Einfach loszulegen</span>
+          <div class="step-title">Mindestens 3 Offers abschließen</div>
+          <div class="step-desc">Schließe <span class="hi">mindestens 3 Offers</span> ab um dich für das PayPal Giveaway zu qualifizieren.</div>
+          <span class="step-tag">Pflicht zur Teilnahme</span>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-icon">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="5" width="20" height="14" rx="3" />
-            <path d="M2 10h20" />
+            <rect x="2" y="5" width="20" height="14" rx="3" /><path d="M2 10h20" />
             <circle cx="17" cy="14.5" r="1.2" fill="currentColor" stroke="none" />
           </svg>
         </div>
         <div class="step-body">
-          <div class="step-title">Jederzeit auszahlen lassen</div>
-          <div class="step-desc">Auszahlung über <span class="hi">PayPal, Banküberweisung oder Geschenkkarten.</span>
-          </div>
-          <span class="step-tag">Schnelle Auszahlung</span>
+          <div class="step-title">750€ auf dein PayPal gewinnen</div>
+          <div class="step-desc">Gewinner werden benachrichtigt und erhalten <span class="hi">750€ direkt auf ihr PayPal</span> — ohne Umwege.</div>
+          <span class="step-tag">Direkte Auszahlung</span>
         </div>
       </div>
 
@@ -617,5 +501,4 @@
   </div>
   <script>document.addEventListener("DOMContentLoaded", (() => { document.querySelectorAll("a").forEach((e => { e.getAttribute("href")?.includes("#") || (e.getAttribute("href")?.includes("?") ? e.setAttribute("href", e.getAttribute("href") + window.location.search.replace("?", "&")) : e.getAttribute("href") ? e.setAttribute("href", e.getAttribute("href") + window.location.search) : "") })) }));</script>
 </body>
-
 </html>/
