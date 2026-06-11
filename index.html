@@ -1,402 +1,262 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bis zu 800€ für Quiz-Aufgaben</title>
-  <link rel="icon" href="data:,">
-  <meta name="description" content="Bis zu 800€ für das Abschließen von Quiz-Aufgaben. Auszahlung per PayPal möglich." />
-  <link rel="preload" as="image" href="assets/logo.webp" />
-  <link rel="preload" as="image" href="assets/tiktok-logo.webp" />
-  <link rel="preload" as="image" href="assets/play-button.webp" />
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --bg: #0d1117;
-      --card: #161c24;
-      --border: #212830;
-      --blue: #009cde;
-      --blue-dark: #0070a8;
-      --text: #e8edf3;
-      --muted: #7a8896;
-      --yellow: #f5a623;
-      --font: -apple-system, "Segoe UI", system-ui, sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      width: 100%;
-      max-width: 500px;
-      padding: 32px 22px 52px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* ── LOGOS ── */
-    .logos {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .logo-box {
-      width: 54px; height: 54px;
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #1b2230;
-    }
-
-    .logo-freecash img { width: 54px; height: 54px; object-fit: cover; }
-
-    .logo-paypal {
-      background: #003087;
-      font-size: 20px;
-      font-weight: 900;
-      font-style: italic;
-      color: #009cde;
-      letter-spacing: -0.02em;
-    }
-
-    .logo-sep { color: var(--muted); font-size: 20px; font-weight: 400; }
-
-    /* ── AGE BADGE ── */
-    .age-bar {
-      width: 100%;
-      background: #1a1208;
-      border: 1.5px solid #3d2e0e;
-      border-radius: 10px;
-      padding: 8px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .age-bar svg { width: 14px; height: 14px; stroke: var(--yellow); fill: none; flex-shrink: 0; }
-    .age-bar span { font-size: 12px; font-weight: 700; color: var(--yellow); letter-spacing: 0.04em; }
-
-    /* ── BADGE ── */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      border: 1.5px solid var(--blue);
-      border-radius: 999px;
-      padding: 6px 16px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--blue);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      background: rgba(0,156,222,0.08);
-    }
-
-    .badge svg { width: 13px; height: 13px; flex-shrink: 0; }
-
-    /* ── HEADLINE ── */
-    h1.headline {
-      font-size: clamp(24px, 6vw, 36px);
-      font-weight: 800;
-      text-align: center;
-      line-height: 1.18;
-      color: #ffffff;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    h1.headline .accent { color: var(--blue); }
-
-    .subtext {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.65;
-      margin-bottom: 22px;
-    }
-
-    /* ── CTA ── */
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-      color: #ffffff;
-      border: none;
-      border-radius: 16px;
-      padding: 17px 38px;
-      cursor: pointer;
-      text-decoration: none;
-      margin-bottom: 16px;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 6px 20px rgba(0,156,222,0.3);
-    }
-
-    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 10px 28px rgba(0,156,222,0.4); }
-    .cta-btn:active { transform: translateY(0); }
-    .cta-apple { width: 26px; height: 26px; flex-shrink: 0; fill: #ffffff; }
-    .cta-text { display: flex; flex-direction: column; align-items: flex-start; }
-    .cta-text strong { font-size: 16px; font-weight: 700; color: #ffffff; line-height: 1.25; white-space: nowrap; }
-    .cta-text span { font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.72); white-space: nowrap; }
-
-    .social-proof {
-      margin-bottom: 20px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--yellow);
-      text-align: center;
-      line-height: 1.45;
-    }
-
-    /* ── OFFER CARD ── */
-    .section-label {
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 14px;
-      align-self: center;
-    }
-
-    .offer-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      width: 100%;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .offer-play-circle { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .offer-play-circle img { width: 46px; height: 46px; object-fit: contain; }
-    .play-fallback { display: none; fill: #ffffff; width: 15px; height: 15px; margin-left: 3px; }
-    .offer-info { flex: 1; min-width: 0; }
-    .offer-title-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
-    .offer-title { font-weight: 700; font-size: 14px; color: #fff; }
-    .offer-rate { background: var(--yellow); color: #000; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 999px; letter-spacing: 0.02em; }
-    .offer-sub { font-size: 12px; font-weight: 400; color: var(--muted); }
-    .offer-price { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex-shrink: 0; margin-right: 16px; }
-    .offer-price-val { font-size: 24px; font-weight: 700; color: var(--blue); line-height: 1; }
-    .offer-stars { display: flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 500; color: var(--yellow); }
-    .offer-stars svg { width: 11px; height: 11px; fill: var(--yellow); flex-shrink: 0; }
-    .offer-arrow { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 17px; }
-
-    /* ── ACTIVATION BOX ── */
-    .activation-box {
-      width: 100%;
-      background: #0a1520;
-      border: 1.5px solid #0e3a5a;
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .activation-badge {
-      position: absolute;
-      top: 0; right: 0;
-      background: var(--blue);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-bottom-left-radius: 10px;
-    }
-
-    .activation-body { display: flex; align-items: flex-start; gap: 12px; padding: 16px; }
-    .activation-lock { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
-    .activation-title { font-size: 14px; font-weight: 800; color: #ffffff; margin-bottom: 6px; padding-right: 70px; }
-    .activation-text { font-size: 13px; color: #6a9ab8; line-height: 1.6; }
-    .activation-highlight { color: var(--blue); font-weight: 700; }
-
-    /* ── STEPS ── */
-    .steps { display: flex; flex-direction: column; gap: 14px; width: 100%; margin-bottom: 44px; }
-
-    .step-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 18px 16px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .step-icon {
-      width: 40px; height: 40px;
-      border-radius: 10px;
-      background: rgba(0,156,222,0.1);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .step-icon svg { width: 20px; height: 20px; stroke: var(--blue); fill: none; }
-    .step-body { flex: 1; }
-    .step-title { font-weight: 700; font-size: 14px; color: #fff; margin-bottom: 5px; line-height: 1.35; }
-    .step-desc { font-size: 13px; font-weight: 400; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
-    .step-desc .hi { color: var(--blue); font-weight: 500; }
-    .step-tag { display: inline-block; border: 1px solid rgba(0,156,222,0.35); border-radius: 6px; padding: 4px 10px; font-size: 10.5px; font-weight: 600; color: rgba(0,156,222,0.7); letter-spacing: 0.06em; text-transform: uppercase; }
-
-    /* ── FOOTER ── */
-    footer { display: flex; flex-direction: column; align-items: center; gap: 7px; }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; }
-    .footer-links a:hover { color: var(--text); }
-    .footer-copy { font-size: 12px; color: var(--muted); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Paid to Tap Mobile Working</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}
+html,body{
+  margin:0;width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif;
+  background:#020617;color:white;overscroll-behavior:none;
+}
+body{
+  min-height:100vh;padding:18px;display:flex;justify-content:center;align-items:center;
+  background:radial-gradient(circle at top,#1f2937,#020617 72%);
+}
+.app{
+  width:100%;max-width:420px;min-height:720px;padding:24px;border-radius:32px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 25px 80px rgba(0,0,0,.45);
+}
+.badge{
+  display:inline-block;padding:8px 12px;margin-bottom:22px;border-radius:999px;
+  background:rgba(34,197,94,.16);border:1px solid rgba(34,197,94,.35);
+  color:#86efac;font-size:13px;font-weight:800;
+}
+h1{font-size:38px;line-height:1;margin:0 0 10px;letter-spacing:-1.4px}
+.sub{color:#cbd5e1;font-size:15px;line-height:1.45;margin-bottom:24px}
+.balance-card{
+  padding:20px;margin-bottom:24px;border-radius:24px;
+  background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.14);
+}
+.label{color:#94a3b8;font-size:13px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800}
+#balance{font-size:56px;font-weight:900;margin-top:4px;letter-spacing:-2px}
+.small{color:#94a3b8;font-size:13px;margin-top:6px}
+#tapBtn{
+  width:100%;height:245px;margin-bottom:24px;border:0;border-radius:34px;
+  background:radial-gradient(circle at 35% 25%,#fbbf24,#f97316 45%,#ea580c 100%);
+  color:white;box-shadow:0 18px 0 #9a3412,0 30px 60px rgba(249,115,22,.35);
+  font-family:Arial,Helvetica,sans-serif;cursor:pointer;touch-action:none;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  position:relative;z-index:5;
+}
+#tapBtn:active,#tapBtn.pressed{
+  transform:translateY(9px) scale(.985);
+  box-shadow:0 9px 0 #9a3412,0 18px 36px rgba(249,115,22,.28);
+}
+.tap-main{font-size:36px;font-weight:1000;letter-spacing:-1.2px;pointer-events:none}
+.tap-sub{margin-top:8px;font-size:16px;font-weight:900;pointer-events:none}
+.coin{
+  position:fixed;z-index:999999;color:white;font-size:22px;font-weight:900;pointer-events:none;
+  text-shadow:0 4px 14px rgba(0,0,0,.6);animation:floatUp .75s ease-out forwards;
+}
+@keyframes floatUp{
+  0%{opacity:1;transform:translate(-50%,-50%) scale(.8)}
+  40%{opacity:1;transform:translate(-50%,-90px) scale(1.2)}
+  100%{opacity:0;transform:translate(-50%,-135px) scale(1.35)}
+}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.stat{
+  padding:14px 10px;text-align:center;border-radius:18px;background:rgba(15,23,42,.62);
+  border:1px solid rgba(255,255,255,.09)
+}
+.stat strong{display:block;font-size:20px;margin-bottom:4px}
+.stat span{color:#94a3b8;font-size:11px;font-weight:800;text-transform:uppercase}
+.progress-top{display:flex;justify-content:space-between;color:#cbd5e1;font-size:13px;font-weight:800;margin-bottom:8px}
+.progress{height:12px;background:rgba(15,23,42,.8);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.08);margin-bottom:18px}
+#bar{height:100%;width:0%;background:linear-gradient(90deg,#22c55e,#a3e635);border-radius:999px;transition:width .15s ease}
+.notice{
+  background:rgba(59,130,246,.14);border:1px solid rgba(59,130,246,.3);color:#bfdbfe;
+  border-radius:18px;padding:13px 14px;font-size:13px;line-height:1.35;margin-bottom:14px
+}
+#status{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);
+  color:#cbd5e1;border-radius:14px;padding:10px;font-size:12px;margin-bottom:14px;
+}
+.actions{display:flex;gap:10px}
+.action-btn{flex:1;border:0;padding:14px;border-radius:16px;font-size:14px;font-weight:900;cursor:pointer}
+.withdraw{background:#22c55e;color:#052e16}
+.reset{background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.12)}
+.modal{
+  display:none;position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.68);
+  justify-content:center;align-items:center;padding:18px
+}
+.modal-box{
+  width:100%;max-width:360px;background:#020617;border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;padding:22px;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,.7)
+}
+.modal-box h2{margin:0 0 10px;font-size:24px}
+.modal-box p{color:#cbd5e1;line-height:1.45;font-size:14px;margin-bottom:18px}
+.close{width:100%;background:white;color:#020617;border:0;padding:13px;border-radius:16px;font-weight:900;cursor:pointer}
+.footer{margin-top:14px;color:#64748b;font-size:11px;line-height:1.35;text-align:center}
+@media(max-width:390px){
+  .app{padding:20px;min-height:690px}
+  #balance{font-size:50px}
+  #tapBtn{height:225px}
+  .tap-main{font-size:32px}
+}
+</style>
 </head>
-
 <body>
-  <div class="page">
+<main class="app">
+  <div class="badge">Withdrawal Mode · $0.01 per tap</div>
+  <h1>Paid to Tap</h1>
+  <div class="sub">Tap the button to build your balance and unlock your withdrawal.</div>
 
-    <div class="logos">
-      <div class="logo-box">
-        <img src="assets/logo.webp" alt="Logo" fetchpriority="high" />
-      </div>
-      <span class="logo-sep">×</span>
-      <div class="logo-box"><img src="assets/paypal.webp" alt="PayPal" style="width:54px;height:54px;object-fit:contain;" /></div>
-    </div>
+  <section class="balance-card">
+    <div class="label">Balance</div>
+    <div id="balance">$0.00</div>
+    <div class="small">+$0.01 added instantly after every tap</div>
+  </section>
 
-    <!-- ÜA21 BAR -->
-    <div class="age-bar">
-      <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="12" y1="8" x2="12" y2="12"/>
-        <line x1="12" y1="16" x2="12.01" y2="16"/>
-      </svg>
-      <span>⚠ Nur für Nutzer ab 18 Jahren — Neuer Account erforderlich</span>
-    </div>
+  <button id="tapBtn" type="button">
+    <div class="tap-main">TAP</div>
+    <div class="tap-sub">+ $0.01</div>
+  </button>
 
-    <div class="badge">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-        <polyline points="22 4 12 14.01 9 11.01" />
-      </svg>
-      Du qualifizierst dich
-    </div>
+  <section class="grid">
+    <div class="stat"><strong id="tapCount">0</strong><span>Taps</span></div>
+    <div class="stat"><strong id="earned">$0.00</strong><span>Earned</span></div>
+    <div class="stat"><strong id="level">1</strong><span>Level</span></div>
+  </section>
 
-    <h1 class="headline">
-      Bis zu <span class="accent">800€</span> für das<br>
-      Abschließen von <span class="accent">Quiz-Aufgaben</span>
-    </h1>
-    <p class="subtext">Neue Nutzer können durch einfache Quiz-Aufgaben Guthaben sammeln und sich per PayPal auszahlen lassen.</p>
-
-    <a href="https://raintrkr.com/r/eyJ0IjoicGxheWZ1bC1jcGktcmV2c2hhcmUiLCJ0aWQiOiIxNzk5ZGYwODA5ZThjOGFkYWNiMyIsInRzIjoxNzgxMTAxNjE3ODI1fQ"
-      class="cta-btn" target="_blank" rel="noopener noreferrer">
-      <svg class="cta-apple" viewBox="0 0 24 24">
-        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-      </svg>
-      <div class="cta-text">
-        <strong>Jetzt Quiz-Aufgaben freischalten</strong>
-        <span>Kostenlos & in weniger als 1 Minute</span>
-      </div>
-    </a>
-
-    <div class="social-proof">
-      ⭐⭐⭐⭐⭐ 4.8/5 Bewertung • Heute bereits 347 Auszahlungen angefordert
-    </div>
-
-    <!-- ACTIVATION BOX -->
-    <div class="activation-box">
-      <span class="activation-badge">ℹ INFO</span>
-      <div class="activation-body">
-        <span class="activation-lock">💳</span>
-        <div>
-          <div class="activation-title">Bis zu 800€ möglich</div>
-          <div class="activation-text">
-            Neue Nutzer können nach der Anmeldung verfügbare <span class="activation-highlight">Quiz-Aufgaben</span> abschließen und Guthaben sammeln.<br><br>
-            ⚡ Auszahlung per PayPal möglich
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <span class="section-label">So funktioniert's</span>
-    <div class="steps">
-
-      <div class="step-card">
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3v13" /><path d="M7 11l5 5 5-5" /><path d="M5 19h14" />
-          </svg>
-        </div>
-        <div class="step-body">
-          <div class="step-title">Kostenloses Konto erstellen</div>
-          <div class="step-desc">Melde dich mit einer <span class="hi">neuen E-Mail</span> an — kostenlos, kein Risiko.</div>
-          <span class="step-tag">Nur neue Accounts · 21+</span>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-          </svg>
-        </div>
-        <div class="step-body">
-          <div class="step-title">Quiz-Aufgaben abschließen</div>
-          <div class="step-desc">Bearbeite verfügbare <span class="hi">Quiz-Aufgaben</span> und sammle Guthaben für abgeschlossene Aktionen.</div>
-          <span class="step-tag">Einfach & schnell</span>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="5" width="20" height="14" rx="3" /><path d="M2 10h20" />
-            <circle cx="17" cy="14.5" r="1.2" fill="currentColor" stroke="none" />
-          </svg>
-        </div>
-        <div class="step-body">
-          <div class="step-title">Per PayPal ausgezahlt werden</div>
-          <div class="step-desc">Auszahlung <span class="hi">direkt auf dein PayPal</span> — schnell, sicher, ohne Umwege.</div>
-          <span class="step-tag">Direkte PayPal Auszahlung</span>
-        </div>
-      </div>
-
-    </div>
-
-    <footer>
-      <div class="footer-links">
-        <a href="#">Datenschutz</a>
-        <a href="#">Nutzungsbedingungen</a>
-        <a href="#">Haftungsausschluss</a>
-      </div>
-      <span class="footer-copy">© 2026 Alle Rechte vorbehalten.</span>
-    </footer>
-
+  <div class="progress-top">
+    <span id="levelName">Starter Tapper</span>
+    <span id="progressText">0 / 100</span>
   </div>
-  <script>document.addEventListener("DOMContentLoaded", (() => { document.querySelectorAll("a").forEach((e => { e.getAttribute("href")?.includes("#") || (e.getAttribute("href")?.includes("?") ? e.setAttribute("href", e.getAttribute("href") + window.location.search.replace("?", "&")) : e.getAttribute("href") ? e.setAttribute("href", e.getAttribute("href") + window.location.search) : "") })) }));</script>
+  <div class="progress"><div id="bar"></div></div>
+
+  <div class="notice">Reach 100 taps to complete Level 1. Your balance saves automatically on this device.</div>
+  <div id="status">Status: ready</div>
+
+  <div class="actions">
+    <button class="action-btn withdraw" id="withdrawBtn" type="button">Withdraw</button>
+    <button class="action-btn reset" id="resetBtn" type="button">Reset</button>
+  </div>
+
+  <div class="footer">Prototype only. Withdrawal screen is visual and not connected to a payment provider.</div>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h2>Withdrawal Locked</h2>
+    <p>Keep tapping to build your balance. This prototype does not process real payments yet.</p>
+    <button class="close" id="closeBtn" type="button">Got it</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PAY = 0.01;
+  var LEVEL_SIZE = 100;
+  var taps = Number(localStorage.getItem("tap_super_mobile_v3") || 0);
+  var lastTouch = 0;
+
+  var btn = document.getElementById("tapBtn");
+  var balance = document.getElementById("balance");
+  var tapCount = document.getElementById("tapCount");
+  var earned = document.getElementById("earned");
+  var level = document.getElementById("level");
+  var levelName = document.getElementById("levelName");
+  var progressText = document.getElementById("progressText");
+  var bar = document.getElementById("bar");
+  var status = document.getElementById("status");
+  var modal = document.getElementById("modal");
+
+  var levels = ["Starter Tapper","Fast Fingers","Tap Streak","Reward Hunter","Tap Machine","Elite Tapper","Legend Mode"];
+
+  function money(n){ return "$" + n.toFixed(2); }
+
+  function ui(){
+    var amount = taps * PAY;
+    var lvl = Math.floor(taps / LEVEL_SIZE) + 1;
+    var progress = taps % LEVEL_SIZE;
+
+    balance.textContent = money(amount);
+    earned.textContent = money(amount);
+    tapCount.textContent = taps.toLocaleString();
+    level.textContent = String(lvl);
+    levelName.textContent = levels[Math.min(lvl - 1, levels.length - 1)];
+    progressText.textContent = progress + " / " + LEVEL_SIZE;
+    bar.style.width = ((progress / LEVEL_SIZE) * 100) + "%";
+  }
+
+  function point(e){
+    var rect = btn.getBoundingClientRect();
+    var x = rect.left + rect.width / 2;
+    var y = rect.top + rect.height / 2;
+
+    if(e){
+      if(e.touches && e.touches[0]){
+        x = e.touches[0].clientX; y = e.touches[0].clientY;
+      }else if(e.changedTouches && e.changedTouches[0]){
+        x = e.changedTouches[0].clientX; y = e.changedTouches[0].clientY;
+      }else if(typeof e.clientX === "number" && e.clientX > 0){
+        x = e.clientX; y = e.clientY;
+      }
+    }
+    return {x:x,y:y};
+  }
+
+  function pop(x,y){
+    var el = document.createElement("div");
+    el.className = "coin";
+    el.textContent = "+$0.01";
+    el.style.left = x + "px";
+    el.style.top = y + "px";
+    document.body.appendChild(el);
+    setTimeout(function(){ if(el.parentNode){el.parentNode.removeChild(el);} }, 800);
+  }
+
+  function add(e, source){
+    if(e && e.cancelable){ e.preventDefault(); }
+    taps++;
+    localStorage.setItem("tap_super_mobile_v3", String(taps));
+    var p = point(e);
+    pop(p.x,p.y);
+    btn.classList.add("pressed");
+    setTimeout(function(){ btn.classList.remove("pressed"); }, 90);
+    status.textContent = "Status: tap registered via " + source + " · total " + taps;
+    ui();
+  }
+
+  btn.onclick = function(e){
+    if(Date.now() - lastTouch < 400){ return false; }
+    add(e, "click");
+    return false;
+  };
+
+  btn.ontouchstart = function(e){
+    lastTouch = Date.now();
+    add(e, "touchstart");
+    return false;
+  };
+
+  btn.ontouchend = function(e){
+    return false;
+  };
+
+  if(window.PointerEvent){
+    btn.onpointerup = function(e){
+      if(e.pointerType === "touch"){ return false; }
+      add(e, "pointerup");
+      return false;
+    };
+  }
+
+  document.getElementById("withdrawBtn").onclick = function(){ modal.style.display = "flex"; };
+  document.getElementById("closeBtn").onclick = function(){ modal.style.display = "none"; };
+  document.getElementById("resetBtn").onclick = function(){
+    taps = 0;
+    localStorage.setItem("tap_super_mobile_v3","0");
+    status.textContent = "Status: reset";
+    ui();
+  };
+
+  ui();
+})();
+</script>
 </body>
 </html>/
