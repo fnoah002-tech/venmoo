@@ -1,185 +1,577 @@
 <!DOCTYPE html>
-<html lang="nl">
-
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pay 2 Click</title>
+  <title>Umfragen & Quiz Rewards</title>
   <link rel="icon" href="data:,">
-  <meta name="description" content="Downloaden. Klikken. Rewards ontgrendelen." />
-
+  <meta name="description" content="Beantworte Umfragen und Quizfragen. Starte kostenlos und sichere dir deinen Platz." />
   <link rel="preload" as="image" href="assets/freecash-logo.webp" />
-  <link rel="preload" as="image" href="assets/freecash-logo.webp" />
-  <link rel="preload" as="image" href="assets/play-button.webp" />
 
-  <!-- LASS DEIN CSS 1:1 GENAU SO DRIN WIE VORHER -->
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    :root {
+      --bg: #071224;
+      --bg2: #0a162b;
+      --card: #0d1c31;
+      --card2: #0b2230;
+      --border: #173255;
+      --green: #00d45a;
+      --green-dark: #00b94f;
+      --green-soft: rgba(0, 212, 90, 0.11);
+      --text: #f4f7fb;
+      --muted: #8b9bb1;
+      --muted2: #667892;
+      --shadow: rgba(0, 212, 90, 0.24);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 430px;
+      min-height: 100vh;
+      padding: 28px 17px 88px;
+      background:
+        radial-gradient(circle at 50% -20%, rgba(0, 212, 90, 0.08), transparent 34%),
+        linear-gradient(180deg, #071224 0%, #081326 55%, #071224 100%);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 13px;
+      overflow: hidden;
+      background: #111f36;
+      box-shadow: 0 0 22px rgba(0, 212, 90, 0.14);
+      flex-shrink: 0;
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-name {
+      font-size: 21px;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    .timer {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid #203a5c;
+      background: rgba(13, 28, 49, 0.74);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .timer strong {
+      color: #d5deea;
+      font-weight: 850;
+    }
+
+    .timer svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+
+    .trust {
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1.5px solid rgba(0, 212, 90, 0.5);
+      background: rgba(0, 212, 90, 0.07);
+      color: var(--green);
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: inset 0 0 0 1px rgba(0, 212, 90, 0.06);
+    }
+
+    .trust svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 3;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .headline {
+      font-size: clamp(28px, 8.8vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .headline .accent {
+      color: var(--green);
+    }
+
+    .subtext {
+      max-width: 365px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px 8px;
+      margin-bottom: 28px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #18304f;
+      background: rgba(13, 28, 49, 0.62);
+      color: #7f90a8;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .pill svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      flex-shrink: 0;
+    }
+
+    .signup-card {
+      width: 100%;
+      border: 1.5px solid rgba(0, 212, 90, 0.42);
+      background: linear-gradient(135deg, rgba(8, 39, 51, 0.94), rgba(9, 32, 45, 0.94));
+      border-radius: 23px;
+      padding: 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 28px;
+      box-shadow: 0 0 0 1px rgba(0, 212, 90, 0.04), 0 14px 45px rgba(0, 0, 0, 0.16);
+    }
+
+    .signup-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .fire {
+      font-size: 28px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 9px rgba(255, 95, 0, 0.3));
+    }
+
+    .signup-title {
+      font-size: 17px;
+      line-height: 1.23;
+      font-weight: 850;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .signup-sub {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 550;
+    }
+
+    .spots {
+      min-width: 104px;
+      background: rgba(0, 212, 90, 0.10);
+      border-radius: 16px;
+      padding: 12px 10px 11px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .spots-num {
+      font-size: 34px;
+      line-height: 0.95;
+      color: var(--green);
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      margin-bottom: 7px;
+    }
+
+    .spots-text {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+
+    .step {
+      min-height: 210px;
+      border: 1px solid #1a3150;
+      background: rgba(13, 28, 49, 0.78);
+      border-radius: 15px;
+      padding: 22px 10px 18px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .step-num {
+      font-size: 23px;
+      font-weight: 950;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .step-icon {
+      color: var(--green);
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 22px;
+      font-weight: 400;
+    }
+
+    .step-title {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 850;
+      line-height: 1.22;
+      margin-bottom: 12px;
+    }
+
+    .step-desc {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .age-note {
+      width: 100%;
+      border: 1.5px solid rgba(0, 212, 90, 0.42);
+      background: rgba(0, 212, 90, 0.08);
+      border-radius: 15px;
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .age-note .warn {
+      color: #f7c948;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .age-note strong {
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .sticky-cta {
+      position: sticky;
+      bottom: 18px;
+      width: 100%;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: #06100a;
+      background: var(--green);
+      border-radius: 24px;
+      padding: 24px 22px;
+      font-size: 22px;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+      box-shadow: 0 0 0 10px rgba(0, 212, 90, 0.07), 0 16px 36px rgba(0, 212, 90, 0.18);
+      transition: transform 0.12s ease, background 0.12s ease;
+      z-index: 3;
+    }
+
+    .sticky-cta:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .sticky-cta span {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 28px;
+      vertical-align: -2px;
+    }
+
+    @media (max-width: 390px) {
+      .page {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .headline {
+        font-size: 31px;
+      }
+
+      .subtext {
+        font-size: 15px;
+      }
+
+      .signup-card {
+        padding: 18px 14px;
+      }
+
+      .spots {
+        min-width: 92px;
+      }
+
+      .steps {
+        gap: 7px;
+      }
+
+      .step {
+        padding: 20px 7px 16px;
+      }
+
+      .step-title {
+        font-size: 14px;
+      }
+
+      .step-desc {
+        font-size: 12.5px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="page">
-
-    <div class="logos">
-      <div class="logo-box logo-freecash">
-        <img src="assets/freecash-logo.webp" alt="Logo" fetchpriority="high" />
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">
+          <img src="assets/freecash-logo.webp" alt="FreeCash">
+        </div>
+        <div class="brand-name">FreeCash</div>
       </div>
 
-      <span class="logo-sep">×</span>
-
-      <div class="logo-box logo-app">
-        <img src="assets/freecash-logo.webp" alt="Logo" fetchpriority="high" />
+      <div class="timer">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v6l4 2"></path>
+        </svg>
+        Bonus läuft ab in <strong>19:33</strong>
       </div>
+    </header>
+
+    <div class="trust">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      Vertraut von 50.000+ Nutzern 🇩🇪
     </div>
 
-    <div class="badge">
-      Je komt in aanmerking
-    </div>
+    <section class="hero">
+      <h1 class="headline">
+        Werde bezahlt für Umfragen &<br>
+        <span class="accent">Quiz beantworten</span>
+      </h1>
 
-    <h1 class="headline">
-      Verdien met<br>
-      <span class="accent">Klikken</span>
-    </h1>
+      <p class="subtext">
+        Gib deine Meinung ab und verdiene echtes Geld.
+        Tausende Nutzer werden täglich für ihre Antworten bezahlt.
+      </p>
 
-    <p class="subtext">Downloaden. Klikken. Rewards ontgrendelen.</p>
-
-    <a href="https://taptrcks.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidSI6IjY5N2UxODY0ZGJmOTk3M2FkYzIxN2NjMSIsInRzIjoxNzc1OTg2MjgzMzYzfQ"
-      class="cta-btn" target="_blank" rel="noopener noreferrer">
-
-      <div class="cta-text">
-        <strong>Starten & aanmelden</strong>
-        <span>iOS & Android</span>
-      </div>
-    </a>
-
-    <span class="section-label">Uitgelichte aanbiedingen</span>
-
-    <div class="offer-card">
-      <div class="offer-play-circle">
-        <img src="assets/play-button.webp" alt="Play" fetchpriority="high" />
-      </div>
-
-      <div class="offer-info">
-        <div class="offer-title-row">
-          <span class="offer-title">Aanbiedingen aanklikken</span>
-          <span class="offer-rate">CLICK BONUS</span>
+      <div class="pills">
+        <div class="pill">
+          <svg viewBox="0 0 24 24">
+            <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path>
+          </svg>
+          Sofortige Auszahlungen
         </div>
 
-        <div class="offer-sub">
-          Klik door taken en ontgrendel rewards
+        <div class="pill">
+          <svg viewBox="0 0 24 24">
+            <rect x="6" y="10" width="12" height="10" rx="2"></rect>
+            <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+          </svg>
+          100+ Umfragen
+        </div>
+
+        <div class="pill">
+          <svg viewBox="0 0 24 24">
+            <rect x="4" y="8" width="16" height="12" rx="2"></rect>
+            <path d="M12 8V5"></path>
+            <path d="M9 5h6"></path>
+          </svg>
+          Täglich neue Quiz
+        </div>
+
+        <div class="pill">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          Sicher & Seriös
         </div>
       </div>
+    </section>
 
-      <div class="offer-price">
-        <span class="offer-price-val">149€</span>
-        <span class="offer-stars">5.0</span>
-      </div>
-
-      <span class="offer-arrow">›</span>
-    </div>
-
-    <div class="activation-box">
-      <span class="activation-badge">⚠ BELANGRIJK</span>
-
-      <div class="activation-body">
-        <span class="activation-lock">🔒</span>
-
+    <section class="signup-card">
+      <div class="signup-left">
+        <div class="fire">🔥</div>
         <div>
-          <div class="activation-title">
-            Activatie vereist
-          </div>
-
-          <div class="activation-text">
-            Nieuwe gebruikers: voltooi
-            <span class="activation-highlight">
-              2 snelle taken
-            </span>
-            om de klik-aanbieding te ontgrendelen.
-            Taken al voltooid? Ga dan direct naar de klik-aanbieding
-            in je dashboard!
-          </div>
+          <div class="signup-title">Melde dich an & starte sofort</div>
+          <div class="signup-sub">Sichere dir deinen Platz</div>
         </div>
       </div>
+
+      <div class="spots">
+        <div class="spots-num">24</div>
+        <div class="spots-text">Plätze frei</div>
+      </div>
+    </section>
+
+    <div class="section-label">So funktioniert's</div>
+
+    <section class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-icon">＋</div>
+        <div class="step-title">Umfrage<br>beantworten</div>
+        <div class="step-desc">
+          Wähle eine Umfrage oder ein Quiz und gib deine Antworten.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-icon">✓</div>
+        <div class="step-title">Quiz<br>erledigen</div>
+        <div class="step-desc">
+          Nach 2–3 schnellen Quiz höher bezahlte Umfragen freischalten.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-icon">$</div>
+        <div class="step-title">Geld<br>erhalten</div>
+        <div class="step-desc">
+          Lass dir deine Belohnungen via PayPal, Banküberweisung oder Gutscheine auszahlen.
+        </div>
+      </div>
+    </section>
+
+    <div class="age-note">
+      <span class="warn">⚠</span>
+      <span>Gib bei der Anmeldung ein Alter von <strong>21+</strong> an, um alle Angebote freizuschalten.</span>
     </div>
 
-    <span class="section-label">Zo werkt het</span>
+    <a href="https://raintrkr.com/r/eyJ0IjoiZnJlZWNhc2gtY3BpIiwidGlkIjoiMTc5OWRmMDgwOWU4YzhhZGFjYjMiLCJ0cyI6MTc4MTM2ODExNjAxNX0">
+      Jetzt anmelden <span>→</span>
+    </a>
+  </main>
 
-    <div class="steps">
-
-      <div class="step-card">
-        <div class="step-body">
-
-          <div class="step-title">
-            App downloaden
-          </div>
-
-          <div class="step-desc">
-            Installeer de aanbevolen app en ontvang direct
-            <span class="hi">10€.</span>
-          </div>
-
-          <span class="step-tag">
-            Gratis download
-          </span>
-
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-body">
-
-          <div class="step-title">
-            Verdien door te klikken
-          </div>
-
-          <div class="step-desc">
-            Klik, voltooi taken en verdien
-            <span class="hi">echt geld.</span>
-          </div>
-
-          <span class="step-tag">
-            Makkelijk om te starten
-          </span>
-
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-body">
-
-          <div class="step-title">
-            Laat je op elk moment uitbetalen
-          </div>
-
-          <div class="step-desc">
-            Uitbetaling via
-            <span class="hi">
-              PayPal, bankoverschrijving of cadeaubonnen.
-            </span>
-          </div>
-
-          <span class="step-tag">
-            Snelle uitbetaling
-          </span>
-
-        </div>
-      </div>
-
-    </div>
-
-    <footer>
-
-      <div class="footer-links">
-        <a href="#">Privacybeleid</a>
-        <a href="#">Gebruiksvoorwaarden</a>
-        <a href="#">Disclaimer</a>
-      </div>
-
-      <span class="footer-copy">
-        © 2026 Alle rechten voorbehouden.
-      </span>
-
-    </footer>
-
-  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var qs = window.location.search;
+      document.querySelectorAll("a").forEach(function (a) {
+        var href = a.getAttribute("href");
+        if (!href || href.includes("#")) return;
+        if (!qs) return;
+        a.setAttribute("href", href.includes("?") ? href + qs.replace("?", "&") : href + qs);
+      });
+    });
+  </script>
 </body>
-</html>/
+</html>
