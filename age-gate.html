@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="fi">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Er du 25+?</title>
+  <title>Oletko 25+?</title>
   <link rel="icon" href="data:,">
   <link rel="preload" as="image" href="assets/freecash-logo.webp" />
-
   <style>
     *,
     *::before,
@@ -217,6 +216,11 @@
       transform: translateY(-1px);
     }
 
+    .btn-yes:active {
+      transform: translateY(0);
+      background: var(--green-dark);
+    }
+
     .btn-no {
       display: block;
       width: 100%;
@@ -229,6 +233,13 @@
       font-weight: 500;
       cursor: pointer;
       text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-no:hover {
+      border-color: #2a4a2e;
+      color: #9ab09e;
     }
   </style>
 </head>
@@ -242,18 +253,17 @@
 
     <div class="badge">
       <span class="badge-dot"></span>
-      Scroll FYP-tilbud
+      Scroll FYP -tarjous
     </div>
 
-    <h1>ER DU <span class="accent">25+</span>?</h1>
-    <p class="subtext">Tjen ekte penger ved å scrolle.</p>
+    <h1>OLETKO <span class="accent">25+</span>?</h1>
+    <p class="subtext">Ansaitse oikeaa rahaa selaamalla.</p>
 
     <div class="info-card">
       <div class="info-label">
         <span class="info-label-dot"></span>
-        Viktig – vennligst les dette
+        Tärkeää – lue tämä
       </div>
-
       <div class="info-row">
         <div class="info-row-icon">
           <svg viewBox="0 0 24 24">
@@ -261,12 +271,10 @@
             <polyline points="12 7 12 12 15 15" />
           </svg>
         </div>
-
         <div class="info-row-text">
-          Du må være <strong>minst 25 år gammel</strong> ved registrering for å låse opp tilbudet for videoscrolling.
+          Sinun on oltava rekisteröityessäsi <strong>vähintään 25-vuotias</strong>, jotta voit avata videoiden selaustarjouksen.
         </div>
       </div>
-
       <div class="info-row">
         <div class="info-row-icon">
           <svg viewBox="0 0 24 24">
@@ -276,23 +284,16 @@
             <line x1="22" y1="11" x2="16" y2="11" />
           </svg>
         </div>
-
         <div class="info-row-text">
-          Har du allerede appen? <strong>Opprett en ny konto</strong> via denne siden – eksisterende kontoer er ikke kvalifisert.
+          Onko sinulla jo sovellus? <strong>Luo uusi tili</strong> tämän sivun kautta – olemassa olevat tilit eivät ole oikeutettuja.
         </div>
       </div>
     </div>
 
-    <a href="index.html" class="btn-yes" id="btn-yes">
-      Ja, jeg er 25 år eller eldre
-    </a>
-
-    <a href="blocked.html" class="btn-no" id="btn-no">
-      Nei, jeg er yngre enn 25 år
-    </a>
+    <a href="index.html" class="btn-yes" id="btn-yes">Kyllä, olen 25-vuotias tai vanhempi</a>
+    <a href="blocked.html" class="btn-no" id="btn-no">Ei, olen alle 25-vuotias</a>
 
   </div>
-
   <script>
     (function () {
       var qs = window.location.search;
@@ -302,6 +303,6 @@
       }
     })();
   </script>
-
 </body>
+
 </html>/
