@@ -467,6 +467,28 @@
       color: var(--muted);
     }
   </style>
+
+<!-- TikTok Pixel -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+  ttq.load=function(e,n){
+    var r="https://analytics.tiktok.com/i18n/pixel/events.js";
+    ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;
+    ttq._o=ttq._o||{};ttq._o[e]=n||{};
+    var o=document.createElement("script");o.type="text/javascript";o.async=!0;
+    o.src=r+"?sdkid="+e+"&lib="+t;
+    var a=document.getElementsByTagName("script")[0];
+    a.parentNode.insertBefore(o,a);
+  };
+  ttq.load('D8T93BJC77UATVQ6KP40');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+
 </head>
 
 <body>
@@ -498,7 +520,7 @@
     <p class="subtext">Pobierz. Przewijaj i testuj gry. Zacznij od razu.</p>
 
     <a href="https://www.stw4c9hx.com/9HZJBK/KG29BK/?sub1=1&sub2=1"
-      class="cta-btn" target="_blank" rel="noopener noreferrer">
+      class="cta-btn" target="_blank" rel="noopener noreferrer" onclick="ttq.track('ClickButton')">
       <svg class="cta-apple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 3v12"/>
         <path d="M7 10l5 5 5-5"/>
