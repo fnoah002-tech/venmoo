@@ -8,8 +8,7 @@
   <link rel="icon" href="data:,">
   <meta name="description" content="Download. Test apps and games. Start right away." />
   <link rel="preload" as="image" href="assets/freecash-logo.webp" />
-  <link rel="preload" as="image" href="assets/tiktok-logo.webp" />
-  <link rel="preload" as="image" href="assets/play-button.webp" />
+    <link rel="preload" as="image" href="assets/play-button.webp" />
   <style>
     *,
     *::before,
@@ -51,10 +50,9 @@
     }
 
     .logos {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
+      display:flex;
+      justify-content:center;
+      margin-bottom:14px;
     }
 
     .logo-box {
@@ -74,21 +72,7 @@
       object-fit: cover;
     }
 
-    .logo-tiktok {
-      background: #010101;
-    }
-
-    .logo-tiktok img {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-    }
-
-    .logo-sep {
-      color: var(--muted);
-      font-size: 20px;
-      font-weight: 400;
-    }
+    
 
     .badge {
       display: inline-flex;
@@ -497,10 +481,6 @@
     <div class="logos">
       <div class="logo-box logo-freecash">
         <img src="assets/freecash-logo.webp" alt="Freecash" fetchpriority="high" />
-      </div>
-      <span class="logo-sep">×</span>
-      <div class="logo-box logo-tiktok">
-        <img src="assets/tiktok-logo.webp" alt="TikTok" fetchpriority="high" />
       </div>
     </div>
 
