@@ -170,6 +170,39 @@
     *:focus-visible{ outline:3px solid rgba(255,68,56,.45); outline-offset:2px; border-radius:8px; }
     @media (max-width:360px){ h1{ font-size:30px; } .wrap{ padding-left:13px; padding-right:13px; } .trio .th{ font-size:11.5px; } }
     @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } .js .reveal{ opacity:1; transform:none; } }
+
+    .age-warning-box {
+      margin: 16px 0 0;
+      background: linear-gradient(135deg, #fff4bf, #ffd84d);
+      border: 1px solid #e8b900;
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #2b2100;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+      box-shadow: 0 10px 24px rgba(255, 196, 0, 0.18);
+    }
+
+    .age-warning-box .age-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: rgba(43, 33, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      font-size: 15px;
+    }
+
+    .age-warning-box strong {
+      font-weight: 900;
+    }
+
   </style>
 </head>
 <body>
@@ -218,6 +251,12 @@
         <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
       <div class="cta-sub reveal">Ready in 60 seconds • no card needed</div>
+
+      <div class="age-warning-box reveal">
+        <span class="age-icon">⚠️</span>
+        <div>You must be <strong>18+</strong> when registering.</div>
+      </div>
+
 
       <div class="trustchips reveal">
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% free</span>
