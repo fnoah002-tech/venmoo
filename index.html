@@ -1,399 +1,640 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#F4F5F7" />
-  <title>Testerup • Earn real money playing games &amp; testing apps</title>
-
-  <!-- ============ TikTok Pixel: paste your pixel code here ============ -->
-  <!-- <script>!function(w,d,t){ ... ttq.load('YOUR_PIXEL_ID'); ttq.page(); }(window,document,'ttq');</script> -->
-
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earn by Playing and Scrolling</title>
+  <link rel="icon" href="data:,">
+  <meta name="description" content="Download the app, play games, complete offers, and earn rewards." />
+  <link rel="preload" as="image" href="assets/freecash-logo.webp" />
+  <link rel="preload" as="image" href="assets/tiktok-logo.webp" />
+  <link rel="preload" as="image" href="assets/play-button.webp" />
   <style>
-    :root{
-      --ink:#14151A; --ink-soft:#5B6171; --ink-faint:#8A8F9C;
-      --bg:#F4F5F7; --surface:#FFFFFF; --line:#E7E9EF; --line-soft:#EFF1F5;
-      --accent:#6C5CE7; --accent-press:#5649C9; --accent-tint:#F0EDFF;
-      --money:#0FA958; --money-deep:#0B8A48; --money-tint:#E7F6EE;
-      --star:#FFB020; --night:#171A2B; --night-2:#222845;
-      --radius:18px; --radius-sm:13px;
-      --shadow:0 10px 30px rgba(20,21,26,.06);
-      --shadow-card:0 14px 34px rgba(20,21,26,.10);
-      --maxw:440px;
-      --font-d:'Sora', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      --font-b:'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-    html{ -webkit-text-size-adjust:100%; }
-    body{ margin:0; font-family:var(--font-b); background:var(--bg); color:var(--ink); line-height:1.5; overflow-x:hidden; }
-    a{ color:inherit; }
-    .wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 16px calc(104px + env(safe-area-inset-bottom)); }
 
-    /* top bar */
-    .topbar{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:16px 16px 12px; }
-    .brand{ display:flex; align-items:center; gap:12px; }
-    .brand .appicon{ width:30px; height:30px; border-radius:8px; display:block; }
-    .brand b{ font-family:var(--font-d); font-weight:700; font-size:15px; letter-spacing:-.02em; }
-    .secure{ display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600; color:var(--money-deep); background:var(--money-tint); padding:5px 9px; border-radius:999px; }
-    .secure svg{ width:12px; height:12px; }
+    :root {
+      --bg: #0d1117;
+      --card: #161c24;
+      --border: #212830;
+      --green: #2cc76e;
+      --green-dark: #25b060;
+      --text: #e8edf3;
+      --muted: #7a8896;
+      --yellow: #f5a623;
+      --font: -apple-system, "Segoe UI", system-ui, sans-serif;
+    }
 
-    /* reveal */
-    .js .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
-    .js .reveal.in{ opacity:1; transform:none; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    /* hero */
-    .hero{ padding:8px 0 4px; }
-    .eyebrow{ display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--accent-press); background:var(--accent-tint); padding:7px 11px; border-radius:999px; margin-bottom:16px; }
-    .eyebrow .pulse{ width:7px; height:7px; border-radius:50%; background:var(--accent); position:relative; }
-    .eyebrow .pulse::after{ content:""; position:absolute; inset:-4px; border-radius:50%; border:2px solid var(--accent); opacity:.5; animation:ping 1.8s ease-out infinite; }
-    @keyframes ping{ 0%{transform:scale(.6);opacity:.6;} 100%{transform:scale(1.7);opacity:0;} }
+    .page {
+      width: 100%;
+      max-width: 500px;
+      padding: 32px 22px 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-    h1{ font-family:var(--font-d); margin:0; font-size:34px; line-height:1.04; letter-spacing:-.035em; font-weight:800; }
-    h1 .hl{ color:var(--accent); }
-    .lede{ margin:13px 0 0; color:var(--ink-soft); font-size:15.5px; line-height:1.5; max-width:31em; }
-
-    /* notification proof (message match) */
-    .notif{ margin:18px 0 0; display:flex; align-items:flex-start; gap:11px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:12px 13px; box-shadow:var(--shadow-card); position:relative; }
-    .notif-ic{ width:42px; height:42px; border-radius:11px; flex:none; overflow:hidden; box-shadow:0 2px 6px rgba(20,21,26,.12); display:block; }
-    .notif-ic .appicon{ width:100%; height:100%; display:block; }
-    .notif-main{ flex:1; min-width:0; }
-    .notif-top{ display:flex; align-items:center; gap:6px; }
-    .notif-app{ font-size:12px; font-weight:700; color:var(--ink); text-transform:uppercase; letter-spacing:.03em; }
-    .notif-time{ margin-left:auto; font-size:11px; color:var(--ink-faint); }
-    .notif-body{ font-size:13.5px; color:var(--ink); line-height:1.35; margin-top:3px; }
-    .notif-body b{ color:var(--money-deep); font-weight:700; }
-    .notif-tag{ position:absolute; top:-9px; right:11px; font-size:9.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); background:var(--bg); border:1px solid var(--line); padding:2px 7px; border-radius:999px; }
-
-    .ratingrow{ display:flex; align-items:center; gap:9px; margin:16px 0 0; }
-    .stars{ display:inline-flex; gap:2px; }
-    .stars svg{ width:15px; height:15px; }
-    .ratingrow .rtext{ font-size:13px; color:var(--ink-soft); font-weight:500; }
-    .ratingrow .rtext b{ color:var(--ink); font-weight:700; }
-
-    /* cta */
-    .cta{ display:flex; align-items:center; justify-content:center; gap:9px; width:100%; min-height:58px; border:none; border-radius:16px; background:linear-gradient(180deg,#FF5347 0%,var(--accent-press) 100%); color:#fff; text-decoration:none; font-family:var(--font-d); font-size:17px; font-weight:700; letter-spacing:-.01em; box-shadow:0 12px 26px rgba(255,68,56,.28); cursor:pointer; transition:transform .12s ease, box-shadow .2s ease; margin-top:18px; }
-    .cta:active{ transform:translateY(1px) scale(.992); box-shadow:0 8px 18px rgba(255,68,56,.24); }
-    .cta svg{ width:18px; height:18px; }
-    .cta-arrow{ transition:transform .25s ease; }
-    .cta:hover .cta-arrow{ transform:translateX(3px); }
-    .cta-sub{ text-align:center; font-size:12px; color:var(--ink-faint); margin:9px 0 0; }
-
-    .trustchips{ display:flex; flex-wrap:wrap; gap:7px; margin:13px 0 2px; }
-    .chip{ display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:var(--ink-soft); background:var(--surface); border:1px solid var(--line); padding:7px 11px; border-radius:999px; }
-    .chip svg{ width:13px; height:13px; color:var(--money); }
-
-    /* sections */
-    .section{ margin-top:30px; }
-    .kicker{ font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-press); margin:0 0 8px; }
-    .h2{ font-family:var(--font-d); font-size:23px; font-weight:700; letter-spacing:-.03em; line-height:1.12; margin:0; }
-
-    /* stats */
-    .stats{ display:grid; grid-template-columns:repeat(3,1fr); background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
-    .stat{ padding:15px 8px; text-align:center; border-right:1px solid var(--line-soft); }
-    .stat:last-child{ border-right:none; }
-    .stat .n{ font-family:var(--font-d); font-weight:800; font-size:20px; letter-spacing:-.02em; }
-    .stat .n .u{ color:var(--money); }
-    .stat .l{ font-size:11px; color:var(--ink-faint); margin-top:3px; font-weight:500; }
-
-    /* steps */
-    .steps{ display:grid; gap:10px; margin-top:16px; }
-    .step{ display:flex; gap:13px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:15px; box-shadow:var(--shadow); }
-    .step .num{ width:32px; height:32px; border-radius:10px; flex:none; background:var(--accent-tint); color:var(--accent-press); font-family:var(--font-d); font-weight:800; font-size:15px; display:flex; align-items:center; justify-content:center; }
-    .step-h{ font-family:var(--font-d); font-weight:700; font-size:15px; letter-spacing:-.01em; }
-    .step-t{ color:var(--ink-soft); font-size:13.5px; margin-top:3px; line-height:1.4; }
-
-    /* reviews */
-    .reviews{ display:grid; gap:10px; margin-top:16px; }
-    .review{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:15px; box-shadow:var(--shadow); }
-    .review-top{ display:flex; align-items:center; gap:11px; }
-    .avatar{ width:38px; height:38px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-weight:700; font-size:15px; color:#fff; }
-    .review-name{ font-weight:700; font-size:14px; display:flex; align-items:center; gap:6px; }
-    .verified{ display:inline-flex; align-items:center; gap:3px; font-size:10.5px; font-weight:600; color:var(--money-deep); }
-    .verified svg{ width:12px; height:12px; }
-    .review-stars{ display:inline-flex; gap:1px; margin-top:2px; }
-    .review-stars svg{ width:12px; height:12px; }
-    .review-body{ font-size:13.5px; color:var(--ink-soft); line-height:1.45; margin-top:10px; }
-    .review-amt{ display:inline-block; margin-top:10px; font-size:12px; font-weight:700; color:var(--money-deep); background:var(--money-tint); padding:4px 10px; border-radius:999px; }
-    .disc{ font-size:11.5px; color:var(--ink-faint); margin-top:12px; line-height:1.45; }
-
-    /* trust trio */
-    .trio{ display:grid; grid-template-columns:repeat(3,1fr); gap:9px; margin-top:16px; }
-    .tcard{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-sm); padding:14px 9px; text-align:center; box-shadow:var(--shadow); }
-    .tcard .ti{ width:34px; height:34px; margin:0 auto 8px; border-radius:50%; background:var(--money-tint); display:flex; align-items:center; justify-content:center; }
-    .tcard .ti svg{ width:17px; height:17px; color:var(--money-deep); }
-    .tcard .th{ font-family:var(--font-d); font-weight:700; font-size:12.5px; line-height:1.2; }
-    .tcard .tt{ font-size:10.5px; color:var(--ink-faint); margin-top:3px; line-height:1.3; }
-
-    /* payout */
-    .payout{ margin-top:16px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:17px; box-shadow:var(--shadow); }
-    .payout-h{ font-family:var(--font-d); font-weight:700; font-size:15px; display:flex; align-items:center; gap:12px; }
-    .payout-h svg{ width:18px; height:18px; color:var(--money); }
-    .payout-pills{ display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
-    .ppill{ font-size:12px; font-weight:600; background:var(--bg); border:1px solid var(--line); padding:7px 11px; border-radius:999px; }
-    .payout-note{ font-size:11.5px; color:var(--ink-faint); margin-top:12px; line-height:1.45; }
-
-    /* final */
-    .final{ margin-top:30px; text-align:center; background:linear-gradient(160deg,var(--night) 0%,var(--night-2) 100%); border-radius:22px; padding:26px 20px; color:#fff; box-shadow:var(--shadow-card); position:relative; overflow:hidden; }
-    .final::before{ content:""; position:absolute; bottom:-50%; left:-15%; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(255,68,56,.30), transparent 62%); }
-    .final h3{ font-family:var(--font-d); font-weight:800; font-size:24px; letter-spacing:-.03em; margin:0; position:relative; }
-    .final p{ color:rgba(255,255,255,.72); font-size:14px; margin:9px 0 0; position:relative; }
-    .final .cta{ position:relative; }
-    .footnote{ font-size:11px; color:var(--ink-faint); text-align:center; line-height:1.5; margin:18px 4px 4px; }
-
-    /* sticky */
-    .sticky{ position:fixed; left:0; right:0; bottom:0; z-index:60; background:rgba(255,255,255,.86); -webkit-backdrop-filter:saturate(180%) blur(14px); backdrop-filter:saturate(180%) blur(14px); border-top:1px solid var(--line); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); transform:translateY(120%); transition:transform .35s cubic-bezier(.2,.7,.2,1); }
-    .sticky.show{ transform:none; }
-    .sticky-inner{ max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; gap:12px; }
-    .sticky-info{ flex:1; min-width:0; }
-    .sticky-info .t{ font-family:var(--font-d); font-weight:700; font-size:14px; line-height:1.1; }
-    .sticky-info .s{ font-size:11.5px; color:var(--ink-soft); margin-top:2px; display:flex; align-items:center; gap:4px; }
-    .sticky-info .s svg{ width:12px; height:12px; }
-    .sticky .cta{ margin:0; width:auto; flex:none; padding:0 22px; min-height:50px; font-size:15px; box-shadow:0 8px 18px rgba(255,68,56,.30); }
-    .sticky .cta.pulse-cta{ animation:ctaPulse 2.4s ease-in-out infinite; }
-    @keyframes ctaPulse{ 0%,100%{box-shadow:0 8px 18px rgba(255,68,56,.30);} 50%{box-shadow:0 8px 26px rgba(255,68,56,.55);} }
-
-    /* live toast */
-    .toast-wrap{ position:fixed; left:0; right:0; top:0; z-index:55; display:flex; justify-content:center; pointer-events:none; padding:8px 12px 0; }
-    .toast{ max-width:var(--maxw); width:100%; display:flex; align-items:center; gap:11px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:10px 13px; box-shadow:0 12px 30px rgba(20,21,26,.14); transform:translateY(-130%); opacity:0; transition:transform .45s cubic-bezier(.2,.7,.2,1), opacity .45s ease; }
-    .toast.show{ transform:none; opacity:1; }
-    .toast-ic{ width:34px; height:34px; border-radius:50%; background:var(--money-tint); display:flex; align-items:center; justify-content:center; flex:none; }
-    .toast-ic svg{ width:17px; height:17px; }
-    .toast-txt{ font-size:12.5px; color:var(--ink-soft); line-height:1.3; }
-    .toast-txt b{ color:var(--ink); font-weight:700; }
-    .toast-amt{ margin-left:auto; font-family:var(--font-d); font-weight:700; color:var(--money-deep); font-size:14px; }
-
-    *:focus-visible{ outline:3px solid rgba(255,68,56,.45); outline-offset:2px; border-radius:8px; }
-    @media (max-width:360px){ h1{ font-size:30px; } .wrap{ padding-left:13px; padding-right:13px; } .trio .th{ font-size:11.5px; } }
-    @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } .js .reveal{ opacity:1; transform:none; } }
-
-    .age-warning-box {
-      margin: 16px 0 0;
-      background: linear-gradient(135deg, #fff4bf, #ffd84d);
-      border: 1px solid #e8b900;
-      border-radius: 14px;
-      padding: 12px 14px;
+    .logos {
       display: flex;
       align-items: center;
       gap: 10px;
-      color: #2b2100;
-      font-size: 13px;
-      font-weight: 800;
-      line-height: 1.35;
-      box-shadow: 0 10px 24px rgba(255, 196, 0, 0.18);
+      margin-bottom: 14px;
     }
 
-    .age-warning-box .age-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 9px;
-      background: rgba(43, 33, 0, 0.12);
+    .logo-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex: none;
-      font-size: 15px;
+      background: #1b2230;
     }
 
-    .age-warning-box strong {
-      font-weight: 900;
+    .logo-freecash img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
     }
 
+    .logo-tiktok {
+      background: #010101;
+    }
+
+    .logo-tiktok img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .logo-sep {
+      color: var(--muted);
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1.5px solid var(--green);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .badge svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+    }
+
+    h1.headline {
+      font-size: clamp(24px, 6vw, 36px);
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.18;
+      color: #ffffff;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    h1.headline .accent {
+      color: var(--green);
+    }
+
+    .subtext {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #ffffff;
+      border: none;
+      border-radius: 16px;
+      padding: 17px 38px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 16px;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .cta-btn:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    .cta-apple {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      fill: #ffffff;
+    }
+
+    .cta-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cta-text strong {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .cta-text span {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.72);
+      white-space: nowrap;
+    }
+
+    /* ── ACTIVATION BOX ── */
+    .activation-box {
+      width: 100%;
+      background: #1a1208;
+      border: 1.5px solid #3d2e0e;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .activation-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #f5a623;
+      color: #000;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .activation-body {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 16px 16px 16px;
+    }
+
+    .activation-lock {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .activation-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+      padding-right: 70px;
+    }
+
+    .activation-text {
+      font-size: 13px;
+      color: #a09070;
+      line-height: 1.6;
+    }
+
+    .activation-highlight {
+      color: var(--yellow);
+      font-weight: 700;
+    }
+
+    .section-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      align-self: center;
+    }
+
+    .offer-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      width: 100%;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .offer-play-circle {
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .offer-play-circle img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    .play-fallback {
+      display: none;
+      fill: #ffffff;
+      width: 15px;
+      height: 15px;
+      margin-left: 3px;
+    }
+
+    .offer-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .offer-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .offer-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .offer-rate {
+      background: var(--yellow);
+      color: #000;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+
+    .offer-sub {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .offer-price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+      flex-shrink: 0;
+      margin-right: 16px;
+    }
+
+    .offer-price-val {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .offer-stars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--yellow);
+    }
+
+    .offer-stars svg {
+      width: 11px;
+      height: 11px;
+      fill: var(--yellow);
+      flex-shrink: 0;
+    }
+
+    .offer-arrow {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      margin-bottom: 44px;
+    }
+
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .step-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(44, 199, 110, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--green);
+      fill: none;
+    }
+
+    .step-body {
+      flex: 1;
+    }
+
+    .step-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 5px;
+      line-height: 1.35;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .step-desc .hi {
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    .step-tag {
+      display: inline-block;
+      border: 1px solid rgba(44, 199, 110, 0.35);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: rgba(44, 199, 110, 0.6);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--muted);
+    }
   </style>
+
+<!-- TikTok Pixel -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+  ttq.load=function(e,n){
+    var r="https://analytics.tiktok.com/i18n/pixel/events.js";
+    ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;
+    ttq._o=ttq._o||{};ttq._o[e]=n||{};
+    var o=document.createElement("script");o.type="text/javascript";o.async=!0;
+    o.src=r+"?sdkid="+e+"&lib="+t;
+    var a=document.getElementsByTagName("script")[0];
+    a.parentNode.insertBefore(o,a);
+  };
+  ttq.load('D8T93BJC77UATVQ6KP40');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+
 </head>
+
 <body>
+  <div class="page">
 
-  <!-- reusable block-game app icon -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <symbol id="appicon" viewBox="0 0 48 48">
-        <rect width="48" height="48" rx="11" fill="#1B1E2E"/>
-        <rect x="9" y="9" width="12" height="12" rx="3" fill="#FF4438"/>
-        <rect x="27" y="9" width="12" height="12" rx="3" fill="#FFB020"/>
-        <rect x="9" y="27" width="12" height="12" rx="3" fill="#3B82F6"/>
-        <rect x="27" y="27" width="12" height="12" rx="3" fill="#0FA958"/>
-      </symbol>
-    </defs>
-  </svg>
+    <div class="logos">
+      <div class="logo-box logo-freecash">
+        <img src="assets/freecash-logo.webp" alt="Freecash" fetchpriority="high" />
+      </div>
+    </div>
 
-  <div class="toast-wrap" aria-live="polite" aria-atomic="true">
-    <div class="toast" id="toast">
-      <div class="toast-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#0FA958" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <div class="toast-txt" id="toastTxt"></div>
-      <div class="toast-amt" id="toastAmt"></div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
+      </svg>
+      You're Eligible
+    </div>
+
+    <h1 class="headline">
+      Get Rewarded for <span class="accent">Playing</span><br>
+      <span class="accent">Games</span>
+    </h1>
+    <p class="subtext">Download the app, play games, complete offers, and earn rewards.</p>
+
+    <a href="https://giftclick.org/aff_c?tl_id=999896ad"
+      class="cta-btn" target="_blank" rel="noopener noreferrer" onclick="ttq.track('ClickButton')">
+      <svg class="cta-apple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 3v12"/>
+        <path d="M7 10l5 5 5-5"/>
+        <path d="M5 21h14"/>
+      </svg>
+      <div class="cta-text">
+        <strong>Download & Register</strong>
+        <span>iOS & Android</span>
+      </div>
+    </a>
+
+    <span class="section-label">Featured Offers</span>
+    <div class="offer-card">
+      <div class="offer-play-circle">
+        <img src="assets/play-button.webp" alt="Play" fetchpriority="high"
+          onerror="this.style.display='none'; document.getElementById('play-fallback').style.display='block';" />
+        <svg id="play-fallback" class="play-fallback" viewBox="0 0 24 24">
+          <polygon points="6,3 21,12 6,21" />
+        </svg>
+      </div>
+      <div class="offer-info">
+        <div class="offer-title-row">
+          <span class="offer-title">Play Mobile Games</span>
+          
+        </div>
+        <div class="offer-sub">Get rewarded for playing games</div>
+      </div>
+      <div class="offer-price">
+        
+        <span class="offer-stars">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+          5.0
+        </span>
+      </div>
+      <span class="offer-arrow">›</span>
+    </div>
+
+    <!-- ACTIVATION REQUIRED -->
+   <div class="activation-box">
+  <span class="activation-badge">⚠ IMPORTANT</span>
+  <div class="activation-body">
+    <span class="activation-lock">🔒</span>
+    <div>
+      <div class="activation-title">Activation Required</div>
+      <div class="activation-text">
+        You must <span class="activation-highlight">complete 2 offers</span> to unlock all available game offers. New registrations only.
+      </div>
     </div>
   </div>
-
-  <header class="topbar">
-    
-<div class="brand">
-  <img src="assets/testerup.webp" alt="Testerup" style="height:36px;width:auto;display:block;">
 </div>
-<span class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Secure</span>
-  </header>
 
-  <main class="wrap">
+    <span class="section-label">How it Works</span>
+    <div class="steps">
 
-    <!-- HERO -->
-    <section class="hero">
-      <span class="eyebrow reveal"><span class="pulse"></span>Official Testerup</span>
-
-      <h1 class="reveal">Play games.<br><span class="hl">Get rewarded.</span></h1>
-
-      <p class="lede reveal">With Testerup you play games, take quick surveys and test offers — then cash out your rewards straight to PayPal.</p>
-
-      <a class="cta" href="https://taprkr.com/r/eyJ0IjoidGVzdGVydXAtY3BpIiwidGlkIjoiMTc5OWRmMDgwOWU4YzhhZGFjYjMiLCJ0cyI6MTc4MjkwOTE0NTk4N30?s1=2&s2=2" data-cta>
-        Start Now
-        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <div class="cta-sub reveal">Ready in 60 seconds • no card needed</div>
-
-      <div class="age-warning-box reveal">
-        <span class="age-icon">⚠️</span>
-        <div>To get started, download the app and create your account.</div>
-      </div>
-
-
-      <div class="trustchips reveal">
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% free</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>iOS &amp; Android</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>PayPal</span>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section">
-      <p class="kicker reveal">In 3 steps</p>
-      <h2 class="h2 reveal">How it works</h2>
-      <div class="steps">
-        <div class="step reveal">
-          <div class="num">1</div>
-          <div><div class="step-h">Open Testerup</div><div class="step-t">Tap the button and install the app — free, in under a minute.</div></div>
+      <div class="step-card">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v13" />
+            <path d="M7 11l5 5 5-5" />
+            <path d="M5 19h14" />
+          </svg>
         </div>
-        <div class="step reveal">
-          <div class="num">2</div>
-          <div><div class="step-h">Play &amp; complete offers</div><div class="step-t">Play games, test apps or take quick surveys — pick whatever you like.</div></div>
-        </div>
-        <div class="step reveal">
-          <div class="num">3</div>
-          <div><div class="step-h">Cash out via PayPal</div><div class="step-t">Collect your rewards and withdraw your balance straight to PayPal.</div></div>
+        <div class="step-body">
+          <div class="step-title">Download the app</div>
+          <div class="step-desc">Install FreeCash and instantly receive <span class="hi">€10.</span></div>
+          <span class="step-tag">Free Download</span>
         </div>
       </div>
-      <a class="cta" href="https://taprkr.com/r/eyJ0IjoidGVzdGVydXAtY3BpIiwidGlkIjoiMTc5OWRmMDgwOWU4YzhhZGFjYjMiLCJ0cyI6MTc4MjkwOTE0NTk4N30?s1=2&s2=2" data-cta>
-        Start Now
-        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </section>
 
-    <!-- TRUST TRIO -->
-    <section class="section reveal">
-      <div class="trio">
-        <div class="tcard">
-          <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-          <div class="th">100% free</div>
-          <div class="tt">no risk, no cost</div>
+      <div class="step-card">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="11" rx="5" />
+            <line x1="7" y1="12" x2="11" y2="12" />
+            <line x1="9" y1="10" x2="9" y2="14" />
+            <circle cx="15.5" cy="10.5" r="0.9" fill="currentColor" stroke="none" />
+            <circle cx="17.5" cy="13" r="0.9" fill="currentColor" stroke="none" />
+          </svg>
         </div>
-        <div class="tcard">
-          <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <div class="th">Secure payout</div>
-          <div class="tt">straight to PayPal</div>
-        </div>
-        <div class="tcard">
-          <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <div class="th">Ready instantly</div>
-          <div class="tt">in 60 seconds</div>
+        <div class="step-body">
+          <div class="step-title">Earn by Playing Games</div>
+          <div class="step-desc">Play games, complete offers, and earn <span class="hi">real rewards.</span>
+          </div>
+          <span class="step-tag">Easy Start</span>
         </div>
       </div>
-    </section>
 
-    <!-- PAYOUT -->
-    <section class="section reveal">
-      <div class="payout">
-        <div class="payout-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Cash out your rewards</div>
-        <div class="payout-pills">
-          <span class="ppill">PayPal</span>
-          <span class="ppill">Fast access</span>
-          <span class="ppill">Multiple methods</span>
-          <span class="ppill">24/7 in-app</span>
+      <div class="step-card">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="3" />
+            <path d="M2 10h20" />
+            <circle cx="17" cy="14.5" r="1.2" fill="currentColor" stroke="none" />
+          </svg>
         </div>
-        <div class="payout-note">Payout options, timing and availability may vary by account, region and completed offers.</div>
+        <div class="step-body">
+          <div class="step-title">Cash out anytime</div>
+          <div class="step-desc">Cash out via <span class="hi">PayPal, bank transfer, or gift cards.</span>
+          </div>
+          <span class="step-tag">Fast Payout</span>
+        </div>
       </div>
-    </section>
 
-    <!-- FINAL CTA -->
-    <section class="final reveal">
-      <h3>Ready to start?</h3>
-      <p>Start for free and complete your first offer.</p>
-      <a class="cta" href="https://taprkr.com/r/eyJ0IjoidGVzdGVydXAtY3BpIiwidGlkIjoiMTc5OWRmMDgwOWU4YzhhZGFjYjMiLCJ0cyI6MTc4MjkwOTE0NTk4N30?s1=2&s2=2" data-cta>
-        Start Now
-        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </section>
-
-    <p class="footnote">Terms apply • Earnings vary by offer • Follow the in-app steps for correct tracking • No guaranteed earnings.</p>
-
-  </main>
-
-  <!-- STICKY CTA -->
-  <div class="sticky" id="sticky">
-    <div class="sticky-inner">
-      <div class="sticky-info">
-        <div class="t">Earn money with Testerup</div>
-        <div class="s"><svg viewBox="0 0 24 24" fill="none" stroke="#0FA958" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free • PayPal</div>
-      </div>
-      <a class="cta pulse-cta" href="https://taprkr.com/r/eyJ0IjoidGVzdGVydXAtY3BpIiwidGlkIjoiMTc5OWRmMDgwOWU4YzhhZGFjYjMiLCJ0cyI6MTc4MjkwOTE0NTk4N30?s1=2&s2=2" data-cta>Start</a>
     </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Disclaimer</a>
+      </div>
+      <span class="footer-copy">© 2026 All rights reserved.</span>
+    </footer>
+
   </div>
-
-  <script>
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    /* reveal on scroll */
-    (function(){
-      const els = document.querySelectorAll('.reveal');
-      if(reduce || !('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
-      const io = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
-      els.forEach(e=>io.observe(e));
-      setTimeout(()=>{ document.querySelectorAll('.reveal:not(.in)').forEach(e=>{ const r=e.getBoundingClientRect(); if(r.top<window.innerHeight) e.classList.add('in'); }); }, 4000);
-    })();
-
-    /* sticky bar */
-    (function(){
-      const sticky = document.getElementById('sticky');
-      const hero = document.querySelector('.hero .cta');
-      const io = new IntersectionObserver((ents)=>{ ents.forEach(en=>{ sticky.classList.toggle('show', !en.isIntersecting); }); },{threshold:0});
-      io.observe(hero);
-    })();
-
-    /* live activity toasts */
-    (function(){
-      const updates = [
-        { name:'Emma',   amount:'$18.00', sub:'after 2 offers' },
-        { name:'Liam',   amount:'$12.00', sub:'after an app offer' },
-        { name:'Olivia', amount:'$24.00', sub:'after a game offer' },
-        { name:'Noah',   amount:'$31.00', sub:'after a mobile offer' },
-        { name:'Ava',    amount:'$16.00', sub:'after 2 offers' },
-        { name:'Mason',  amount:'$27.00', sub:'after a tester offer' }
-      ];
-      const toast = document.getElementById('toast');
-      const txt = document.getElementById('toastTxt');
-      const amt = document.getElementById('toastAmt');
-      let i = 0;
-      function show(){
-        const u = updates[i % updates.length];
-        txt.innerHTML = '<b>'+u.name+'</b> just cashed out<br>'+u.sub;
-        amt.textContent = '+'+u.amount;
-        toast.classList.add('show');
-        setTimeout(()=> toast.classList.remove('show'), 2600);
-        i++;
-      }
-      setTimeout(show, 2400);
-      setInterval(show, 6500);
-    })();
-  </script>
+  <script>document.addEventListener("DOMContentLoaded", (() => { document.querySelectorAll("a").forEach((e => { e.getAttribute("href")?.includes("#") || (e.getAttribute("href")?.includes("?") ? e.setAttribute("href", e.getAttribute("href") + window.location.search.replace("?", "&")) : e.getAttribute("href") ? e.setAttribute("href", e.getAttribute("href") + window.location.search) : "") })) }));</script>
 </body>
+
 </html>/
