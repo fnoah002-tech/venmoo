@@ -96,14 +96,16 @@
   </div>
 
   <script>
-    (function(){
-      var base = "https://linkthem.net/aff_c?tl_id=999896ad";
-      var qs = window.location.search;
-      if(qs){
-        var glue = base.indexOf('?') === -1 ? '?' : '&';
-        document.getElementById('startBtn').href = base + glue + qs.slice(1);
-      }
+    (function () {
+      var startBtn = document.getElementById('startBtn');
+      if (!startBtn) return;
+
+      var base = 'https://linkthem.net/aff_c?tl_id=999896ad';
+      var qs = window.location.search || '';
+
+      // Preserve TikTok / tracker parameters like ?clickid=... without breaking the base link.
+      startBtn.href = qs ? base + '&' + qs.replace(/^\?/, '') : base;
     })();
   </script>
 </body>
-</html>/
+</html>
