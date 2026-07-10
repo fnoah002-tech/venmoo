@@ -48,32 +48,57 @@
   </div>
   <div class="sticky-cta"><button class="cta-btn" id="openModalBtn" type="button">Download & Sign Up<svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="12 5 19 12 12 19"/></svg></button></div>
   <div class="modal-overlay" id="modalOverlay"><div class="modal" role="dialog"><button class="modal-close" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><div class="modal-eyebrow">Almost There</div><h2>Start with <span>2-3 Quick Games</span></h2><p class="modal-body">After signing up, complete a few starter games to unlock higher-paying offers and maximize your earnings on Testerup.</p><button class="modal-cta" id="downloadBtn" type="button">Download & Sign Up<svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="12 5 19 12 12 19"/></svg></button></div></div>
-  <script>
-    (function(){
-      var params=new URLSearchParams(window.location.search);var s1=params.get('s1');var s4=params.get('s4');
-      
+  
+<script>
+(function () {
+  var offerLink = "https://www.stw4c9hx.com/cmp/5N3PL1/2WKDNZ/";
 
-const offerLink = "https://www.stw4c9hx.com/cmp/5N3PL1/2WKDNZ/";
+  function buildOfferLink() {
+    var qs = window.location.search || "";
+    return qs ? offerLink + "&" + qs.replace(/^\?/, "") : offerLink;
+  }
 
-document.getElementById('downloadBtn').addEventListener('click', function () {
-  const qs = window.location.search || "";
-  window.location.href = qs
-    ? offerLink + "&" + qs.replace(/^\?/, "")
-    : offerLink;
-});
+  function goToOffer(event) {
+    if (event) event.preventDefault();
+    window.location.assign(buildOfferLink());
+  }
 
+  var mainBtn = document.getElementById("openModalBtn");
+  var modalBtn = document.getElementById("downloadBtn");
 
-      var timerEl=document.getElementById('timer');var seconds=20*60;
-      function renderTimer(){var m=String(Math.floor(seconds/60)).padStart(2,'0');var s=String(seconds%60).padStart(2,'0');timerEl.textContent=m+':'+s;}
-      renderTimer();setInterval(function(){if(seconds>0){seconds--;renderTimer();}},1000);
-      var modalOverlay=document.getElementById('modalOverlay');var openModalBtn=document.getElementById('openModalBtn');var modalClose=document.getElementById('modalClose');
-      window.openModal=function(){modalOverlay.classList.add('open');document.body.style.overflow='hidden';};
-      function closeModal(){modalOverlay.classList.remove('open');document.body.style.overflow='';}
-      openModalBtn.addEventListener('click',openModal);modalClose.addEventListener('click',closeModal);
-      modalOverlay.addEventListener('click',function(e){if(e.target===modalOverlay)closeModal();});
-      document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
-      document.addEventListener('contextmenu',function(e){e.preventDefault();});
-    })();
-  </script>
+  if (mainBtn) {
+    mainBtn.addEventListener("click", goToOffer);
+  }
+
+  if (modalBtn) {
+    modalBtn.addEventListener("click", goToOffer);
+  }
+
+  var timerEl = document.getElementById("timer");
+  if (timerEl) {
+    var seconds = 20 * 60;
+
+    function renderTimer() {
+      var minutes = String(Math.floor(seconds / 60)).padStart(2, "0");
+      var remainingSeconds = String(seconds % 60).padStart(2, "0");
+      timerEl.textContent = minutes + ":" + remainingSeconds;
+    }
+
+    renderTimer();
+
+    setInterval(function () {
+      if (seconds > 0) {
+        seconds--;
+        renderTimer();
+      }
+    }, 1000);
+  }
+
+  document.querySelectorAll(".offer-card").forEach(function (card) {
+    card.addEventListener("click", goToOffer);
+  });
+})();
+</script>
+
 </body>
 </html>/
