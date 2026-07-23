@@ -336,13 +336,14 @@
   <script>
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* sub1 passthrough — appends ?sub1=TAG from landing page URL to all CTA links */
+    /* sub1 passthrough — appends sub1=TAG from the page URL to all CTA links.
+       sub1 is Everflow's parameter (proven working: SD tag arrived via sub1). */
     (function(){
-      var sub1 = new URLSearchParams(window.location.search).get('sub1');
-      if(sub1){
+      var tag = new URLSearchParams(window.location.search).get('sub1') || new URLSearchParams(window.location.search).get('s1');
+      if(tag){
         document.querySelectorAll('[data-cta]').forEach(function(a){
           var href = a.getAttribute('href');
-          a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + 'sub1=' + encodeURIComponent(sub1));
+          a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + 'sub1=' + encodeURIComponent(tag));
         });
       }
     })();
@@ -406,4 +407,4 @@
   </script>
 
 </body>
-</html>
+</html>/
