@@ -336,6 +336,17 @@
   <script>
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    /* sub1 passthrough — appends ?sub1=TAG from landing page URL to all CTA links */
+    (function(){
+      var sub1 = new URLSearchParams(window.location.search).get('sub1');
+      if(sub1){
+        document.querySelectorAll('[data-cta]').forEach(function(a){
+          var href = a.getAttribute('href');
+          a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + 'sub1=' + encodeURIComponent(sub1));
+        });
+      }
+    })();
+
     /* reveal on scroll */
     (function(){
       const els = document.querySelectorAll('.reveal');
@@ -395,4 +406,4 @@
   </script>
 
 </body>
-</html>/
+</html>
