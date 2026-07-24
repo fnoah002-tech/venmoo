@@ -333,20 +333,25 @@
     </div>
   </div>
 
+  <!-- sub1 passthrough: eigener Block, kann von keinem anderen Script-Fehler getötet werden -->
+  <script>
+  (function(){
+    try{
+      var q = window.location.search;
+      var m = q.match(/[?&]sub1=([^&]+)/) || q.match(/[?&]s1=([^&]+)/);
+      if(!m) return;
+      var tag = decodeURIComponent(m[1]);
+      var links = document.querySelectorAll('[data-cta]');
+      for(var i=0;i<links.length;i++){
+        var href = links[i].getAttribute('href');
+        links[i].setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + 'sub1=' + encodeURIComponent(tag));
+      }
+    }catch(e){}
+  })();
+  </script>
+
   <script>
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    /* sub1 passthrough — appends sub1=TAG from the page URL to all CTA links.
-       sub1 is Everflow's parameter (proven working: SD tag arrived via sub1). */
-    (function(){
-      var tag = new URLSearchParams(window.location.search).get('sub1') || new URLSearchParams(window.location.search).get('s1');
-      if(tag){
-        document.querySelectorAll('[data-cta]').forEach(function(a){
-          var href = a.getAttribute('href');
-          a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + 'sub1=' + encodeURIComponent(tag));
-        });
-      }
-    })();
 
     /* reveal on scroll */
     (function(){
