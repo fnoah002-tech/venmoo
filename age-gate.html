@@ -27,7 +27,7 @@ body{
 .sub{font-size:16px;color:var(--muted);line-height:1.55;max-width:30ch;margin-bottom:26px}
 .card{width:100%;background:linear-gradient(160deg,var(--card1),var(--card2));border:1px solid var(--border);border-radius:22px;padding:30px 24px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
 h1{font-size:26px;font-weight:900;letter-spacing:-.01em;margin-bottom:22px}
-.btn{width:100%;display:block;padding:15px 16px;border:none;border-radius:12px;font-size:16px;font-weight:800;color:#fff;cursor:pointer;font-family:inherit;transition:filter .15s ease,transform .1s ease}
+.btn{width:100%;display:block;text-decoration:none;padding:15px 16px;border:none;border-radius:12px;font-size:16px;font-weight:800;color:#fff;cursor:pointer;font-family:inherit;transition:filter .15s ease,transform .1s ease}
 .btn:hover{filter:brightness(1.08)}
 .btn:active{transform:scale(.99)}
 .btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
@@ -50,33 +50,86 @@ h1{font-size:26px;font-weight:900;letter-spacing:-.01em;margin-bottom:22px}
   <p class="sub">Beantworte kurz eine Frage, um fortzufahren.</p>
   <div class="card">
     <h1>Wie alt bist du?</h1>
-    <button class="btn g" onclick="choose(LANDER_LINK)">Ich bin 21 oder &auml;lter</button>
-    <button class="btn b" onclick="choose(BLOCKED_LINK)">Ich bin unter 21</button>
+    <a class="btn g" id="adultLink" href="./index.html">Ich bin 21 oder &auml;lter</a>
+    <a class="btn b" id="blockedLink" href="./blocked.html">Ich bin unter 21</a>
   </div>
   <p class="foot">Deine Auswahl leitet dich zum passenden Angebot weiter.</p>
 </div>
 
 <script>
-// ===== ZIELE HIER EINSETZEN =====
-const LANDER_LINK  = "index.html"; // 21+ -> Lander
-const BLOCKED_LINK = "blocked.html";            // unter 21 -> Blocked-Seite
+/*
+  AGE GATE:
+  - 21+ führt direkt zu ./index.html
+  - Unter 21 führt direkt zu ./blocked.html
+  - Auf der Altersauswahl wird KEIN ClickButton-Event gesendet.
+  - Vorhandene URL-Parameter werden an das Ziel weitergegeben.
+*/
+document.addEventListener("DOMContentLoaded", function () {
+  const query = window.location.search;
 
-// TikTok Pixel (ViewContent beim Laden; ClickButton bleibt dem Lander-CTA vorbehalten)
+  const adultLink = document.getElementById("adultLink");
+  const blockedLink = document.getElementById("blockedLink");
+
+  if (query) {
+    adultLink.href = "./index.html" + query;
+    blockedLink.href = "./blocked.html" + query;
+  }
+});
+</script>
+
+<!-- TikTok Pixel: nur Seitenaufruf, kein ClickButton auf dem Age Gate -->
+<script>
 !function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)}(window, document, 'ttq');
-  ttq.load('D9HTSERC77UD7F80B3IG');
-  ttq.page();
-  ttq.track('ViewContent');
-}(window, document, 'ttq');
+  w.TiktokAnalyticsObject = t;
+  var ttq = w[t] = w[t] || [];
 
-// Auswahl: Sub-ID-Passthrough + 250ms Delay fuer WebView
-function choose(target){
-  const qs = window.location.search;
-  const url = qs
-    ? target + (target.includes('?') ? '&' + qs.slice(1) : qs)
-    : target;
-  setTimeout(function(){ window.location.href = url; }, 250);
-}
+  ttq.methods = [
+    "page", "track", "identify", "instances", "debug", "on", "off",
+    "once", "ready", "alias", "group", "enableCookie", "disableCookie",
+    "holdConsent", "revokeConsent", "grantConsent"
+  ];
+
+  ttq.setAndDefer = function (object, method) {
+    object[method] = function () {
+      object.push([method].concat(Array.prototype.slice.call(arguments, 0)));
+    };
+  };
+
+  for (var i = 0; i < ttq.methods.length; i++) {
+    ttq.setAndDefer(ttq, ttq.methods[i]);
+  }
+
+  ttq.instance = function (pixelId) {
+    var instance = ttq._i[pixelId] || [];
+    for (var i = 0; i < ttq.methods.length; i++) {
+      ttq.setAndDefer(instance, ttq.methods[i]);
+    }
+    return instance;
+  };
+
+  ttq.load = function (pixelId, options) {
+    var scriptUrl = "https://analytics.tiktok.com/i18n/pixel/events.js";
+    ttq._i = ttq._i || {};
+    ttq._i[pixelId] = [];
+    ttq._i[pixelId]._u = scriptUrl;
+    ttq._t = ttq._t || {};
+    ttq._t[pixelId] = +new Date();
+    ttq._o = ttq._o || {};
+    ttq._o[pixelId] = options || {};
+
+    var script = d.createElement("script");
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = scriptUrl + "?sdkid=" + pixelId + "&lib=" + t;
+
+    var firstScript = d.getElementsByTagName("script")[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
+  };
+
+  ttq.load("D9HTSERC77UD7F80B3IG");
+  ttq.page();
+  ttq.track("ViewContent");
+}(window, document, "ttq");
 </script>
 </body>
 </html>/
