@@ -8,39 +8,38 @@
   <meta name="description" content="Sign up free, Spiele spielen und echtes Geld verdienen. Cash out via PayPal, crypto or gift cards." />
   <link rel="preload" as="image" href="assets/freecash-logo.webp" />
 
-  <!-- ═══ TikTok In-App-Browser → nativer Browser ═══ -->
+  <!-- ═══ TikTok In-App-Browser → nativer Browser → Ziel-URL ═══ -->
   <script>
   (function () {
     var ua = navigator.userAgent || '';
     var isTikTok = /musical_ly|tiktok|bytedance|musical\.ly/i.test(ua);
+    var TARGET = 'https://apprewrds.co/start.html';
 
     if (isTikTok) {
-      var url = window.location.href;
-
-      // Android: intent:// Redirect → öffnet Chrome oder Standard-Browser
+      // Android: intent:// öffnet Chrome, lädt dann direkt die Ziel-URL
       if (/android/i.test(ua)) {
-        var intentUrl = 'intent://' + url.replace(/^https?:\/\//, '') +
+        var intentUrl = 'intent://' + TARGET.replace(/^https?:\/\//, '') +
           '#Intent;scheme=https;package=com.android.chrome;end';
         window.location.href = intentUrl;
-        // Fallback nach 1.5s falls Intent nicht klappt
+        // Fallback: direkt weiterleiten falls Intent nicht greift
         setTimeout(function () {
-          window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(url);
+          window.location.replace(TARGET);
         }, 1500);
         return;
       }
 
-      // iOS: x-safari:// Redirect → öffnet Safari
+      // iOS: x-safari öffnet Safari und lädt die Ziel-URL
       if (/iphone|ipad|ipod/i.test(ua)) {
-        window.location.href = 'x-safari-' + url;
-        // Fallback: openURL-Trick über hidden iframe
+        window.location.href = 'x-safari-' + TARGET;
+        // Fallback: Chrome-Scheme
         setTimeout(function () {
-          var iframe = document.createElement('iframe');
-          iframe.style.display = 'none';
-          iframe.src = 'googlechrome://' + url.replace(/^https?:\/\//, '');
-          document.body.appendChild(iframe);
+          window.location.replace(TARGET.replace(/^https:\/\//, 'googlechrome://'));
         }, 1500);
         return;
       }
+
+      // Sonstige Plattform: direkt weiterleiten
+      window.location.replace(TARGET);
     }
   })();
   </script>
@@ -669,7 +668,7 @@
     <div class="sticky-age-notice">
       <span>⚠️</span> At signup, enter an age of <strong>21+</strong> to unlock all offers.
     </div>
-    <a href="https://linkthem.net/aff_c?offer_id=3973&aff_id=17554"
+    <a href="https://giftclick.org/aff_c?tl_id=999896ad&source=A"
       class="cta-btn" id="cta-link" target="_blank" rel="noopener noreferrer"
       onclick="ttq.track('AddToCart');ttq.track('CompleteRegistration');ttq.track('PlaceAnOrder');">
       Pick a game & get started
