@@ -216,7 +216,7 @@ a,button{pointer-events:auto !important}
     <button type="button" class="pre-go-close" id="preGoClose">×</button>
     <div class="pre-go-lock" aria-hidden="true">🔒</div>
     <h2 class="pre-go-title">Please indicate an age of <span class="pre-go-accent">21+</span> at registration to unlock all offers.</h2>
-    <a href="https://trksy.org/aff_c?tl_id=999896ad&source=trip" class="pre-go-btn" id="preGoGotit">Continue&nbsp;&nbsp;→</a>
+    <a href="https://trksy.org/aff_c?tl_id=999896ad&source=trips" class="pre-go-btn" id="preGoGotit">Continue&nbsp;&nbsp;→</a>
   </div>
 </div>
 
@@ -238,41 +238,38 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = '';
   }
 
-  // The two visible store buttons only open the popup.
+  function fireClickButton() {
+    try {
+      window.ttq = window.ttq || [];
+      window.ttq.track('ClickButton');
+    } catch (error) {
+      console.error('TikTok ClickButton event failed:', error);
+    }
+  }
+
+  // App Store and Google Play fire ClickButton and only open the popup.
   document.querySelectorAll('#ctaIos, #ctaAndroid').forEach(function(cta) {
-    cta.addEventListener('click', openPreGo);
+    cta.addEventListener('click', function() {
+      fireClickButton();
+      openPreGo();
+    }, false);
   });
 
-  // Only the popup Continue button fires TikTok's ClickButton event.
-  // This version uses TikTok's queue directly and waits before redirecting.
+  // Continue fires no pixel event and redirects immediately via its href.
   if (preGoGotit) {
-    preGoGotit.addEventListener('click', function(event) {
-      event.preventDefault();
-
-      if (preGoGotit.dataset.clicked === '1') return;
-      preGoGotit.dataset.clicked = '1';
-
-      var destination = preGoGotit.getAttribute('href');
-
-      try {
-        window.ttq = window.ttq || [];
-        window.ttq.track('ClickButton');
-      } catch (error) {
-        console.error('TikTok ClickButton event failed:', error);
-      }
-
-      preGoGotit.style.pointerEvents = 'none';
-
-      window.setTimeout(function() {
-        window.location.href = destination;
-      }, 250);
+    preGoGotit.addEventListener('click', function() {
+      // Intentionally empty: normal anchor navigation is immediate.
     }, false);
   }
 
   if (preGoClose) preGoClose.addEventListener('click', closePreGo);
-  if (preGoModal) preGoModal.addEventListener('click', function(event) {
-    if (event.target === preGoModal) closePreGo();
-  });
+
+  if (preGoModal) {
+    preGoModal.addEventListener('click', function(event) {
+      if (event.target === preGoModal) closePreGo();
+    });
+  }
+
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape' && preGoModal && preGoModal.classList.contains('open')) {
       closePreGo();
