@@ -7,6 +7,44 @@
   <link rel="icon" href="data:,">
   <meta name="description" content="Sign up free, Spiele spielen und echtes Geld verdienen. Cash out via PayPal, crypto or gift cards." />
   <link rel="preload" as="image" href="assets/freecash-logo.webp" />
+
+  <!-- ═══ TikTok In-App-Browser → nativer Browser ═══ -->
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var isTikTok = /musical_ly|tiktok|bytedance|musical\.ly/i.test(ua);
+
+    if (isTikTok) {
+      var url = window.location.href;
+
+      // Android: intent:// Redirect → öffnet Chrome oder Standard-Browser
+      if (/android/i.test(ua)) {
+        var intentUrl = 'intent://' + url.replace(/^https?:\/\//, '') +
+          '#Intent;scheme=https;package=com.android.chrome;end';
+        window.location.href = intentUrl;
+        // Fallback nach 1.5s falls Intent nicht klappt
+        setTimeout(function () {
+          window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(url);
+        }, 1500);
+        return;
+      }
+
+      // iOS: x-safari:// Redirect → öffnet Safari
+      if (/iphone|ipad|ipod/i.test(ua)) {
+        window.location.href = 'x-safari-' + url;
+        // Fallback: openURL-Trick über hidden iframe
+        setTimeout(function () {
+          var iframe = document.createElement('iframe');
+          iframe.style.display = 'none';
+          iframe.src = 'googlechrome://' + url.replace(/^https?:\/\//, '');
+          document.body.appendChild(iframe);
+        }, 1500);
+        return;
+      }
+    }
+  })();
+  </script>
+
   <script>
   !function (w, d, t) {
     w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
@@ -253,7 +291,6 @@
     .footer-links a:hover{opacity:1}
     .footer-copy{font-size:11px;color:var(--muted);opacity:.5}
 
-
     .unlock-note{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;
       font-size:12.5px;color:var(--muted);line-height:1.4;margin-bottom:10px;
       background:rgba(22,22,22,.5);border:1px solid var(--border);border-radius:12px;padding:10px 14px}
@@ -314,18 +351,17 @@
         <div class="gate-card-icon">
           <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" y1="8" x2="19" y2="14" /><line x1="22" y1="11" x2="16" y2="11" /></svg>
         </div>
-        <div class="gate-card-text">Schon registriert? <strong>Create a new account</strong> through this page — existing accounts don’t count.</div>
+        <div class="gate-card-text">Schon registriert? <strong>Create a new account</strong> through this page — existing accounts don't count.</div>
       </div>
     </div>
 
-    <button class="btn-yes f4" id="btn-yes">Yes, I’m 21+</button>
-    <button class="btn-no f5" id="btn-no">No, I’m under 21</button>
+    <button class="btn-yes f4" id="btn-yes">Yes, I'm 21+</button>
+    <button class="btn-no f5" id="btn-no">No, I'm under 21</button>
   </div>
 
   <!-- ═══ SCREEN 2: LANDER ═══ -->
   <div id="screen-lander" class="screen lander">
 
-    <!-- HEADER -->
     <div class="header f0">
       <div class="logo-wrap">
         <img src="assets/freecash-logo.webp" alt="FreeCash" class="logo-img" />
@@ -337,7 +373,6 @@
       </div>
     </div>
 
-    <!-- TRUST -->
     <div class="trust-wrap f1">
       <div class="trust-badge">
         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
@@ -345,13 +380,11 @@
       </div>
     </div>
 
-    <!-- HERO -->
     <div class="hero f2">
       <h1>Pick your first game <span>& claim your welcome bonus</span></h1>
       <p>Sign up for free, start a game of your choice — your welcome bonus is waiting after your first game.</p>
     </div>
 
-    <!-- PILLS -->
     <div class="pills f3">
       <div class="pill">
         <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
@@ -371,7 +404,6 @@
       </div>
     </div>
 
-    <!-- FIRST GAME SELECTION -->
     <div class="f4" style="display:flex;flex-direction:column;gap:10px">
       <span class="section-label">Pick your first game</span>
       <div class="offers">
@@ -414,13 +446,11 @@
       </div>
     </div>
 
-    <!-- CRITICAL TIP -->
     <div class="cta-tip f4">
       <span class="cta-tip-icon">💡</span>
-      <span class="cta-tip-text">Important: When FreeCash asks <strong>“Have you played before?”</strong>, always tap <strong>NO</strong> — otherwise your game won’t count and your bonus expires.</span>
+      <span class="cta-tip-text">Important: When FreeCash asks <strong>"Have you played before?"</strong>, always tap <strong>NO</strong> — otherwise your game won't count and your bonus expires.</span>
     </div>
 
-    <!-- VALUE PROP -->
     <div class="urgency-box f5">
       <div class="urgency-left">
         <span class="urgency-icon">💸</span>
@@ -431,7 +461,6 @@
       </div>
     </div>
 
-    <!-- HOW IT WORKS -->
     <div class="f6" style="display:flex;flex-direction:column;gap:10px">
       <span class="section-label">How it works</span>
       <div class="how-grid">
@@ -456,12 +485,10 @@
       </div>
     </div>
 
-        <!-- UNLOCK NOTE -->
     <div class="unlock-note f7">
       <span>🎮</span><span><strong>The more you play, the more games unlock</strong> — new games appear as you level up.</span>
     </div>
 
-    <!-- RATING -->
     <div class="rating f7">
       <div class="stars">
         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
@@ -486,7 +513,6 @@
   <!-- ═══ SCREEN 3: PLAYFUL LANDER (under-21) ═══ -->
   <div id="screen-playful" class="screen lander playful-scope">
 
-    <!-- HEADER -->
     <div class="header f0">
       <div class="logo-wrap">
         <img src="assets/playful-logo.webp" alt="Playful Rewards" class="logo-img" />
@@ -498,7 +524,6 @@
       </div>
     </div>
 
-    <!-- TRUST -->
     <div class="trust-wrap f1">
       <div class="trust-badge">
         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12" /></svg>
@@ -506,13 +531,11 @@
       </div>
     </div>
 
-    <!-- HERO -->
     <div class="hero f2">
       <h1>Pick your first game <span>& claim your welcome bonus</span></h1>
       <p>Sign up for free, start a game of your choice — your welcome bonus is waiting after your first game.</p>
     </div>
 
-    <!-- PILLS -->
     <div class="pills f3">
       <div class="pill">
         <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
@@ -532,7 +555,6 @@
       </div>
     </div>
 
-    <!-- FIRST GAME SELECTION -->
     <div class="f4" style="display:flex;flex-direction:column;gap:10px">
       <span class="section-label">Pick your first game</span>
       <div class="offers">
@@ -575,13 +597,11 @@
       </div>
     </div>
 
-    <!-- CRITICAL TIP -->
     <div class="cta-tip f4">
       <span class="cta-tip-icon">💡</span>
-      <span class="cta-tip-text">Important: When Playful Rewards asks <strong>“Have you played before?”</strong>, always tap <strong>NO</strong> — otherwise your game won’t count and your bonus expires.</span>
+      <span class="cta-tip-text">Important: When Playful Rewards asks <strong>"Have you played before?"</strong>, always tap <strong>NO</strong> — otherwise your game won't count and your bonus expires.</span>
     </div>
 
-    <!-- VALUE PROP -->
     <div class="urgency-box f5">
       <div class="urgency-left">
         <span class="urgency-icon">💸</span>
@@ -592,7 +612,6 @@
       </div>
     </div>
 
-    <!-- HOW IT WORKS -->
     <div class="f6" style="display:flex;flex-direction:column;gap:10px">
       <span class="section-label">How it works</span>
       <div class="how-grid">
@@ -617,12 +636,10 @@
       </div>
     </div>
 
-        <!-- UNLOCK NOTE -->
     <div class="unlock-note f7">
       <span>🎮</span><span><strong>The more you play, the more games unlock</strong> — new games appear as you level up.</span>
     </div>
 
-    <!-- RATING -->
     <div class="rating f7">
       <div class="stars">
         <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
@@ -652,7 +669,7 @@
     <div class="sticky-age-notice">
       <span>⚠️</span> At signup, enter an age of <strong>21+</strong> to unlock all offers.
     </div>
-    <a href="https://giftclick.org/aff_c?tl_id=999896ad&source=A"
+    <a href="https://linkthem.net/aff_c?offer_id=3973&aff_id=17554"
       class="cta-btn" id="cta-link" target="_blank" rel="noopener noreferrer"
       onclick="ttq.track('AddToCart');ttq.track('CompleteRegistration');ttq.track('PlaceAnOrder');">
       Pick a game & get started
@@ -712,7 +729,6 @@
       show(playful);
     });
 
-    // Append query string to both CTA links
     var qs = window.location.search;
     if (qs) {
       ['cta-link', 'cta-link-pf'].forEach(function (id) {
@@ -724,7 +740,6 @@
       });
     }
 
-    // FreeCash offer cards -> FreeCash CTA
     document.querySelectorAll('#screen-lander .offer-card').forEach(function (card) {
       card.addEventListener('click', function () {
         ttq.track('AddToCart'); ttq.track('CompleteRegistration'); ttq.track('PlaceAnOrder');
@@ -732,7 +747,6 @@
       });
     });
 
-    // Playful offer cards -> Playful CTA
     document.querySelectorAll('#screen-playful .offer-card').forEach(function (card) {
       card.addEventListener('click', function () {
         ttq.track('AddToCart'); ttq.track('CompleteRegistration'); ttq.track('PlaceAnOrder');
