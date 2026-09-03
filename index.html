@@ -1,7 +1,24 @@
-<script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_O5LDZ6SDymAiyD");whop.track("page");</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_O5LDZ6SDymAiyD");whop.track("page");</script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1602975754603058');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1602975754603058&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Pick Your Game & Claim Your Welcome Bonus</title>
@@ -671,7 +688,7 @@
     </div>
     <a href="https://giftclick.org/aff_c?tl_id=999896ad&source=A"
       class="cta-btn" id="cta-link" target="_blank" rel="noopener noreferrer"
-      onclick="ttq.track('AddToCart');ttq.track('CompleteRegistration');ttq.track('PlaceAnOrder');">
+      onclick="ttq.track('AddToCart');ttq.track('CompleteRegistration');ttq.track('PlaceAnOrder');fbq('track','AddToCart');fbq('track','CompleteRegistration');fbq('track','Purchase');">
       Pick a game & get started
       <svg viewBox="0 0 24 24"><polyline points="5 12 19 12" /><polyline points="12 5 19 12 12 19" /></svg>
     </a>
@@ -689,7 +706,7 @@
     </div>
     <a href="https://linkthem.net/aff_c?offer_id=2691&aff_id=17554&source=playful"
       class="cta-btn" id="cta-link-pf" target="_blank" rel="noopener noreferrer"
-      onclick="ttq.track('AddToCart');ttq.track('CompleteRegistration');ttq.track('PlaceAnOrder');">
+      onclick="ttq.track('AddToCart');ttq.track('CompleteRegistration');ttq.track('PlaceAnOrder');fbq('track','AddToCart');fbq('track','CompleteRegistration');fbq('track','Purchase');">
       Pick a game & get started
       <svg viewBox="0 0 24 24"><polyline points="5 12 19 12" /><polyline points="12 5 19 12 12 19" /></svg>
     </a>
@@ -743,6 +760,7 @@
     document.querySelectorAll('#screen-lander .offer-card').forEach(function (card) {
       card.addEventListener('click', function () {
         ttq.track('AddToCart'); ttq.track('CompleteRegistration'); ttq.track('PlaceAnOrder');
+        fbq('track','AddToCart'); fbq('track','CompleteRegistration'); fbq('track','Purchase');
         window.open(document.getElementById('cta-link').href, '_blank');
       });
     });
@@ -750,6 +768,7 @@
     document.querySelectorAll('#screen-playful .offer-card').forEach(function (card) {
       card.addEventListener('click', function () {
         ttq.track('AddToCart'); ttq.track('CompleteRegistration'); ttq.track('PlaceAnOrder');
+        fbq('track','AddToCart'); fbq('track','CompleteRegistration'); fbq('track','Purchase');
         window.open(document.getElementById('cta-link-pf').href, '_blank');
       });
     });
