@@ -203,7 +203,7 @@ window.TRACKING_CONFIG = Object.freeze({
         <div class="first-app"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzU1ZDhkYyIvPgo8Y2lyY2xlIGN4PSI1MCIgY3k9IjU0IiByPSIzMSIgZmlsbD0iI2YyYjA3YiIvPgo8cGF0aCBkPSJNMjAgMzVsNy0yMCAxNiA4IDctMTUgOCAxNSAxNi04IDcgMjB6IiBmaWxsPSIjZjVjNjJkIi8+CjxwYXRoIGQ9Ik0yMCAzNWg2MXYxMkgyMHoiIGZpbGw9IiNjOTQ1MzUiLz4KPHBhdGggZD0iTTI0IDU1YzctMTIgMTctOCAyNi0zIDktNSAxOS05IDI2IDMtMyAyMS0xMyAzMC0yNiAzMFMyNyA3NiAyNCA1NXoiIGZpbGw9IiMxNzE3MTciLz4KPGNpcmNsZSBjeD0iMzgiIGN5PSI1MCIgcj0iNCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSI2MiIgY3k9IjUwIiByPSI0IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzkgNzBjNyA1IDE1IDUgMjIgMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+" alt="Clash Royale"><span>Clash Royale</span></div>
         <div class="first-app"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzExMSIvPgo8cGF0aCBmaWxsPSJ3aGl0ZSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMjUgMTVsNjAgMTAtMTAgNjAtNjAtMTAgMTAtNjB6bTIwIDI3bDIwIDMtMyAyMC0yMC0zIDMtMjB6Ii8+Cjwvc3ZnPg==" alt="Roblox"><span>Roblox</span></div>
       </div>
-      <a class="btn-activate anim" style="animation-delay:0.3s;text-decoration:none" id="continueBtn" href="https://globalvisitlog.com/cf/click/1"><span data-i18n="continue">CONTINUE</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="hsl(160,20%,5%)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      <button class="btn-activate anim" style="animation-delay:0.3s" id="continueBtn" type="button"><span data-i18n="continue">CONTINUE</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="hsl(160,20%,5%)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
       <p class="reassure anim" style="animation-delay:0.4s" data-i18n="reassure1">Cash out through Apple Wallet • Instant payouts</p>
     </div>
 
@@ -328,7 +328,6 @@ document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAtt
   }
 
   
-  document.getElementById("activateBtn2").addEventListener("click", activate, {passive:true});
 
   // Restore state if user already activated and came back
   try {
@@ -343,13 +342,23 @@ document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAtt
 
 <script>
 (function(){
-  ["continueBtn","activateBtn2"].forEach(function(id){
-    var el=document.getElementById(id);
-    if(!el) return;
-    el.addEventListener("click",function(){
-      try{ if(window.whop) whop.track("lead"); }catch(e){}
-    },{passive:true});
-  });
+  var continueBtn = document.getElementById("continueBtn");
+  if (continueBtn) {
+    continueBtn.addEventListener("click", function(){
+      var qualifyView = document.getElementById("view-qualify");
+      var instrView = document.getElementById("view-instructions");
+      if (qualifyView) qualifyView.classList.add("hidden");
+      if (instrView) instrView.classList.remove("hidden");
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+
+  var startBtn = document.getElementById("activateBtn2");
+  if (startBtn) {
+    startBtn.addEventListener("click", function(){
+      try { if (window.whop) whop.track("lead"); } catch(e) {}
+    }, {passive:true});
+  }
 })();
 </script>
 
