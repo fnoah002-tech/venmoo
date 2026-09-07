@@ -1,107 +1,147 @@
-<!DOCTYPE html><html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Start Earning — Reco</title>
-<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#07070d">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://www.stw4c9hx.com">
+<link rel="dns-prefetch" href="https://www.stw4c9hx.com">
+<title>Reco Social — $150 welcome bonus</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:hsl(160,20%,5%);color:#fff}
-.lp-wrap{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;position:relative;overflow-x:hidden}
-.bg-glow{position:fixed;inset:0;background:radial-gradient(ellipse at center,hsla(160,100%,30%,0.12) 0%,transparent 60%),radial-gradient(ellipse at center,hsla(160,100%,20%,0.08) 0%,transparent 80%),hsl(160,20%,5%);z-index:0}
-.container{position:relative;z-index:1;width:100%;max-width:480px;padding:24px 20px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.logo-row{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.logo-row img{width:60px;height:60px;border-radius:14px;box-shadow:0 0 20px hsla(160,100%,50%,0.15)}
-.logo-row span{color:hsla(0,0%,100%,0.5);font-size:22px;font-weight:500}
-.pill{display:inline-flex;align-items:center;gap:7px;background:hsla(160,100%,50%,0.1);border:1px solid hsla(160,100%,50%,0.35);color:hsl(160,100%,60%);font-size:12px;font-weight:700;letter-spacing:0.08em;padding:7px 14px;border-radius:999px;margin-bottom:16px}
-.pill .live{width:7px;height:7px;border-radius:50%;background:hsl(160,100%,50%);box-shadow:0 0 8px hsl(160,100%,50%);animation:pulse 1.8s ease-in-out infinite}
-.hero-title{font-size:clamp(1.5rem,6vw,2rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em;color:#fff;margin-bottom:8px;text-wrap:balance}
-.hero-title .grad{background:linear-gradient(180deg,hsl(160,100%,60%) 0%,hsl(160,100%,42%) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{color:hsla(0,0%,100%,0.55);font-size:14px;line-height:1.5;max-width:340px;margin-bottom:22px}
-.qualify-list{display:flex;flex-direction:column;gap:12px;width:100%;margin-bottom:20px}
-.qualify-item{position:relative;display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,hsl(160,12%,11%) 0%,hsl(160,10%,9%) 100%);border:1px solid hsl(160,20%,20%);border-radius:16px;padding:16px;text-align:left;overflow:hidden}
-.qualify-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:hsl(160,100%,50%)}
-.qualify-icon{width:46px;height:46px;border-radius:12px;background:hsla(160,100%,50%,0.12);border:1px solid hsla(160,100%,50%,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.qualify-text{flex:1;min-width:0}
-.qualify-text h2{font-size:clamp(1.05rem,4vw,1.3rem);font-weight:800;letter-spacing:-0.01em;color:#fff;margin-bottom:2px}
-.qualify-text p{font-size:12px;color:hsla(0,0%,100%,0.5);line-height:1.35}
-.qualify-badge{flex-shrink:0;background:hsla(160,100%,50%,0.12);border:1px solid hsla(160,100%,50%,0.3);color:hsl(160,100%,55%);font-size:12px;font-weight:800;padding:6px 10px;border-radius:8px;white-space:nowrap}
-.btn-activate{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:20px 32px;border:none;border-radius:16px;cursor:pointer;background:linear-gradient(180deg,hsl(160,100%,55%) 0%,hsl(160,100%,45%) 100%);box-shadow:0 0 30px hsla(160,100%,50%,0.5),0 0 60px hsla(160,100%,50%,0.25),0 4px 15px hsla(0,0%,0%,0.3);transition:all 0.2s ease}
-.btn-activate:hover{transform:translateY(-2px);box-shadow:0 0 40px hsla(160,100%,50%,0.6),0 0 80px hsla(160,100%,50%,0.3),0 8px 25px hsla(0,0%,0%,0.4)}
-.btn-activate:active{transform:translateY(1px) scale(0.98)}
-.btn-activate span{font-size:16px;font-weight:700;color:hsl(160,20%,5%);letter-spacing:0.05em}
-.btn-activate svg{flex-shrink:0}
-.reassure{margin-top:14px;font-size:12px;color:hsla(0,0%,100%,0.4);line-height:1.4}
-.anim{opacity:0;animation:fadeSlideUp 0.5s ease forwards}
-@keyframes fadeSlideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.status-banner{display:flex;align-items:center;gap:10px;width:100%;background:hsla(160,100%,50%,0.1);border:1px solid hsla(160,100%,50%,0.3);border-radius:14px;padding:12px 16px;margin-bottom:18px;text-align:left}
-.status-banner .dot{width:10px;height:10px;border-radius:50%;background:hsl(160,100%,50%);flex-shrink:0;box-shadow:0 0 10px hsl(160,100%,50%);animation:pulse 1.8s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
-.status-banner p{font-size:13px;font-weight:600;color:hsl(160,100%,75%)}
-.card-dark{background:hsl(160,10%,10%);border:1px solid hsl(160,15%,18%);border-radius:16px;padding:20px 18px;width:100%;text-align:left;margin-bottom:16px}
-.card-dark h3{text-align:center;font-size:11px;font-weight:700;letter-spacing:0.2em;color:hsla(0,0%,100%,0.5);margin-bottom:18px}
-.step{position:relative;display:flex;gap:14px;padding-bottom:18px}
-.step:not(:last-child)::after{content:"";position:absolute;left:14px;top:30px;bottom:0;width:2px;background:hsl(160,15%,18%)}
-.step:last-child{padding-bottom:0}
-.step-num{width:28px;height:28px;border-radius:50%;background:hsl(160,100%,50%);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:hsl(160,20%,5%);flex-shrink:0;z-index:1}
-.step h4{font-size:14px;font-weight:700;margin-bottom:3px}
-.step p{font-size:12px;color:hsla(0,0%,100%,0.55);line-height:1.45}
-.step p .accent{color:hsl(160,100%,55%);font-weight:600}
-.card-important{background:hsl(160,10%,8%);border:1px solid hsl(0,70%,45%);border-radius:16px;padding:20px 18px;width:100%;text-align:left;position:relative;margin-bottom:16px}
-.badge{position:absolute;top:-11px;right:16px;background:hsl(0,70%,50%);color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:6px;letter-spacing:0.05em}
-.card-important .inner{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
-.card-important h4{font-size:15px;font-weight:800;margin-bottom:4px}
-.card-important .desc{font-size:12px;color:hsla(0,0%,100%,0.6);line-height:1.5}
-.card-important .desc .accent{color:hsl(160,100%,55%);font-weight:700}
-.imp-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid hsl(160,15%,15%)}
-.imp-list li{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:hsla(0,0%,100%,0.6);line-height:1.4}
-.imp-list li svg{flex-shrink:0;margin-top:1px}
-.section-label{width:100%;text-align:left;font-size:11px;font-weight:700;letter-spacing:0.2em;color:hsla(0,0%,100%,0.5);margin-bottom:12px}
-.reward{width:100%;background:hsl(160,10%,10%);border:1px solid hsl(160,15%,18%);border-radius:16px;padding:16px;margin-bottom:12px;text-align:left;transition:border-color 0.3s ease}
-.reward.ready{border-color:hsla(160,100%,50%,0.5);box-shadow:0 0 24px hsla(160,100%,50%,0.12)}
-.reward-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.reward-tile{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid hsla(0,0%,100%,0.12);overflow:hidden}
-.reward-tile img{width:30px;height:30px;object-fit:contain}
-.reward-info{flex:1;min-width:0}
-.reward-info h4{font-size:15px;font-weight:800}
-.reward-info p{font-size:12px;color:hsla(0,0%,100%,0.5)}
-.reward-prize{flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;line-height:1.1;font-size:17px;font-weight:800;color:hsl(160,100%,55%)}
-.reward-prize span{font-size:10px;font-weight:600;color:hsla(0,0%,100%,0.45);letter-spacing:0.02em;margin-top:2px}
-.progress-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.progress-row .lbl{font-size:11px;font-weight:600;color:hsla(0,0%,100%,0.55)}
-.progress-row .cnt{font-size:11px;font-weight:700;color:hsla(0,0%,100%,0.8)}
-.pbar{width:100%;height:7px;border-radius:4px;background:hsl(160,12%,16%);overflow:hidden;margin-bottom:12px}
-.pbar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,hsl(160,100%,45%),hsl(160,100%,55%));transition:width 0.6s ease}
-.reward-btn{width:100%;padding:12px;border:none;border-radius:12px;font-size:13px;font-weight:800;letter-spacing:0.03em;cursor:pointer;transition:all 0.2s ease}
-.reward-btn.locked{background:hsl(160,10%,14%);color:hsla(0,0%,100%,0.4);cursor:not-allowed}
-.reward-btn.ready{background:linear-gradient(180deg,hsl(160,100%,55%),hsl(160,100%,45%));color:hsl(160,20%,5%);box-shadow:0 0 20px hsla(160,100%,50%,0.4)}
-.reward-btn.ready:active{transform:scale(0.98)}
-.reward-unavailable{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border-radius:12px;background:hsla(0,70%,50%,0.12);border:1px solid hsla(0,70%,55%,0.4);color:hsl(0,80%,70%);font-size:13px;font-weight:700}
-.mini-note{font-size:11px;color:hsla(0,0%,100%,0.35);margin-top:4px;text-align:center;line-height:1.4}
-.overlay{position:fixed;inset:0;z-index:10;background:hsla(160,25%,3%,0.75);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.25s ease forwards}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal{position:relative;width:100%;max-width:400px;background:hsl(160,12%,10%);border:1px solid hsl(160,20%,20%);border-radius:20px;padding:28px 24px;text-align:center;box-shadow:0 20px 60px hsla(0,0%,0%,0.5);animation:pop 0.3s cubic-bezier(0.34,1.56,0.64,1) forwards}
-@keyframes pop{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
-.modal-icon{width:64px;height:64px;border-radius:18px;background:hsla(160,100%,50%,0.12);border:1px solid hsla(160,100%,50%,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.modal h3{font-size:20px;font-weight:800;letter-spacing:-0.01em;margin-bottom:10px}
-.modal .lead{font-size:14px;color:hsla(0,0%,100%,0.6);line-height:1.5;margin-bottom:20px}
-.modal-note{display:flex;gap:12px;align-items:flex-start;text-align:left;background:hsl(160,10%,8%);border:1px solid hsl(160,15%,18%);border-radius:14px;padding:14px 16px;margin-bottom:22px}
-.modal-note .num{width:24px;height:24px;border-radius:50%;background:hsl(160,100%,50%);color:hsl(160,20%,5%);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.modal-note p{font-size:13px;color:hsla(0,0%,100%,0.75);line-height:1.45}
-.modal-note .accent{color:hsl(160,100%,55%);font-weight:700}
-.modal-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;border:none;background:hsl(160,10%,16%);color:hsla(0,0%,100%,0.6);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s ease}
-.modal-close:hover{background:hsl(160,10%,22%);color:#fff}
-.hidden{display:none!important}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+:root{--bg:#07070d;--card:#15151f;--card2:#1f1f2b;--line:#ffffff14;--tx:#fff;--mut:#9a9aa8;--dim:#6b6b78;
+--b1:#5b7cff;--b2:#8a5cff;--b3:#ff6aa8;--acc:#b9a8ff;--green:#30d158;--red:#ff453a;--blue:#0a84ff}
+html{-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+background:radial-gradient(640px 360px at 50% -80px,#2a2352,transparent 70%),var(--bg);
+color:var(--tx);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;line-height:1.45;overflow-x:hidden}
+.wrap{max-width:440px;margin:0 auto;padding:calc(16px + env(safe-area-inset-top)) 18px 100px}
+.grad{background:linear-gradient(90deg,#8fa4ff,#c48bff,#ff8fc0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:-.01em}
+.icon{width:38px;height:38px;border-radius:11px;flex-shrink:0;overflow:hidden;
+background:linear-gradient(160deg,#5b7cff 0%,#6f5cff 40%,#a85cff 70%,#ff6aa8 100%);box-shadow:0 6px 16px -6px #7a5cffaa}
+.icon svg{width:100%;height:100%;display:block}
+.brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.tbr{display:flex;gap:7px}
+.pill{font-size:11.5px;font-weight:800;border:1px solid #ffffff26;border-radius:99px;padding:5px 10px;color:var(--mut)}
+.pill.star{color:#ff9f0a;border-color:#ff9f0a44}
+.social{display:flex;align-items:center;justify-content:center;gap:10px;margin:4px 0 0}
+.avstack{display:flex}
+.av{width:26px;height:26px;border-radius:50%;border:2px solid var(--bg);margin-left:-9px}
+.av:first-child{margin-left:0}
+.social .cnt{font-size:12.5px;color:var(--mut);font-weight:600}
+.social .cnt b{color:var(--tx);font-weight:800}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.16em;
+text-transform:uppercase;color:var(--acc);margin:16px 0 10px}
+.eyebrow::before,.eyebrow::after{content:"";height:1px;width:26px;background:#8a5cff66}
+h1{font-size:31px;line-height:1.12;font-weight:900;letter-spacing:-.026em;text-align:center}
+.lead{text-align:center;color:var(--mut);font-size:15px;margin-top:9px}
+.count{display:flex;align-items:center;justify-content:center;gap:7px;margin:14px auto 0;width:max-content;padding:7px 14px;border-radius:99px;
+background:#ff453a14;border:1px solid #ff453a3d;font-size:12.5px;font-weight:800;color:#ffb3ad}
+.count .cdT{font-variant-numeric:tabular-nums;color:#fff;font-weight:900}
+.slotcard{position:relative;background:linear-gradient(180deg,#1b1b2a,#111119);border:1px solid var(--line);border-radius:22px;
+padding:18px 16px 16px;margin-top:14px;box-shadow:0 22px 50px -22px #000c,inset 0 1px 0 #ffffff0d}
+.slothead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.slothead b{font-size:13px;letter-spacing:.03em;color:var(--acc)}
+.freetag{font-size:10.5px;font-weight:900;letter-spacing:.1em;color:#fff;background:linear-gradient(90deg,var(--b1),var(--b2));border-radius:99px;padding:5px 11px}
+.slotframe{border:1px solid #8a5cff55;border-radius:16px;padding:9px;background:#0a0a12;box-shadow:inset 0 0 0 1px #0006,0 0 26px -12px #8a5cff99}
+.slot{display:flex;justify-content:center;gap:8px}
+.reel{flex:1;max-width:104px;height:96px;background:linear-gradient(180deg,#14141f,#08080f);border:1px solid #ffffff1f;border-radius:13px;
+display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:inset 0 10px 18px #000a,inset 0 -10px 18px #00000080}
+.reel.spin{filter:blur(1.6px)}
+.reel.land{animation:pop .4s cubic-bezier(.2,1.7,.4,1)}
+@keyframes pop{0%{transform:scale(.5) translateY(-14px)}100%{transform:scale(1)}}
+.reel.hit{border-color:#b9a8ffaa;box-shadow:inset 0 10px 18px #000a,0 0 20px #8a5cff88}
+.slotcard.won{border-color:#8a5cff66;box-shadow:0 0 0 1px #8a5cff33,0 26px 64px -20px #8a5cff40}
+.verdict{text-align:center;font-size:13.5px;font-weight:800;letter-spacing:.13em;min-height:20px;margin-top:12px;color:var(--mut)}
+.verdict.win{color:var(--acc)}
+.bonus{margin-top:14px;text-align:center;border:1px solid #8a5cff66;border-radius:16px;background:linear-gradient(180deg,#8a5cff1f,#8a5cff08);padding:16px 14px 14px}
+.bonus[hidden]{display:none}
+.bwon{font-size:11px;font-weight:900;letter-spacing:.22em;color:var(--acc);text-transform:uppercase}
+.bamt{display:block;font-size:46px;font-weight:900;letter-spacing:-.02em;line-height:1.05;margin-top:3px}
+.blbl{display:block;font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--acc);margin-top:2px}
+.stack{display:flex;flex-direction:column;gap:8px;margin-top:14px;text-align:left}
+.chip{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:12px;background:#0b0b12;border:1px solid var(--line);
+color:var(--mut);font-weight:700;font-size:14px;opacity:.45;transform:translateY(5px);transition:.45s cubic-bezier(.2,.8,.3,1)}
+.chip i{width:23px;height:23px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:13px;font-weight:900;background:#2a2a3a;color:#7a7a90;flex-shrink:0}
+.chip .cv{flex:1}
+.chip .cx{font-size:12px;font-weight:800;color:var(--dim)}
+.chip.on{opacity:1;transform:none;border-color:#8a5cff66;background:linear-gradient(180deg,#8a5cff14,#0b0b12);color:var(--tx)}
+.chip.on i{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff}
+.chip.on .cx{color:var(--acc)}
+.bsub{display:block;font-size:12px;color:var(--mut);margin-top:11px;line-height:1.5}
+.spinbtn{position:relative;display:flex;align-items:center;justify-content:center;gap:9px;width:100%;border:0;border-radius:99px;padding:17px;margin-top:14px;
+font:900 17px -apple-system,BlinkMacSystemFont,sans-serif;cursor:pointer;overflow:hidden;
+background:linear-gradient(90deg,var(--b1),var(--b2) 55%,var(--b3));color:#fff;box-shadow:0 12px 30px -8px #8a5cffaa;transition:transform .12s}
+.spinbtn::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(100deg,transparent,#ffffff80,transparent);transform:skewX(-18deg);animation:sheen 2.6s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-60%}80%,100%{left:130%}}
+.spinbtn:active{transform:scale(.977)}
+.spinbtn.pulse{animation:pls .5s ease 2}
+@keyframes pls{50%{transform:scale(1.04)}}
+.revealnote{font-size:11px;color:var(--dim);text-align:center;margin-top:10px;line-height:1.5}
+.pool{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;font-size:12.5px;color:var(--mut);font-weight:600}
+.pool b{color:var(--acc);font-weight:800}
+.dotlive{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px #30d15830;animation:lp 1.4s infinite}
+@keyframes lp{50%{box-shadow:0 0 0 6px #30d15812}}
+.appcard{display:flex;gap:12px;align-items:center;margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:13px;text-decoration:none;color:inherit}
+.appcard .icon{width:58px;height:58px;border-radius:15px}
+.appcard .txt{flex:1;min-width:0}.appcard .n,.appcard .s,.appcard .r{display:block}.appcard .n{font-size:16px;font-weight:800}
+.appcard .s{font-size:12.5px;color:var(--mut);margin-top:2px}
+.appcard .r{font-size:12px;color:#ff9f0a;font-weight:800;margin-top:3px}
+.appcard .r span{color:var(--dim);font-weight:600}
+.appcard .get{margin-left:auto;background:var(--blue);color:#fff;border-radius:99px;padding:8px 16px;font-size:14px;font-weight:800;flex-shrink:0}
+.hiw{display:flex;align-items:center;justify-content:center;gap:9px;margin:26px 0 12px;font-size:12.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--mut)}
+.hiw .dot{width:5px;height:5px;border-radius:50%;background:var(--acc)}
+.step{display:flex;align-items:center;gap:12px;background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:10px}
+.step.key{background:var(--card2);border:2px solid #8a5cff}
+.ico{width:44px;height:44px;border-radius:13px;background:#8a5cff22;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:21px}
+.step.key .ico{background:linear-gradient(135deg,var(--b1),var(--b2))}
+.stt{font-size:16.5px;font-weight:700;line-height:1.3}
+.sts{font-size:13.5px;color:var(--mut);margin-top:2px}
+.num{font-size:14px;color:var(--dim);font-weight:600;flex-shrink:0}
+.step.key .num{color:var(--acc);font-weight:800}
+.stx{flex:1;min-width:0}
+.badges{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+.badge{font-size:11.5px;font-weight:700;color:var(--mut);background:#ffffff08;border:1px solid var(--line);border-radius:99px;padding:7px 12px}
+.fine{margin-top:18px;text-align:center;font-size:11px;line-height:1.55;color:var(--dim)}
+.toast{position:fixed;left:12px;bottom:88px;z-index:55;max-width:270px;display:flex;align-items:center;gap:10px;padding:9px 13px 9px 11px;border-radius:13px;
+background:#1b1b28f5;border:1px solid var(--line);box-shadow:0 14px 34px -14px #000e;transform:translateY(14px) scale(.97);opacity:0;transition:.35s;pointer-events:none}
+.toast.show{transform:none;opacity:1}
+.toast-t{font-size:12.5px;color:var(--tx);font-weight:600;line-height:1.3}
+.toast-t small{display:block;color:var(--dim);font-weight:600;font-size:11px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+background:linear-gradient(180deg,#07070d00,#07070d 42%);transform:translateY(140%);transition:transform .32s cubic-bezier(.2,.8,.3,1)}
+.sticky.show{transform:none}
+.stickybtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:440px;margin:0 auto;border:0;border-radius:99px;padding:16px;
+font:900 17px -apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(90deg,var(--b1),var(--b2) 55%,var(--b3));color:#fff;box-shadow:0 12px 30px -8px #8a5cffaa;cursor:pointer}
+.dim{position:fixed;inset:0;z-index:80;background:#0000;transition:background .3s;pointer-events:none}
+.dim.show{background:#0009;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:90;max-width:440px;margin:0 auto;background:#2c2c36;border-radius:24px 24px 0 0;
+padding:12px 18px calc(18px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .38s cubic-bezier(.2,.9,.3,1)}
+.sheet.show{transform:none}
+.grab{width:38px;height:5px;border-radius:99px;background:#ffffff33;margin:0 auto 14px}
+.sh-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sh-top b{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.sh-x{width:30px;height:30px;border-radius:50%;background:#ffffff1f;color:#fff;font-size:16px;font-weight:800;border:0;cursor:pointer}
+.sh-app{display:flex;gap:12px;align-items:center;background:#3a3a46;border-radius:14px;padding:12px}
+.sh-app .icon{width:54px;height:54px;border-radius:13px}
+.sh-n{font-size:15.5px;font-weight:800}
+.sh-s{font-size:12.5px;color:var(--mut);margin-top:2px}
+.sh-s b{color:var(--acc)}
+.sh-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:99px;padding:16px;margin-top:14px;
+font:900 17px -apple-system,BlinkMacSystemFont,sans-serif;background:var(--blue);color:#fff;cursor:pointer;box-shadow:0 10px 26px -8px #0a84ff99}
+.sh-note{text-align:center;font-size:11.5px;color:var(--dim);margin-top:10px}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:70}
+.conf{position:absolute;width:8px;height:12px;border-radius:2px}
+.coin{position:absolute;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6cf,#f5c451 45%,#b9791f);box-shadow:0 2px 6px #0008}
+@media(max-width:400px){h1{font-size:27px}.reel{height:86px;font-size:36px}}
+@media(prefers-reduced-motion:reduce){.spinbtn::after,.dotlive{animation:none}}
 </style>
+<noscript><meta http-equiv="refresh" content="0;url=https://www.stw4c9hx.com/9211KL/2DCLFC3/?sub1=test"></noscript>
 
-<!-- =========================================================
-     TRACKING STACK
-     Meta campaign entry URL (paste THIS URL into Meta Ads):
-     https://globalvisitlog.com/cf/r/6a9b01f34c29ae0012663693?ad_id={{ad.id}}&adset_id={{adset.id}}&campaign_id={{campaign.id}}&ad_name={{ad.name}}&adset_name={{adset.name}}&campaign_name={{campaign.name}}&source={{site_source_name}}&placement={{placement}}
-     IMPORTANT: outbound CTA on this lander uses ClickFlare /cf/click/1.
-     ========================================================= -->
-
-<!-- Meta Pixel -->
+<!-- ===== Tracking stack: Meta + Whop/Koast + ClickFlare ===== -->
 <script>
 !function(f,b,e,v,n,t,s){
   if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -115,9 +155,7 @@ fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=943252405500946&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel -->
 
-<!-- Whop / Koast Pixel -->
 <script>
 !function(w,d,s,u,n,a,b){
   if(w[n])return;
@@ -133,11 +171,8 @@ whop.setScope("biz_O5LDZ6SDymAiyD");
 whop.track("page");
 whop.track("view_content");
 </script>
-<!-- End Whop / Koast Pixel -->
 
 <script>
-/* Saved here so the exact Meta destination URL is not lost.
-   Do NOT redirect CTA clicks to this URL or the visitor would re-enter the campaign. */
 window.TRACKING_CONFIG = Object.freeze({
   metaCampaignUrl: "https://globalvisitlog.com/cf/r/6a9b01f34c29ae0012663693?ad_id={{ad.id}}&adset_id={{adset.id}}&campaign_id={{campaign.id}}&ad_name={{ad.name}}&adset_name={{adset.name}}&campaign_name={{campaign.name}}&source={{site_source_name}}&placement={{placement}}",
   clickFlareOutbound: "https://globalvisitlog.com/cf/click/1",
@@ -146,220 +181,133 @@ window.TRACKING_CONFIG = Object.freeze({
 });
 </script>
 
-
-<style>
-.first-apps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;margin:0 0 18px}
-.first-app{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:94px;padding:12px 8px;border-radius:14px;background:linear-gradient(180deg,hsl(160,12%,11%),hsl(160,10%,9%));border:1px solid hsl(160,20%,20%)}
-.first-app img{width:44px;height:44px;object-fit:contain;border-radius:10px}
-.first-app span{font-size:11px;font-weight:700;color:hsla(0,0%,100%,.78);text-align:center}
-</style>
-
-<!-- ClickFlare Lander Tracking -->
-<script>!function(){"use strict";var t="lp_ref",n="cpid",e="lpurl",c="https://globalvisitlog.com",r="(?<domain>http(?:s?)://[^/]*)".concat("/cf/click"),a="(?:(?:/(?<cta>[a-zA-Z0-9_-]+)/?)|(?:/))?",i="^".concat(r).concat(a).concat("(?:$|(\\?.*))"),o='javascript:window.clickflare.l="(?<original_link>'.concat(r).concat(a,'("|(\\?[^"]*"))).*'),s=function(){return new RegExp(i,"")},u=function(){return new RegExp(o,"")};function l(t){var n=function(t){return t.replace(s(),(function(t){for(var n=[],e=1;e<arguments.length;e++)n[e-1]=arguments[e];var r=n[n.length-1].domain;return t.replace(r,c)}))}(t);return'javascript:window.clickflare.l="'.concat(n,'"; void 0;')}function d(t,n){if(n&&t&&n.apply(document,[t]),/loaded|interactive|complete/.test(document.readyState))for(var e=0,c=document.links.length;e<c;e++)if(s().test(document.links[e].href)){var r=document.links[e];window.clickflare.links_replaced.has(r)||(r.href=l(r.href),window.clickflare.links_replaced.add(r))}}var f,h,m,p;!function(r,a){var i=document.onreadystatechange;window.clickflare||(window.clickflare={listeners:{},customParams:{},links_replaced:new Set,addEventListener:function(t,n){var e=this.listeners[t]||[];e.includes(n)||e.push(n),this.listeners[t]=e},dispatchEvent:function(t,n){n&&(this.customParams[t]=n),(this.listeners[t]||[]).forEach((function(t){return t(n)}))},push:function(t,n){n&&(this.customParams[t]=n),(this.listeners[t]||[]).forEach((function(t){return t(n)}))}},document.onreadystatechange=function(t){return d(t,i)},d(null,i),setTimeout((function(){!function(r,a){var i,o=function(r,a){var i=new URL("".concat(c).concat(r));o=a,s="{",u=s+s,l="_",d=l+l,o.startsWith(u)||o.startsWith(d)||i.searchParams.set(n,a);var o,s,u,l,d;return i.searchParams.append(t,document.referrer),i.searchParams.append(e,location.href),i.searchParams.append("lpt",document.title),i.searchParams.append("t",(new Date).getTime().toString()),i.toString()}(r,a),s=document.createElement("script"),l=document.scripts[0];s.async=1,s.src=o,s.onerror=function(){!function(){for(var t=function(t,n){var e=document.links[t];u().test(decodeURI(e.href))&&setTimeout((function(){e&&e.setAttribute("href",function(t){var n=t.match(u());if(n){var e=(n.groups||{}).original_link;return e?e.slice(0,-1):t}return t}(decodeURI(e.href)))}))},n=0,e=document.links.length;n<e;n++)t(n)}()},null===(i=l.parentNode)||void 0===i||i.insertBefore(s,l)}(r,a)})))}("".concat("/cf/tags","/").concat(new URL(window.location.href).searchParams.get("cftmid")||"__CONTAINER_ID__"),(m=new URL(window.location.href).searchParams.get(n),f=new RegExp("(^| )".concat("cf_cpid","=([^;]+)")),p=(h=document.cookie.match(f))&&h.pop()||null,m||p||"__CAMPAIGN_ID__"))}();</script>
-<!-- End ClickFlare Lander Tracking -->
+<script>!function(){"use strict";var t="lp_ref",n="cpid",e="lpurl",c="https://globalvisitlog.com",r="(?<domain>http(?:s?)://[^/]*)".concat("/cf/click"),a="(?:(?:/(?<cta>[a-zA-Z0-9_-]+)/?)|(?:/))?",i="^".concat(r).concat(a).concat("(?:$|(\\?.*))"),o='javascript:window.clickflare.l="(?<original_link>'.concat(r).concat(a,'("|(\\?[^"]*"))).*'),s=function(){return new RegExp(i,"")},u=function(){return new RegExp(o,"")};function l(t){var n=function(t){return t.replace(s(),(function(t){for(var n=[],e=1;e<arguments.length;e++)n[e-1]=arguments[e];var r=n[n.length-1].domain;return t.replace(r,c)}))}(t);return'javascript:window.clickflare.l="'.concat(n,'"; void 0;')}function d(t,n){if(n&&t&&n.apply(document,[t]),/loaded|interactive|complete/.test(document.readyState))for(var e=0,c=document.links.length;e<c;e++)if(s().test(document.links[e].href)){var r=document.links[e];window.clickflare.links_replaced.has(r)||(r.href=l(r.href),window.clickflare.links_replaced.add(r))}}var f,h,m,p;!function(r,a){var i=document.onreadystatechange;window.clickflare||(window.clickflare={listeners:{},customParams:{},links_replaced:new Set,addEventListener:function(t,n){var e=this.listeners[t]||[];e.includes(n)||e.push(n),this.listeners[t]=e},dispatchEvent:function(t,n){n&&(this.customParams[t]=n),(this.listeners[t]||[]).forEach((function(t){return t(n)}))},push:function(t,n){n&&(this.customParams[t]=n),(this.listeners[t]||[]).forEach((function(t){return t(n)}))}},document.onreadystatechange=function(t){return d(t,i)},d(null,i),setTimeout((function(){!function(r,a){var i,o=function(r,a){var i=new URL("".concat(c).concat(r));o=a,s="{",u=s+s,l="_",d=l+l,o.startsWith(u)||o.startsWith(d)||i.searchParams.set(n,a);var o,s,u,l,d;return i.searchParams.append(t,document.referrer),i.searchParams.append(e,location.href),i.searchParams.append("lpt",document.title),i.searchParams.append("t",(new Date).getTime().toString()),i.toString()}(r,a),s=document.createElement("script"),l=document.scripts[0];s.async=1;s.src=o;s.onerror=function(){!function(){for(var t=function(t,n){var e=document.links[t];u().test(decodeURI(e.href))&&setTimeout((function(){e&&e.setAttribute("href",function(t){var n=t.match(u());if(n){var e=(n.groups||{}).original_link;return e?e.slice(0,-1):t}return t}(decodeURI(e.href)))}))},n=0,e=document.links.length;n<e;n++)t(n)}()},null===(i=l.parentNode)||void 0===i||i.insertBefore(s,l)}(r,a)})))}("".concat("/cf/tags","/").concat(new URL(window.location.href).searchParams.get("cftmid")||"__CONTAINER_ID__"),(m=new URL(window.location.href).searchParams.get(n),f=new RegExp("(^| )".concat("cf_cpid","=([^;]+)")),p=(h=document.cookie.match(f))&&h.pop()||null,m||p||"__CAMPAIGN_ID__"))}();</script>
+<!-- ===== End tracking stack ===== -->
 
 </head>
 <body>
-<div class="lp-wrap">
-  <div class="bg-glow"></div>
-  <div class="container">
-    <div class="logo-row anim">
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzA4MDgwOCIvPgo8cGF0aCBkPSJNNTkgMTljMiAxMiA5IDE5IDIxIDIxdjE1Yy04IDAtMTUtMi0yMS03djIwYzAgMTgtMTMgMjctMjcgMjQtMTEtMi0xOS0xMi0xOS0yMyAwLTE1IDEyLTI3IDI3LTI3aDR2MTVjLTktMi0xNiAzLTE2IDEyIDAgNSA0IDkgOSA5IDYgMCA5LTQgOS0xMVYxOXoiIGZpbGw9IiMyNUY0RUUiLz4KPHBhdGggZD0iTTY0IDE4YzIgMTEgOCAxNyAxOSAyMHYxNGMtNyAwLTEzLTItMTktNnYyMGMwIDE3LTExIDI2LTI1IDI2LTUgMC0xMC0yLTE0LTUgMyAxIDYgMiA5IDIgMTQgMCAyNS05IDI1LTI2VjQzYzYgNCAxMiA2IDE5IDZWMzhjLTctMy0xMi04LTE0LTIweiIgZmlsbD0iI0ZFMkM1NSIvPgo8cGF0aCBkPSJNNTkgMTljMiAxMiA5IDE5IDIxIDIxdjEwYy04IDAtMTUtMi0yMS03djIzYzAgMTQtOSAyMi0yMSAyMi0xMSAwLTIwLTktMjAtMjAgMC0xMiAxMC0yMSAyMi0yMWg0djEwaC00Yy02IDAtMTEgNS0xMSAxMSAwIDYgNSAxMCAxMCAxMCA3IDAgMTAtNSAxMC0xMlYxOXoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==" alt="TikTok">
-      <span>x</span>
-      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzE3NjdmZiIvPjxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjNjY1N2U4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZWY4M2E5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMjIiIGZpbGw9InVybCgjZykiLz4KPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yNCAyMGMtNSAwLTggNC04IDl2NDJjMCA3IDYgMTEgMTIgN2wyMi0xNCAyMiAxNGM2IDQgMTIgMCAxMi03VjI5YzAtNS0zLTktOC05SDI0em0yNiAxMmM4LTEwIDI0IDAgMTYgMTFMNTAgNTkgMzQgNDNjLTgtMTEgOC0yMSAxNi0xMXoiLz4KPC9zdmc+" alt="Reco">
-    </div>
-
-    <!-- QUALIFY VIEW -->
-    <div id="view-qualify">
-      <div class="pill anim" style="animation-delay:0.08s"><span class="live"></span><span data-i18n="pill">ACCOUNT VERIFIED</span></div>
-      <h1 class="hero-title anim" style="animation-delay:0.12s" data-i18n="heroTitle">You're eligible to <span class="grad">start earning</span></h1>
-      <p class="hero-sub anim" style="animation-delay:0.16s" data-i18n="heroSub">Your account qualifies for the following paid programs:</p>
-      <div class="qualify-list anim" style="animation-delay:0.2s">
-        <div class="qualify-item">
-          <div class="qualify-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M6 11h4M8 9v4M15 11.5h.01M18 10h.01" stroke="hsl(160,100%,55%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M17.5 6h-11A4.5 4.5 0 002 10.5v3A4.5 4.5 0 006.5 18c1.2 0 1.9-.5 2.7-1.2.6-.5 1.2-.8 2.8-.8s2.2.3 2.8.8c.8.7 1.5 1.2 2.7 1.2a4.5 4.5 0 004.5-4.5v-3A4.5 4.5 0 0017.5 6z" stroke="hsl(160,100%,55%)" stroke-width="2" stroke-linejoin="round"></path>
-            </svg>
-          </div>
-          <div class="qualify-text"><h2 data-i18n="q1T">Get Paid To Game</h2><p data-i18n="q1D">Play Roblox, Subway Surfers &amp; more</p></div>
-          <div class="qualify-badge" data-i18n="earn">Earn $$$</div>
-        </div>
-        <div class="qualify-item">
-          <div class="qualify-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <rect x="6" y="2" width="12" height="20" rx="3" stroke="hsl(160,100%,55%)" stroke-width="2"></rect>
-              <path d="M10.5 18.5h3" stroke="hsl(160,100%,55%)" stroke-width="2" stroke-linecap="round"></path>
-              <path d="M9 6.5h6M9 9.5h4" stroke="hsl(160,100%,55%)" stroke-width="1.6" stroke-linecap="round"></path>
-            </svg>
-          </div>
-          <div class="qualify-text"><h2 data-i18n="q2T">Get Paid To Scroll</h2><p data-i18n="q2D">Scroll and explore available offers</p></div>
-          <div class="qualify-badge" data-i18n="earn">Earn $$$</div>
-        </div>
-      </div>
-
-      <div class="first-apps anim" style="animation-delay:0.24s">
-        <div class="first-app"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzA4MDgwOCIvPgo8cGF0aCBkPSJNNTkgMTljMiAxMiA5IDE5IDIxIDIxdjE1Yy04IDAtMTUtMi0yMS03djIwYzAgMTgtMTMgMjctMjcgMjQtMTEtMi0xOS0xMi0xOS0yMyAwLTE1IDEyLTI3IDI3LTI3aDR2MTVjLTktMi0xNiAzLTE2IDEyIDAgNSA0IDkgOSA5IDYgMCA5LTQgOS0xMVYxOXoiIGZpbGw9IiMyNUY0RUUiLz4KPHBhdGggZD0iTTY0IDE4YzIgMTEgOCAxNyAxOSAyMHYxNGMtNyAwLTEzLTItMTktNnYyMGMwIDE3LTExIDI2LTI1IDI2LTUgMC0xMC0yLTE0LTUgMyAxIDYgMiA5IDIgMTQgMCAyNS05IDI1LTI2VjQzYzYgNCAxMiA2IDE5IDZWMzhjLTctMy0xMi04LTE0LTIweiIgZmlsbD0iI0ZFMkM1NSIvPgo8cGF0aCBkPSJNNTkgMTljMiAxMiA5IDE5IDIxIDIxdjEwYy04IDAtMTUtMi0yMS03djIzYzAgMTQtOSAyMi0yMSAyMi0xMSAwLTIwLTktMjAtMjAgMC0xMiAxMC0yMSAyMi0yMWg0djEwaC00Yy02IDAtMTEgNS0xMSAxMSAwIDYgNSAxMCAxMCAxMCA3IDAgMTAtNSAxMC0xMlYxOXoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==" alt="TikTok"><span>TikTok</span></div>
-        <div class="first-app"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzU1ZDhkYyIvPgo8Y2lyY2xlIGN4PSI1MCIgY3k9IjU0IiByPSIzMSIgZmlsbD0iI2YyYjA3YiIvPgo8cGF0aCBkPSJNMjAgMzVsNy0yMCAxNiA4IDctMTUgOCAxNSAxNi04IDcgMjB6IiBmaWxsPSIjZjVjNjJkIi8+CjxwYXRoIGQ9Ik0yMCAzNWg2MXYxMkgyMHoiIGZpbGw9IiNjOTQ1MzUiLz4KPHBhdGggZD0iTTI0IDU1YzctMTIgMTctOCAyNi0zIDktNSAxOS05IDI2IDMtMyAyMS0xMyAzMC0yNiAzMFMyNyA3NiAyNCA1NXoiIGZpbGw9IiMxNzE3MTciLz4KPGNpcmNsZSBjeD0iMzgiIGN5PSI1MCIgcj0iNCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSI2MiIgY3k9IjUwIiByPSI0IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzkgNzBjNyA1IDE1IDUgMjIgMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+" alt="Clash Royale"><span>Clash Royale</span></div>
-        <div class="first-app"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzExMSIvPgo8cGF0aCBmaWxsPSJ3aGl0ZSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMjUgMTVsNjAgMTAtMTAgNjAtNjAtMTAgMTAtNjB6bTIwIDI3bDIwIDMtMyAyMC0yMC0zIDMtMjB6Ii8+Cjwvc3ZnPg==" alt="Roblox"><span>Roblox</span></div>
-      </div>
-      <button class="btn-activate anim" style="animation-delay:0.3s" id="continueBtn" type="button"><span data-i18n="continue">CONTINUE</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="hsl(160,20%,5%)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
-      <p class="reassure anim" style="animation-delay:0.4s" data-i18n="reassure1">Cash out through Apple Wallet • Instant payouts</p>
-    </div>
-
-    <!-- INSTRUCTIONS VIEW (shown when the user comes back after activating) -->
-    <div id="view-instructions" class="hidden">
-      <div class="status-banner anim"><div class="dot"></div><p id="statusText">Reco active • Start offers to unlock rewards</p></div>
-      <div class="card-dark anim" style="animation-delay:0.05s">
-        <h3 data-i18n="howTitle">HOW TO START EARNING</h3>
-        <div class="step"><div class="step-num">1</div><div><h4 data-i18n="s1T">Download &amp; register</h4><p data-i18n="s1D">Tap <span class="accent">Download and register</span> below, then create your Reco account to get started.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div><h4 data-i18n="s2T">Complete games &amp; tasks for money</h4><p data-i18n="s2D">Follow the instructions in your pass and complete <span class="accent">games and tasks</span> to start earning real money.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div><h4 data-i18n="s3T">Complete 3 tasks to unlock top offers</h4><p data-i18n="s3D">Complete <span class="accent">3 tasks</span> to unlock high-paying popular offers like <span class="accent">Paid to Scroll</span>, Roblox and more.</p></div></div>
-      </div>
-      <a class="btn-activate anim" style="animation-delay:0.1s;text-decoration:none" id="activateBtn2"
-         href="https://globalvisitlog.com/cf/click/1">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="hsl(160,20%,5%)" stroke-width="2"></rect><path d="M16 12h.01" stroke="hsl(160,20%,5%)" stroke-width="2" stroke-linecap="round"></path></svg>
-        <span data-i18n="activate">START NOW</span>
-      </a>
-      <p class="reassure anim" style="animation-delay:0.15s;margin-bottom:20px" data-i18n="reassure2">Ready? Tap above to continue.</p>
-      <div class="card-important anim" style="animation-delay:0.2s">
-        <span class="badge" data-i18n="important">IMPORTANT</span>
-        <div class="inner">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px"><rect x="5" y="11" width="14" height="10" rx="2" stroke="hsl(0,70%,50%)" stroke-width="2"></rect><path d="M8 11V7a4 4 0 118 0v4" stroke="hsl(0,70%,50%)" stroke-width="2" stroke-linecap="round"></path></svg>
-          <div><h4 data-i18n="impT">Requirements to Unlock</h4><p class="desc" data-i18n="impD">Top offers stay locked until you are <span class="accent">21+</span> and have started <span class="accent">3 offers</span>.</p></div>
-        </div>
-        <ul class="imp-list">
-          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="hsl(160,100%,55%)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><span data-i18n="imp1">Start 3 offers in Reco to make progress.</span></li>
-        </ul>
-      </div>
-      <div class="section-label anim" style="animation-delay:0.25s" data-i18n="rewardsLabel">REWARDS TO UNLOCK</div>
-      <div id="rewardsList"></div>
-      <p class="mini-note anim" style="animation-delay:0.5s" data-i18n="miniNote">Rewards are credited to your Apple Wallet. One reward set per verified account.</p>
-    </div>
-  </div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="recoLogo" viewBox="0 0 100 100">
+<mask id="rm"><rect width="100" height="100" fill="#fff"/><path d="M50 66 C38 57 31 51 31 43 a8.5 8.5 0 0 1 19 -3 a8.5 8.5 0 0 1 19 3 C69 51 62 57 50 66Z" fill="#000"/></mask>
+<path d="M31 20h38a6 6 0 0 1 6 6v56l-25-12-25 12V26a6 6 0 0 1 6-6z" fill="#fff" mask="url(#rm)"/>
+</symbol></defs></svg>
+<div class="wrap">
+<div class="topbar">
+<span class="brand"><span class="icon"><svg><use href="#recoLogo"/></svg></span><span>Reco Social<small>Real recs. Real talk.</small></span></span>
+<span class="tbr"><span class="pill star">★ 4.7</span><span class="pill">FREE</span></span>
 </div>
-
-<!-- i18n engine: Reco ships en + de (PLAYBOOK geo table); currency symbol follows ?country -->
+<h1>Spin for your <span class="grad">$150 welcome bonus</span></h1>
+<div class="count">⏱ <span class="cdT" id="cdT">09:59</span></div>
+<div class="slotcard" id="slotcard">
+<div class="slothead"><b>★ Starter perks</b><span class="freetag" id="spinTag">FREE</span></div>
+<div class="slotframe"><div class="slot"><div class="reel" id="r0">🎁</div><div class="reel" id="r1">⭐</div><div class="reel" id="r2">🔗</div></div></div>
+<p class="verdict" id="verdict"></p>
+<div class="bonus" id="bonus" hidden>
+<span class="bwon">You unlocked</span>
+<span class="bamt grad" id="bamt">$0</span>
+<span class="blbl">WELCOME BONUS</span>
+<div class="stack" id="stack">
+<span class="chip"><i>✓</i><span class="cv">$150 welcome bonus</span><span class="cx">UNLOCKED</span></span>
+<span class="chip"><i>✓</i><span class="cv">Earn playing Subway Surfers 🏄</span><span class="cx">UNLOCKED</span></span>
+<span class="chip"><i>✓</i><span class="cv">Cash out in app</span><span class="cx">UNLOCKED</span></span>
+</div>
+</div>
+<button class="spinbtn" id="spinBtn" type="button">SPIN</button>
+</div>
+<a class="appcard js-go" href="#">
+<span class="icon"><svg><use href="#recoLogo"/></svg></span>
+<span class="txt"><span class="n">Reco Social</span><span class="s">Real recs. Real talk.</span><span class="r">★ 4.7 <span>· 25K ratings</span></span></span>
+<span class="get">GET</span>
+</a>
+<p class="fine" style="margin:0 0 10px;font-size:10px">Reveal spin shows standard new-member perks · not a game of chance · earnings per app terms</p>
+<div class="step key"><div class="ico">📲</div><div class="stx"><div class="stt">Get the app &amp; sign up</div><div class="sts">Free · email only</div></div><div class="num">1</div></div>
+<div class="step"><div class="ico">🎬</div><div class="stx"><div class="stt">Play Subway Surfers</div><div class="sts">Earn while you play</div></div><div class="num">2</div></div>
+<div class="step"><div class="ico">💸</div><div class="stx"><div class="stt">Cash out</div><div class="sts">$150 bonus + earnings</div></div><div class="num">3</div></div>
+</div>
+<div class="toast" id="toast"><span class="dotlive"></span><span class="toast-t" id="toastT">A new member just unlocked their starter perks<small>moments ago</small></span></div>
+<div class="sticky" id="sticky"><button class="stickybtn" id="stickyBtn" type="button">Spin</button></div>
+<div class="dim" id="dim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-label="Install">
+<div class="grab"></div>
+<div class="sh-top"><b>Reward reserved</b><button class="sh-x" id="shx" type="button" aria-label="Close">✕</button></div>
+<div class="sh-app">
+<span class="icon"><svg><use href="#recoLogo"/></svg></span>
+<div><div class="sh-n">Reco Social</div><div class="sh-s">Free · <b>$150 welcome bonus</b> reserved</div></div>
+</div>
+<button class="sh-btn js-go" type="button">⬇︎ Install &amp; claim</button>
+<p class="sh-note">Opens the App Store</p>
+</div>
+<div id="fx" aria-hidden="true"></div>
 <script>
-var T = {
-  en: { _title:'Start Earning — Reco', pill:'ACCOUNT VERIFIED', heroTitle:'You\'re eligible to <span class="grad">start earning</span>', heroSub:'Your account qualifies for the following paid programs:', q1T:'Get Paid To Game', q1D:'Play Roblox, Subway Surfers &amp; more', earn:'Earn $$$', q2T:'Get Paid To Scroll', q2D:'Scroll and explore available offers', continue:'CONTINUE', reassure1:'Cash out through Apple Wallet • Instant payouts', statusActive:'Reco active • Start offers to unlock rewards', statusAll:'All rewards unlocked — checking availability…', howTitle:'HOW TO START EARNING', s1T:'Download &amp; register', s1D:'Tap <span class="accent">Download and register</span> below, then create your Reco account to get started.', s2T:'Complete games &amp; tasks for money', s2D:'Follow the instructions in your pass and complete <span class="accent">games and tasks</span> to start earning real money.', s3T:'Complete 3 tasks to unlock top offers', s3D:'Complete <span class="accent">3 tasks</span> to unlock high-paying popular offers like <span class="accent">Paid to Scroll</span>, Roblox and more.', activate:'START NOW', reassure2:'Didn\'t add it yet? Tap above to add your pass again.', important:'IMPORTANT', impT:'Requirements to Unlock', impD:'Top offers stay locked until your wallet pass is active and you\'ve completed <span class="accent">3 tasks</span>. Keep completing tasks in your Reco to unlock them.', imp1:'Start 3 offers in Reco to make progress.', rewardsLabel:'REWARDS TO UNLOCK', miniNote:'Rewards are credited to your Apple Wallet. One reward set per verified account.', modalTitle:'Start Earning Now', modalLead:'Add your Reco to Apple Wallet and start earning from your scrolling &amp; get paid to game.', modalNote:'After adding the pass, <span class="accent">come back to this page</span> for your earning instructions.', startNow:'START EARNING NOW', taskScroll:'Paid to Scroll', taskPlay:'Play &amp; Earn', rate1:'$32/hr', rate2:'$28/hr', rate3:'$35/hr', perHour:'per hour', tasksDone:'Tasks completed', unlock:'UNLOCK {name}', locked:'LOCKED • {n} TASKS LEFT', unavail:'Currently Unavailable' },
-  de: { _title:'Jetzt verdienen — Reco', pill:'KONTO VERIFIZIERT', heroTitle:'Du bist berechtigt, <span class="grad">Geld zu verdienen</span>', heroSub:'Dein Konto qualifiziert sich für folgende bezahlte Programme:', q1T:'Fürs Gamen bezahlt werden', q1D:'Spiele Roblox, Subway Surfers &amp; mehr', earn:'$$$ verdienen', q2T:'Für Scrollen bezahlt werden', q2D:'Verdiene beim Scrollen, keine Vorkenntnisse nötig', continue:'WEITER', reassure1:'Auszahlung über Apple Wallet • Sofortige Auszahlung', statusActive:'Reco aktiv • Starte Offers, um Prämien freizuschalten', statusAll:'Alle Prämien freigeschaltet — Verfügbarkeit wird geprüft…', howTitle:'SO FÄNGST DU AN ZU VERDIENEN', s1T:'Reco aktivieren &amp; öffnen', s1D:'Tippe unten auf <span class="accent">Wallet-Pass aktivieren</span> und öffne dann deinen Reco in <span class="accent">Apple Wallet</span>.', s2T:'Spiele &amp; Aufgaben gegen Geld erledigen', s2D:'Folge den Anweisungen in deinem Pass und erledige <span class="accent">Spiele und Aufgaben</span>, um echtes Geld zu verdienen.', s3T:'3 Aufgaben erledigen, um Top-Angebote freizuschalten', s3D:'Erledige <span class="accent">3 Aufgaben</span>, um gut bezahlte Angebote wie <span class="accent">Paid to Scroll</span>, Roblox und mehr freizuschalten.', activate:'JETZT STARTEN', reassure2:'Bereit? Tippe oben auf „Jetzt starten“.', important:'WICHTIG', impT:'Voraussetzungen zum Freischalten', impD:'Top-Angebote bleiben gesperrt, bis du <span class="accent">21+</span> bist und <span class="accent">3 Offers gestartet</span> hast.', imp1:'Starte 3 Offers in Reco, um Fortschritte zu machen.', rewardsLabel:'PRÄMIEN ZUM FREISCHALTEN', miniNote:'Prämien werden deinem Apple Wallet gutgeschrieben. Ein Prämienset pro verifiziertem Konto.', modalTitle:'Jetzt verdienen', modalLead:'Füge deinen Reco zu Apple Wallet hinzu und verdiene mit deiner Scrollen &amp; beim Gamen.', modalNote:'Nachdem du den Pass hinzugefügt hast, <span class="accent">komm zurück auf diese Seite</span> für deine Anleitung.', startNow:'JETZT VERDIENEN', taskScroll:'Paid to Scroll', taskPlay:'Spielen &amp; verdienen', rate1:'32 $/Std.', rate2:'28 $/Std.', rate3:'35 $/Std.', perHour:'pro Stunde', tasksDone:'Aufgaben erledigt', unlock:'{name} FREISCHALTEN', locked:'GESPERRT • NOCH {n} AUFGABEN', unavail:'Derzeit nicht verfügbar' }
-};
-var countryToLang = { US:'en' };
-function detectLanguage() { return 'en'; }
-var CURRENT_LANG = detectLanguage();
-var CURRENT_T = T[CURRENT_LANG] || T.en;
-// Currency follows the country, not the language (PLAYBOOK): GB £, US/CA/AU $, EU €. Same numbers, symbol swapped.
-(function(){
-    var SYM = { GB:'£', US:'$', CA:'$', AU:'$', DE:'€', AT:'€', CH:'€' };
-    var c = (new URLSearchParams(location.search).get('country') || '').toUpperCase();
-    if (!c) { var rm = (navigator.language || '').toUpperCase().match(/-([A-Z]{2})$/); if (rm) c = rm[1]; }
-    var s = SYM[c]; if (!s) return;
-    var swap = function(v){ return typeof v === 'string' ? v.replace(/[$€£]/g, function(){ return s; }) : v; };
-    CURRENT_T = Object.keys(CURRENT_T).reduce(function(o,k){ o[k] = swap(CURRENT_T[k]); return o; }, {});
-})();
-document.documentElement.lang = CURRENT_LANG;
-document.title = CURRENT_T._title;
-document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if (CURRENT_T[k] !== undefined) el.innerHTML = CURRENT_T[k]; });
+var CTA_LINK="https://globalvisitlog.com/cf/click/1";
+function withQ2(u){var q=location.search;return q?u+(u.indexOf("?")>-1?"&"+q.substring(1):q):u;}
+var went=false;
+function openM(){if(went)return;went=true;try{if(window.whop)whop.track("lead");}catch(e){}setTimeout(function(){went=false;},1500);location.href=withQ2(CTA_LINK);}
+document.querySelectorAll(".js-go").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();openM();});});
+var dim=document.getElementById("dim"),sheet=document.getElementById("sheet");
+function openSheet(){dim.classList.add("show");sheet.classList.add("show");}
+function closeSheet(){dim.classList.remove("show");sheet.classList.remove("show");}
+document.getElementById("shx").addEventListener("click",closeSheet);dim.addEventListener("click",closeSheet);
+var POOL=["🎁","⭐","🔗","💬","💎","💵"],WIN="💵";
+var spun=false,busy=false,spunFlag=false;
+var reels=[0,1,2].map(function(i){return document.getElementById("r"+i);});
+var v=document.getElementById("verdict"),btn=document.getElementById("spinBtn"),card=document.getElementById("slotcard"),
+bonus=document.getElementById("bonus"),tag=document.getElementById("spinTag"),bamt=document.getElementById("bamt"),
+stack=document.getElementById("stack"),fx=document.getElementById("fx"),sticky=document.getElementById("sticky"),stickyBtn=document.getElementById("stickyBtn");
+function setSym(i,k){reels[i].textContent=k;}
+function land(i){reels[i].classList.remove("spin");setSym(i,WIN);reels[i].classList.add("land");setTimeout(function(){reels[i].classList.remove("land");reels[i].classList.add("hit");},400);}
+var CONF=["#5b7cff","#8a5cff","#ff6aa8","#30d158","#ffffff","#ffd60a"];
+function spawnConf(x,y){var el=document.createElement("div");el.className="conf";el.style.background=CONF[Math.floor(Math.random()*CONF.length)];fx.appendChild(el);
+el.style.left=(x-4)+"px";el.style.top=(y-6)+"px";var ang=Math.random()*Math.PI*2,dist=50+Math.random()*150,dx=Math.cos(ang)*dist,dy=Math.sin(ang)*dist-30,
+fall=window.innerHeight-y+70,rot=(Math.random()*2-1)*760,dur=1400+Math.random()*1000;
+var a=el.animate([{transform:"translate(0,0)",opacity:1},{transform:"translate("+dx+"px,"+dy+"px) rotate("+(rot/2)+"deg)",opacity:1,offset:.25},
+{transform:"translate("+(dx*1.1)+"px,"+fall+"px) rotate("+rot+"deg)",opacity:0}],{duration:dur,easing:"cubic-bezier(.2,.6,.3,1)"});a.onfinish=function(){el.remove();};}
+function spawnCoin(x,y){var c=document.createElement("div");c.className="coin";fx.appendChild(c);c.style.left=(x-11)+"px";c.style.top=(y-11)+"px";
+var dx=(Math.random()*2-1)*90,fall=window.innerHeight-y+60,rot=(Math.random()*2-1)*540,dur=1100+Math.random()*800;
+var a=c.animate([{transform:"translate(0,0)",opacity:1},{transform:"translate("+dx+"px,"+fall+"px) rotate("+rot+"deg)",opacity:.95,offset:.82},
+{transform:"translate("+dx+"px,"+(fall+70)+"px)",opacity:0}],{duration:dur,easing:"cubic-bezier(.3,.5,.4,1)"});a.onfinish=function(){c.remove();};}
+function fxBurst(){if(!Element.prototype.animate)return;var r=card.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height*0.4;
+for(var i=0;i<18;i++){(function(k){setTimeout(function(){spawnCoin(r.left+22+Math.random()*(r.width-44),r.top+18+Math.random()*34);},k*42);})(i);}
+for(var j=0;j<26;j++)spawnConf(cx,cy);}
+function countUp(el,to,dur){var start=null;function step(ts){if(!start)start=ts;var p=Math.min(1,(ts-start)/dur);el.textContent="$"+Math.floor(p*to);if(p<1)requestAnimationFrame(step);else el.textContent="$"+to;}requestAnimationFrame(step);}
+function lightStack(){var c=stack.querySelectorAll(".chip");for(var i=0;i<c.length;i++){(function(el,k){setTimeout(function(){el.classList.add("on");},500+k*380);})(c[i],i);}}
+function allStackOn(){var c=stack.querySelectorAll(".chip");for(var i=0;i<c.length;i++)c[i].classList.add("on");}
+function updateSticky(){if(spunFlag){sticky.classList.add("show");return;}var r=card.getBoundingClientRect();if(r.bottom<90)sticky.classList.add("show");else sticky.classList.remove("show");}
+window.addEventListener("scroll",updateSticky,{passive:true});window.addEventListener("resize",updateSticky);
+stickyBtn.addEventListener("click",function(){if(spunFlag){openM();return;}card.scrollIntoView({behavior:"smooth",block:"center"});btn.classList.add("pulse");setTimeout(function(){btn.classList.remove("pulse");},1100);});
+function finishWin(animate){
+card.classList.add("won");v.textContent="CASH · CASH · CASH";v.classList.add("win");
+bonus.hidden=false;tag.textContent="0 SPINS LEFT";btn.textContent="Claim in app →";btn.dataset.mode="claim";
+spunFlag=true;stickyBtn.textContent="Claim in app →";updateSticky();
+if(animate){countUp(bamt,150,1200);lightStack();fxBurst();setTimeout(openSheet,2600);}
+else{bamt.textContent="$150";allStackOn();}
+}
+function restoreWon(){spun=true;[0,1,2].forEach(function(i){setSym(i,WIN);reels[i].classList.add("hit");});finishWin(false);}
+try{if(sessionStorage.getItem("rc_spun")==="1")restoreWon();}catch(e){}
+btn.addEventListener("click",function(){
+if(btn.dataset.mode==="claim"){openM();return;}
+if(spun||busy)return;spun=true;busy=true;
+try{sessionStorage.setItem("rc_spun","1");}catch(e){}
+v.textContent="";v.className="verdict";
+var spinning=[0,1,2];reels.forEach(function(r){r.classList.add("spin");});
+var iv=setInterval(function(){spinning.forEach(function(i){setSym(i,POOL[Math.floor(Math.random()*POOL.length)]);});},70);
+setTimeout(function(){spinning=[1,2];land(0);v.textContent="CASH …";},950);
+setTimeout(function(){spinning=[2];land(1);v.textContent="CASH · CASH …";},1850);
+setTimeout(function(){spinning=[];clearInterval(iv);reels[2].classList.remove("spin");
+var seq=["⭐","💵","🎁","💵","🔗"],delays=[130,180,250,330,430],t=0;
+seq.forEach(function(k,idx){t+=delays[idx];setTimeout(function(){setSym(2,k);},t);});
+setTimeout(function(){land(2);setTimeout(function(){finishWin(true);busy=false;},430);},t+520);
+},2050);
+});
+(function(){var el=document.getElementById("cdT"),t=9*60+30+Math.floor(Math.random()*29);
+function tick(){var m=Math.floor(t/60),s=t%60;el.textContent=(m<10?"0":"")+m+":"+(s<10?"0":"")+s;if(t>0)t--;else t=4*60+59;}tick();setInterval(tick,1000);})();
+(function(){var el=document.getElementById("clm");if(!el)return;var n=2200+Math.floor(Math.random()*200);function fmt(x){return(""+x).replace(/\B(?=(\d{3})+(?!\d))/g,",");}
+el.textContent=fmt(n);setInterval(function(){n+=Math.floor(Math.random()*2);el.textContent=fmt(n);},4200);})();
+(function(){var T=[["A new member just unlocked their starter perks","moments ago"],["Someone just got paid playing Subway Surfers","just now"],["A new member joined","moments ago"],["$150 welcome bonus reserved for a new member","just now"]];
+var el=document.getElementById("toast"),tt=document.getElementById("toastT"),i=Math.floor(Math.random()*T.length);
+function show(){var m=T[i%T.length];i++;tt.innerHTML=m[0]+"<small>"+m[1]+"</small>";el.classList.add("show");setTimeout(function(){el.classList.remove("show");},3600);}
+setTimeout(function(){show();setInterval(show,8200);},3200);})();
+updateSticky();
 </script>
-
-<script>
-/* Ripped page logic: qualify view → modal → CTA (handleActivate). The activation timestamp
-   is stored so a user who comes back sees the instructions view with the reward progress. */
-(function () {
-  var ACTIVATED_KEY = "gp_v2_activated_at";
-  var TASK_INTERVAL_MS = 10 * 60 * 1000;
-  var TASKS_PER_REWARD = 3;
-  var t = CURRENT_T;
-
-  var REWARDS = [
-    { id:"tiktok", name:"TikTok", task:t.taskScroll, rate:t.rate1, logo:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzA4MDgwOCIvPgo8cGF0aCBkPSJNNTkgMTljMiAxMiA5IDE5IDIxIDIxdjE1Yy04IDAtMTUtMi0yMS03djIwYzAgMTgtMTMgMjctMjcgMjQtMTEtMi0xOS0xMi0xOS0yMyAwLTE1IDEyLTI3IDI3LTI3aDR2MTVjLTktMi0xNiAzLTE2IDEyIDAgNSA0IDkgOSA5IDYgMCA5LTQgOS0xMVYxOXoiIGZpbGw9IiMyNUY0RUUiLz4KPHBhdGggZD0iTTY0IDE4YzIgMTEgOCAxNyAxOSAyMHYxNGMtNyAwLTEzLTItMTktNnYyMGMwIDE3LTExIDI2LTI1IDI2LTUgMC0xMC0yLTE0LTUgMyAxIDYgMiA5IDIgMTQgMCAyNS05IDI1LTI2VjQzYzYgNCAxMiA2IDE5IDZWMzhjLTctMy0xMi04LTE0LTIweiIgZmlsbD0iI0ZFMkM1NSIvPgo8cGF0aCBkPSJNNTkgMTljMiAxMiA5IDE5IDIxIDIxdjEwYy04IDAtMTUtMi0yMS03djIzYzAgMTQtOSAyMi0yMSAyMi0xMSAwLTIwLTktMjAtMjAgMC0xMiAxMC0yMSAyMi0yMWg0djEwaC00Yy02IDAtMTEgNS0xMSAxMSAwIDYgNSAxMCAxMCAxMCA3IDAgMTAtNSAxMC0xMlYxOXoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==", tile:"hsl(0,0%,8%)", ring:"hsl(180,90%,50%)" },
-    { id:"clash", name:"Clash Royale", task:t.taskPlay, rate:t.rate2, logo:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzU1ZDhkYyIvPgo8Y2lyY2xlIGN4PSI1MCIgY3k9IjU0IiByPSIzMSIgZmlsbD0iI2YyYjA3YiIvPgo8cGF0aCBkPSJNMjAgMzVsNy0yMCAxNiA4IDctMTUgOCAxNSAxNi04IDcgMjB6IiBmaWxsPSIjZjVjNjJkIi8+CjxwYXRoIGQ9Ik0yMCAzNWg2MXYxMkgyMHoiIGZpbGw9IiNjOTQ1MzUiLz4KPHBhdGggZD0iTTI0IDU1YzctMTIgMTctOCAyNi0zIDktNSAxOS05IDI2IDMtMyAyMS0xMyAzMC0yNiAzMFMyNyA3NiAyNCA1NXoiIGZpbGw9IiMxNzE3MTciLz4KPGNpcmNsZSBjeD0iMzgiIGN5PSI1MCIgcj0iNCIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSI2MiIgY3k9IjUwIiByPSI0IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzkgNzBjNyA1IDE1IDUgMjIgMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+", tile:"hsl(215,60%,22%)", ring:"hsl(45,100%,55%)" },
-    { id:"roblox", name:"Roblox", task:t.taskPlay, rate:t.rate3, logo:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iIzExMSIvPgo8cGF0aCBmaWxsPSJ3aGl0ZSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMjUgMTVsNjAgMTAtMTAgNjAtNjAtMTAgMTAtNjB6bTIwIDI3bDIwIDMtMyAyMC0yMC0zIDMtMjB6Ii8+Cjwvc3ZnPg==", tile:"hsl(0,0%,15%)", ring:"hsl(0,80%,55%)" }
-  ];
-
-  var activatedAt = null;
-  var unavailable = {};
-
-  var qualifyView = document.getElementById("view-qualify");
-  var instrView = document.getElementById("view-instructions");
-
-  function showInstructions() {
-    qualifyView.classList.add("hidden"); instrView.classList.remove("hidden");
-  }
-
-  function totalTasksCompleted() { return 0; }
-
-  function renderRewards() {
-    var total = totalTasksCompleted();
-    var all = REWARDS.length * TASKS_PER_REWARD;
-    document.getElementById("statusText").innerHTML = total >= all ? t.statusAll : t.statusActive;
-
-    var list = document.getElementById("rewardsList");
-    list.innerHTML = "";
-    REWARDS.forEach(function (r, i) {
-      var done = Math.max(0, Math.min(TASKS_PER_REWARD, total - i * TASKS_PER_REWARD));
-      var ready = done >= TASKS_PER_REWARD;
-      var pct = Math.round((done / TASKS_PER_REWARD) * 100);
-      var card = document.createElement("div");
-      card.className = "reward anim" + (ready ? " ready" : "");
-      card.style.animationDelay = (0.3 + i * 0.05) + "s";
-      var btnHtml = unavailable[r.id]
-        ? '<div class="reward-unavailable"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="hsl(0,80%,65%)" stroke-width="2"/><path d="M12 7v5M12 15.5h.01" stroke="hsl(0,80%,65%)" stroke-width="2" stroke-linecap="round"/></svg>' + t.unavail + '</div>'
-        : '<button class="reward-btn ' + (ready ? "ready" : "locked") + '" ' + (ready ? "" : "disabled") + ' data-id="' + r.id + '">' + (ready ? t.unlock.replace("{name}", r.name.toUpperCase()) : t.locked.replace("{n}", TASKS_PER_REWARD - done)) + '</button>';
-      card.innerHTML =
-        '<div class="reward-top"><div class="reward-tile" style="background:' + r.tile + (ready ? (";box-shadow:0 0 16px " + r.ring + "55") : "") + '"><img src="' + r.logo + '" alt="' + r.name + '"/></div>' +
-        '<div class="reward-info"><h4>' + r.name + '</h4><p>' + r.task + '</p></div>' +
-        '<div class="reward-prize">' + r.rate + '<span>' + t.perHour + '</span></div></div>' +
-        '<div class="progress-row"><span class="lbl">' + t.tasksDone + '</span><span class="cnt">' + done + '/' + TASKS_PER_REWARD + '</span></div>' +
-        '<div class="pbar"><div class="pbar-fill" style="width:' + pct + '%"></div></div>' + btnHtml;
-      list.appendChild(card);
-    });
-    list.querySelectorAll(".reward-btn.ready").forEach(function (b) {
-      b.addEventListener("click", function () {
-        unavailable[b.getAttribute("data-id")] = true;
-        renderRewards();
-      });
-    });
-  }
-
-  function activate() {
-    try { if (window.whop) whop.track("lead"); } catch (e) {}
-  }
-
-  
-
-  // Restore state if user already activated and came back
-  try {
-    var ts = parseInt(window.localStorage.getItem(ACTIVATED_KEY), 10);
-    if (!isNaN(ts)) { activatedAt = ts; showInstructions(); renderRewards(); }
-  } catch (e) {}
-
-  // Tick so progress bars fill over time
-  setInterval(function () { if (!instrView.classList.contains("hidden")) renderRewards(); }, 5000);
-})();
-</script>
-
-<script>
-(function(){
-  var continueBtn = document.getElementById("continueBtn");
-  if (continueBtn) {
-    continueBtn.addEventListener("click", function(){
-      var qualifyView = document.getElementById("view-qualify");
-      var instrView = document.getElementById("view-instructions");
-      if (qualifyView) qualifyView.classList.add("hidden");
-      if (instrView) instrView.classList.remove("hidden");
-      window.scrollTo({top:0, behavior:"smooth"});
-    });
-  }
-
-  var startBtn = document.getElementById("activateBtn2");
-  if (startBtn) {
-    startBtn.addEventListener("click", function(){
-      try { if (window.whop) whop.track("lead"); } catch(e) {}
-    }, {passive:true});
-  }
-})();
-</script>
-
-</body></html>
+</body>
+</html>
