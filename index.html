@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<title>Freecash | Earn rewards from offers</title>
+<title>Reco Social | Discover and sign up</title>
 <script>
 /* Set these before publishing. Registrations are confirmed server-side by
    Glitchy -> ClickFlare -> Whop, never from a CTA click on this page. */
 window.LANDER_CONFIG = {
   metaPixelId: '943252405500946',
   // Keep the visitor inside the ClickFlare flow. ClickFlare then sends the
-  // visitor to the Freecash offer configured in the active campaign.
+  // visitor to the Reco offer configured in the active campaign.
   clickflareOutboundUrl: 'https://globalvisitlog.com/cf/click/1',
   privacyPolicyUrl: '#',
   termsUrl: '#',
@@ -73,9 +73,9 @@ position:relative;
 .logo-wrap{display:flex;align-items:center;gap:8px}
 .logo-img{width:32px;height:32px;border-radius:9px;animation:logoGlow 2.5s ease-in-out infinite;object-fit:cover}
 .logo-name{font-size:18px;font-weight:800;letter-spacing:-0.4px}
-.freecash-mark{width:36px;height:36px;border-radius:10px;display:block;background:#0c1710;object-fit:contain;animation:logoGlow 2.5s ease-in-out infinite}
-.freecash-card-mark{display:grid;place-items:center;background:linear-gradient(135deg,#23d47a,#a5f037)!important}
-.freecash-card-mark img{width:54px;height:54px;border-radius:15px;object-fit:contain;background:#0c1710}
+.freecash-mark{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:#0c1710;color:#23d47a;font-size:18px;font-weight:950;animation:logoGlow 2.5s ease-in-out infinite}
+.freecash-card-mark{display:grid;place-items:center;background:linear-gradient(135deg,#23d47a,#a5f037)!important;color:#07130b;font-size:28px;font-weight:950}
+.freecash-card-mark svg{width:54px;height:54px}
 .timer{
 display:flex;align-items:center;gap:5px;
 border:1px solid var(--border);
@@ -331,14 +331,19 @@ font-weight:700;
 <script>!function(){"use strict";var t="lp_ref",n="cpid",e="lpurl",c="https://globalvisitlog.com",r="(?<domain>http(?:s?)://[^/]*)".concat("/cf/click"),a="(?:(?:/(?<cta>[a-zA-Z0-9_-]+)/?)|(?:/))?",i="^".concat(r).concat(a).concat("(?:$|(\\?.*))"),o='javascript:window.clickflare.l="(?<original_link>'.concat(r).concat(a,'("|(\\?[^"]*"))).*'),s=function(){return new RegExp(i,"")},u=function(){return new RegExp(o,"")};function l(t){var n=function(t){return t.replace(s(),(function(t){for(var n=[],e=1;e<arguments.length;e++)n[e-1]=arguments[e];var r=n[n.length-1].domain;return t.replace(r,c)}))}(t);return'javascript:window.clickflare.l="'.concat(n,'"; void 0;')}function d(t,n){if(n&&t&&n.apply(document,[t]),/loaded|interactive|complete/.test(document.readyState))for(var e=0,c=document.links.length;e<c;e++)if(s().test(document.links[e].href)){var r=document.links[e];window.clickflare.links_replaced.has(r)||(r.href=l(r.href),window.clickflare.links_replaced.add(r))}}var f,h,m,p;!function(r,a){var i=document.onreadystatechange;window.clickflare||(window.clickflare={listeners:{},customParams:{},links_replaced:new Set,addEventListener:function(t,n){var e=this.listeners[t]||[];e.includes(n)||e.push(n)},dispatchEvent:function(t,n){n&&(this.customParams[t]=n),(this.listeners[t]||[]).forEach((function(t){return t(n)}))},push:function(t,n){n&&(this.customParams[t]=n),(this.listeners[t]||[]).forEach((function(t){return t(n)}))}},document.onreadystatechange=function(t){return d(t,i)},d(null,i),setTimeout((function(){!function(r,a){var i,o=function(r,a){var i=new URL("".concat(c).concat(r));o=a,s="{",u=s+s,l="_",d=l+l,o.startsWith(u)||o.startsWith(d)||i.searchParams.set(n,a);var o,s,u,l,d;return i.searchParams.append(t,document.referrer),i.searchParams.append(e,location.href),i.searchParams.append("lpt",document.title),i.searchParams.append("t",(new Date).getTime().toString()),i.toString()}(r,a),s=document.createElement("script"),l=document.scripts[0];s.async=1;s.src=o;s.onerror=function(){!function(){for(var t=function(t,n){var e=document.links[t];u().test(decodeURI(e.href))&&setTimeout((function(){e&&e.setAttribute("href",function(t){var n=t.match(u());if(n){var e=(n.groups||{}).original_link;return e?e.slice(0,-1):t}return t}(decodeURI(e.href)))}))},n=0,e=document.links.length;n<e;n++)t(n)}()},null===(i=l.parentNode)||void 0===i||i.insertBefore(s,l)}(r,a)})))}("".concat("/cf/tags","/").concat(new URL(window.location.href).searchParams.get("cftmid")||"__CONTAINER_ID__"),(m=new URL(window.location.href).searchParams.get(n),f=new RegExp("(^| )".concat("cf_cpid","=([^;]+)")),p=(h=document.cookie.match(f))&&h.pop()||null,m||p||"__CAMPAIGN_ID__"))}();</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="recoLogo" viewBox="0 0 100 100">
+<mask id="rm"><rect width="100" height="100" fill="#fff"/><path d="M50 66 C38 57 31 51 31 43 a8.5 8.5 0 0 1 19 -3 a8.5 8.5 0 0 1 19 3 C69 51 62 57 50 66Z" fill="#000"/></mask>
+<path d="M31 20h38a6 6 0 0 1 6 6v56l-25-12-25 12V26a6 6 0 0 1 6-6z" fill="#fff" mask="url(#rm)"/>
+</symbol></defs></svg>
 <div class="page">
 <div class="payout-ticker f0" aria-live="polite">
-    <div class="payout-line"><strong class="payout-amount">Freecash</strong> · complete eligible offers and earn rewards</div>
+    <div class="payout-line"><strong class="payout-amount">Reco Social</strong> · download and sign up to complete eligibility</div>
 </div>
 <div class="header f0">
 <div class="logo-wrap">
-      <img class="freecash-mark" src="https://freecash.com/favicon.ico" alt="Freecash logo">
-<span class="logo-name">Freecash</span>
+      <svg class="freecash-mark" role="img" aria-label="Reco Social logo"><use href="#recoLogo"/></svg>
+<span class="logo-name">Reco Social</span>
 </div>
 <div class="timer">
 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -347,22 +352,22 @@ font-weight:700;
 </div>
 </div>
 <div class="hero f2">
-    <h1 id="heroTitle">Earn rewards for trying<br/><span>games &amp; offers</span></h1>
-    <p id="heroBody">Discover eligible offers, track your progress, and earn rewards when you complete them.</p>
+    <h1 id="heroTitle">Discover a featured<br/><span>mobile app</span></h1>
+    <p id="heroBody">Install the app and complete the eligible sign-up steps to get started.</p>
 </div>
 <div class="pills f3">
-<div class="pill"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span id="pill1">Instant Payouts</span></div>
-<div class="pill"><svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><line x1="12" y1="15" x2="12" y2="17"/></svg><span id="pill2">100+ Games</span></div>
-<div class="pill"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span id="pill3">Daily Bonuses</span></div>
+<div class="pill"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span id="pill1">Quick Setup</span></div>
+<div class="pill"><svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><line x1="12" y1="15" x2="12" y2="17"/></svg><span id="pill2">New Accounts</span></div>
+<div class="pill"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span id="pill3">Eligibility Required</span></div>
 <div class="pill"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span id="pill4">Secure &amp; Trusted</span></div>
 </div>
 <div class="f4 offer-feature">
 <div class="offers single-offer">
 <div class="offer-card highlight">
-        <div class="offer-img freecash-card-mark"><img src="https://freecash.com/favicon.ico" alt="Freecash logo"></div>
+        <div class="offer-img freecash-card-mark"><svg role="img" aria-label="Reco Social logo"><use href="#recoLogo"/></svg></div>
 <div class="offer-info">
-          <div class="offer-row"><span class="offer-name">Featured Freecash offer</span><span class="hot-badge" id="hotBadge">HOT</span></div>
-          <p class="offer-sub" id="offer2Sub">Complete every required step to unlock your reward.</p>
+          <div class="offer-row"><span class="offer-name">Featured Reco offer</span><span class="hot-badge" id="hotBadge">HOT</span></div>
+          <p class="offer-sub" id="offer2Sub">Install the app and complete the eligible sign-up steps.</p>
 </div>
 <div class="offer-right">
           <span class="offer-price">21+</span>
@@ -375,7 +380,7 @@ font-weight:700;
 <div class="pro-inner">
 <div class="pro-left">
 <span class="pro-badge"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span id="proBadgeText">PRO TIP</span></span>
-          <div class="pro-title" id="proTitle">Complete your <span class="y">first offer</span><br/></div>
+          <div class="pro-title" id="proTitle">Use a <span class="y">new account</span><br/></div>
           <p class="pro-body" id="proBody">Follow every required step so your progress can be tracked correctly.</p>
 </div>
 <div class="pro-right">
@@ -427,7 +432,7 @@ font-weight:700;
 </button>
 </nav>
 <div class="disclaimer-panel" id="disclaimerPanel" hidden>
-<p id="affiliateDisclosureText">�� Affiliate Disclosure: This page contains affiliate links. If you sign up for Freecash through this page, we may earn a commission at no additional cost to you.</p>
+<p id="affiliateDisclosureText">Affiliate disclosure: This page contains affiliate links. If you sign up for Reco Social through this page, we may earn a commission at no additional cost to you.</p>
 </div>
 </footer>
 </div>
@@ -461,8 +466,8 @@ font-weight:700;
 <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 </button>
 <div class="modal-eyebrow" id="modalEyebrow">Before you continue</div>
-<h2 id="modalTitle">Start an eligible <span style="color:var(--primary)">Freecash offer</span></h2>
-    <p class="modal-body" id="modalBody">You must create a new Freecash account and start at least one eligible offer to qualify.</p>
+<h2 id="modalTitle">Download and <span style="color:var(--primary)">sign up</span></h2>
+    <p class="modal-body" id="modalBody">You must install the app and create a new eligible Reco Social account to qualify.</p>
 <button class="modal-cta" id="continueBtn" type="button">
 <span id="continueText">Continue</span>
 <svg viewBox="0 0 24 24"><polyline points="5 12 19 12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -505,14 +510,14 @@ payoutPaid: 'paid instantly',
 privacyText: 'Privacy Policy',
 termsText: 'Terms of Use',
 disclaimerText: 'Disclaimer',
-affiliateDisclosureText: '�� Affiliate Disclosure: This page contains affiliate links. If you sign up for Freecash through this page, we may earn a commission at no additional cost to you.',
+affiliateDisclosureText: '�� Affiliate Disclosure: This page contains affiliate links. If you sign up for Reco Social through this page, we may earn a commission at no additional cost to you.',
 availableText: 'Available now on iOS and Android',
 iosStoreSmall: 'Download on the',
 androidStoreSmall: 'Get it on',
 stickyCtaText: 'Start Earning Now',
 modalEyebrow: 'Before you go',
 modalTitle: 'Select <span style="color:var(--primary)">21+</span> when signing up',
-modalBody: 'This unlocks higher payouts on Freecash.',
+modalBody: 'This unlocks higher payouts on Reco Social.',
 continueText: 'Continue'
 },
 it: {
@@ -548,14 +553,14 @@ payoutPaid: 'pagato subito',
 privacyText: 'Informativa sulla privacy',
 termsText: 'Termini di utilizzo',
 disclaimerText: 'Avvertenza',
-affiliateDisclosureText: '�� Informativa di affiliazione: Questa pagina contiene link di affiliazione. Se ti registri a Freecash tramite questa pagina, potremmo ricevere una commissione senza alcun costo aggiuntivo per te.',
+affiliateDisclosureText: '�� Informativa di affiliazione: Questa pagina contiene link di affiliazione. Se ti registri a Reco Social tramite questa pagina, potremmo ricevere una commissione senza alcun costo aggiuntivo per te.',
 availableText: 'Disponibile ora su iOS e Android',
 iosStoreSmall: 'Scarica su',
 androidStoreSmall: 'Disponibile su',
 stickyCtaText: 'Inizia a guadagnare ora',
 modalEyebrow: 'Prima di continuare',
 modalTitle: 'Seleziona <span style="color:var(--primary)">21+</span> al momento della registrazione',
-modalBody: 'Questo sblocca pagamenti più alti su Freecash.',
+modalBody: 'Questo sblocca pagamenti più alti su Reco Social.',
 continueText: 'Continua'
 },
 es: {
@@ -591,14 +596,14 @@ payoutPaid: 'pagado al instante',
 privacyText: 'Política de privacidad',
 termsText: 'Términos de uso',
 disclaimerText: 'Aviso legal',
-affiliateDisclosureText: '�� Aviso de afiliación: Esta página contiene enlaces de afiliados. Si te registras en Freecash a través de esta página, podemos recibir una comisión sin coste adicional para ti.',
+affiliateDisclosureText: '�� Aviso de afiliación: Esta página contiene enlaces de afiliados. Si te registras en Reco Social a través de esta página, podemos recibir una comisión sin coste adicional para ti.',
 availableText: 'Disponible ahora en iOS y Android',
 iosStoreSmall: 'Descárgalo en',
 androidStoreSmall: 'Disponible en',
 stickyCtaText: 'Empieza a ganar ahora',
 modalEyebrow: 'Antes de continuar',
 modalTitle: 'Selecciona <span style="color:var(--primary)">21+</span> al registrarte',
-modalBody: 'Esto desbloquea pagos más altos en Freecash.',
+modalBody: 'Esto desbloquea pagos más altos en Reco Social.',
 continueText: 'Continuar'
 },
 nl: {
@@ -634,14 +639,14 @@ payoutPaid: 'direct uitbetaald',
 privacyText: 'Privacybeleid',
 termsText: 'Gebruiksvoorwaarden',
 disclaimerText: 'Disclaimer',
-affiliateDisclosureText: '�� Affiliateverklaring: Deze pagina bevat affiliatelinks. Als je je via deze pagina aanmeldt bij Freecash, kunnen wij een commissie ontvangen zonder extra kosten voor jou.',
+affiliateDisclosureText: '�� Affiliateverklaring: Deze pagina bevat affiliatelinks. Als je je via deze pagina aanmeldt bij Reco Social, kunnen wij een commissie ontvangen zonder extra kosten voor jou.',
 availableText: 'Nu beschikbaar op iOS en Android',
 iosStoreSmall: 'Download in de',
 androidStoreSmall: 'Download via',
 stickyCtaText: 'Begin nu met verdienen',
 modalEyebrow: 'Voordat je doorgaat',
 modalTitle: 'Selecteer <span style="color:var(--primary)">21+</span> tijdens het aanmelden',
-modalBody: 'Dit ontgrendelt hogere uitbetalingen op Freecash.',
+modalBody: 'Dit ontgrendelt hogere uitbetalingen op Reco Social.',
 continueText: 'Doorgaan'
 },
 de: {
@@ -677,14 +682,14 @@ payoutPaid: 'sofort ausgezahlt',
 privacyText: 'Datenschutzerklärung',
 termsText: 'Nutzungsbedingungen',
 disclaimerText: 'Haftungsausschluss',
-affiliateDisclosureText: '�� Affiliate-Hinweis: Diese Seite enthält Affiliate-Links. Wenn du dich über diese Seite bei Freecash anmeldest, können wir eine Provision erhalten, ohne dass dir zusätzliche Kosten entstehen.',
+affiliateDisclosureText: '�� Affiliate-Hinweis: Diese Seite enthält Affiliate-Links. Wenn du dich über diese Seite bei Reco Social anmeldest, können wir eine Provision erhalten, ohne dass dir zusätzliche Kosten entstehen.',
 availableText: 'Jetzt für iOS und Android verfügbar',
 iosStoreSmall: 'Laden im',
 androidStoreSmall: 'Jetzt bei',
 stickyCtaText: 'Jetzt Geld verdienen',
 modalEyebrow: 'Bevor du fortfährst',
 modalTitle: 'Wähle bei der Anmeldung <span style="color:var(--primary)">21+</span>',
-modalBody: 'Dadurch werden höhere Auszahlungen auf Freecash freigeschaltet.',
+modalBody: 'Dadurch werden höhere Auszahlungen auf Reco Social freigeschaltet.',
 continueText: 'Weiter'
 },
 fr: {
@@ -720,14 +725,14 @@ payoutPaid: 'payé instantanément',
 privacyText: 'Politique de confidentialité',
 termsText: 'Conditions d’utilisation',
 disclaimerText: 'Avertissement',
-affiliateDisclosureText: '�� Divulgation d’affiliation : Cette page contient des liens d’affiliation. Si tu t’inscris sur Freecash via cette page, nous pouvons recevoir une commission sans frais supplémentaires pour toi.',
+affiliateDisclosureText: '�� Divulgation d’affiliation : Cette page contient des liens d’affiliation. Si tu t’inscris sur Reco Social via cette page, nous pouvons recevoir une commission sans frais supplémentaires pour toi.',
 availableText: 'Disponible maintenant sur iOS et Android',
 iosStoreSmall: 'Télécharger dans',
 androidStoreSmall: 'Disponible sur',
 stickyCtaText: 'Commence à gagner maintenant',
 modalEyebrow: 'Avant de continuer',
 modalTitle: 'Sélectionne <span style="color:var(--primary)">21+</span> lors de ton inscription',
-modalBody: 'Cela débloque des paiements plus élevés sur Freecash.',
+modalBody: 'Cela débloque des paiements plus élevés sur Reco Social.',
 continueText: 'Continuer'
 },
 sv: {
@@ -763,14 +768,14 @@ payoutPaid: 'utbetalt direkt',
 privacyText: 'Integritetspolicy',
 termsText: 'Användarvillkor',
 disclaimerText: 'Ansvarsfriskrivning',
-affiliateDisclosureText: '�� Information om affiliatelänkar: Den här sidan innehåller affiliatelänkar. Om du registrerar dig på Freecash via den här sidan kan vi få provision utan extra kostnad för dig.',
+affiliateDisclosureText: '�� Information om affiliatelänkar: Den här sidan innehåller affiliatelänkar. Om du registrerar dig på Reco Social via den här sidan kan vi få provision utan extra kostnad för dig.',
 availableText: 'Tillgänglig nu på iOS och Android',
 iosStoreSmall: 'Hämta i',
 androidStoreSmall: 'Ladda ned på',
 stickyCtaText: 'Börja tjäna nu',
 modalEyebrow: 'Innan du fortsätter',
 modalTitle: 'Välj <span style="color:var(--primary)">21+</span> när du registrerar dig',
-modalBody: 'Detta låser upp högre utbetalningar på Freecash.',
+modalBody: 'Detta låser upp högre utbetalningar på Reco Social.',
 continueText: 'Fortsätt'
 },
 pl: {
@@ -806,14 +811,14 @@ payoutPaid: 'wypłacono natychmiast',
 privacyText: 'Polityka prywatności',
 termsText: 'Warunki korzystania',
 disclaimerText: 'Zastrzeżenie',
-affiliateDisclosureText: '�� Informacja o linkach afiliacyjnych: Ta strona zawiera linki afiliacyjne. Jeśli zarejestrujesz się w Freecash za pośrednictwem tej strony, możemy otrzymać prowizję bez dodatkowych kosztów dla Ciebie.',
+affiliateDisclosureText: '�� Informacja o linkach afiliacyjnych: Ta strona zawiera linki afiliacyjne. Jeśli zarejestrujesz się w Reco Social za pośrednictwem tej strony, możemy otrzymać prowizję bez dodatkowych kosztów dla Ciebie.',
 availableText: 'Dostępne teraz na iOS i Android',
 iosStoreSmall: 'Pobierz w',
 androidStoreSmall: 'Pobierz z',
 stickyCtaText: 'Zacznij zarabiać teraz',
 modalEyebrow: 'Zanim przejdziesz dalej',
 modalTitle: 'Wybierz <span style="color:var(--primary)">21+</span> podczas rejestracji',
-modalBody: 'To odblokuje wyższe wypłaty na Freecash.',
+modalBody: 'To odblokuje wyższe wypłaty na Reco Social.',
 continueText: 'Kontynuuj'
 }
 };
@@ -869,7 +874,7 @@ if (pro) {
 pro.textContent = '+' + symbol + pro.getAttribute('data-min') + '–' + symbol + pro.getAttribute('data-max');
 }
 }
-  // Keep one reviewed English version for this Freecash 21+ offer.
+  // Keep one reviewed English version for this Reco 21+ offer.
 applyCurrency();
 var payoutMarkets=[
 {flag:'����',symbol:'£',names:['Jordan P.','Sophie M.','Lewis T.','Emily R.','Harry C.','Olivia B.']},
@@ -935,7 +940,7 @@ disclaimerPanel.hidden = isOpen;
     (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', String(pixelId));
     fbq('track', 'PageView');
-    fbq('track', 'ViewContent', {content_name: 'Freecash offer'});
+    fbq('track', 'ViewContent', {content_name: 'Reco Social offer'});
   }
   initMetaPixel(CONFIG.metaPixelId);
 var timerEl=document.getElementById('timer');
