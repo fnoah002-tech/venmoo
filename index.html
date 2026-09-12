@@ -406,8 +406,17 @@
       document.getElementById("privacyLink").href = config.privacyPolicyUrl || "#";
       document.getElementById("termsLink").href = config.termsUrl || "#";
 
-      /* Keeps Meta / ClickFlare query parameters when continuing to the offer. */
-      cta.addEventListener("click", function () {
+      /*
+       * The CTA is only an outbound click. Do not fire Whop, Meta Lead, or a
+       * registration event here: the real registration is sent by the Glitchy
+       * -> Netlify postback only after a positive payout is received.
+       */
+      var isLeaving = false;
+      cta.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (isLeaving) return;
+        isLeaving = true;
+
         try {
           var target = new URL(config.clickflareOutboundUrl, window.location.href);
           var source = new URLSearchParams(window.location.search);
@@ -418,9 +427,9 @@
             }
           });
 
-          cta.href = target.toString();
+          window.location.assign(target.toString());
         } catch (error) {
-          cta.href = config.clickflareOutboundUrl;
+          window.location.assign(config.clickflareOutboundUrl);
         }
       });
     }());
