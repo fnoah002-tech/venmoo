@@ -20,6 +20,15 @@ window.LANDER_CONFIG = {
 <!-- Whop: page activity and CTA clicks only. Registrations stay server-side. -->
 <script>
 !function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");
+// Preserve source parameters and expose real Meta IDs in Whop's documented URL fields.
+try {
+  var whopPage=new URL(location.href);
+  [['ad_id','utm_meta_ad_id'],['adset_id','utm_meta_adset_id'],['campaign_id','utm_meta_campaign_id']].forEach(function(pair){
+    var value=whopPage.searchParams.get(pair[0]);
+    if(value && /^\d+$/.test(value) && !whopPage.searchParams.has(pair[1])) whopPage.searchParams.set(pair[1],value);
+  });
+  history.replaceState(history.state,'',whopPage.href);
+} catch(e) {}
 whop.setScope("biz_O5LDZ6SDymAiyD");
 whop.track("page");
 whop.track("view_content");
@@ -979,7 +988,29 @@ function closeAgeGate(){
 modalOverlay.classList.remove('open');
 document.body.style.overflow='';
 }
-function goToOffer(url){
+async function saveWhopVisit(){
+  var clickId=new URLSearchParams(location.search).get('cf_click_id');
+  if(!/^[a-f0-9-]{36}$/i.test(clickId || '')) throw new Error('missing_cf_click_id');
+  var wuid='';
+  for(var attempt=0;attempt<10;attempt++){
+    var match=document.cookie.match(/(?:^|;\s*)_wuid=([^;]*)/);
+    try { wuid=match ? decodeURIComponent(match[1]) : localStorage.getItem('_wuid'); } catch(e) {}
+    if(wuid) break;
+    await new Promise(function(resolve){setTimeout(resolve,100);});
+  }
+  if(!wuid) throw new Error('missing_whop_visitor');
+  var controller=new AbortController();
+  var timeout=setTimeout(function(){controller.abort();},2500);
+  try {
+    var response=await fetch('https://clickflare-whop-tracking.netlify.app/.netlify/functions/visit',{
+      method:'POST',headers:{'Content-Type':'text/plain'},
+      body:JSON.stringify({click_id:clickId,wuid:wuid,url:location.href}),
+      keepalive:true,signal:controller.signal
+    });
+    if(!response.ok) throw new Error('visit_save_'+response.status);
+  } finally {clearTimeout(timeout);}
+}
+async function goToOffer(url){
   if (!url || url === '#' || leavingForOffer) return;
   leavingForOffer=true;
   /* This request to /cf/click/1 is the ClickFlare CTA click counter.
@@ -987,6 +1018,8 @@ function goToOffer(url){
   try {
     if (window.whop) window.whop.track("cta_click");
   } catch (error) {}
+  try { await saveWhopVisit(); }
+  catch(error) { console.warn('Whop attribution unavailable:',error.message); }
   window.location.assign(url);
 }
 if(iosCta){
