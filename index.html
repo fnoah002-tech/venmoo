@@ -17,6 +17,13 @@ window.LANDER_CONFIG = {
   minimumAge: 21
 };
 </script>
+<!-- Whop: page activity and CTA clicks only. Registrations stay server-side. -->
+<script>
+!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");
+whop.setScope("biz_O5LDZ6SDymAiyD");
+whop.track("page");
+whop.track("view_content");
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -976,7 +983,10 @@ function goToOffer(url){
   if (!url || url === '#' || leavingForOffer) return;
   leavingForOffer=true;
   /* This request to /cf/click/1 is the ClickFlare CTA click counter.
-     Do not fire a Meta Lead/Register or a Whop event in the browser. */
+     The browser sends only the Whop cta_click event, never a registration. */
+  try {
+    if (window.whop) window.whop.track("cta_click");
+  } catch (error) {}
   window.location.assign(url);
 }
 if(iosCta){
