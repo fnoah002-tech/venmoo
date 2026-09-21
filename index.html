@@ -346,6 +346,19 @@ body{
 .offer-card.js-offer{text-decoration:none;color:var(--fg);cursor:pointer}.offer-card.js-offer:hover{border-color:var(--primary)}
 .sticky-cta>.direct-cta{margin-bottom:9px;min-height:50px;padding:12px}.page{padding-bottom:220px}.available-line{margin-bottom:7px}
 @media(max-width:359px){.offer-card{gap:8px;padding:12px}.offer-right{max-width:85px}.offer-price{font-size:12px}.hero h1{font-size:29px}}
+.reco-spin{padding:20px;border:1px solid #a78bfa66;border-radius:24px;background:radial-gradient(ellipse at top,#7544bd44,transparent 75%),#191323;text-align:center}
+.reco-spin h2{font-size:21px;margin:6px 0}.reco-spin p{font-size:12px;line-height:1.6;color:#c3b9d3}.spin-eyebrow{font-size:10px;letter-spacing:2px;color:#c4b5fd;font-weight:800}
+.reco-reels{display:flex;gap:10px;margin:16px 0}.reco-reel{flex:1;min-width:0;border:1px solid #a78bfa55;border-radius:16px;background:linear-gradient(#302044,#130e20,#302044);padding:20px 0;font-size:30px;color:#ddd0ff;box-shadow:inset 0 0 16px #0006}
+.reco-reel.rolling{animation:reel-roll .14s linear infinite}
+@keyframes reel-roll{0%{transform:translateY(-8px);filter:blur(2px);opacity:.5}50%{opacity:1}100%{transform:translateY(8px);filter:blur(2px);opacity:.5}}
+.reco-reel.landed{animation:reel-glow .45s ease-out}
+@keyframes reel-glow{50%{box-shadow:0 0 24px #b58aff;transform:scale(1.04)}}
+.spin-dialog{box-sizing:border-box;width:calc(100% - 32px);max-width:390px;max-height:85dvh;overflow:auto;margin:auto;padding:28px 22px;border:1px solid #a78bfa88;border-radius:24px;color:#fff;background:radial-gradient(ellipse at top,#513076,#1b1328 70%);box-shadow:0 24px 90px #0009;text-align:center}
+.spin-dialog::backdrop{background:#090611cc;backdrop-filter:blur(6px)}
+.spin-dialog h2{font-size:25px;line-height:1.2;margin:14px 0 10px}.spin-dialog p{font-size:13px;line-height:1.6;color:#d1c7de}.dialog-close{display:block;margin-left:auto;border:0;background:#ffffff15;color:white;border-radius:50%;width:36px;height:36px;font-size:24px;cursor:pointer}.dialog-steps{list-style:none;padding:0;margin:22px 0;display:grid;gap:16px;text-align:left;counter-reset:steps}.dialog-steps li{display:flex;gap:12px;align-items:flex-start;font-size:12px;color:#cfc3dd;line-height:1.5}.dialog-steps li::before{counter-increment:steps;content:counter(steps);display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:10px;background:#8b5cf6;color:#fff;font-weight:800}.dialog-steps strong{display:block;color:white;font-size:14px}.dialog-close:focus-visible{outline:3px solid white;outline-offset:3px}
+.spin-control{font:inherit;font-weight:800;width:100%;padding:15px;border-radius:14px;border:1px solid #bda0ff;background:#35204f;color:white;cursor:pointer}.spin-control:disabled{cursor:default;opacity:.7}.spin-control:focus-visible{outline:3px solid white;outline-offset:4px}
+.spin-result{margin-top:14px}.spin-result[hidden]{display:none}.spin-result .direct-cta{margin-top:12px}.reco-spin .spin-note{font-size:10px;margin-top:10px;color:#b5a9c5}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 <!-- ===== Tracking stack: Meta + Whop/Koast + ClickFlare ===== -->
 <script>
@@ -416,6 +429,19 @@ window.TRACKING_CONFIG = Object.freeze({
     <a class="cta-btn direct-cta js-offer" id="heroCta" href="https://globalvisitlog.com/cf/click/1">Try Reco Now <span aria-hidden="true">→</span></a>
     <small class="cta-note">Continue to the app download</small>
   </div>
+
+  <section class="reco-spin" aria-labelledby="spinHeading">
+    <span class="spin-eyebrow">A LITTLE PLAY BEFORE YOU GO</span>
+    <h2 id="spinHeading">Give Reco a spin</h2>
+    <p>Try the animation, or jump straight into Reco.</p>
+    <div class="reco-reels" id="recoReels" aria-hidden="true"><span class="reco-reel">✦</span><span class="reco-reel">♥</span><span class="reco-reel">✦</span></div>
+    <button class="spin-control" id="recoSpin" type="button">Spin for fun ↻</button>
+    <div class="spin-result" id="recoResult" hidden>
+      <p role="status">Ready for your next discovery?</p>
+      <a class="cta-btn direct-cta js-offer" href="https://globalvisitlog.com/cf/click/1">Continue to Reco <span aria-hidden="true">→</span></a>
+    </div>
+    <p class="spin-note">Optional animation only. No prize or reward is awarded.</p>
+  </section>
 
   <div class="pills f3">
     <div class="pill"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span id="pill1">Download the App</span></div>
@@ -521,6 +547,18 @@ window.TRACKING_CONFIG = Object.freeze({
 </div>
 
 
+<dialog class="spin-dialog" id="spinDialog" aria-labelledby="spinDialogTitle">
+  <button class="dialog-close" id="closeSpinDialog" type="button" aria-label="Close popup">×</button>
+  <span aria-hidden="true" style="font-size:36px">✨</span>
+  <h2 id="spinDialogTitle">Your next discovery starts here</h2>
+  <p>Get started with Reco in three simple steps.</p>
+  <ol class="dialog-steps">
+    <li><span><strong>Download</strong>Continue to the app download and install Reco.</span></li>
+    <li><span><strong>Sign up</strong>Open the app and create your account.</span></li>
+    <li><span><strong>Explore</strong>Discover the features and offers available in Reco.</span></li>
+  </ol>
+  <a class="cta-btn direct-cta js-offer" href="https://globalvisitlog.com/cf/click/1">Download Reco &amp; Sign Up →</a>
+</dialog>
 <script>
 (function(){
  "use strict";
@@ -534,6 +572,25 @@ window.TRACKING_CONFIG = Object.freeze({
      if(e.button>0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
      try{if(window.whop)whop.track("cta_click");}catch(err){}
      // Let the native link (including ClickFlare's rewrite) handle navigation.
+   });
+ });
+ var spin=document.getElementById("recoSpin"),reels=document.getElementById("recoReels"),result=document.getElementById("recoResult"),dialog=document.getElementById("spinDialog");
+ document.getElementById("closeSpinDialog").addEventListener("click",function(){dialog.close();});
+ dialog.addEventListener("close",function(){document.body.style.overflow="";result.querySelector("a").focus();});
+ dialog.addEventListener("click",function(e){if(e.target===dialog){var r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+ spin.addEventListener("click",function(){
+   if(spin.disabled)return;
+   spin.disabled=true;spin.textContent="Spinning…";
+   var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+   Array.prototype.forEach.call(reels.children,function(reel,i){
+     reel.classList.add("rolling");
+     var symbols=["✦","♥","✧","✨"],frame=i;
+     var timer=reduced?null:window.setInterval(function(){reel.textContent=symbols[frame++%symbols.length];},80);
+     window.setTimeout(function(){
+       if(timer!==null)window.clearInterval(timer);
+       reel.classList.remove("rolling");reel.textContent="✨";reel.classList.add("landed");
+       if(i===2){spin.hidden=true;result.hidden=false;window.setTimeout(function(){if(typeof dialog.showModal==="function"){dialog.showModal();document.body.style.overflow="hidden";}},reduced?0:180);}
+     },reduced?0:600+i*300);
    });
  });
  var toggle=document.getElementById("disclaimerToggle"),panel=document.getElementById("disclaimerPanel");
