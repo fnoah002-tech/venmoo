@@ -341,6 +341,11 @@ body{
 
 
 .store-btn:focus-visible,.disclaimer-toggle:focus-visible{outline:3px solid white;outline-offset:4px}.offer-row{flex-wrap:wrap}.offer-price{font-size:14px}.sticky-cta{padding-bottom:calc(14px + env(safe-area-inset-bottom))}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+.direct-cta{color:#fff;text-decoration:none;min-height:58px;background:linear-gradient(110deg,#7650e4,#a16aff);cursor:pointer;animation:none;box-shadow:0 8px 28px #8b5cf638}
+.hero .direct-cta{margin-top:9px}.cta-note{font-size:11px;color:#aaa}.hero{animation:none}.js-offer:focus-visible{outline:3px solid white;outline-offset:4px}
+.offer-card.js-offer{text-decoration:none;color:var(--fg);cursor:pointer}.offer-card.js-offer:hover{border-color:var(--primary)}
+.sticky-cta>.direct-cta{margin-bottom:9px;min-height:50px;padding:12px}.page{padding-bottom:220px}.available-line{margin-bottom:7px}
+@media(max-width:359px){.offer-card{gap:8px;padding:12px}.offer-right{max-width:85px}.offer-price{font-size:12px}.hero h1{font-size:29px}}
 </style>
 <!-- ===== Tracking stack: Meta + Whop/Koast + ClickFlare ===== -->
 <script>
@@ -406,8 +411,10 @@ window.TRACKING_CONFIG = Object.freeze({
   </div>
 
   <div class="hero f2">
-    <h1 id="heroTitle">Discover Reco<br/><span>&amp; find your next favorite</span></h1>
-    <p id="heroBody">Download Reco Social, create your account and explore what the app has to offer.</p>
+    <h1 id="heroTitle">Your next discovery<br/><span>starts with Reco.</span></h1>
+    <p id="heroBody">Ready to try Reco Social? Get the app, sign up and explore.</p>
+    <a class="cta-btn direct-cta js-offer" id="heroCta" href="https://globalvisitlog.com/cf/click/1">Try Reco Now <span aria-hidden="true">→</span></a>
+    <small class="cta-note">Continue to the app download</small>
   </div>
 
   <div class="pills f3">
@@ -421,7 +428,7 @@ window.TRACKING_CONFIG = Object.freeze({
   <div class="f4 offer-feature">
 
     <div class="offers single-offer">
-      <div class="offer-card highlight">
+      <a class="offer-card highlight js-offer" href="https://globalvisitlog.com/cf/click/1" aria-label="Get Reco Social">
         <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2224%22%20fill%3D%22%238B5CF6%22%2F%3E%3Cmask%20id%3D%22m%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22white%22%2F%3E%3Cpath%20d%3D%22M50%2066%20C38%2057%2031%2051%2031%2043%20a8.5%208.5%200%200%201%2019%20-3%20a8.5%208.5%200%200%201%2019%203%20C69%2051%2062%2057%2050%2066Z%22%20fill%3D%22black%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M31%2020h38a6%206%200%200%201%206%206v56l-25-12-25%2012V26a6%206%200%200%201%206-6z%22%20fill%3D%22white%22%20mask%3D%22url(%23m)%22%2F%3E%3C%2Fsvg%3E" alt="Reco Social" class="offer-img" loading="lazy"/>
         <div class="offer-info">
           <div class="offer-row"><span class="offer-name">Reco Social</span><span class="hot-badge" id="hotBadge">RECO</span></div>
@@ -431,7 +438,7 @@ window.TRACKING_CONFIG = Object.freeze({
           <span class="offer-price">Get Started</span>
           <div class="star-row"><span>Download &amp; sign up</span></div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 
@@ -488,6 +495,7 @@ window.TRACKING_CONFIG = Object.freeze({
 </div>
 
 <div class="sticky-cta">
+  <a class="cta-btn direct-cta js-offer" id="stickyCta" href="https://globalvisitlog.com/cf/click/1">Get Reco Social <span aria-hidden="true">→</span></a>
   <div class="available-line"><span class="available-dot"></span><span id="availableText">Download Reco Social & complete sign-up</span></div>
   <div class="store-buttons">
     <a class="store-btn store-ios" id="iosCta" href="https://globalvisitlog.com/cf/click/1" aria-label="Download on the App Store">
@@ -517,14 +525,15 @@ window.TRACKING_CONFIG = Object.freeze({
 (function(){
  "use strict";
  var dest=new URL("https://globalvisitlog.com/cf/click/1");
- new URLSearchParams(location.search).forEach(function(value,key){dest.searchParams.append(key,value);});
- document.querySelectorAll(".store-btn").forEach(function(link){
+ new URLSearchParams(location.search).forEach(function(value,key){
+   if(key.toLowerCase()!=="s1")dest.searchParams.append(key,value);
+ });
+ document.querySelectorAll(".store-btn, .js-offer").forEach(function(link){
    link.href=dest.href;
    link.addEventListener("click",function(e){
      if(e.button>0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
-     e.preventDefault();
      try{if(window.whop)whop.track("cta_click");}catch(err){}
-     window.location.assign(dest.href);
+     // Let the native link (including ClickFlare's rewrite) handle navigation.
    });
  });
  var toggle=document.getElementById("disclaimerToggle"),panel=document.getElementById("disclaimerPanel");
