@@ -1,366 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<title>Reco Social — Download &amp; Sign Up</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#07070d">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://www.stw4c9hx.com">
+<link rel="dns-prefetch" href="https://www.stw4c9hx.com">
+<title>Reco Social — $150 welcome bonus</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --bg:#0c0c0c;
-  --card:#161616;
-  --fg:#f0f0f0;
-  --muted:#888;
- --primary:#8B5CF6;
-  --primary-fg:#000;
-  --border:#252525;
-  --star:#f5c518;
-  --hot:#ff4500;
-  --muted-bg:#1a1a1a;
-}
-
-body{
-  background:var(--bg);
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  color:var(--fg);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  -webkit-font-smoothing:antialiased;
-}
-
-.page{
-  width:100%;
-  max-width:430px;
-  background:linear-gradient(180deg,#0c0c0c 0%,#101010 50%,#0c0c0c 100%);
-  min-height:100vh;
-  padding:24px 16px 130px;
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-  position:relative;
-}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-@keyframes ctaPulse{
-  0%,100%{box-shadow:0 0 22px rgba(139,92,246,0.45)}
-  50%{box-shadow:0 0 44px rgba(139,92,246,0.75),0 0 0 6px rgba(139,92,246,0.08)}
-}
-@keyframes logoGlow{
-  0%,100%{box-shadow:0 0 12px rgba(139,92,246,0.35)}
-  50%{box-shadow:0 0 24px rgba(139,92,246,0.65)}
-}
-@keyframes timerTick{0%,49%{opacity:1}50%,99%{opacity:.4}100%{opacity:1}}
-
-.f0{animation:fadeUp .5s ease both 0ms}
-.f1{animation:fadeUp .5s ease both 80ms}
-.f2{animation:fadeUp .5s ease both 160ms}
-.f3{animation:fadeUp .5s ease both 240ms}
-.f4{animation:fadeUp .5s ease both 340ms}
-.f5{animation:fadeUp .5s ease both 440ms}
-.f6{animation:fadeUp .5s ease both 540ms}
-.f7{animation:fadeUp .5s ease both 640ms}
-
-.header{display:flex;align-items:center;justify-content:space-between}
-.logo-wrap{display:flex;align-items:center;gap:8px}
-.logo-img{width:32px;height:32px;border-radius:9px;animation:logoGlow 2.5s ease-in-out infinite;object-fit:cover}
-.logo-name{font-size:18px;font-weight:800;letter-spacing:-0.4px}
-
-.timer{
-  display:flex;align-items:center;gap:5px;
-  border:1px solid var(--border);
-  background:rgba(22,22,22,.7);
-  border-radius:99px;
-  padding:6px 12px;
-}
-.timer svg{width:13px;height:13px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.timer-label{font-size:11px;color:var(--muted)}
-.timer-time{font-size:11px;font-weight:800;color:var(--fg);animation:timerTick 1s step-end infinite}
-
-.trust-wrap{display:flex;justify-content:center}
-.trust-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  border:1px solid rgba(139,92,246,.28);
-  background:rgba(139,92,246,.09);
-  border-radius:99px;
-  padding:8px 16px;
-}
-.trust-badge svg{width:13px;height:13px;stroke:var(--primary);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.trust-text{font-size:11px;font-weight:600;color:var(--primary)}
-
-.hero{text-align:center;display:flex;flex-direction:column;gap:11px}
-.hero h1{font-size:33px;font-weight:900;line-height:1.14;letter-spacing:-0.5px}
-.hero h1 span{color:var(--primary)}
-.hero p{font-size:13px;color:var(--muted);line-height:1.65;padding:0 8px}
-
-.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
-.pill{
-  display:inline-flex;align-items:center;gap:6px;
-  border:1px solid var(--border);
-  background:rgba(22,22,22,.5);
-  border-radius:99px;
-  padding:7px 12px;
-}
-.pill svg{width:13px;height:13px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.pill span{font-size:11px;font-weight:600;color:var(--muted)}
-
-.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--muted)}
-.offers{display:flex;flex-direction:column;gap:10px}
-.offer-card{
-  display:flex;align-items:center;gap:12px;
-  border:1px solid var(--border);
-  background:rgba(22,22,22,.5);
-  border-radius:16px;
-  padding:14px;
-  
-  transition:transform .12s,border-color .2s;
-  -webkit-tap-highlight-color:transparent;
-}
-.offer-card.highlight{border-color:rgba(139,92,246,.38);background:rgba(255,255,255,.94)}
-.offer-img{width:48px;height:48px;border-radius:12px;object-fit:cover;flex-shrink:0}
-.offer-info{flex:1;min-width:0}
-.offer-row{display:flex;align-items:center;gap:8px}
-.offer-name{font-size:14px;font-weight:700}
-.hot-badge{background:var(--hot);border-radius:99px;padding:2px 8px;font-size:10px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.05em}
-.offer-sub{font-size:12px;color:var(--muted);margin-top:3px}
-.offer-right{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
-.offer-price{font-size:16px;font-weight:800;color:var(--primary)}
-.star-row{display:flex;align-items:center;gap:3px}
-.star-row svg{width:11px;height:11px;fill:var(--star)}
-.star-row span{font-size:11px;color:var(--muted)}
-.chevron-icon{width:15px;height:15px;flex-shrink:0;stroke:var(--muted);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-
-.pro-tip{border:1px solid rgba(139,92,246,.22);background:linear-gradient(180deg,var(--card) 0%,#0e0e0e 100%);border-radius:16px;padding:20px;position:relative;overflow:hidden}
-.pro-tip::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--primary)}
-.pro-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.pro-left{display:flex;flex-direction:column;gap:9px;flex:1}
-.pro-badge{display:inline-flex;align-items:center;gap:4px;background:var(--muted-bg);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:800;color:var(--primary);width:fit-content}
-.pro-badge svg{width:11px;height:11px;fill:var(--primary);stroke:none}
-.pro-title{font-size:18px;font-weight:800;line-height:1.25}.pro-title .y{color:var(--primary)}
-.pro-body{font-size:12px;color:var(--muted);line-height:1.6}
-.pro-right{text-align:right;flex-shrink:0;padding-top:32px}
-.pro-amount{font-size:20px;font-weight:800;color:var(--primary)}
-.pro-period{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
-
-.how-grid{display:flex;gap:8px}
-.how-card{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;border:1px solid var(--border);background:rgba(22,22,22,.5);border-radius:12px;padding:16px 10px;text-align:center}
-.how-step{font-size:17px;font-weight:800;color:var(--primary)}
-.how-card svg{width:22px;height:22px;stroke:var(--primary);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.how-title{font-size:12px;font-weight:700;color:var(--fg)}
-.how-desc{font-size:11px;color:var(--muted);line-height:1.45}
-
-.rating{display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 0}
-.stars{display:flex;gap:3px}.stars svg{width:20px;height:20px;fill:var(--star)}
-.rating-text{font-size:13px;color:var(--muted)}.rating-text strong{color:var(--fg);font-weight:700}
-
-.sticky-cta{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;padding:10px 16px 18px;background:linear-gradient(to top,#0c0c0c 72%,rgba(12,12,12,.94) 88%,transparent);z-index:40}
-.cta-btn{width:100%;border:none;border-radius:18px;background:var(--primary);color:var(--primary-fg);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:17px;font-weight:800;padding:18px 24px;display:flex;align-items:center;justify-content:center;gap:8px;animation:ctaPulse 2.5s ease-in-out infinite;-webkit-tap-highlight-color:transparent;transition:transform .1s;letter-spacing:-0.2px}
-.cta-btn:active{transform:scale(.96)}
-.cta-btn svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-
-
-.payout-ticker{height:46px;margin:-24px -16px 0;border-bottom:1px solid var(--border);background:#111;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.payout-line{width:100%;padding:0 16px;text-align:center;font-size:13px;color:var(--muted);white-space:nowrap;animation:payoutIn .32s ease both}
-.payout-line strong{color:var(--fg);font-weight:800}.payout-amount{color:var(--primary)!important}.payout-flag{margin-right:5px}
-@keyframes payoutIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-@keyframes payoutOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(10px)}}
-.header{margin-top:-6px}.page{padding-top:24px;padding-bottom:154px}.logo-img{width:36px;height:36px;border-radius:10px}
-.sticky-cta{padding:9px 14px 14px;background:linear-gradient(to top,#0c0c0c 78%,rgba(12,12,12,.97) 90%,transparent)}
-.available-line{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:7px}.available-dot{width:7px;height:7px;border-radius:50%;background:#8B5CF6;box-shadow:0 0 10px rgba(139,92,246,.5)}
-.store-buttons{display:flex;gap:8px}.store-btn{flex:1;min-height:54px;border-radius:15px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:9px;padding:8px 10px;font-family:inherit;transition:transform .1s;-webkit-tap-highlight-color:transparent}.store-btn:active{transform:scale(.97)}
-.store-btn span:last-child{display:flex;flex-direction:column;line-height:1.02}.store-btn small{font-size:9px;font-weight:600}.store-btn strong{font-size:17px;letter-spacing:-.4px}.store-ios{background:#151515;color:#fff;border:1px solid #303030}.store-android{background:var(--primary);color:#fff;border:1px solid rgba(0,0,0,.04);box-shadow:0 5px 20px rgba(139,92,246,.22)}.store-mark{width:24px;height:28px;display:flex;align-items:center;justify-content:center;flex:0 0 24px;color:#fff}.store-mark svg{display:block;width:100%;height:100%}.play-mark{width:25px;height:28px;flex-basis:25px}
-
-.modal-overlay{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:rgba(12,12,12,.85);backdrop-filter:blur(8px);padding:24px;opacity:0;pointer-events:none;transition:opacity .2s}
-.modal-overlay.open{opacity:1;pointer-events:all}
-.modal{width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:scale(.9);transition:transform .2s}
-.modal-overlay.open .modal{transform:scale(1)}
-.modal-close{position:absolute;top:14px;right:14px;background:none;border:none;color:var(--muted);-webkit-tap-highlight-color:transparent;transition:color .15s}
-.modal-close:hover{color:var(--fg)}
-.modal-close svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.modal-eyebrow{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--primary)}
-.modal h2{font-size:21px;font-weight:800;line-height:1.25;letter-spacing:-0.3px}.modal h2 span{color:var(--primary)}
-.modal-body{font-size:13px;color:var(--muted);line-height:1.65}
-.modal-cta{width:100%;border:none;border-radius:14px;background:var(--primary);color:var(--primary-fg);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px;font-weight:800;padding:16px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 0 30px rgba(139,92,246,.3);-webkit-tap-highlight-color:transparent;transition:transform .1s}
-.modal-cta:active{transform:scale(.97)}
-.modal-cta svg{width:18px;height:18px;stroke:#000;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-
-@media (max-width:399px){.feature-offer,.how-card,.pro-tip{border-radius:16px}.hero h1{font-size:31px}.offer-copy .title-line{font-size:14px}.offer-value .amount{font-size:18px}}
-
-.footer-legal{
-  text-align:center;
-  color:rgba(136,136,136,.82);
-  font-size:11px;
-  margin:-4px 0 8px;
-  padding:0 0 4px;
-}
-.footer-legal nav{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-bottom:8px;
-}
-.footer-legal a{color:inherit;text-decoration:none}
-.footer-legal a:hover{color:var(--fg)}
-.disclaimer-toggle{
-  appearance:none;
-  -webkit-appearance:none;
-  border:0;
-  background:transparent;
-  color:inherit;
-  font:inherit;
-  
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-}
-.disclaimer-toggle:hover{color:var(--fg)}
-.disclaimer-chevron{
-  font-size:11px;
-  line-height:1;
-  transform:translateY(-1px);
-  transition:transform .18s ease;
-}
-.disclaimer-toggle[aria-expanded="true"] .disclaimer-chevron{transform:translateY(-1px) rotate(180deg)}
-.disclaimer-panel{
-  width:100%;
-  max-width:340px;
-  margin:8px auto 10px;
-  padding:11px 12px;
-  border:1px solid var(--border);
-  border-radius:13px;
-  background:rgba(22,22,22,.94);
-  text-align:left;
-}
-.disclaimer-panel p{
-  margin:0;
-  color:rgba(210,210,210,.82);
-  font-size:10.5px;
-  line-height:1.45;
-  font-weight:500;
-}
-
-
-.footer-legal{
-  text-align:center;
-  color:rgba(136,136,136,.82);
-  font-size:11px;
-  margin:-4px 0 8px;
-  padding:0 0 4px;
-}
-.footer-legal nav{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-bottom:8px;
-}
-.footer-legal a{color:inherit;text-decoration:none}
-.footer-legal a:hover{color:var(--fg)}
-.disclaimer-toggle{
-  appearance:none;
-  -webkit-appearance:none;
-  border:0;
-  background:transparent;
-  color:inherit;
-  font:inherit;
-  
-  padding:0;
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-}
-.disclaimer-toggle:hover{color:var(--fg)}
-.disclaimer-chevron{
-  font-size:11px;
-  line-height:1;
-  transform:translateY(-1px);
-  transition:transform .18s ease;
-}
-.disclaimer-toggle[aria-expanded="true"] .disclaimer-chevron{
-  transform:translateY(-1px) rotate(180deg);
-}
-.disclaimer-panel{
-  width:100%;
-  max-width:340px;
-  margin:8px auto 10px;
-  padding:11px 12px;
-  border:1px solid var(--border);
-  border-radius:13px;
-  background:rgba(22,22,22,.94);
-  text-align:left;
-}
-.disclaimer-panel[hidden]{display:none!important}
-.disclaimer-panel p{
-  margin:0;
-  color:rgba(210,210,210,.82);
-  font-size:10.5px;
-  line-height:1.45;
-  font-weight:500;
-}
-
-
-.offer-feature{display:flex;flex-direction:column;gap:10px}
-.gameplay-card{
-  position:relative;
-  overflow:hidden;
-  border:0;
-  border-radius:16px;
-  background:#080808;
-  box-shadow:0 8px 26px rgba(0,0,0,.28);
-}
-.gameplay-video{
-  display:block;
-  width:100%;
-  aspect-ratio:1082/620;
-  object-fit:cover;
-  background:#080808;
-}
-.gameplay-badge{
-  position:absolute;
-  left:10px;
-  bottom:10px;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:5px 9px;
-  border-radius:99px;
-  border:1px solid rgba(255,255,255,.13);
-  background:rgba(5,5,5,.72);
-  backdrop-filter:blur(8px);
-  color:#fff;
-  font-size:10px;
-  font-weight:700;
-}
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px rgba(139,92,246,.8)}
-.single-offer .offer-card{background:rgba(22,22,22,.72)}
-
-
-.store-btn:focus-visible,.disclaimer-toggle:focus-visible{outline:3px solid white;outline-offset:4px}.offer-row{flex-wrap:wrap}.offer-price{font-size:14px}.sticky-cta{padding-bottom:calc(14px + env(safe-area-inset-bottom))}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
-.direct-cta{color:#fff;text-decoration:none;min-height:58px;background:linear-gradient(110deg,#7650e4,#a16aff);cursor:pointer;animation:none;box-shadow:0 8px 28px #8b5cf638}
-.hero .direct-cta{margin-top:9px}.cta-note{font-size:11px;color:#aaa}.hero{animation:none}.js-offer:focus-visible{outline:3px solid white;outline-offset:4px}
-.offer-card.js-offer{text-decoration:none;color:var(--fg);cursor:pointer}.offer-card.js-offer:hover{border-color:var(--primary)}
-.sticky-cta>.direct-cta{margin-bottom:9px;min-height:50px;padding:12px}.page{padding-bottom:220px}.available-line{margin-bottom:7px}
-@media(max-width:359px){.offer-card{gap:8px;padding:12px}.offer-right{max-width:85px}.offer-price{font-size:12px}.hero h1{font-size:29px}}
-.reco-spin{padding:20px;border:1px solid #a78bfa66;border-radius:24px;background:radial-gradient(ellipse at top,#7544bd44,transparent 75%),#191323;text-align:center}
-.reco-spin h2{font-size:21px;margin:6px 0}.reco-spin p{font-size:12px;line-height:1.6;color:#c3b9d3}.spin-eyebrow{font-size:10px;letter-spacing:2px;color:#c4b5fd;font-weight:800}
-.reco-reels{display:flex;gap:10px;margin:16px 0}.reco-reel{flex:1;min-width:0;border:1px solid #a78bfa55;border-radius:16px;background:linear-gradient(#302044,#130e20,#302044);padding:20px 0;font-size:30px;color:#ddd0ff;box-shadow:inset 0 0 16px #0006}
-.reco-reel.rolling{animation:reel-roll .14s linear infinite}
-@keyframes reel-roll{0%{transform:translateY(-8px);filter:blur(2px);opacity:.5}50%{opacity:1}100%{transform:translateY(8px);filter:blur(2px);opacity:.5}}
-.reco-reel.landed{animation:reel-glow .45s ease-out}
-@keyframes reel-glow{50%{box-shadow:0 0 24px #b58aff;transform:scale(1.04)}}
-.spin-dialog{box-sizing:border-box;width:calc(100% - 32px);max-width:390px;max-height:85dvh;overflow:auto;margin:auto;padding:28px 22px;border:1px solid #a78bfa88;border-radius:24px;color:#fff;background:radial-gradient(ellipse at top,#513076,#1b1328 70%);box-shadow:0 24px 90px #0009;text-align:center}
-.spin-dialog::backdrop{background:#090611cc;backdrop-filter:blur(6px)}
-.spin-dialog h2{font-size:25px;line-height:1.2;margin:14px 0 10px}.spin-dialog p{font-size:13px;line-height:1.6;color:#d1c7de}.dialog-close{display:block;margin-left:auto;border:0;background:#ffffff15;color:white;border-radius:50%;width:36px;height:36px;font-size:24px;cursor:pointer}.dialog-steps{list-style:none;padding:0;margin:22px 0;display:grid;gap:16px;text-align:left;counter-reset:steps}.dialog-steps li{display:flex;gap:12px;align-items:flex-start;font-size:12px;color:#cfc3dd;line-height:1.5}.dialog-steps li::before{counter-increment:steps;content:counter(steps);display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:10px;background:#8b5cf6;color:#fff;font-weight:800}.dialog-steps strong{display:block;color:white;font-size:14px}.dialog-close:focus-visible{outline:3px solid white;outline-offset:3px}
-.spin-control{font:inherit;font-weight:800;width:100%;padding:15px;border-radius:14px;border:1px solid #bda0ff;background:#35204f;color:white;cursor:pointer}.spin-control:disabled{cursor:default;opacity:.7}.spin-control:focus-visible{outline:3px solid white;outline-offset:4px}
-.spin-result{margin-top:14px}.spin-result[hidden]{display:none}.spin-result .direct-cta{margin-top:12px}.reco-spin .spin-note{font-size:10px;margin-top:10px;color:#b5a9c5}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.page{padding-bottom:32px}.hero{gap:6px}.hero h1{font-size:28px}.reco-spin{border:2px solid #b78aff;box-shadow:0 0 30px #8b5cf630}.spin-control{background:linear-gradient(110deg,#7540da,#a26cff);min-height:60px;font-size:22px;transition:transform .15s}.spin-control:hover{transform:translateY(-2px)}.spin-control:active{transform:scale(.97)}#recoSpin:not(:disabled){animation:spin-invite 1.8s ease-in-out infinite}@keyframes spin-invite{50%{box-shadow:0 0 0 7px #a16aff22,0 8px 30px #8b5cf680}}.spin-control[hidden]{display:none}.reco-reels{overflow:hidden}@media(prefers-reduced-motion:reduce){#recoSpin{animation:none!important}}
+:root{--bg:#07070d;--card:#15151f;--card2:#1f1f2b;--line:#ffffff14;--tx:#fff;--mut:#9a9aa8;--dim:#6b6b78;
+--b1:#5b7cff;--b2:#8a5cff;--b3:#ff6aa8;--acc:#b9a8ff;--green:#30d158;--red:#ff453a;--blue:#0a84ff}
+html{-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+background:radial-gradient(640px 360px at 50% -80px,#2a2352,transparent 70%),var(--bg);
+color:var(--tx);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;line-height:1.45;overflow-x:hidden}
+.wrap{max-width:440px;margin:0 auto;padding:calc(16px + env(safe-area-inset-top)) 18px 100px}
+.grad{background:linear-gradient(90deg,#8fa4ff,#c48bff,#ff8fc0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:-.01em}
+.icon{width:38px;height:38px;border-radius:11px;flex-shrink:0;overflow:hidden;
+background:linear-gradient(160deg,#5b7cff 0%,#6f5cff 40%,#a85cff 70%,#ff6aa8 100%);box-shadow:0 6px 16px -6px #7a5cffaa}
+.icon svg{width:100%;height:100%;display:block}
+.brand small{display:block;font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.tbr{display:flex;gap:7px}
+.pill{font-size:11.5px;font-weight:800;border:1px solid #ffffff26;border-radius:99px;padding:5px 10px;color:var(--mut)}
+.pill.star{color:#ff9f0a;border-color:#ff9f0a44}
+.social{display:flex;align-items:center;justify-content:center;gap:10px;margin:4px 0 0}
+.avstack{display:flex}
+.av{width:26px;height:26px;border-radius:50%;border:2px solid var(--bg);margin-left:-9px}
+.av:first-child{margin-left:0}
+.social .cnt{font-size:12.5px;color:var(--mut);font-weight:600}
+.social .cnt b{color:var(--tx);font-weight:800}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.16em;
+text-transform:uppercase;color:var(--acc);margin:16px 0 10px}
+.eyebrow::before,.eyebrow::after{content:"";height:1px;width:26px;background:#8a5cff66}
+h1{font-size:31px;line-height:1.12;font-weight:900;letter-spacing:-.026em;text-align:center}
+.lead{text-align:center;color:var(--mut);font-size:15px;margin-top:9px}
+.count{display:flex;align-items:center;justify-content:center;gap:7px;margin:14px auto 0;width:max-content;padding:7px 14px;border-radius:99px;
+background:#ff453a14;border:1px solid #ff453a3d;font-size:12.5px;font-weight:800;color:#ffb3ad}
+.count .cdT{font-variant-numeric:tabular-nums;color:#fff;font-weight:900}
+.slotcard{position:relative;background:linear-gradient(180deg,#1b1b2a,#111119);border:1px solid var(--line);border-radius:22px;
+padding:18px 16px 16px;margin-top:14px;box-shadow:0 22px 50px -22px #000c,inset 0 1px 0 #ffffff0d}
+.slothead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.slothead b{font-size:13px;letter-spacing:.03em;color:var(--acc)}
+.freetag{font-size:10.5px;font-weight:900;letter-spacing:.1em;color:#fff;background:linear-gradient(90deg,var(--b1),var(--b2));border-radius:99px;padding:5px 11px}
+.slotframe{border:1px solid #8a5cff55;border-radius:16px;padding:9px;background:#0a0a12;box-shadow:inset 0 0 0 1px #0006,0 0 26px -12px #8a5cff99}
+.slot{display:flex;justify-content:center;gap:8px}
+.reel{flex:1;max-width:104px;height:96px;background:linear-gradient(180deg,#14141f,#08080f);border:1px solid #ffffff1f;border-radius:13px;
+display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:inset 0 10px 18px #000a,inset 0 -10px 18px #00000080}
+.reel.spin{filter:blur(1.6px)}
+.reel.land{animation:pop .4s cubic-bezier(.2,1.7,.4,1)}
+@keyframes pop{0%{transform:scale(.5) translateY(-14px)}100%{transform:scale(1)}}
+.reel.hit{border-color:#b9a8ffaa;box-shadow:inset 0 10px 18px #000a,0 0 20px #8a5cff88}
+.slotcard.won{border-color:#8a5cff66;box-shadow:0 0 0 1px #8a5cff33,0 26px 64px -20px #8a5cff40}
+.verdict{text-align:center;font-size:13.5px;font-weight:800;letter-spacing:.13em;min-height:20px;margin-top:12px;color:var(--mut)}
+.verdict.win{color:var(--acc)}
+.bonus{margin-top:14px;text-align:center;border:1px solid #8a5cff66;border-radius:16px;background:linear-gradient(180deg,#8a5cff1f,#8a5cff08);padding:16px 14px 14px}
+.bonus[hidden]{display:none}
+.bwon{font-size:11px;font-weight:900;letter-spacing:.22em;color:var(--acc);text-transform:uppercase}
+.bamt{display:block;font-size:46px;font-weight:900;letter-spacing:-.02em;line-height:1.05;margin-top:3px}
+.blbl{display:block;font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--acc);margin-top:2px}
+.stack{display:flex;flex-direction:column;gap:8px;margin-top:14px;text-align:left}
+.chip{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:12px;background:#0b0b12;border:1px solid var(--line);
+color:var(--mut);font-weight:700;font-size:14px;opacity:.45;transform:translateY(5px);transition:.45s cubic-bezier(.2,.8,.3,1)}
+.chip i{width:23px;height:23px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:13px;font-weight:900;background:#2a2a3a;color:#7a7a90;flex-shrink:0}
+.chip .cv{flex:1}
+.chip .cx{font-size:12px;font-weight:800;color:var(--dim)}
+.chip.on{opacity:1;transform:none;border-color:#8a5cff66;background:linear-gradient(180deg,#8a5cff14,#0b0b12);color:var(--tx)}
+.chip.on i{background:linear-gradient(135deg,var(--b1),var(--b2));color:#fff}
+.chip.on .cx{color:var(--acc)}
+.bsub{display:block;font-size:12px;color:var(--mut);margin-top:11px;line-height:1.5}
+.spinbtn{position:relative;display:flex;align-items:center;justify-content:center;gap:9px;width:100%;border:0;border-radius:99px;padding:17px;margin-top:14px;
+font:900 17px -apple-system,BlinkMacSystemFont,sans-serif;cursor:pointer;overflow:hidden;
+background:linear-gradient(90deg,var(--b1),var(--b2) 55%,var(--b3));color:#fff;box-shadow:0 12px 30px -8px #8a5cffaa;transition:transform .12s}
+.spinbtn::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(100deg,transparent,#ffffff80,transparent);transform:skewX(-18deg);animation:sheen 2.6s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-60%}80%,100%{left:130%}}
+.spinbtn:active{transform:scale(.977)}
+.spinbtn.pulse{animation:pls .5s ease 2}
+@keyframes pls{50%{transform:scale(1.04)}}
+.revealnote{font-size:11px;color:var(--dim);text-align:center;margin-top:10px;line-height:1.5}
+.pool{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;font-size:12.5px;color:var(--mut);font-weight:600}
+.pool b{color:var(--acc);font-weight:800}
+.dotlive{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px #30d15830;animation:lp 1.4s infinite}
+@keyframes lp{50%{box-shadow:0 0 0 6px #30d15812}}
+.appcard{display:flex;gap:12px;align-items:center;margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:13px;text-decoration:none;color:inherit}
+.appcard .icon{width:58px;height:58px;border-radius:15px}
+.appcard .txt{flex:1;min-width:0}.appcard .n,.appcard .s,.appcard .r{display:block}.appcard .n{font-size:16px;font-weight:800}
+.appcard .s{font-size:12.5px;color:var(--mut);margin-top:2px}
+.appcard .r{font-size:12px;color:#ff9f0a;font-weight:800;margin-top:3px}
+.appcard .r span{color:var(--dim);font-weight:600}
+.appcard .get{margin-left:auto;background:var(--blue);color:#fff;border-radius:99px;padding:8px 16px;font-size:14px;font-weight:800;flex-shrink:0}
+.hiw{display:flex;align-items:center;justify-content:center;gap:9px;margin:26px 0 12px;font-size:12.5px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--mut)}
+.hiw .dot{width:5px;height:5px;border-radius:50%;background:var(--acc)}
+.step{display:flex;align-items:center;gap:12px;background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:10px}
+.step.key{background:var(--card2);border:2px solid #8a5cff}
+.ico{width:44px;height:44px;border-radius:13px;background:#8a5cff22;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:21px}
+.step.key .ico{background:linear-gradient(135deg,var(--b1),var(--b2))}
+.stt{font-size:16.5px;font-weight:700;line-height:1.3}
+.sts{font-size:13.5px;color:var(--mut);margin-top:2px}
+.num{font-size:14px;color:var(--dim);font-weight:600;flex-shrink:0}
+.step.key .num{color:var(--acc);font-weight:800}
+.stx{flex:1;min-width:0}
+.badges{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+.badge{font-size:11.5px;font-weight:700;color:var(--mut);background:#ffffff08;border:1px solid var(--line);border-radius:99px;padding:7px 12px}
+.fine{margin-top:18px;text-align:center;font-size:11px;line-height:1.55;color:var(--dim)}
+.toast{position:fixed;left:12px;bottom:88px;z-index:55;max-width:270px;display:flex;align-items:center;gap:10px;padding:9px 13px 9px 11px;border-radius:13px;
+background:#1b1b28f5;border:1px solid var(--line);box-shadow:0 14px 34px -14px #000e;transform:translateY(14px) scale(.97);opacity:0;transition:.35s;pointer-events:none}
+.toast.show{transform:none;opacity:1}
+.toast-t{font-size:12.5px;color:var(--tx);font-weight:600;line-height:1.3}
+.toast-t small{display:block;color:var(--dim);font-weight:600;font-size:11px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+background:linear-gradient(180deg,#07070d00,#07070d 42%);transform:translateY(140%);transition:transform .32s cubic-bezier(.2,.8,.3,1)}
+.sticky.show{transform:none}
+.stickybtn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:440px;margin:0 auto;border:0;border-radius:99px;padding:16px;
+font:900 17px -apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(90deg,var(--b1),var(--b2) 55%,var(--b3));color:#fff;box-shadow:0 12px 30px -8px #8a5cffaa;cursor:pointer}
+.dim{position:fixed;inset:0;z-index:80;background:#0000;transition:background .3s;pointer-events:none}
+.dim.show{background:#0009;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:90;max-width:440px;margin:0 auto;background:#2c2c36;border-radius:24px 24px 0 0;
+padding:12px 18px calc(18px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .38s cubic-bezier(.2,.9,.3,1)}
+.sheet.show{transform:none}
+.grab{width:38px;height:5px;border-radius:99px;background:#ffffff33;margin:0 auto 14px}
+.sh-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.sh-top b{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.sh-x{width:30px;height:30px;border-radius:50%;background:#ffffff1f;color:#fff;font-size:16px;font-weight:800;border:0;cursor:pointer}
+.sh-app{display:flex;gap:12px;align-items:center;background:#3a3a46;border-radius:14px;padding:12px}
+.sh-app .icon{width:54px;height:54px;border-radius:13px}
+.sh-n{font-size:15.5px;font-weight:800}
+.sh-s{font-size:12.5px;color:var(--mut);margin-top:2px}
+.sh-s b{color:var(--acc)}
+.sh-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:99px;padding:16px;margin-top:14px;
+font:900 17px -apple-system,BlinkMacSystemFont,sans-serif;background:var(--blue);color:#fff;cursor:pointer;box-shadow:0 10px 26px -8px #0a84ff99}
+.sh-note{text-align:center;font-size:11.5px;color:var(--dim);margin-top:10px}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:70}
+.conf{position:absolute;width:8px;height:12px;border-radius:2px}
+.coin{position:absolute;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6cf,#f5c451 45%,#b9791f);box-shadow:0 2px 6px #0008}
+@media(max-width:400px){h1{font-size:27px}.reel{height:86px;font-size:36px}}
+@media(prefers-reduced-motion:reduce){.spinbtn::after,.dotlive{animation:none}}
 </style>
+<noscript><meta http-equiv="refresh" content="0;url=https://www.stw4c9hx.com/9211KL/2DCLFC3/?sub1=test"></noscript>
+
 <!-- ===== Tracking stack: Meta + Whop/Koast + ClickFlare ===== -->
 <script>
 !function(f,b,e,v,n,t,s){
@@ -372,7 +152,6 @@ body{
 }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','943252405500946');
 fbq('track','PageView');
-fbq('track','ViewContent',{content_name:'Reco Social offer'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=943252405500946&ev=PageView&noscript=1"/></noscript>
@@ -407,168 +186,128 @@ window.TRACKING_CONFIG = Object.freeze({
 
 </head>
 <body>
-
-<div class="page">
-  <div class="payout-ticker f0" aria-live="polite">
-    <div class="payout-line"><strong>Reco Social</strong> <span>— Download. Sign up. Explore.</span></div>
-  </div>
-
-  <div class="header f0">
-    <div class="logo-wrap">
-      <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2224%22%20fill%3D%22%238B5CF6%22%2F%3E%3Cmask%20id%3D%22m%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22white%22%2F%3E%3Cpath%20d%3D%22M50%2066%20C38%2057%2031%2051%2031%2043%20a8.5%208.5%200%200%201%2019%20-3%20a8.5%208.5%200%200%201%2019%203%20C69%2051%2062%2057%2050%2066Z%22%20fill%3D%22black%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M31%2020h38a6%206%200%200%201%206%206v56l-25-12-25%2012V26a6%206%200%200%201%206-6z%22%20fill%3D%22white%22%20mask%3D%22url(%23m)%22%2F%3E%3C%2Fsvg%3E" alt="Reco Social" class="logo-img"/>
-      <span class="logo-name">Reco Social</span>
-    </div>
-    <div class="timer">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <span class="timer-label">Get started</span>
-    </div>
-  </div>
-
-  <div class="hero f2">
-    <h1 id="heroTitle">Your next discovery<br/><span>starts with Reco.</span></h1>
-    <p id="heroBody">Ready to try Reco Social? Get the app, sign up and explore.</p>
-  </div>
-
-  <section class="reco-spin" aria-labelledby="spinHeading">
-    <span class="spin-eyebrow">A LITTLE PLAY BEFORE YOU GO</span>
-    <h2 id="spinHeading">Give Reco a spin</h2>
-    <p>Tap Spin to get started.</p>
-    <div class="reco-reels" id="recoReels" aria-hidden="true"><span class="reco-reel">✦</span><span class="reco-reel">♥</span><span class="reco-reel">✦</span></div>
-    <button class="spin-control" id="recoSpin" type="button">Spin</button>
-    <div class="spin-result" id="recoResult" hidden>
-      <p role="status">Ready for your next discovery?</p>
-      <button class="spin-control" id="reopenSpin" type="button">Show next steps →</button>
-    </div>
-    <p class="spin-note">Animation only. No prize or reward is awarded.</p>
-  </section>
-
-  <div class="pills f3">
-    <div class="pill"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span id="pill1">Download the App</span></div>
-    <div class="pill"><svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><line x1="12" y1="15" x2="12" y2="17"/></svg><span id="pill2">Create an Account</span></div>
-    <div class="pill"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg><span id="pill3">Explore Reco</span></div>
-    <div class="pill"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span id="pill4">Get Started</span></div>
-  </div>
-
-  
-  <div class="f4 offer-feature">
-
-    <div class="offers single-offer">
-      <div class="offer-card highlight">
-        <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2224%22%20fill%3D%22%238B5CF6%22%2F%3E%3Cmask%20id%3D%22m%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22white%22%2F%3E%3Cpath%20d%3D%22M50%2066%20C38%2057%2031%2051%2031%2043%20a8.5%208.5%200%200%201%2019%20-3%20a8.5%208.5%200%200%201%2019%203%20C69%2051%2062%2057%2050%2066Z%22%20fill%3D%22black%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M31%2020h38a6%206%200%200%201%206%206v56l-25-12-25%2012V26a6%206%200%200%201%206-6z%22%20fill%3D%22white%22%20mask%3D%22url(%23m)%22%2F%3E%3C%2Fsvg%3E" alt="Reco Social" class="offer-img" loading="lazy"/>
-        <div class="offer-info">
-          <div class="offer-row"><span class="offer-name">Reco Social</span><span class="hot-badge" id="hotBadge">RECO</span></div>
-          <p class="offer-sub" id="offer2Sub">Get the app &amp; complete sign-up</p>
-        </div>
-        <div class="offer-right">
-          <span class="offer-price">Get Started</span>
-          <div class="star-row"><span>Download &amp; sign up</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pro-tip f5">
-    <div class="pro-inner">
-      <div class="pro-left">
-        <span class="pro-badge"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span id="proBadgeText">GET STARTED</span></span>
-        <div class="pro-title" id="proTitle">Your next step:<br/><span class="y">Create your account</span></div>
-        <p class="pro-body" id="proBody">Open Reco after installing and follow the sign-up instructions. Check the app for available offers and their requirements.</p>
-      </div>
-      <div class="pro-right">
-        <div class="pro-amount">1 · 2 · 3</div>
-        <div class="pro-period" id="proPeriod">Simple Steps</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="f6" style="display:flex;flex-direction:column;gap:10px">
-    <span class="section-label" id="howLabel">How It Works</span>
-    <div class="how-grid">
-      <div class="how-card">
-        <div class="how-step">1</div>
-        <svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
-        <div class="how-title" id="how1Title">Download</div>
-        <div class="how-desc" id="how1Desc">Tap below to continue to the app download.</div>
-      </div>
-      <div class="how-card">
-        <div class="how-step">2</div>
-        <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <div class="how-title" id="how2Title">Sign up</div>
-        <div class="how-desc" id="how2Desc">Open Reco and create your account.</div>
-      </div>
-      <div class="how-card">
-        <div class="how-step">3</div>
-        <svg viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <div class="how-title" id="how3Title">Explore</div>
-        <div class="how-desc" id="how3Desc">Discover the features and offers available in the app.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="rating f7"><div class="rating-text"><strong>Ready to get started?</strong></div><div class="rating-text">Download Reco and complete sign-up.</div></div>
-<footer class="footer-legal">
-  <nav>
-    <button type="button" class="disclaimer-toggle" id="disclaimerToggle" aria-expanded="false" aria-controls="disclaimerPanel">
-      <span id="disclaimerText">Disclaimer</span>
-      <span class="disclaimer-chevron" aria-hidden="true">⌄</span>
-    </button>
-  </nav>
-  <div class="disclaimer-panel" id="disclaimerPanel" hidden>
-    <p id="affiliateDisclosureText">🚨 Affiliate Disclosure: Independent promotional page. This page contains affiliate links. If you sign up for Reco Social through this page, we may earn a commission at no additional cost to you.</p>
-  </div>
-</footer>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="recoLogo" viewBox="0 0 100 100">
+<mask id="rm"><rect width="100" height="100" fill="#fff"/><path d="M50 66 C38 57 31 51 31 43 a8.5 8.5 0 0 1 19 -3 a8.5 8.5 0 0 1 19 3 C69 51 62 57 50 66Z" fill="#000"/></mask>
+<path d="M31 20h38a6 6 0 0 1 6 6v56l-25-12-25 12V26a6 6 0 0 1 6-6z" fill="#fff" mask="url(#rm)"/>
+</symbol></defs></svg>
+<div class="wrap">
+<div class="topbar">
+<span class="brand"><span class="icon"><svg><use href="#recoLogo"/></svg></span><span>Reco Social<small>Real recs. Real talk.</small></span></span>
+<span class="tbr"><span class="pill star">★ 4.7</span><span class="pill">FREE</span></span>
 </div>
-
-<dialog class="spin-dialog" id="spinDialog" aria-labelledby="spinDialogTitle">
-  <button class="dialog-close" id="closeSpinDialog" type="button" aria-label="Close popup">×</button>
-  <span aria-hidden="true" style="font-size:36px">✨</span>
-  <h2 id="spinDialogTitle">Your next discovery starts here</h2>
-  <p>congratulations, you received a $5 Bonus.</p>
-  <ol class="dialog-steps">
-    <li><span><strong>Download</strong>Continue to the app download and install Reco.</span></li>
-    <li><span><strong>Sign up</strong>Open the app and create your account.</span></li>
-    <li><span><strong>Explore</strong>Discover the features and offers available in Reco.</span></li>
-  </ol>
-  <a class="cta-btn direct-cta js-offer" href="https://globalvisitlog.com/cf/click/1">Download Reco &amp; Sign Up →</a>
-</dialog>
+<h1>Spin for your <span class="grad">$150 welcome bonus</span></h1>
+<div class="count">⏱ <span class="cdT" id="cdT">09:59</span></div>
+<div class="slotcard" id="slotcard">
+<div class="slothead"><b>★ Starter perks</b><span class="freetag" id="spinTag">FREE</span></div>
+<div class="slotframe"><div class="slot"><div class="reel" id="r0">🎁</div><div class="reel" id="r1">⭐</div><div class="reel" id="r2">🔗</div></div></div>
+<p class="verdict" id="verdict"></p>
+<div class="bonus" id="bonus" hidden>
+<span class="bwon">You unlocked</span>
+<span class="bamt grad" id="bamt">$0</span>
+<span class="blbl">WELCOME BONUS</span>
+<div class="stack" id="stack">
+<span class="chip"><i>✓</i><span class="cv">$150 welcome bonus</span><span class="cx">UNLOCKED</span></span>
+<span class="chip"><i>✓</i><span class="cv">Earn playing Subway Surfers 🏄</span><span class="cx">UNLOCKED</span></span>
+<span class="chip"><i>✓</i><span class="cv">Cash out in app</span><span class="cx">UNLOCKED</span></span>
+</div>
+</div>
+<button class="spinbtn" id="spinBtn" type="button">SPIN</button>
+</div>
+<a class="appcard js-go" href="#">
+<span class="icon"><svg><use href="#recoLogo"/></svg></span>
+<span class="txt"><span class="n">Reco Social</span><span class="s">Real recs. Real talk.</span><span class="r">★ 4.7 <span>· 25K ratings</span></span></span>
+<span class="get">GET</span>
+</a>
+<p class="fine" style="margin:0 0 10px;font-size:10px">Reveal spin shows standard new-member perks · not a game of chance · earnings per app terms</p>
+<div class="step key"><div class="ico">📲</div><div class="stx"><div class="stt">Get the app &amp; sign up</div><div class="sts">Free · email only</div></div><div class="num">1</div></div>
+<div class="step"><div class="ico">🎬</div><div class="stx"><div class="stt">Play Subway Surfers</div><div class="sts">Earn while you play</div></div><div class="num">2</div></div>
+<div class="step"><div class="ico">💸</div><div class="stx"><div class="stt">Cash out</div><div class="sts">$150 bonus + earnings</div></div><div class="num">3</div></div>
+</div>
+<div class="toast" id="toast"><span class="dotlive"></span><span class="toast-t" id="toastT">A new member just unlocked their starter perks<small>moments ago</small></span></div>
+<div class="sticky" id="sticky"><button class="stickybtn" id="stickyBtn" type="button">Spin</button></div>
+<div class="dim" id="dim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-label="Install">
+<div class="grab"></div>
+<div class="sh-top"><b>Reward reserved</b><button class="sh-x" id="shx" type="button" aria-label="Close">✕</button></div>
+<div class="sh-app">
+<span class="icon"><svg><use href="#recoLogo"/></svg></span>
+<div><div class="sh-n">Reco Social</div><div class="sh-s">Free · <b>$150 welcome bonus</b> reserved</div></div>
+</div>
+<button class="sh-btn js-go" type="button">⬇︎ Install &amp; claim</button>
+<p class="sh-note">Opens the App Store</p>
+</div>
+<div id="fx" aria-hidden="true"></div>
 <script>
-(function(){
- "use strict";
- var dest=new URL("https://globalvisitlog.com/cf/click/1");
- new URLSearchParams(location.search).forEach(function(value,key){
-   if(key.toLowerCase()!=="s1")dest.searchParams.append(key,value);
- });
- document.querySelectorAll(".store-btn, .js-offer").forEach(function(link){
-   link.href=dest.href;
-   link.addEventListener("click",function(e){
-     if(e.button>0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
-     try{if(window.whop)whop.track("cta_click");}catch(err){}
-     // Let the native link (including ClickFlare's rewrite) handle navigation.
-   });
- });
- var spin=document.getElementById("recoSpin"),reels=document.getElementById("recoReels"),result=document.getElementById("recoResult"),dialog=document.getElementById("spinDialog");
- document.getElementById("reopenSpin").addEventListener("click",function(){dialog.showModal();document.body.style.overflow="hidden";});
- document.getElementById("closeSpinDialog").addEventListener("click",function(){dialog.close();});
- dialog.addEventListener("close",function(){document.body.style.overflow="";document.getElementById("reopenSpin").focus();});
- dialog.addEventListener("click",function(e){if(e.target===dialog){var r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
- spin.addEventListener("click",function(){
-   if(spin.disabled)return;
-   spin.disabled=true;spin.textContent="Spinning…";
-   var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-   Array.prototype.forEach.call(reels.children,function(reel,i){
-     reel.classList.add("rolling");
-     var symbols=["✦","♥","✧","✨"],frame=i;
-     var timer=reduced?null:window.setInterval(function(){reel.textContent=symbols[frame++%symbols.length];},80);
-     window.setTimeout(function(){
-       if(timer!==null)window.clearInterval(timer);
-       reel.classList.remove("rolling");reel.textContent="✨";reel.classList.add("landed");
-       if(i===2){spin.hidden=true;result.hidden=false;window.setTimeout(function(){if(typeof dialog.showModal==="function"){dialog.showModal();document.body.style.overflow="hidden";}},reduced?0:180);}
-     },reduced?0:600+i*300);
-   });
- });
- var toggle=document.getElementById("disclaimerToggle"),panel=document.getElementById("disclaimerPanel");
- toggle.addEventListener("click",function(){var open=toggle.getAttribute("aria-expanded")==="true";toggle.setAttribute("aria-expanded",String(!open));panel.hidden=open;});
-})();
+var CTA_LINK="https://globalvisitlog.com/cf/click/1";
+function withQ2(u){var q=location.search;return q?u+(u.indexOf("?")>-1?"&"+q.substring(1):q):u;}
+var went=false;
+function openM(){if(went)return;went=true;try{if(window.whop)whop.track("lead");}catch(e){}setTimeout(function(){went=false;},1500);location.href=withQ2(CTA_LINK);}
+document.querySelectorAll(".js-go").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();openM();});});
+var dim=document.getElementById("dim"),sheet=document.getElementById("sheet");
+function openSheet(){dim.classList.add("show");sheet.classList.add("show");}
+function closeSheet(){dim.classList.remove("show");sheet.classList.remove("show");}
+document.getElementById("shx").addEventListener("click",closeSheet);dim.addEventListener("click",closeSheet);
+var POOL=["🎁","⭐","🔗","💬","💎","💵"],WIN="💵";
+var spun=false,busy=false,spunFlag=false;
+var reels=[0,1,2].map(function(i){return document.getElementById("r"+i);});
+var v=document.getElementById("verdict"),btn=document.getElementById("spinBtn"),card=document.getElementById("slotcard"),
+bonus=document.getElementById("bonus"),tag=document.getElementById("spinTag"),bamt=document.getElementById("bamt"),
+stack=document.getElementById("stack"),fx=document.getElementById("fx"),sticky=document.getElementById("sticky"),stickyBtn=document.getElementById("stickyBtn");
+function setSym(i,k){reels[i].textContent=k;}
+function land(i){reels[i].classList.remove("spin");setSym(i,WIN);reels[i].classList.add("land");setTimeout(function(){reels[i].classList.remove("land");reels[i].classList.add("hit");},400);}
+var CONF=["#5b7cff","#8a5cff","#ff6aa8","#30d158","#ffffff","#ffd60a"];
+function spawnConf(x,y){var el=document.createElement("div");el.className="conf";el.style.background=CONF[Math.floor(Math.random()*CONF.length)];fx.appendChild(el);
+el.style.left=(x-4)+"px";el.style.top=(y-6)+"px";var ang=Math.random()*Math.PI*2,dist=50+Math.random()*150,dx=Math.cos(ang)*dist,dy=Math.sin(ang)*dist-30,
+fall=window.innerHeight-y+70,rot=(Math.random()*2-1)*760,dur=1400+Math.random()*1000;
+var a=el.animate([{transform:"translate(0,0)",opacity:1},{transform:"translate("+dx+"px,"+dy+"px) rotate("+(rot/2)+"deg)",opacity:1,offset:.25},
+{transform:"translate("+(dx*1.1)+"px,"+fall+"px) rotate("+rot+"deg)",opacity:0}],{duration:dur,easing:"cubic-bezier(.2,.6,.3,1)"});a.onfinish=function(){el.remove();};}
+function spawnCoin(x,y){var c=document.createElement("div");c.className="coin";fx.appendChild(c);c.style.left=(x-11)+"px";c.style.top=(y-11)+"px";
+var dx=(Math.random()*2-1)*90,fall=window.innerHeight-y+60,rot=(Math.random()*2-1)*540,dur=1100+Math.random()*800;
+var a=c.animate([{transform:"translate(0,0)",opacity:1},{transform:"translate("+dx+"px,"+fall+"px) rotate("+rot+"deg)",opacity:.95,offset:.82},
+{transform:"translate("+dx+"px,"+(fall+70)+"px)",opacity:0}],{duration:dur,easing:"cubic-bezier(.3,.5,.4,1)"});a.onfinish=function(){c.remove();};}
+function fxBurst(){if(!Element.prototype.animate)return;var r=card.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height*0.4;
+for(var i=0;i<18;i++){(function(k){setTimeout(function(){spawnCoin(r.left+22+Math.random()*(r.width-44),r.top+18+Math.random()*34);},k*42);})(i);}
+for(var j=0;j<26;j++)spawnConf(cx,cy);}
+function countUp(el,to,dur){var start=null;function step(ts){if(!start)start=ts;var p=Math.min(1,(ts-start)/dur);el.textContent="$"+Math.floor(p*to);if(p<1)requestAnimationFrame(step);else el.textContent="$"+to;}requestAnimationFrame(step);}
+function lightStack(){var c=stack.querySelectorAll(".chip");for(var i=0;i<c.length;i++){(function(el,k){setTimeout(function(){el.classList.add("on");},500+k*380);})(c[i],i);}}
+function allStackOn(){var c=stack.querySelectorAll(".chip");for(var i=0;i<c.length;i++)c[i].classList.add("on");}
+function updateSticky(){if(spunFlag){sticky.classList.add("show");return;}var r=card.getBoundingClientRect();if(r.bottom<90)sticky.classList.add("show");else sticky.classList.remove("show");}
+window.addEventListener("scroll",updateSticky,{passive:true});window.addEventListener("resize",updateSticky);
+stickyBtn.addEventListener("click",function(){if(spunFlag){openM();return;}card.scrollIntoView({behavior:"smooth",block:"center"});btn.classList.add("pulse");setTimeout(function(){btn.classList.remove("pulse");},1100);});
+function finishWin(animate){
+card.classList.add("won");v.textContent="CASH · CASH · CASH";v.classList.add("win");
+bonus.hidden=false;tag.textContent="0 SPINS LEFT";btn.textContent="Claim in app →";btn.dataset.mode="claim";
+spunFlag=true;stickyBtn.textContent="Claim in app →";updateSticky();
+if(animate){countUp(bamt,150,1200);lightStack();fxBurst();setTimeout(openSheet,2600);}
+else{bamt.textContent="$150";allStackOn();}
+}
+function restoreWon(){spun=true;[0,1,2].forEach(function(i){setSym(i,WIN);reels[i].classList.add("hit");});finishWin(false);}
+try{if(sessionStorage.getItem("rc_spun")==="1")restoreWon();}catch(e){}
+btn.addEventListener("click",function(){
+if(btn.dataset.mode==="claim"){openM();return;}
+if(spun||busy)return;spun=true;busy=true;
+try{sessionStorage.setItem("rc_spun","1");}catch(e){}
+v.textContent="";v.className="verdict";
+var spinning=[0,1,2];reels.forEach(function(r){r.classList.add("spin");});
+var iv=setInterval(function(){spinning.forEach(function(i){setSym(i,POOL[Math.floor(Math.random()*POOL.length)]);});},70);
+setTimeout(function(){spinning=[1,2];land(0);v.textContent="CASH …";},950);
+setTimeout(function(){spinning=[2];land(1);v.textContent="CASH · CASH …";},1850);
+setTimeout(function(){spinning=[];clearInterval(iv);reels[2].classList.remove("spin");
+var seq=["⭐","💵","🎁","💵","🔗"],delays=[130,180,250,330,430],t=0;
+seq.forEach(function(k,idx){t+=delays[idx];setTimeout(function(){setSym(2,k);},t);});
+setTimeout(function(){land(2);setTimeout(function(){finishWin(true);busy=false;},430);},t+520);
+},2050);
+});
+(function(){var el=document.getElementById("cdT"),t=9*60+30+Math.floor(Math.random()*29);
+function tick(){var m=Math.floor(t/60),s=t%60;el.textContent=(m<10?"0":"")+m+":"+(s<10?"0":"")+s;if(t>0)t--;else t=4*60+59;}tick();setInterval(tick,1000);})();
+(function(){var el=document.getElementById("clm");if(!el)return;var n=2200+Math.floor(Math.random()*200);function fmt(x){return(""+x).replace(/\B(?=(\d{3})+(?!\d))/g,",");}
+el.textContent=fmt(n);setInterval(function(){n+=Math.floor(Math.random()*2);el.textContent=fmt(n);},4200);})();
+(function(){var T=[["A new member just unlocked their starter perks","moments ago"],["Someone just got paid playing Subway Surfers","just now"],["A new member joined","moments ago"],["$150 welcome bonus reserved for a new member","just now"]];
+var el=document.getElementById("toast"),tt=document.getElementById("toastT"),i=Math.floor(Math.random()*T.length);
+function show(){var m=T[i%T.length];i++;tt.innerHTML=m[0]+"<small>"+m[1]+"</small>";el.classList.add("show");setTimeout(function(){el.classList.remove("show");},3600);}
+setTimeout(function(){show();setInterval(show,8200);},3200);})();
+updateSticky();
 </script>
 </body>
 </html>
