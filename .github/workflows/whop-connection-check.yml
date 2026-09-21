@@ -1,0 +1,64 @@
+name: Whop connection check
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/whop-connection-check.yml]
+permissions:
+  contents: read
+concurrency:
+  group: whop-connection-check
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check Whop campaign read access
+        env:
+          WHOP_API_KEY: ${{ secrets.WHOP_API_KEY }}
+        shell: python
+        run: |
+          import os, json, sys
+          import urllib.request, urllib.parse, urllib.error
+          def fail(message):
+              print(message)
+              sys.exit(1)
+          key = os.environ.get("WHOP_API_KEY", "").strip()
+          if not key:
+              fail("FAIL: WHOP_API_KEY repository secret is missing or empty.")
+          params = urllib.parse.urlencode({
+              "account_id": "biz_O5LDZ6SDymAiyD",
+              "first": 1,
+              "time_zone": "UTC"
+          })
+          request = urllib.request.Request(
+              "https://api.whop.com/api/v1/ad_campaigns?" + params,
+              headers={"Authorization": "Bearer " + key, "Accept": "application/json"},
+              method="GET"
+          )
+          # Never follow a redirect carrying the API credential.
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  return None
+          try:
+              with urllib.request.build_opener(NoRedirect).open(request, timeout=30) as response:
+                  payload = json.load(response)
+          except urllib.error.HTTPError as error:
+              hints = {401: "Check the API key.", 403: "Check Ads read permissions and account access.", 429: "Rate limited; retry later."}
+              fail("FAIL: Whop HTTP " + str(error.code) + ". " + hints.get(error.code, "Request rejected; response body withheld."))
+          except Exception:
+              fail("FAIL: Whop network or JSON response error. Credentials and response withheld.")
+          if not isinstance(payload, dict) or not isinstance(payload.get("data"), list):
+              fail("FAIL: Unexpected Whop response structure.")
+          if payload["data"]:
+              row = payload["data"][0]
+              if not isinstance(row, dict) or not all(k in row for k in ("id", "spend", "completed_registrations")):
+                  fail("FAIL: Expected campaign metrics missing.")
+              message = "PASS: Whop campaign read access and metric fields verified."
+          else:
+              message = "PASS: Whop read access verified; no campaigns returned for this account."
+          print(message)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              summary.write(message + "\n\nRead-only check. No ads or budgets changed. No campaign values logged.\n")
+
