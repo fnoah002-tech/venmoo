@@ -359,6 +359,7 @@ body{
 .spin-control{font:inherit;font-weight:800;width:100%;padding:15px;border-radius:14px;border:1px solid #bda0ff;background:#35204f;color:white;cursor:pointer}.spin-control:disabled{cursor:default;opacity:.7}.spin-control:focus-visible{outline:3px solid white;outline-offset:4px}
 .spin-result{margin-top:14px}.spin-result[hidden]{display:none}.spin-result .direct-cta{margin-top:12px}.reco-spin .spin-note{font-size:10px;margin-top:10px;color:#b5a9c5}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.page{padding-bottom:32px}.hero{gap:6px}.hero h1{font-size:28px}.reco-spin{border:2px solid #b78aff;box-shadow:0 0 30px #8b5cf630}.spin-control{background:linear-gradient(110deg,#7540da,#a26cff);min-height:60px;font-size:22px;transition:transform .15s}.spin-control:hover{transform:translateY(-2px)}.spin-control:active{transform:scale(.97)}#recoSpin:not(:disabled){animation:spin-invite 1.8s ease-in-out infinite}@keyframes spin-invite{50%{box-shadow:0 0 0 7px #a16aff22,0 8px 30px #8b5cf680}}.spin-control[hidden]{display:none}.reco-reels{overflow:hidden}@media(prefers-reduced-motion:reduce){#recoSpin{animation:none!important}}
 </style>
 <!-- ===== Tracking stack: Meta + Whop/Koast + ClickFlare ===== -->
 <script>
@@ -426,21 +427,19 @@ window.TRACKING_CONFIG = Object.freeze({
   <div class="hero f2">
     <h1 id="heroTitle">Your next discovery<br/><span>starts with Reco.</span></h1>
     <p id="heroBody">Ready to try Reco Social? Get the app, sign up and explore.</p>
-    <a class="cta-btn direct-cta js-offer" id="heroCta" href="https://globalvisitlog.com/cf/click/1">Try Reco Now <span aria-hidden="true">→</span></a>
-    <small class="cta-note">Continue to the app download</small>
   </div>
 
   <section class="reco-spin" aria-labelledby="spinHeading">
     <span class="spin-eyebrow">A LITTLE PLAY BEFORE YOU GO</span>
     <h2 id="spinHeading">Give Reco a spin</h2>
-    <p>Try the animation, or jump straight into Reco.</p>
+    <p>Tap Spin to get started.</p>
     <div class="reco-reels" id="recoReels" aria-hidden="true"><span class="reco-reel">✦</span><span class="reco-reel">♥</span><span class="reco-reel">✦</span></div>
-    <button class="spin-control" id="recoSpin" type="button">Spin for fun ↻</button>
+    <button class="spin-control" id="recoSpin" type="button">Spin</button>
     <div class="spin-result" id="recoResult" hidden>
       <p role="status">Ready for your next discovery?</p>
-      <a class="cta-btn direct-cta js-offer" href="https://globalvisitlog.com/cf/click/1">Continue to Reco <span aria-hidden="true">→</span></a>
+      <button class="spin-control" id="reopenSpin" type="button">Show next steps →</button>
     </div>
-    <p class="spin-note">Optional animation only. No prize or reward is awarded.</p>
+    <p class="spin-note">Animation only. No prize or reward is awarded.</p>
   </section>
 
   <div class="pills f3">
@@ -454,7 +453,7 @@ window.TRACKING_CONFIG = Object.freeze({
   <div class="f4 offer-feature">
 
     <div class="offers single-offer">
-      <a class="offer-card highlight js-offer" href="https://globalvisitlog.com/cf/click/1" aria-label="Get Reco Social">
+      <div class="offer-card highlight">
         <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2224%22%20fill%3D%22%238B5CF6%22%2F%3E%3Cmask%20id%3D%22m%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22white%22%2F%3E%3Cpath%20d%3D%22M50%2066%20C38%2057%2031%2051%2031%2043%20a8.5%208.5%200%200%201%2019%20-3%20a8.5%208.5%200%200%201%2019%203%20C69%2051%2062%2057%2050%2066Z%22%20fill%3D%22black%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M31%2020h38a6%206%200%200%201%206%206v56l-25-12-25%2012V26a6%206%200%200%201%206-6z%22%20fill%3D%22white%22%20mask%3D%22url(%23m)%22%2F%3E%3C%2Fsvg%3E" alt="Reco Social" class="offer-img" loading="lazy"/>
         <div class="offer-info">
           <div class="offer-row"><span class="offer-name">Reco Social</span><span class="hot-badge" id="hotBadge">RECO</span></div>
@@ -464,7 +463,7 @@ window.TRACKING_CONFIG = Object.freeze({
           <span class="offer-price">Get Started</span>
           <div class="star-row"><span>Download &amp; sign up</span></div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
@@ -520,38 +519,11 @@ window.TRACKING_CONFIG = Object.freeze({
 </footer>
 </div>
 
-<div class="sticky-cta">
-  <a class="cta-btn direct-cta js-offer" id="stickyCta" href="https://globalvisitlog.com/cf/click/1">Get Reco Social <span aria-hidden="true">→</span></a>
-  <div class="available-line"><span class="available-dot"></span><span id="availableText">Download Reco Social & complete sign-up</span></div>
-  <div class="store-buttons">
-    <a class="store-btn store-ios" id="iosCta" href="https://globalvisitlog.com/cf/click/1" aria-label="Download on the App Store">
-      <span class="store-mark apple-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 29" role="img">
-          <path fill="currentColor" d="M19.58 15.48c.03-3.14 2.57-4.65 2.68-4.72-1.46-2.14-3.74-2.43-4.55-2.46-1.94-.2-3.78 1.14-4.76 1.14-.98 0-2.5-1.11-4.1-1.08-2.11.03-4.05 1.23-5.14 3.12-2.19 3.8-.56 9.43 1.57 12.51 1.04 1.51 2.29 3.2 3.92 3.14 1.57-.06 2.17-1.02 4.07-1.02 1.9 0 2.44 1.02 4.1.99 1.69-.03 2.76-1.54 3.8-3.05 1.2-1.75 1.7-3.44 1.73-3.53-.04-.02-3.29-1.26-3.32-5.04ZM16.44 6.25c.87-1.05 1.46-2.52 1.3-3.98-1.25.05-2.77.84-3.67 1.89-.8.93-1.51 2.43-1.32 3.86 1.4.11 2.82-.71 3.69-1.77Z"/>
-        </svg>
-      </span>
-      <span><small id="iosStoreSmall">Download on the</small><strong>App Store</strong></span>
-    </a>
-    <a class="store-btn store-android" id="androidCta" href="https://globalvisitlog.com/cf/click/1" aria-label="Get it on Google Play">
-      <span class="store-mark play-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 36" role="img">
-          <path fill="currentColor" d="M2.1 1.7c-.7.8-1.1 2-1.1 3.5v25.6c0 1.5.4 2.7 1.1 3.5L17.5 18 2.1 1.7Z"/>
-          <path fill="currentColor" opacity=".9" d="M19.5 15.9 5.6 1.7c1-.1 2 .2 3.1.8l17.8 10.1-7 3.3Z"/>
-          <path fill="currentColor" opacity=".78" d="m19.5 20.1 7 3.3L8.7 33.5c-1.1.6-2.1.9-3.1.8l13.9-14.2Z"/>
-          <path fill="currentColor" opacity=".65" d="M28.6 13.8c1 .6 1.5 1.3 1.5 2.2s-.5 1.6-1.5 2.2l-6.9 3.9L18 18l3.7-4.1 6.9-.1Z"/>
-        </svg>
-      </span>
-      <span><small id="androidStoreSmall">Get it on</small><strong>Google Play</strong></span>
-    </a>
-  </div>
-</div>
-
-
 <dialog class="spin-dialog" id="spinDialog" aria-labelledby="spinDialogTitle">
   <button class="dialog-close" id="closeSpinDialog" type="button" aria-label="Close popup">×</button>
   <span aria-hidden="true" style="font-size:36px">✨</span>
   <h2 id="spinDialogTitle">Your next discovery starts here</h2>
-  <p>Get started with Reco in three simple steps.</p>
+  <p>congratulations, you received a $5 Bonus.</p>
   <ol class="dialog-steps">
     <li><span><strong>Download</strong>Continue to the app download and install Reco.</span></li>
     <li><span><strong>Sign up</strong>Open the app and create your account.</span></li>
@@ -575,8 +547,9 @@ window.TRACKING_CONFIG = Object.freeze({
    });
  });
  var spin=document.getElementById("recoSpin"),reels=document.getElementById("recoReels"),result=document.getElementById("recoResult"),dialog=document.getElementById("spinDialog");
+ document.getElementById("reopenSpin").addEventListener("click",function(){dialog.showModal();document.body.style.overflow="hidden";});
  document.getElementById("closeSpinDialog").addEventListener("click",function(){dialog.close();});
- dialog.addEventListener("close",function(){document.body.style.overflow="";result.querySelector("a").focus();});
+ dialog.addEventListener("close",function(){document.body.style.overflow="";document.getElementById("reopenSpin").focus();});
  dialog.addEventListener("click",function(e){if(e.target===dialog){var r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
  spin.addEventListener("click",function(){
    if(spin.disabled)return;
